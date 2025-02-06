@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>예가람저축은행</title>
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="Content-Script-Type" content="text/javascript">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<meta name="keywords" content="예가람저축은행keywords" />
+<meta name="description" content="예가람저축은행description" />
+<!-- <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0, viewport-fit=cover"> -->
+	<meta name="viewport" content="user-scalable=no,width=375">
+
+<meta name="apple-mobile-web-app-status-bar-style" content="white" />
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta http-equiv="Expires" content="-1">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Cache-Control" content="No-Cache">
+
+<link href="/resources/css/default.css" rel="stylesheet" />
+<link href="/resources/css/renewal.css" rel="stylesheet" />
+
+
+<link href="/resources/css/swiper-bundle.min.css" rel="stylesheet" />
+<link rel="shortcut icon" type="image/x-icon" href="/resources/favicon.ico" />
+<link rel="icon" type="image/x-icon" href="/resources/favicon.ico" />
+
+<script type="text/javascript" src="/resources/js/lib/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="/resources/js/lib/jquery.cookie.js"></script>
+
+<script type="text/javascript" src="/resources/js/lib/swiper-bundle.min.js"></script>
+<script type="text/javascript" src="/resources/js/lib/TweenMax.min.js"></script>
+<script type="text/javascript" src="/resources/js/lib/jquery.animateSprite.min.js"></script>
+<script type="text/javascript" src="/resources/js/lib/default.js?v=20230803152535"></script>
+<script type="text/javascript" src="/resources/js/lib/ui.js?v=20230803152535"></script>
+<script type="text/javascript" src="/resources/js/lib/rolldate.js?v=20230803152535"></script>
+<script type="text/javascript" src="/resources/js/app_common_cont.js?v=20230803152535"></script>
+<script type="text/javascript" src="/resources/js/app_common_auth.js?v=20230803152535"></script>
+<script type="text/javascript" src="/resources/js/app_common_funs.js?v=20230803152535"></script>
+<script type="text/javascript" src="/resources/js/app_common_nsl.js?v=20230803152535"></script>
+<script type="text/javascript" src="/resources/js/app_common_util.js?v=20230803152535"></script>
+<script type="text/javascript" src="/resources/js/biz_common.js?version=20230803152535" id="biz_common"
+	data-menuId="dep/prc"
+	data-frameId="depAcnoOpenPrc2"
+	data-serviceCd="depAcnoOpenPrc2.frm"
+	data-serverTime="20230803152535"
+	data-activeMode="local"
+	data-activeEnv="${active.env">
+</script>
+
+
+<body>
+    <!-- header -->
+    <div id="headerWrap">
+        <script>
+        $(document).ready(function(){
+            document.charset="euc-kr";
+            $("#headerWrap").load("../includes/header.html");
+        });
+        </script>
+    </div>
+	<!-- //header -->
+
+    <!--contentsWrap -->
+    <div class="contentsWrap">
+        <!--contents -->
+        <div class="contents">
+            <div class="default-wrap">
+                
+                <div class="tit-wrap">
+					<p class="txt"><strong>아래 내용을 확인하신 후</strong><br>상계신청을 진행 해주세요</p>
+				</div>
+
+                <div class="txt-list-wrap">
+                    <!--S: 반복문-->
+
+                    <!--s: 예적금 해지 정보 -->
+					<div class="txt-detail-area">
+						<div class="txt-detail-tit">
+							<strong>예적금 해지 정보</strong><!--D: 띄어쓰기 -->
+						</div>
+
+						<ul class="txt-list">
+							<li>
+								<span class="tit">계좌번호</span><!--D: 텍스트 변경-->
+								<span class="txt"></span>
+							</li>
+							<li>
+								<span class="tit">해지원금</span>
+								<span class="txt">원</span>
+							</li>
+							<li>
+								<span class="tit">해지이자</span>
+								<span class="txt">원</span>
+							</li>
+							<li>
+								<span class="tit">상환금액</span>
+								<span class="txt">원</span>
+							</li>
+							<li>
+								<span class="tit">특별이자</span>
+								<span class="txt">원</span>
+							</li>
+							<li>
+								<span class="tit">소득세</span>
+								<span class="txt">원</span>
+							</li>
+							<li>
+								<span class="tit">주민세</span>
+								<span class="txt">원</span>
+							</li>
+							<li>
+								<span class="tit">수입제세합계</span>
+								<span class="txt">원</span>
+							</li>
+							<li>
+								<span class="tit">차감지급액</span>
+								<span class="txt">원</span>
+							</li>
+							<li>
+								<span class="tit">보통예금입금금액</span>
+								<span class="txt">원</span>
+							</li>
+						</ul>
+					</div>
+                    <!--e: 예적금 해지 정보 -->
+
+                    <!--s: 대출 상환 정보 -->
+                    <div class="txt-detail-area">
+						<div class="txt-detail-tit">
+							<strong>대출 상환 정보</strong><!--D: 띄어쓰기 -->
+						</div>
+						<ul class="txt-list">
+							<li>
+								<span class="tit">계좌번호</span><!--D: 텍스트 변경 -->
+								<span class="txt"></span>
+							</li>
+							<li>
+								<span class="tit">상환원금</span>
+								<span class="txt">원</span>
+							</li>
+							<li>
+								<span class="tit">정상이자</span>
+								<span class="txt">원</span>
+							</li>
+							<li>
+								<span class="tit">연체료</span>
+								<span class="txt">원</span>
+							</li>
+							<li>
+								<span class="tit">연체이자</span>
+								<span class="txt">원</span>
+							</li>
+							<li>
+								<span class="tit">미청구이자</span>
+								<span class="txt">원</span>
+							</li>
+							<li>
+								<span class="tit">환출이자</span>
+								<span class="txt">원</span>
+							</li>
+							<li>
+								<span class="tit">상환 후 대출잔액</span>
+								<span class="txt">원</span>
+							</li>
+						</ul>
+					</div>
+                    <!--e: 대출 상환 정보 -->
+
+                    <!--E: 반복문-->
+				</div>
+
+                <!--S: FORM -->
+                <div class="form-all-wrap"><!--D: 전체 폼을 from-all-wrap 태그로 묶어줍니다. -->
+
+                    <div class="form-wrap">
+                        <label for="ipt01" class="formlabel">대출상환금액</label>
+                        <div class="input">
+                            <input type="text" title="대출상환금액" id="ipt01" class="inp" value="" placeholder="" required disabled />
+                            <span class="static-unit">원</span>
+                        </div>
+                    </div>
+
+                    <div class="form-wrap">
+                        <label for="ipt02" class="formlabel onbasic">정산 후 잔여입금금액</label>
+                        <div class="input">
+                            <input type="text" title="정산 후 잔여입금금액" id="ipt02" class="inp" value="" placeholder="" required disabled />
+                            <span class="static-unit">원</span>
+                        </div>
+                    </div>
+
+                    <div class="form-wrap password">
+                        <label for="SID_PWD_C700" class="formlabel essential">해지할 예적금 계좌 비밀번호</label><!--D: essential 클래스 추가-->
+                        <div class="input">
+                            <input type="password" title="해지할 예적금계좌 비밀번호" id="SID_PWD_C700" class="inp validChk" name="SID_PWD_C700" value="" placeholder="비밀번호 입력" required onclick="accoPwd();"/>
+                            <input type="hidden" id="E2E_SID_PWD_C700" name="E2E_SID_PWD_C700">
+                        </div>
+                    </div>
+    
+                    <!--D: 삭제 <div class="form-wrap">
+                        <div class="input"> -->
+                            <div class="form-wrap" id="cmmdAcnoDiv">
+                                <strong class="form-tit">
+                                    <span>정산 후 입금계좌 선택</span>
+                                </strong>
+                                <div class="select-box" tabindex="1" onclick="biz.acnoList('1', selWtchAcno);">
+                                    <label for="CMMD_ACNO" class="essential">입금계좌</label><!--D: essential 클래스 추가-->
+                                    <span class="option" id="cmmdAcnoText">미선택</span>
+                                    <input type="hidden" id="CMMD_ACNO" name="CMMD_ACNO" class="validChk" value="">
+                                </div>
+                            </div>
+                        <!--D: 삭제 </div>
+                    </div> -->
+
+                </div>
+                <!--E: FORM -->
+
+            </div>
+        </div>
+        <!-- //contents -->
+
+        <div class="fixed-btn-wrap">
+			<div class="btn-wrap">
+				<a href="#none" class="btn disabled">다음</a><!--D: disabled 삭제 시 활성화-->
+			</div>
+		</div>
+
+		<!--S: 1. 상계신청 불가 안내 -->
+		<div id="lyPop2" class="layerpopup layer-up has-button show" style="position: fixed; top: 307.5px; left: 0px; display:none;"><!-- [D] has-button 클래스 : 하단버튼 있을 경우 사용 -->
+			<div class="content-wrap">
+				<div class="pop-header">
+					<h2 class="pop-title">상계신청 불가 안내</h2>
+					<button type="button" name="button" class="btn-layer-close" data-focus="btn-layer-close">닫기</button>
+				</div>
+				<div class="ly-scroll-con">
+					<div class="txtbox-wrap">
+						<p>예적금 담보대출 상계신청은 평일 00:00 ~ 23:50 사이에만 가능해요</p>
+					</div>
+				</div>
+				<div class="fixed-btn-wrap">
+					<div class="btn-wrap flexCol">
+						<a href="javascript:void(0);" class="btn close">확인</a>
+						<a href="javascript:void(0);" class="btn txt">버튼명</a>
+					</div>
+				</div>
+			</div>
+
+		</div>
+		<!--E: 1. 상계신청 불가 안내 -->
+
+		<!--S: 2. 입출금계좌 안내 -->
+		<div id="lyPop2" class="layerpopup layer-up has-button show" style="position: fixed; top: 307.5px; left: 0px; display: none;"><!-- [D] has-button 클래스 : 하단버튼 있을 경우 사용 -->
+			<div class="content-wrap">
+				<div class="pop-header">
+					<h2 class="pop-title">입출금계좌 안내</h2>
+					<button type="button" name="button" class="btn-layer-close" data-focus="btn-layer-close">닫기</button>
+				</div>
+				<div class="ly-scroll-con">
+					<div class="txtbox-wrap">
+						<p>입출금통장을 보유하신 분만 예적금 담보대출 상계신청이 가능해요</p>
+					</div>
+				</div>
+				<div class="fixed-btn-wrap">
+					<div class="btn-wrap flexCol">
+						<a href="javascript:void(0);" class="btn close">확인</a>
+						<a href="javascript:void(0);" class="btn txt">빠른계좌개설하기</a>
+					</div>
+				</div>
+			</div>
+
+		</div>
+		<!--E: 2. 입출금계좌 안내 -->
+
+    </div>
+    <!-- //contentsWrap -->
+</body>
+</html>
+

@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>예가람저축은행</title>
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="Content-Script-Type" content="text/javascript">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<meta name="keywords" content="예가람저축은행keywords" />
+<meta name="description" content="예가람저축은행description" />
+<!-- <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0, viewport-fit=cover"> -->
+	<meta name="viewport" content="user-scalable=no,width=375">
+<!--
+<meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"/>
+ -->
+<meta name="apple-mobile-web-app-status-bar-style" content="white" />
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta http-equiv="Expires" content="-1">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Cache-Control" content="No-Cache">
+
+<link href="/resources/css/swiper-bundle.min.css" rel="stylesheet" />
+<link href="/resources/css/default.css" rel="stylesheet" />
+<link href="/resources/css/renewal.css" rel="stylesheet" />
+
+<link rel="shortcut icon" type="image/x-icon" href="/resources/favicon.ico" />
+<link rel="icon" type="image/x-icon" href="/resources/favicon.ico" />
+
+<script type="text/javascript" src="/resources/js/lib/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="/resources/js/lib/jquery.cookie.js"></script>
+
+<script type="text/javascript" src="/resources/js/lib/swiper-bundle.min.js"></script>
+<script type="text/javascript" src="/resources/js/lib/TweenMax.min.js"></script>
+<script type="text/javascript" src="/resources/js/lib/jquery.animateSprite.min.js"></script>
+<script type="text/javascript" src="/resources/js/lib/default.js?v=20230803152139"></script>
+<script type="text/javascript" src="/resources/js/lib/ui.js?v=20230803152139"></script>
+<script type="text/javascript" src="/resources/js/lib/rolldate.js?v=20230803152139"></script>
+<script type="text/javascript" src="/resources/js/app_common_cont.js?v=20230803152139"></script>
+<script type="text/javascript" src="/resources/js/app_common_auth.js?v=20230803152139"></script>
+<script type="text/javascript" src="/resources/js/app_common_funs.js?v=20230803152139"></script>
+<script type="text/javascript" src="/resources/js/app_common_nsl.js?v=20230803152139"></script>
+<script type="text/javascript" src="/resources/js/app_common_util.js?v=20230803152139"></script>
+<script type="text/javascript" src="/resources/js/biz_common.js?version=20230803152139" id="biz_common"
+	data-menuId="dep/inq"
+	data-frameId="depList"
+	data-serviceCd="depList.frm"
+	data-serverTime="20230803152139"
+	data-activeMode="local"
+	data-activeEnv="${active.env">
+</script>
+<script type="text/javascript" src="../../../resources/js/Chart.bundle.js"></script> <!-- [퍼블] 추가 -->
+<script type="text/javascript" src="../../../resources/js/chartjs-plugin-datalabels.js"></script> <!-- [퍼블] 추가 -->
+</head>
+<body>
+	<!-- header -->
+	<header class="headerWrap">  <!--D: bg-color02 클래스 : 뒤에 색상 들어갈 경우  -->
+		<div class="headerLeft">
+			<a href="javascript:void(0)" class="btn btnBack"><img src="/resources/images/header/btn_back.png" alt="이전페이지 이동하기"></a> <!--D: 이전버튼 -->
+		</div>
+		<div class="headerCenter">
+			<h2 class="text"><span>계좌관리</span></h2> 
+		</div>
+		<div class="headerRight">
+		</div>
+	</header>
+	<!-- //header -->
+
+	<!-- s: contentsWrap -->
+	<div class="contentsWrap">
+		<div class="contents">
+			<!--D : 하단버튼이 없는 경우 pb0클래스 추가확인-->
+			<div class="default-wrap pb0">
+				<div class="visaul-info-section">
+					<div class="visaul-info-box">
+						<div class="flag-tit-wrap"><!-- [퍼블-1] : flag-tit-wrap 클래스 추가 -->
+							<em class="flag style2">입출금</em><em class="flag style4">종합통장대출</em>
+						</div>
+						<strong class="info-tit">보고파 파킹통장</strong>
+						<div class="account-area">
+							<p class="account">123-12-12-1234567</p>
+							<button type="button" class="btn-copy">복사하기</button>
+						</div>
+						<a href="#none" class="btn-set star" id="oftnAcct" onclick="oftnAcct(this);">관리</a>
+					</div>
+				</div>
+
+				<div class="account-detail-section">
+					<div class="txt-list-wrap">
+						<div class="txt-detail-area">
+							<ul class="txt-list">
+								<li>
+									<span class="tit">잔액</span>
+									<span class="txt">000,000,000원</span>
+								</li>
+								<li>
+									<span class="tit">계좌개설일</span>
+									<span class="txt">YYYY.MM.DD</span>
+								</li>
+								<li>
+									<span class="tit">현재적용금리<br><span class="s-txt">(기준일자:2023.05.01)</span></span>
+									<span class="txt">0.1%</span>
+								</li>
+							</ul>
+						</div>
+					</div>
+
+					<!-- [퍼블] 종합통장대출 일때 -->
+					<div class="txt-list-wrap">
+						<div class="txt-detail-area">
+							<div class="txt-detail-tit">
+								<strong>종합통장대출</strong>
+							</div>
+							<ul class="txt-list">
+								<li>
+									<span class="tit">한도</span>
+									<span class="txt">000,000,000원</span>
+								</li>
+								<li>
+									<span class="tit">만기일</span>
+									<span class="txt">YYYY.MM.DD</span>
+								</li>
+								<li>
+									<span class="tit">이율</span>
+									<span class="txt">00.00%</span>
+								</li>
+								<li>
+									<span class="tit">연체이율</span>
+									<span class="txt">00.00%</span>
+								</li>
+								<li>
+									<span class="tit">이자(조회일기준)</span>
+									<span class="txt">000,000,000원</span>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<!-- // [퍼블] 종합통장대출 일때 -->
+					
+					<div class="check-box toggle">
+						<input type="checkbox" id="check01">
+						<label for="check01">
+							<span>대표계좌설정</span>
+							<div class="switch-btn">
+								<span class="off">OFF</span>
+								<span class="on">ON</span>
+								<div class="inside"></div>
+							</div>
+						</label>
+					</div>
+
+					<div class="check-box toggle">
+						<input type="checkbox" id="check02">
+						<label for="check02">
+							<span>
+								출금중지설정
+								<div class="tooltip-wrap">
+									<a href="#none" class="tooltip-btn">?</a>
+									<div class="tooltip-txt">
+										<p>
+											출금중지설정을 ON으로<br>
+											변경 시 해당계좌는 출금 및<br>
+											이체가 불가능해요
+										</p>
+										<button type="button" class="tooltip-close">닫기</button>
+									</div>
+								</div>
+							</span>
+							<div class="switch-btn">
+								<span class="off">OFF</span>
+								<span class="on">ON</span>
+								<div class="inside"></div>
+							</div>
+						</label>
+					</div>
+
+					<ul class="arrow-button-list">
+						<li><a href="#none" onclick="">종합통장대출 신청</a></li>
+						<li style="display:none;"><a href="#none" onclick="">종합통장대출 해지</a></li> 
+						<li><a href="#none" onclick="">계좌비밀번호 변경</a></li>
+						<li><a href="#none" onclick="">통장사본</a></li>
+                        <li><a href="#none" onclick="">수시이자지급</a></li>
+					</ul>
+					
+					<div class="btn-wrap mt40">
+                        <a href="javascript:void(0);" class="btn disabled">계좌해지</a>
+                    </div>
+
+					<p class="info-txt">지급제한 계좌 또는 자동이체 연결 계좌 이거나 계좌 잔액이 마이너스인 경우 계좌 해지 신청이 불가능해요</p>
+
+					<div class="kdic-wrap">
+						<img src="../../../resources/images/common/img-kdic.png" alt="예금보험공사 보호금융상품 1인당 최고 5천만원">
+						<p>이 예금은 예금자보호법에 따라 예금보험공사가 보호하되, 보호 한도는 본 예가람저축은행에 있는 귀하의 모든 예금보호 대상 금융상품의 원금과 소정의 이자를 합하여 1인당 "최고 5천만원"이며,  5천만원을 초과하는 나머지 금액은 보호하지 않습니다.</p>
+					</div>
+
+				</div>
+			</div>
+
+			<!--[퍼블-1] - 6/17: 누락 페이지  -->
+			<!--S: 종합통합대출 신청 계좌 선택 (팝업)-->
+			<div id="lypullPop" class="layerpopup laypop-all show" style="display: none;">
+                <!-- s: contents -->
+                <div class="pop-header">
+                    <h2 class="pop-title">계좌선택</h2>
+                    <button type="button" name="button" class="btn-layer-close" onclick="closePopup('lypullPop')">닫기</button>
+                </div>
+                
+                <div class="pop-con-wrap" style="padding-bottom: 60px;">
+                    <div class="default-wrap">
+						<div class="tit-wrap">
+							<p class="txt"><strong>종합통장대출</strong>을<br>신청하실 계좌를 선택해 주세요</p>
+						</div>
+						<div class="form-all-wrap">
+							<div id="" class="select-wrap">
+								<div class="select-box openSel" tabindex="1" onclick="">
+									<label for="qValue2" class="essential">계좌선택</label><!--D: essential 클래스 추가-->
+									<span class="option" id="qText2">미선택</span>
+									<input type="hidden" name="LOAN_AIM" class="validChk" value="" id="qValue2">
+									<input type="hidden" name="LOAN_AIM_TEXT" value="" id="qReason2">
+								</div>
+							</div>
+						</div>
+                    </div>
+                </div>
+
+                <div class="fixed-btn-wrap">
+                    <div class="btn-wrap">
+                        <a href="#none" class="btn">다음</a>
+                    </div>
+                </div>
+
+            </div>
+			<!--E: 종합통합대출 신청 계좌 선택 (팝업)-->
+			<!--[퍼블-1] - 6/17: 누락 페이지  //-->
+			
+		</div>
+
+	</div>
+    <!-- //e: contentsWrap -->
+
+	
+
+
+<footer>
+<!-- 푸터 타입별 정의 -->
+</footer>
+
+<!-- 업무공통 -->
+<!-- //footer -->
+
+</body>
+</html>

@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>예가람저축은행</title>
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="Content-Script-Type" content="text/javascript">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<meta name="keywords" content="예가람저축은행keywords" />
+<meta name="description" content="예가람저축은행description" />
+<!-- <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0, viewport-fit=cover"> -->
+	<meta name="viewport" content="user-scalable=no,width=375">
+
+<meta name="apple-mobile-web-app-status-bar-style" content="white" />
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta http-equiv="Expires" content="-1">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Cache-Control" content="No-Cache">
+
+<link href="/resources/css/default.css" rel="stylesheet" />
+<link href="/resources/css/renewal.css" rel="stylesheet" />
+
+
+<link href="/resources/css/swiper-bundle.min.css" rel="stylesheet" />
+<link rel="shortcut icon" type="image/x-icon" href="/resources/favicon.ico" />
+<link rel="icon" type="image/x-icon" href="/resources/favicon.ico" />
+
+<script type="text/javascript" src="/resources/js/lib/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="/resources/js/lib/jquery.cookie.js"></script>
+
+<script type="text/javascript" src="/resources/js/lib/swiper-bundle.min.js"></script>
+<script type="text/javascript" src="/resources/js/lib/TweenMax.min.js"></script>
+<script type="text/javascript" src="/resources/js/lib/jquery.animateSprite.min.js"></script>
+<script type="text/javascript" src="/resources/js/lib/default.js?v=20230803152350"></script>
+<script type="text/javascript" src="/resources/js/lib/ui.js?v=20230803152350"></script>
+<script type="text/javascript" src="/resources/js/lib/rolldate.js?v=20230803152350"></script>
+<script type="text/javascript" src="/resources/js/app_common_cont.js?v=20230803152350"></script>
+<script type="text/javascript" src="/resources/js/app_common_auth.js?v=20230803152350"></script>
+<script type="text/javascript" src="/resources/js/app_common_funs.js?v=20230803152350"></script>
+<script type="text/javascript" src="/resources/js/app_common_nsl.js?v=20230803152350"></script>
+<script type="text/javascript" src="/resources/js/app_common_util.js?v=20230803152350"></script>
+<script type="text/javascript" src="/resources/js/biz_common.js?version=20230803152350" id="biz_common" 
+	data-menuId="dep/inq"
+	data-frameId="depDetail"
+	data-serviceCd="depDetail.frm" 
+	data-serverTime="20230803152350"
+	data-activeMode="local"
+	data-activeEnv="${active.env">
+</script>
+<script>
+	$(document).ready(function(){
+		$('.like').on('click', function (e) {
+			e.preventDefault();
+			var $tooltipWrap = $(this).parents('.tooltip-wrap');
+			var $regText  = $(this).siblings('.tooltip-txt.reg');
+			var $delText = $(this).siblings('.tooltip-txt.del');
+	
+			if ($tooltipWrap.hasClass('type2')) {
+				if ($(this).hasClass('active')) {
+					$(this).removeClass('active');
+					$delText.fadeIn();
+					setTimeout(function () {
+						$delText.fadeOut();
+					}, 1000);
+				} else {
+					$(this).addClass('active');
+					$regText.fadeIn();
+					setTimeout(function () {
+						$regText.fadeOut();
+					}, 1000);
+				}
+			}
+		});
+	});
+	
+	</script>
+</head>
+<body>
+	<!-- header -->
+	<header class="headerWrap">
+		<div class="headerLeft">
+			<a href="javascript:void(0)" class="btn btnBack"><img src="/resources/images/header/btn_back.png" alt="이전페이지 이동하기"></a>
+		</div>
+		<div class="headerCenter">
+			<h2 class="text"><span>e-회전정기예금</span></h2> <!--D: TEXT -->
+		</div>
+		<div class="headerRight">
+			<a href="javascript:void(0)" class="btn btn-menu "><img src="/resources/images/header/btn_menu.png" alt="전체메뉴"></a>
+		</div>
+	</header>
+        <!-- s: contentsWrap -->
+		<div class="contentsWrap product-detail dep01"> <!-- D: dep01, dep02 클래스 변경시 .visual-area 아이콘 변경 -->
+			<!-- s: contents -->
+			<div class="contents">
+				<!-- s: default-wrap -->
+				<div class="default-wrap">
+					<div class="visual-area">
+						<div class="flag-tit-wrap">
+							<p><em class="flag style2">목돈굴리기</em></p><!--D: style2 클래스 : 목돈굴리기/입출금자유/목돈마련상품, style3 클래스 : 대출상품 -->
+							<strong class="tit">e-회전정기예금</strong>
+							<div class="tooltip-wrap type2">
+                                <span class="like"></span>
+                                <div class="tooltip-txt reg"><!--D:  클릭 했을 경우 -->
+                                    <p>관심상품으로 등록되었어요</p>
+                                </div>
+                                <div class="tooltip-txt del"><!--D:  클릭 해제 했을 경우 -->
+                                    <p>관심상품에서 제외했어요</p>
+                                </div>
+                            </div>
+						</div>
+						<p class="desc-txt">#회전정기예금 #변동금리 #2년,3년 #인터넷,모바일가입</p> 
+
+						<ul>
+							<li class="amount">
+								<strong class="tit">가입금액</strong>
+								<span class="exp">제한없음</span>
+							</li>
+							<li class="term">
+								<strong class="tit">가입기간</strong>
+								<span class="exp">제한없음</span>
+							</li>
+						</ul>
+					</div>
+					<ul class="button-list">
+						<li><a href="#none">친구에게 공유하기</a></li>
+						<li class="active"><a href="#none">상품비교 담기</a></li> <!-- [퍼블-2] li에 active 클래스 추가시 체크 활성화 --> 
+					</ul>
+					<div class="visual-area img01">
+						<div class="tit-wrap">
+							<ul class="tag">
+								<li>변등금리</li>
+                                <li>인터넷 가입</li>
+                                <li>모바일 가입</li>
+							</ul>
+							<p class="txt">
+								12개월 단위로 최대 3년까지<br>
+								최대 연<em class="color-F1108E">4.02%</em>로<br>
+								<em class="color-F1108E">e-회전정기예금</em>에 가입 해보세요
+							</p>
+						</div>
+					</div>
+					<div class="visual-area img02">
+						<div class="tit-wrap">
+							<ul class="tag">
+								<li>#회전정기예금</li>
+								<li>#2년, 3년</li>
+							</ul>
+							<p class="txt">
+								<em class="color-F1108E">연단위</em>로<br>
+								<em class="color-F1108E">최대 2년, 3년</em>까지<br>
+                                12개월 회전주기로 금리 변동 상품!
+							</p>
+						</div>
+					</div>
+					<div class="product-info">
+						<h3>상품안내</h3>
+						<div class="sub-tit-wrap">
+							<p class="tit">가입대상</p>
+							<ul class="txt hyphen">
+								<li>비거주 외국인 외 제한없음</li>
+								<li>인터넷 모바일 전용상품</li>
+							</ul>
+						</div>
+						<div class="sub-tit-wrap">
+							<p class="tit">가입기간</p>
+							<p class="txt">최소 1개월 ~ 최대 36개월</p>
+						</div>
+						<div class="sub-tit-wrap">
+							<p class="tit">가입한도</p>
+							<p class="txt">10만원 이상</p>
+						</div>
+						<div class="sub-tit-wrap">
+							<p class="tit">이자 지급 시기 및 방법</p>
+							<div class="bg-box">
+								<ul class="list-bull type-large num">
+									<li>
+										<em>1.</em>
+                                        단리식(매월 이자지금식) 으로 지급되며 만기일시지금식(월복리식): 만기(후) 또는 중도해지 요청 시 이자를 지급									</li>
+									<li>
+										<em>2.</em>
+										이자 지급식의 경우에 매월 방색하는 이자를 고객이 지정한 당행 또는 시중은행 보통 예금 계좌에 자동이체(대체) 가능
+									</li>
+								</ul>
+							</div>
+						</div>
+                        <div class="sub-tit-wrap">
+							<p class="tit">상품특성</p>
+							<p class="txt">예금액 중 일부 금액이 필요하신 경우에만 만기해약을 포함하여 4회(해지포함) 분할 및 중도인출이 가능합니다.</p>
+						</div>
+                        <div class="sub-tit-wrap">
+							<p class="tit">중도해지 이율</p>
+                            <ul class="txt hyphen">
+								<li>회전주기 도래 전 : 정기예금 중도해지 이율 적용</li>
+								<li>회전주기 도래 후 : </li>
+                                <li>완료된 회전주기 기간 : 약정금리 적용</li>
+                                <li>미완료된 회전주기 기간 : 정기예금 중도해지 이율 적용</li>
+							</ul>
+                        </div>
+						<div class="sub-tit-wrap">
+							<p class="tit">유의사항</p>
+							<div class="bg-box">
+								<ul class="list-bull type-large color-FF0000">
+									<li>계약 체결 전 상품설명서 및 약관을 확인하시기 바랍니다.</li>
+									<li>해당 상품에 대해 충분한 사전 설명을 받을 권리가 있으며, 설명을 이해한 후 거래하시기 바랍니다.</li>
+									<li>계좌에 압류, 가압류, 질권설정 등이 등록될 경우 원금 및 이자 지급 제한됩니다.</li>
+								</ul>
+							</div>
+						</div>
+                        <div class="sub-tit-wrap">
+							<p class="tit">인지 비용 부담</p>
+                            <div class="table-type table-row">
+								<table>
+									<caption>대출금액, 인지세액(고객 부담 금액)로 구성되어 있는 인지 비용 부담 안내 표</caption>
+									<colgroup>
+										<col width="30%">
+										<col width="*%">
+									</colgroup>
+									<thead>
+										<tr>
+											<th scope="col">대출금액</th>
+											<th scope="col">인지세액(고객 부담 금액)</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td class="ta-l">5천만원 미만</td>
+											<td class="ta-l">없음</td>
+										</tr>
+										<tr>
+											<td class="ta-l">5천만원 초과 ~ 1억원 이하</td>
+											<td class="ta-l">7만원 (3.5만원)</td>
+										</tr>
+										<tr>
+											<td class="ta-l">1억원 초과 ~ 10억원 이하</td>
+											<td class="ta-l">15만원 (7.5만원)</td>
+										</tr>
+                                        <tr>
+											<td class="ta-l">10억원 초과</td>
+											<td class="ta-l">35만원 (17.5만원)</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+                        </div>
+					</div>
+					<div class="product-info">
+						<ul class="arrow-button-list">
+                            <li><a href="#none">유의사항</a></li>
+							<li><a href="#none">예금거래 기본약관</a></li>
+							<li><a href="#none">정기예금 특약</a></li>
+							<li><a href="#none">금리안내</a></li>
+							<li><a href="#none">비과세종합저축 안내</a></li>
+
+						</ul>
+					</div>
+
+					<div class="kdic-wrap">
+						<img src="../../../resources/images/common/img-kdic.png" alt="예금보험공사 보호금융상품 1인당 최고 5천만원" />
+						<p>이 예금은 예금자보호법에 따라 예금보험공사가 보호하되, 보호 한도는 본 예가람저축은행에 있는 귀하의 모든 예금보호 대상 금융상품의 원금과 소정의 이자를 합하여 1인당 "최고 5천만원"이며,  5천만원을 초과하는 나머지 금액은 보호하지 않습니다.</p>
+					</div>
+					<p class="txt-junbub">준법감시인 심의필 제230679호<br>(2023.05.17~2024.05.16)</p>
+				</div>
+				<!-- //e: default-wrap -->
+
+				<!-- s: btn-wrap -->
+				<div class="fixed-btn-wrap">
+					<div class="btn-wrap flexRow">
+                        <a href="javascript:void(0);" class="btn btn-info">상담</a>
+                        <a href="javascript:void(0);" class="btn">계좌개설 가입하기</a>
+                    </div>
+				</div>
+				<!-- //e: btn-wrap -->
+
+			</div>
+			<!-- //e: contents -->
+
+			<!-- s: 비과세 종합저축 클릭시 풀팝업 -->
+			<div id="lyPullPop" class="layerpopup laypop-all" tabindex="0" data-focus-prev="btn-menu-close" style="display:none;">
+				<div class="pop-header">
+                    <h2 class="pop-title">비과세종합저축 가입안내</h2>
+                    <button type="button" name="button" class="btn-layer-close" onclick="closePopup('lypullPop')">닫기</button>
+                </div>
+				<div class="pop-con-wrap">
+					<div class="default-wrap">
+						<div class="tit-wrap">
+							<p class="txt"><strong>비과세종합저축</strong>이란?</p>
+						</div>
+
+						<ul class="step-box">
+							<li>
+								<div>1</div>
+								<span>증빙서류<br>제출</span>
+							</li>
+							<li>
+								<div>2</div>
+								<span>접수/심사</span>
+							</li>
+							<li>
+								<div>3</div>
+								<span>적용완료<br>및 SMS안내</span>
+							</li>
+						</ul>
+
+						<div class="txt-style">
+							<ul class="list-bull">
+								<li>조세특례제한법에 따라 일정한 자격을 갖춘 거주자는 1인당 저축원금 5천만원까지 이자 소득세를 면제
+                                    받을 수 있어요</li>
+								<li>가입대상 : 만 65세 이상, 장애인, 독립유공자 및
+                                    유가족, 국가유공상이자, 기초생활수급자, 고엽제후유의증환자, 5·18민주화운동부상자</li>
+								<li>단, 직전 3개 과세기간 내 1회 이상 금융소득 종합과세 대상자는 가입 제한</li>
+							</ul>
+						</div>
+
+						<div class="txt-group">
+							<div class="bg-box">
+								<ul class="dot">
+									<li>
+										20.01.01 이후 가입(자동재예치) 분부터 직전 3개년도 과세기간 내 1회 이상 <strong>금융소득 종합과세 대상자(금융소득 연간 합계액 2천만원 초과)</strong>에 
+                                        해당되는 경우 추후 검증을 통해 가입대상에서 제외되며, 이후 관련 법령에서 정하는 절차에 따라 일반과세로 전환될 수 있어요
+									</li>
+								</ul>
+							</div>
+							<div class="bg-box">
+								<ul class="dot">
+									<li>
+										<strong>
+											관련세법이 개정될 경우 세율이 변경되거나 세금이 부과될 수 있으며, 계약기간 만료일 이후의 이자는 과세돼요
+										</strong>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- e: 비과세 종합저축 클릭시 풀팝업 -->
+
+			<!-- s: 금리 안내 클릭시 풀팝업 -->
+			<div id="lyPullPop02" class="layerpopup laypop-all" tabindex="0" data-focus-prev="btn-menu-close">
+				<div class="pop-header">
+                    <h2 class="pop-title">금리안내</h2>
+                    <button type="button" name="button" class="btn-layer-close" onclick="closePopup('lypullPop')">닫기</button>
+                </div>
+				<div class="pop-con-wrap">
+					<div class="default-wrap">
+						<div class="txtbox-wrap bt1">
+							<h3>1. 약정이율</h3>
+							<div class="table-type table-row">
+								<div class="ta-r">(2024년 4월 26일 기준, 단위 : 연, 세전)</div>
+								<table>
+									<caption>기간, 금리로 구성되어 있는 약정이율 안내 표</caption>
+									<colgroup>
+										<col width="50%">
+										<col width="50%">
+									</colgroup>
+									<thead>
+										<tr>
+											<th scope="col">기간</th>
+											<th scope="col">금리</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td class="ta-l">12개월</td>
+											<td class="ta-l">4.10%</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+							<div class="list-bull hyphen mt15">
+                                <ul>
+                                    <li>회전주기 도래 전 : 정기예금 중도해지 이율 적용</li>
+                                    <li>회전주기 도래 후 : </li>
+                                    <li>완료된 회전주기 기간 : 약정금리 적용</li>
+                                    <li>미완료된 회전주기 기간 : 정기예금 중도해지 이율 적용</li>
+                                </ul>
+                            </div>
+						</div>
+                        <div class="txtbox-wrap">
+							<h3>2. 중도해지이율</h3>
+							<div class="table-type table-row">
+								<div class="ta-r">(단위 : 연, 세전)</div>
+								<table>
+									<caption>회전주기 도래 전 안내 표</caption>
+									<colgroup>
+										<col width="100%">
+									</colgroup>
+									<thead>
+										<tr>
+											<th scope="col">회전주기 도래 전</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td class="ta-l">정기예금 중도해지이율 적용</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+                            <div class="table-type table-row">
+								<table>
+									<caption>회전주기 도래 후 완료된 회전주기 기간 안내표</caption>
+									<colgroup>
+										<col width="100%">
+									</colgroup>
+									<thead>
+										<tr>
+											<th scope="col">회전주기 도래 후 완료된 회전주기 기간</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td class="ta-l">약정금리적용</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+                            <div class="table-type table-row">
+								<table>
+									<caption>회전주기 도래 후 미완료된 회전주기 기간 에 관한 예치기간, 금리 안내표</caption>
+									<colgroup>
+										<col width="*%">
+                                        <col width="40%">
+									</colgroup>
+									<thead>
+                                        <tr>
+											<th scope="col" colspan="2">회전주기 도래 후 미완료된 회전주기 기간</th>
+										</tr>
+										<tr>
+											<th scope="col">예치기간</th>
+                                            <th scope="col">금리</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td class="ta-l">1개월 미만</td>
+                                            <td class="ta-r">4.10%</td>
+										</tr>
+                                        <tr>
+											<td class="ta-l">1개월 이상 6개월 미만</td>
+                                            <td class="ta-r">약정금리 X 50%</td>
+										</tr>
+                                        <tr>
+											<td class="ta-l">6개월 이상 12개월 미만</td>
+                                            <td class="ta-r">약정금리 X 55%</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+							
+						</div>
+                        <div class="txtbox-wrap">
+							<h3>3. 만기 후 이율</h3>
+							<div class="table-type table-row">
+								<div class="ta-r">(단위 : 연, 세전)</div>
+								<table>
+									<caption>경과기간, 금리에 따른 만기 후 이율 안내표</caption>
+									<colgroup>
+										<col width="50%">
+                                        <col width="50%">
+									</colgroup>
+									<thead>
+										<tr>
+											<th scope="col">경과기간</th>
+                                            <th scope="col">금리</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td class="ta-l">만기 후 1개월 이내</td>
+                                            <td class="ta-r">약정금리와 만기시 동일상품 동일계약기간의 신규약정금리 중 낮은 이율 적용
+                                                (2019.07.01 가입분 부터)</td>
+										</tr>
+                                        <tr>
+											<td class="ta-l">만기 후 1개월 초과</td>
+                                            <td class="ta-r">보통예금이율<br>(현재 0.1%)</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- e: 금리 안내 클릭시 풀팝업 -->
+
+			<!-- s: 계좌개설 신청 클릭시 팝업 -->
+            <div id="lySel03" class="layerpopup layer-up show has-button" style="display:none">
+                <div class="content-wrap">
+                    <div class="pop-header">
+                        <button type="button" name="button" class="btn-layer-close" data-focus="btn-layer-close">닫기</button>
+                    </div>
+                    <div class="ly-scroll-con ly-select type-high">
+                        <div class="txtbox-wrap">
+                            <div>
+                                <p>
+                                    입출금 계좌가 있는 고객님만 가입하실 수 있어요.<br>
+                                    입출금 계좌에 가입하시겠어요?
+                                </p>
+                            </div>
+                        </div>
+    
+                    </div>
+                    <div class="fixed-btn-wrap">
+                        <div class="btn-wrap ">
+                            <a href="#none" class="btn">가입</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+			<!-- e: 계좌개설 신청 클릭시 팝업 -->
+
+            <!-- s: 유의사항 풀팝업 -->
+			<div id="lyPullPop" class="layerpopup laypop-all" tabindex="0" data-focus-prev="btn-menu-close">
+				<div class="pop-header">
+                    <h2 class="pop-title">유의사항</h2>
+                    <button type="button" name="button" class="btn-layer-close" onclick="closePopup('lypullPop')">닫기</button>
+                </div>
+				<div class="pop-con-wrap">
+					<div class="default-wrap">
+						<div class="txt-style">
+							<ul class="list-bull">
+								<li>계약 체결 전 상품설명서 및 약관을 확인하시기 바랍니다.</li>
+								<li>해당 상품에 대해 충분한 사전 설명을 받을 권리가 있으며, 설명을 이해한 후 거래하시기 바랍니다.</li>
+								<li>계좌에 압류, 가압류, 칠권설정 등이 등록될 경우 원금 및 이자 지급 제한됩니다.</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- e: 서비스 이용 불가 시간 안내 알럿 -->
+            <div id="lyAlert" class="layerpopup type-alert on" style="display: none;">
+                <div class="content-wrap">
+                    
+                    <div class="pop-con-wrap">
+                        <div class="txtbox-wrap">
+                            <p>
+                                서비스 이용 시간을 안내할게요<br>
+                                00 : 10 ~ 23 : 45
+                            </p>
+                        </div>
+                    </div>
+                    <div class="btn-wrap">
+                        <a href="javascript:void(0);" class="btn close">확인</a>
+                    </div>
+                </div>
+            </div>
+
+		</div>
+		<!-- //e: contentsWrap -->
+	<!-- footer -->
+
+
+
+<footer>
+<!-- 푸터 타입별 정의 -->
+</footer>
+
+<!-- 업무공통 -->
+
+</body>
+</html>

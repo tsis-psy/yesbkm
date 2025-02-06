@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>예가람저축은행</title>
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="Content-Script-Type" content="text/javascript">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<meta name="keywords" content="예가람저축은행keywords" />
+<meta name="description" content="예가람저축은행description" />
+<!-- <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0, viewport-fit=cover"> -->
+	<meta name="viewport" content="user-scalable=no,width=375">
+
+<meta name="apple-mobile-web-app-status-bar-style" content="white" />
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta http-equiv="Expires" content="-1">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Cache-Control" content="No-Cache">
+
+<link href="/resources/css/default.css" rel="stylesheet" />
+<link href="/resources/css/renewal.css" rel="stylesheet" />
+
+
+<link href="/resources/css/swiper-bundle.min.css" rel="stylesheet" />
+<link rel="shortcut icon" type="image/x-icon" href="/resources/favicon.ico" />
+<link rel="icon" type="image/x-icon" href="/resources/favicon.ico" />
+
+<script type="text/javascript" src="/resources/js/lib/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="/resources/js/lib/jquery.cookie.js"></script>
+
+<script type="text/javascript" src="/resources/js/lib/swiper-bundle.min.js"></script>
+<script type="text/javascript" src="/resources/js/lib/TweenMax.min.js"></script>
+<script type="text/javascript" src="/resources/js/lib/jquery.animateSprite.min.js"></script>
+<script type="text/javascript" src="/resources/js/lib/default.js?v=20230803152535"></script>
+<script type="text/javascript" src="/resources/js/lib/ui.js?v=20230803152535"></script>
+<script type="text/javascript" src="/resources/js/lib/rolldate.js?v=20230803152535"></script>
+<script type="text/javascript" src="/resources/js/app_common_cont.js?v=20230803152535"></script>
+<script type="text/javascript" src="/resources/js/app_common_auth.js?v=20230803152535"></script>
+<script type="text/javascript" src="/resources/js/app_common_funs.js?v=20230803152535"></script>
+<script type="text/javascript" src="/resources/js/app_common_nsl.js?v=20230803152535"></script>
+<script type="text/javascript" src="/resources/js/app_common_util.js?v=20230803152535"></script>
+<script type="text/javascript" src="/resources/js/biz_common.js?version=20230803152535" id="biz_common"
+	data-menuId="dep/prc"
+	data-frameId="depAcnoOpenPrc2"
+	data-serviceCd="depAcnoOpenPrc2.frm"
+	data-serverTime="20230803152535"
+	data-activeMode="local"
+	data-activeEnv="${active.env">
+</script>
+
+
+<body>
+    <!-- header -->
+    <header class="headerWrap">
+		<div class="headerLeft">
+			<a href="javascript:void(0)" class="btn btnBack"><img src="/resources/images/header/btn_back.png" alt="이전페이지 이동하기"></a>
+		</div>
+		<div class="headerCenter">
+			<h2 class="text"><span>간편대출한도조회</span></h2> <!--D: TEXT -->
+		</div>
+		<div class="headerRight">
+			<!-- <a href="javascript:void(0)" class="btn btn-menu "><img src="/resources/images/header/btn_menu.png" alt="전체메뉴"></a> -->
+		</div>
+	</header>
+	<!-- //header -->
+
+    <!--contentsWrap -->
+    <div class="contentsWrap">
+        <!--contents -->
+        <div class="contents">
+            <div class="default-wrap">
+
+                <div class="tit-wrap">
+                    <p class="txt"><strong>대출한도조회</strong>를 위해<br/><strong>정보를 입력</strong>해 주세요</p>
+                </div>
+
+                <div class="form-all-wrap"><!--D: 5/13 - form 전체 감쌀 경우 : form-all-wrap / slect-box를 감쌀 경우 slect-wrap이 아닌 form-wrap으로 감싸주세요-->
+
+                    <div class="form-wrap"><!--D: 5/13  개발 포커스 및 error 적용 문제로 select-wrap을 form-wrap으로 변경-->
+                        <div class="select-box">
+                            <label for="" class="formlabel essential">직업선택</label><!--D: essential 클래스 추가 -->
+                            <span class="option" id="">미선택</span>
+                        </div>
+                    </div> 
+
+                    <div class="form-wrap"><!--D: 5/13  개발 포커스 및 error 적용 문제로 select-wrap을 form-wrap으로 변경-->
+                        <div id="rolldate5" class="select-box">
+                            <label for="" class="formlabel essential">입사연월</label><!--D: essential 클래스 추가 -->
+                            <span class="option" id="">미선택</span>
+                        </div>
+                    </div>
+
+                    <div class="form-wrap">
+                        <label for="" class="formlabel essential">연소득</label><!--D: essential 클래스 추가 -->
+                        <div class="input">
+                            <input type="tel" title="연소득" id="" class="inp"  value="" placeholder="연소득 입력" required="">
+                            <span class="static-unit">만원</span>
+                        </div>
+                    </div>
+
+                    
+                </div>
+                
+                
+            </div>
+        </div>
+        <!-- //contents -->
+
+        <div class="fixed-btn-wrap">
+            <div class="btn-wrap flexCol">
+                <a href="#none" class="btn">다음</a>
+                <a href="#none" class="btn txt">그만하기</a>
+            </div>
+        </div>
+
+
+        <!--S: 직업선택 (팝업)-->
+        <div id="lySel1" class="layerpopup layer-up show" style="display: block;">
+            <div class="content-wrap">
+                <div class="pop-header">
+                    <h2 class="pop-title">직업선택</h2>
+                    <button type="button" name="button" class="btn-layer-close" data-focus="btn-layer-close">닫기</button>
+                </div>
+                <div class="ly-scroll-con ly-select">
+                    <ul class="ly-select-list">
+                        <li><button>급여소득자</button></li><!-- [D] 클래스 active 추가 시 활성화 스타일 노출 -->
+                        <li><button>자영업자</button></li>
+                        <li><button>주부</button></li>
+                        <li><button>프리랜서</button></li>
+                        <li><button>연금소득자</button></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!--S: 직업선택 (팝업)-->
+
+    </div>
+    <!-- //contentsWrap -->
+</body>
+</html>
+

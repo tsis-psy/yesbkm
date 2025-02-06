@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>예가람저축은행</title>
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="Content-Script-Type" content="text/javascript">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<meta name="keywords" content="예가람저축은행keywords" />
+<meta name="description" content="예가람저축은행description" />
+<!-- <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0, viewport-fit=cover"> -->
+	<meta name="viewport" content="user-scalable=no,width=375">
+
+<meta name="apple-mobile-web-app-status-bar-style" content="white" />
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta http-equiv="Expires" content="-1">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Cache-Control" content="No-Cache">
+
+<link href="/resources/css/default.css" rel="stylesheet" />
+<link href="/resources/css/renewal.css" rel="stylesheet" />
+
+
+<link href="/resources/css/swiper-bundle.min.css" rel="stylesheet" />
+<link rel="shortcut icon" type="image/x-icon" href="/resources/favicon.ico" />
+<link rel="icon" type="image/x-icon" href="/resources/favicon.ico" />
+
+<script type="text/javascript" src="/resources/js/lib/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="/resources/js/lib/jquery.cookie.js"></script>
+
+<script type="text/javascript" src="/resources/js/lib/swiper-bundle.min.js"></script>
+<script type="text/javascript" src="/resources/js/lib/TweenMax.min.js"></script>
+<script type="text/javascript" src="/resources/js/lib/jquery.animateSprite.min.js"></script>
+<script type="text/javascript" src="/resources/js/lib/default.js?v=20230803152535"></script>
+<script type="text/javascript" src="/resources/js/lib/ui.js?v=20230803152535"></script>
+<script type="text/javascript" src="/resources/js/lib/rolldate.js?v=20230803152535"></script>
+<script type="text/javascript" src="/resources/js/app_common_cont.js?v=20230803152535"></script>
+<script type="text/javascript" src="/resources/js/app_common_auth.js?v=20230803152535"></script>
+<script type="text/javascript" src="/resources/js/app_common_funs.js?v=20230803152535"></script>
+<script type="text/javascript" src="/resources/js/app_common_nsl.js?v=20230803152535"></script>
+<script type="text/javascript" src="/resources/js/app_common_util.js?v=20230803152535"></script>
+<script type="text/javascript" src="/resources/js/biz_common.js?version=20230803152535" id="biz_common" 
+	data-menuId="dep/prc"
+	data-frameId="depAcnoOpenPrc2"
+	data-serviceCd="depAcnoOpenPrc2.frm" 
+	data-serverTime="20230803152535"
+	data-activeMode="local"
+	data-activeEnv="${active.env">
+</script>
+
+
+<body>
+    <!-- header -->
+    <header class="headerWrap">
+        <div class="headerLeft">
+            <!--D: 이전버튼-->
+            <a href="javascript:void(0)" class="btn btnBack"><img src="/resources/images/header/btn_back.png" alt="이전페이지 이동하기"></a>
+        </div>
+        <div class="headerCenter">
+            <h2 class="text"><span>자동이체 결과 조회</span></h2> <!--D: TEXT -->
+        </div>
+        <div class="headerRight">
+            <!--D: 전체메뉴버튼 -->
+            <a href="javascript:void(0)" class="btn btn-menu "><img src="/resources/images/header/btn_menu.png" alt="전체메뉴"></a>
+        </div>
+    </header>
+	<!-- //header -->
+
+    <!--contentsWrap -->
+    <div class="contentsWrap">
+        <!--contents -->
+        <div class="contents">
+            <div class="default-wrap">
+                <div class="tit-wrap">
+                    <p class="txt"><strong>자동이체 결과 조회</strong>를 위해<br/>정보를 입력해 주세요</p><!--[퍼블-1] : strong 태그로 변경 및 위치 이동-->
+                </div>
+
+                <section class="form-all-wrap">
+                    <div id="" class="select-wrap">
+                        <div class="select-box on" tabindex="1"><!--D: on 클래스 : 값이 들어갈 경우 on 클래스 적용-->
+                            <label for="" class="essential">조회 계좌</label>
+                            <span class="option" id="">101-1245-1243-21</span>
+                        </div>
+                        
+                    </div>
+                </section>
+
+                <section>
+                    <div class="inquiry-choice-area type-spread" id="dateInqDiv">
+                        <button type="button" class="btn-inquiry-choice">
+                            <span id="">3개월</span>
+                            <span id="">전체</span>
+                            <span id="">최신순</span>
+                        </button>
+                    </div>
+                    <!-- S: 조회결과 노출 영역 -->
+                    <div class="inquiry-result-area">
+                        <div class="inquiry-summary type-spread" id="inqDateDiv" style="display:block;"> <!-- [퍼블] .type-spread 추가 -->
+                            <p class="period" id="dateText">2023. 03. 15 ~ 2023. 06. 15</p>
+                            <span class="num"><strong id="totalCnt">N</strong>건</span>
+                        </div>
+
+                        <ul class="data-list-wrap" id="transRsltData"></ul>
+                        
+                        <ul class="data-list-wrap" id="transResult" style="display:block;">
+                            <!-- 반복부 : 즉시 -->
+                            <li>
+                                <ul class="data-list">
+                                    <li class="date"><span>2023.05.04 13:24:56</span></li><!-- [퍼블-2] date 클래스 위치 li로 변경 -->
+
+                                    <!-- <li>
+                                        <span class="tit">출금계좌</span>
+                                        <span class="txt">123-45-678-90</span>
+                                    </li> -->
+                                    <li>
+                                        <span class="tit">받는 분</span>
+                                        <span class="txt">홍길동</span>
+                                    </li>
+                                    <li>
+                                        <span class="tit">입금 계좌</span>
+                                        <span class="txt">
+                                            우체국<br>
+                                            01012345678
+                                        </span>
+                                    </li>
+                                    <li>
+                                        <span class="tit">이체 금액</span>
+                                        <span class="txt point">500,000원</span>
+                                    </li>
+                                    <li>
+                                        <span class="tit">이체 예정 일시</span>
+                                        <span class="txt">2023.06.12 12:30</span>
+                                    </li>
+                                    <li>
+                                        <span class="tit">수수료</span>
+                                        <span class="txt">0원</span>
+                                    </li>
+                                    <li>
+                                        <span class="tit">이체 결과</span>
+                                        <span class="txt success">정상</span>
+                                    </li>
+                                </ul>
+                                
+                            </li>
+                            <li>
+                                <ul class="data-list">
+                                    <li class="date"><span>2023.05.04 13:24:56</span></li><!-- [퍼블-2] date 클래스 위치 li로 변경 -->
+
+                                    <!-- <li>
+                                        <span class="tit">출금계좌</span>
+                                        <span class="txt">123-45-678-90</span>
+                                    </li> -->
+                                    <li>
+                                        <span class="tit">받는 분</span>
+                                        <span class="txt">홍길동</span>
+                                    </li>
+                                    <li>
+                                        <span class="tit">입금 계좌</span>
+                                        <span class="txt">
+                                            우체국<br>
+                                            01012345678
+                                        </span>
+                                    </li>
+                                    <li>
+                                        <span class="tit">이체 금액</span>
+                                        <span class="txt point">500,000원</span>
+                                    </li>
+                                    <li>
+                                        <span class="tit">이체 예정 일시</span>
+                                        <span class="txt">2023.06.12 12:30</span>
+                                    </li>
+                                    <li>
+                                        <span class="tit">수수료</span>
+                                        <span class="txt">0원</span>
+                                    </li>
+                                    <li>
+                                        <span class="tit">이체 결과</span>
+                                        <span class="txt success">정상</span>
+                                    </li>
+                                </ul>
+                                
+                            </li>
+                            <!-- //반복부 -->
+                        </ul>
+                        <!-- S : 조회 결과 없음 -->
+                        <div class="result-area nodata" id="transRsltNoData" style="display:block;"><!-- [퍼블-2] 클래스 변경 -->
+                            <p>조회된 이체 내역이 없어요</p>
+                        </div>
+                        <!-- E : 조회 결과 없음 -->
+                    </div>
+                    <!-- E: 조회결과 노출 영역 -->
+                </section>
+
+            </div>
+        </div>
+        <!-- //contents -->
+
+        <!--D: 자동이체 등록해지 확인 (Alert)-->
+        <div id="lyAlert1" class="layerpopup type-alert on" >
+            <div class="content-wrap">
+                
+                <div class="pop-con-wrap">
+                    <span class="pop-con">자동이체 등록을 해지 하시겠어요?</span>
+                </div>
+                <div class="btn-wrap">
+                    <a href="javascript:void(0);" class="btn btn-info" onclick="">아니오</a>
+                    <a href="javascript:void(0);" class="btn close">해지하기</a>
+                </div>
+            </div>
+        </div>
+        <!--D: 자동이체 등록해지 확인 (Alert)//-->
+    </div>
+    <!-- //contentsWrap -->
+</body>
+</html>
+

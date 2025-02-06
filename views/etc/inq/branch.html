@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>예가람저축은행</title>
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="Content-Script-Type" content="text/javascript">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<meta name="keywords" content="예가람저축은행keywords" />
+<meta name="description" content="예가람저축은행description" />
+<!-- <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0, viewport-fit=cover"> -->
+	<meta name="viewport" content="user-scalable=no,width=375">
+
+<meta name="apple-mobile-web-app-status-bar-style" content="white" />
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta http-equiv="Expires" content="-1">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Cache-Control" content="No-Cache">
+
+<link href="/resources/css/default.css" rel="stylesheet" />
+<link href="/resources/css/renewal.css" rel="stylesheet" />
+
+
+<link href="/resources/css/swiper-bundle.min.css" rel="stylesheet" />
+<link rel="shortcut icon" type="image/x-icon" href="/resources/favicon.ico" />
+<link rel="icon" type="image/x-icon" href="/resources/favicon.ico" />
+
+<script type="text/javascript" src="/resources/js/lib/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="/resources/js/lib/jquery.cookie.js"></script>
+
+<script type="text/javascript" src="/resources/js/lib/swiper-bundle.min.js"></script>
+<script type="text/javascript" src="/resources/js/lib/TweenMax.min.js"></script>
+<script type="text/javascript" src="/resources/js/lib/jquery.animateSprite.min.js"></script>
+<script type="text/javascript" src="/resources/js/lib/default.js?v=20230803152535"></script>
+<script type="text/javascript" src="/resources/js/lib/ui.js?v=20230803152535"></script>
+<script type="text/javascript" src="/resources/js/lib/rolldate.js?v=20230803152535"></script>
+<script type="text/javascript" src="/resources/js/app_common_cont.js?v=20230803152535"></script>
+<script type="text/javascript" src="/resources/js/app_common_auth.js?v=20230803152535"></script>
+<script type="text/javascript" src="/resources/js/app_common_funs.js?v=20230803152535"></script>
+<script type="text/javascript" src="/resources/js/app_common_nsl.js?v=20230803152535"></script>
+<script type="text/javascript" src="/resources/js/app_common_util.js?v=20230803152535"></script>
+<script type="text/javascript" src="/resources/js/biz_common.js?version=20230803152535" id="biz_common"
+	data-menuId="dep/prc"
+	data-frameId="depAcnoOpenPrc2"
+	data-serviceCd="depAcnoOpenPrc2.frm"
+	data-serverTime="20230803152535"
+	data-activeMode="local"
+	data-activeEnv="${active.env">
+</script>
+
+
+<body>
+    <!-- header -->
+    <header class="headerWrap"> <!--D: bg-color02 클래스 : 뒤에 색상 들어갈 경우  -->
+		<div class="headerLeft">
+			<!--D: 이전버튼-->
+			<a href="javascript:void(0)" class="btn btnBack"><img src="/resources/images/header/btn_back.png" alt="이전페이지 이동하기"></a>
+	
+		</div>
+		<div class="headerCenter">
+			<h2 class="text"><span>영업점안내</span></h2> <!--D: TEXT -->
+		</div>
+		<div class="headerRight">
+			<!--D: 전체메뉴버튼 -->
+			<a href="javascript:void(0)" class="btn btn-menu "><img src="/resources/images/header/btn_menu.png" alt="전체메뉴"></a>
+		</div>
+	</header>
+	<!-- //header -->
+
+    <!--contentsWrap -->
+    <div class="contentsWrap">
+        <!--contents -->
+        <div class="contents">
+            <div class="default-wrap">
+                <!--D:영업지점 일괄 변경 구조는 같으나 탭 하나 더 추가 및 텍스트 일괄 변경 되었습니다.-->
+                <section class="tabs-wrap">
+                    <div class="tabs">
+                        <ul class="tab-item">
+                            <li data-tab="tab-cont01" class="on"><a href="#none" title="선택됨">남대문본점</a></li>
+                            <li data-tab="tab-cont02"><a href="#none">강남지점</a></li>
+                            <li data-tab="tab-cont03" ><a href="#none">창원지점</a></li>
+                            <li data-tab="tab-cont04"><a href="#none">울산지점</a></li>
+                        </ul>
+                        <div class="tab-content-area">
+                            <div id="tab-cont01" class="tab-content">
+
+                                <!--D: 삭제 -->
+                                <!-- <div class="tit-wrap">
+                                    <p class="txt"><strong>영업점 위치</strong></p>
+                                </div> -->
+
+                                <div class="sub-tit-wrap">
+                                    <p class="tit">영업점 위치</p>
+                                </div>
+
+                                <div class="map-area">
+                                    <div class="map" id="daumMap">
+                                        <!-- TODO 지도 -->
+                                    </div>
+                                </div>
+
+                                <div class="table-type table-col">
+                                    <div class="sub-tit-wrap">
+                                        <p class="tit">영업점 정보</p>
+                                    </div>
+                                    <!--D: 삭제-->
+                                    <!-- <div class="map-info-area head">
+                                        <div class="map-img"></div>
+                                    </div> -->
+                                    <table>
+                                        <caption></caption>
+                                        <colgroup>
+                                            <col width="40%">
+                                            <col width="*">
+                                        </colgroup>
+                                        <tbody>
+                                            <tr>
+                                                <th scope="col">전화번호</th>
+                                                <td>02-6906-7000</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="col">팩스번호</th>
+                                                <td>02-6906-7099</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="col">주소</th>
+                                                <td>서울 중구 세종대로<br/>흥국생명빌딩 2~3층<button type="button" class="btn-copy">복사하기</button></td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="col">교통편</th>
+                                                <td>1) 지하철 2호선 시청역 7번 출구<br/>2) 4호선 회현역 5번 출구 숭례문 오거리 방향 500m 이내</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="col">영업시간</th>
+                                                <td>평일 9:00 ~ 16:00<br/>주말, 공휴일 휴무</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                
+                                <div class="btn-cont-wrap flexCenter"><!--D: 클래스 변경-->
+                                    <a href="#none" class="btn btn-add">전화 문의하기</a>
+                                </div>
+                                
+                            </div>
+
+                            <div id="tab-cont02" class="tab-content dp-none">
+                                <!-- D: 삭제-->
+                                <!-- <div class="tit-wrap">
+                                    <p class="txt"><strong>중앙지점</strong></p>
+                                </div> -->
+
+                                <div class="sub-tit-wrap">
+                                    <p class="tit">영업점 위치</p>
+                                </div>
+                                <div class="map-area">
+                                    <div class="map" id="daumMap">
+                                        <!-- TODO 지도 -->
+                                    </div>
+                                </div>
+
+                                <div class="table-type table-col">
+                                    <div class="sub-tit-wrap">
+                                        <p class="tit">영업점 정보</p>
+                                    </div>
+                                    <!--D: 삭제-->
+                                    <!-- <div class="map-info-area center">
+                                        <div class="map-img"></div>
+                                    </div> -->
+                                    <table>
+                                        <caption></caption>
+                                        <colgroup>
+                                            <col width="40%">
+                                            <col width="*">
+                                        </colgroup>
+                                        <tbody>
+                                            <tr>
+                                                <th scope="col">전화번호</th>
+                                                <td>02-2678-4377</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="col">팩스번호</th>
+                                                <td>02-2672-4378</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="col">주소</th>
+                                                <td>서울 강남구 테헤란로 337<br/>화남타워 2층<button type="button" class="btn-copy">복사하기</button></td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="col">교통편</th>
+                                                <td>1) 지하철 2호선/수인분당선 선릉역 6번 출구 4m 이내</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="col">영업시간</th>
+                                                <td>평일 9:00 ~ 16:00<br/>주말, 공휴일 휴무</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="btn-cont-wrap flexCenter"><!--D: 클래스 변경 -->
+                                    <a href="#none" class="btn  btn-add">전화문의하기</a>
+                                </div>
+                            </div>
+
+                            <div id="tab-cont03" class="tab-content dp-none "><!--D: 창원지점 -->
+                                <!-- D: 삭제-->
+                                <!-- <div class="tit-wrap">
+                                    <p class="txt"><strong>센텀지점</strong></p>
+                                </div> -->
+                                <div class="sub-tit-wrap">
+                                    <p class="tit">영업점 위치</p>
+                                </div>
+                                <div class="map-area">
+                                    <div class="map" id="daumMap">
+                                        <!-- TODO 지도 -->
+                                    </div>
+                                </div>
+
+
+                                <div class="table-type table-col ">
+                                    <div class="sub-tit-wrap">
+                                        <p class="tit">영업점 정보</p>
+                                    </div>
+                                    <!--D: 삭제-->
+                                    <!-- <div class="map-info-area centum">
+                                        <div class="map-img"></div>
+                                    </div> -->
+                                    <table>
+                                        <caption></caption>
+                                        <colgroup>
+                                            <col width="40%">
+                                            <col width="*">
+                                        </colgroup>
+                                        <tbody>
+                                            <tr>
+                                                <th scope="col">전화번호</th>
+                                                <td>070-4589-5386</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="col">팩스번호</th>
+                                                <td>055-285-8424</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="col">주소</th>
+                                                <td>강남 창원시 성산구 용지로 56 1층<button type="button" class="btn-copy">복사하기</button></td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="col">교통편</th>
+                                                <td>1) 751, 102, 107, 115, 503, 507번 버스 탑승 후  '창원호텔 정류장' 하차<br/>
+                                                    2) 정류장에서 84m 전방에 위치
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="col">영업시간</th>
+                                                <td>평일 9:00 ~ 18:00<br/>주말, 공휴일 휴무</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="btn-cont-wrap flexCenter"><!--D: 클래스 변경 -->
+                                    <a href="#none" class="btn btn-add">전화문의하기</a>
+                                </div>
+                            </div>
+
+                            <!--D:탭추가-->
+                            <div id="tab-cont04" class="tab-content dp-none"><!--D: 울산지점 -->
+                                <div class="sub-tit-wrap">
+                                    <p class="tit">영업점 위치</p>
+                                </div>
+                                <div class="map-area">
+                                    <div class="map" id="daumMap">
+                                        <!-- TODO 지도 -->
+                                    </div>
+                                </div>
+
+
+                                <div class="table-type table-col">
+                                    <div class="sub-tit-wrap">
+                                        <p class="tit">영업점 정보</p>
+                                    </div>
+                                    <!--D: 삭제-->
+                                    <!-- <div class="map-info-area centum">
+                                        <div class="map-img"></div>
+                                    </div> -->
+                                    <table>
+                                        <caption></caption>
+                                        <colgroup>
+                                            <col width="40%">
+                                            <col width="*">
+                                        </colgroup>
+                                        <tbody>
+                                            <tr>
+                                                <th scope="col">전화번호</th>
+                                                <td>070-4589-5396</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="col">팩스번호</th>
+                                                <td>052-939-1248</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="col">주소</th>
+                                                <td>울산 남구 삼산로 231 울산센트럴자이 상가 401호<button type="button" class="btn-copy">복사하기</button></td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="col">교통편</th>
+                                                <td>1) 432, 417, 401, 127, 126번 버스 탑승 후 '좋은의사들안과병원 정류장' 하차<br/>
+                                                    2) 정류장에서 현대백화점 방향 230m 부근에 위치
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="col">영업시간</th>
+                                                <td>평일 9:00 ~ 16:00<br/>주말, 공휴일 휴무</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="btn-cont-wrap flexCenter">
+                                    <a href="#none" class="btn btn-add">전화문의하기</a>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </section>
+
+            </div>
+        </div>
+        <!-- //contents -->
+
+    </div>
+    <!-- //contentsWrap -->
+</body>
+</html>
+

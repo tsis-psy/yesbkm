@@ -1,0 +1,998 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>예가람저축은행</title>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Script-Type" content="text/javascript">
+    <meta http-equiv="Content-Style-Type" content="text/css">
+    <meta name="keywords" content="예가람저축은행keywords" />
+    <meta name="description" content="예가람저축은행description" />
+    <!-- <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0, viewport-fit=cover"> -->
+	<meta name="viewport" content="user-scalable=no,width=375">
+
+    <meta name="apple-mobile-web-app-status-bar-style" content="white" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta http-equiv="Expires" content="-1">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Cache-Control" content="No-Cache">
+
+    <link href="/resources/css/default.css" rel="stylesheet" />
+    <link href="/resources/css/renewal.css" rel="stylesheet" />
+
+
+    <link href="/resources/css/swiper-bundle.min.css" rel="stylesheet" />
+    <link rel="shortcut icon" type="image/x-icon" href="/resources/favicon.ico" />
+    <link rel="icon" type="image/x-icon" href="/resources/favicon.ico" />
+
+    <script type="text/javascript" src="/resources/js/lib/jquery-1.12.4.min.js"></script>
+    <script type="text/javascript" src="/resources/js/lib/jquery.cookie.js"></script>
+
+    <script type="text/javascript" src="/resources/js/lib/swiper-bundle.min.js"></script>
+    <script type="text/javascript" src="/resources/js/lib/TweenMax.min.js"></script>
+    <script type="text/javascript" src="/resources/js/lib/jquery.animateSprite.min.js"></script>
+    <script type="text/javascript" src="/resources/js/lib/default.js?v=20230803152535"></script>
+    <script type="text/javascript" src="/resources/js/lib/ui.js?v=20230803152535"></script>
+    <script type="text/javascript" src="/resources/js/lib/rolldate.js?v=20230803152535"></script>
+    <script type="text/javascript" src="/resources/js/app_common_cont.js?v=20230803152535"></script>
+    <script type="text/javascript" src="/resources/js/app_common_auth.js?v=20230803152535"></script>
+    <script type="text/javascript" src="/resources/js/app_common_funs.js?v=20230803152535"></script>
+    <script type="text/javascript" src="/resources/js/app_common_nsl.js?v=20230803152535"></script>
+    <script type="text/javascript" src="/resources/js/app_common_util.js?v=20230803152535"></script>
+    <script type="text/javascript" src="/resources/js/biz_common.js?version=20230803152535" id="biz_common"
+        data-menuId="dep/prc" data-frameId="depAcnoOpenPrc2" data-serviceCd="depAcnoOpenPrc2.frm"
+        data-serverTime="20230803152535" data-activeMode="local" data-activeEnv="${active.env">
+        </script>
+</head>
+
+<body>
+    <!-- header -->
+    <div id="headerWrap">
+        <script>
+            $(document).ready(function () {
+                document.charset = "euc-kr";
+                $("#headerWrap").load("../includes/header.html");
+            });
+        </script>
+    </div>
+    <!-- //header -->
+
+    <!--contentsWrap -->
+    <div class="contentsWrap">
+        <!--contents -->
+        <div class="contents">
+            <div class="default-wrap dsr-con-wrap">
+
+                <div class="step-wrap">
+                    <div class="step-line" aria-label="총 3단계 중 2단계 진행중">
+                        <div class="step-bar" style="width: 66.6666%;"></div>
+                    </div>
+                    <div class="num"><strong class="current">2</strong>/<span class="tot">3</span></div>
+                </div>
+
+                <div class="loan-info-wrap">
+
+                    <div class="mo-terms-wrap">
+
+                        <div class="tit-wrap">
+                            <p class="txt"><strong>약관동의</strong></p>
+                            <p class="s-txt">대출신청을 위한 약관에 동의하시겠습니까?</p>
+                        </div>
+
+                        <!--S: 필수 약관-->
+                        <section class="terms-area">
+
+                            <ul class="radio-list">
+                                <li>
+                                    <input type="radio" name="radio01" id="radio01_2" value="" onclick="" checked="checked">
+                                    <label for="radio01_2" class="">요약동의서</label>
+                                </li>
+                                <li>
+                                    <input type="radio" name="radio01" id="radio01_1" value="" onclick="">
+                                    <label for="radio01_1" class="">상세동의서</label>
+                                </li>
+                            </ul>
+
+
+                            <!--S: 금융상품 중요사항 안내 : 아래 팝업 사용-->
+                            <div class="terms-wrap level1 chk-all">
+                                <fieldset>
+                                    <input type="checkbox" id="allChk01" class="check all">
+                                    <label for="allChk01"><span>금융상품 중요사항 안내</span></label>
+                                </fieldset>
+                            </div>
+                            <!--E: 금융상품 중요사항 안내-->
+
+                            <!--S:가계대출상품설명서 : 팝업은 기존 개발 공통 약관 팝업으로 사용-->
+                            <div class="terms-wrap level1 chk-all">
+                                <fieldset>
+                                    <input type="checkbox" id="allChk01" class="check all">
+                                    <label for="allChk01"><span>가계대출상품설명서 확인</span></label>
+                                </fieldset>
+                            </div>
+                            <!--E:가계대출상품설명서-->
+
+                            <!--D: 팝업 : 관리자 영역-->
+                            <div class="terms-wrap level1 chk-all">
+                                <fieldset>
+                                    <input type="checkbox" id="allChk01" class="check all">
+                                    <label for="allChk01"><span>팔수약관에 모두 동의할게요</span></label>
+
+                                </fieldset>
+                            </div>
+
+                            <div class="terms-wrap level2">
+                                <fieldset>
+                                    <input type="checkbox" id="chk_T000800001" name="check" value="Y" class="check">
+                                    <label for="chk_T000800001"><span>[필수] 개인(신용)정보 조회 동의서</span></label>
+                                </fieldset>
+                            </div>
+
+                            <div class="terms-wrap level2">
+                                <fieldset>
+                                    <input type="checkbox" id="chk_T00080002" name="check" value="Y" class="check">
+                                    <label for="chk_T00080002"><span>[필수] 개인(신용)정보 수집.이용 제공 동의서 (여신 금융
+                                            거래)</span></label>
+                                </fieldset>
+                            </div>
+
+                            <div class="terms-wrap level2">
+                                <fieldset>
+                                    <input type="checkbox" id="chk_T00080003" name="check" value="Y" class="check">
+                                    <label for="chk_T00080003"><span>[선택] 개인(신용)정보 수집.이용 제공 동의서 (상품서비스
+                                            안내)</span></label>
+                                </fieldset>
+                            </div>
+
+                            <div class="terms-wrap level2">
+                                <fieldset>
+                                    <input type="checkbox" id="chk_T00080003" name="check" value="Y" class="check">
+                                    <label for="chk_T00080003"><span>[필수] 개인(신용)정보 및 기업(신용)정보 조회 수집이용 제공과 행정정보공동이용,
+                                            전자금융거래확인서 발급을 위한 동의서</span></label>
+                                </fieldset>
+                            </div>
+
+                        </section>
+
+                        <!--E: 필수 약관-->
+
+                        <!--S: 공공 마이데이터 약관 -->
+                        <section class="terms-area">
+
+                            <div class="terms-wrap level1 chk-all">
+                                <fieldset>
+                                    <input type="checkbox" id="allChk01" class="check all">
+                                    <label for="allChk01"><span>공공 마이데이터 팔수약관에 모두 동의할게요</span></label>
+
+                                </fieldset>
+                            </div>
+
+                            <div class="terms-wrap level2">
+                                <fieldset>
+                                    <input type="checkbox" id="chk_T000800001" name="check" value="Y" class="check">
+                                    <label for="chk_T000800001"><span>[필수] 공공 마이데이터 개인(신용)정보 수집.이용.제공 동의서</span></label>
+                                </fieldset>
+                            </div>
+
+                            <div class="terms-wrap level2">
+                                <fieldset>
+                                    <input type="checkbox" id="chk_T00080002" name="check" value="Y" class="check">
+                                    <label for="chk_T00080002"><span>[필수] 본인 행정정보 제3자 제공 요구서</span></label>
+                                </fieldset>
+                            </div>
+
+                            <div class="terms-wrap level2">
+                                <fieldset>
+                                    <input type="checkbox" id="chk_T00080003" name="check" value="Y" class="check">
+                                    <label for="chk_T00080003"><span>[필수] 본인정보 제3자 제공 요구서</span></label>
+                                </fieldset>
+                            </div>
+
+                        </section>
+                        <!--E: 공공 마이데이터 약관-->
+
+                        <!--S: 선택 약관-->
+                        <section class="terms-area">
+
+                            <div class="terms-wrap level1 chk-all">
+                                <fieldset>
+                                    <input type="checkbox" id="allChk01" class="check all">
+                                    <label for="allChk01"><span>선택약관에 모두 동의할게요</span></label>
+
+                                </fieldset>
+                            </div>
+
+                            <div class="terms-wrap level2">
+                                <fieldset>
+                                    <input type="checkbox" id="chk_T000800001" name="check" value="Y" class="check">
+                                    <label for="chk_T000800001"><span>[선택] 개인(신용)정보 수집.이용. 제공 조회 동의서(상품서비스 안내
+                                            등)</span></label>
+                                </fieldset>
+                            </div>
+
+                            <div class="terms-wrap level2">
+                                <fieldset>
+                                    <input type="checkbox" id="chk_T00080002" name="check" value="Y" class="check">
+                                    <label for="chk_T00080002"><span>[선택] 개인(신용)정보 수집.이용. 제공 동의서 (보증료 우대
+                                            서비스)</span></label>
+                                </fieldset>
+
+                            </div>
+
+                            <div class="terms-wrap level2">
+                                <fieldset>
+                                    <input type="checkbox" id="chk_T00080003" name="check" value="Y" class="check">
+                                    <label for="chk_T00080003"><span>[선택] 개인(신용)정보 수집.이용 동의서(상품서비스 안내 등)</span></label>
+                                </fieldset>
+                            </div>
+
+                            <div class="terms-wrap level2">
+                                <fieldset>
+                                    <input type="checkbox" id="chk_T00080003" name="check" value="Y" class="check">
+                                    <label for="chk_T00080003"><span>[선택] 개인(신용)정보 수집.이용. 제공 동의서 (맞춤형 상품 제공)
+                                        </span></label>
+                                </fieldset>
+                            </div>
+
+                            <div class="terms-wrap level2">
+                                <fieldset>
+                                    <input type="checkbox" id="chk_T00080003" name="check" value="Y" class="check">
+                                    <label for="chk_T00080003"><span>[선택] 개인(신용)정보 수집.이용. 제공, 조회 동의서 (멤버십 회원가입
+                                            동의)</span></label>
+                                </fieldset>
+                            </div>
+
+                        </section>
+                        <!--E: 선택 약관-->
+
+                        <div class="form-wrap">
+                            <div class="form-tit">
+                                <p class="tit">본인인증 방법</p>
+                            </div>
+                            <div id="" class="select-box" tabindex="1" onclick="openPopupUp('lySel1');">
+                                <label for="">본인인증 방법 선택</label>
+                                <span class="option">미선택</span>
+                            </div>
+                            <p class="info-txt">대출신청 진행을 위해서는 본인인증이 필요합니다.
+                                인증 방식 중 하나를 선택해 인증을 진행해 주시
+                                기 바랍니다.</p>
+                        </div>
+
+                        <div class="sub-tit-wrap mb15">
+                            <p class="tit">예상한도 선택</p>
+                        </div>
+                        <ul class="prod-box-list type2">
+                            <li onclick="">
+                                <div class="prod-box">
+                                    <div class="flag-tit-wrap">
+                                        <em class="flag style3">
+                                        태그
+                                        </em>
+                                        <strong class="tit">상품명</strong>
+                                    </div>
+                                    <ul class="amount-area">
+                                        <li>
+                                            <strong class="tit">예상한도</strong>
+                                            <span class="num point">%</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="btn-cont-wrap">
+                                    <a href="javascript:void(0);" class="btn btn-primary">선택하기</a>
+                                </div>
+                            </li>
+                            <li onclick="">
+                                <div class="prod-box">
+                                    <div class="flag-tit-wrap">
+                                        <em class="flag style3">
+                                        태그
+                                        </em>
+                                        <strong class="tit">상품명</strong>
+                                    </div>
+                                    <ul class="amount-area">
+                                        <li>
+                                            <strong class="tit">예상한도</strong>
+                                            <span class="num point">%</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="btn-cont-wrap">
+                                    <a href="javascript:void(0);" class="btn btn-primary">선택하기</a>
+                                </div>
+                            </li>
+                        </ul>
+
+                    </div>
+
+                    <div class="list-bull">
+                        <div class="border"></div>
+                        <strong>알아두세요</strong>
+                        <ul>
+                            <li>고객님께서 입력하신 개인정보는 대출신청 완료 후 수집됩니다.</li>
+                            <li>대출신청하기 클릭 시 본인인증 팝업으로 넘어갑니다.</li>
+                        </ul>
+                    </div>
+
+                </div>
+
+                <div class="btn-cont-wrap flexCenter">
+                    <a href="#none" class="btn">다음단계 진행</a>
+                    <a href="#none" class="btn-refresh"><span class="blind">취소</span></a><!--D: 취소 버튼-->
+                </div>
+
+            </div>
+        </div>
+        <!-- //contents -->
+
+        <!--S: 본인인증 방식 선택-->
+        <div id="lySel1" class="layerpopup layer-up show">
+            <div class="content-wrap">
+                <div class="pop-header">
+                    <h2 class="pop-title">본인인증 방식</h2>
+                    <button type="button" name="button" class="btn-layer-close" data-focus="btn-layer-close">닫기</button>
+                </div>
+                <div class="ly-scroll-con ly-select">
+                    <ul class="list-icon certification">
+                        <li class="phone"><a href="#none">휴대폰 본인인증</a></li>
+                        <li class="joint"><a href="#none">공동인증서</a></li>
+                        <li class="ipin"><a href="#none">아이핀인증</a></li>
+                        <li class="kakao"><a href="#none">카카오인증</a></li>
+                        <li class="credit"><a href="#none">신용카드인증</a></li>
+                    </ul>
+
+                </div>
+            </div>
+        </div>
+        <!--E: 본인인증 방식 선택-->
+
+        <!--S: 금융상품 중요사항 안내 (팝업)-->
+        <div id="importantNotiPop" class="layerpopup laypop-all" tabindex="0" data-focus-prev="btn-menu-close" >
+            <div class="pop-header">
+                <h2 class="pop-title">금융상품 중요사항 안내</h2>
+                <button type="button" name="button" class="btn-layer-close">닫기</button>
+            </div>
+            <div class="pop-con-wrap">
+                <div class="default-wrap">
+                    <div class="tabs-wrap type2">
+                        <div class="tabs">
+                            <ul class="tab-item pf col-02">
+                                <li class="on" data-tab="tab-cont001" id="tep01"><a href="javascript:void(0);">상품정보</a>
+                                </li>
+                                <li class="" data-tab="tab-cont002" id="tep02"><a href="javascript:void(0);">유의사항</a>
+                                </li>
+                            </ul>
+
+                            <div class="tab-content-area scroll-height">
+                                <div id="tab-cont001" class="tab-content on">
+                                    <div id="intractInfo">
+                                        <section>관리자 영역</section>
+                                        <!--S:고정 영역-->
+                                        <!-- <section class="list-bull">
+                                            <div class="border"></div>
+                                            <strong>알아두세요</strong>
+                                            <ul>
+                                                <li>금융상품의 중요사항에 대한 일반적인 안내사항으로 세부내용을 상품설명서를 통해 확인하실 수 있습니다.</li>
+                                            </ul>
+                                        </section> -->
+                                        <!--E:고정 영역-->
+                                    </div>
+                                </div>
+
+                                <div id="tab-cont002" class="tab-content dp-none">
+
+                                    <div class="bg-box">
+                                        <ul class="list-bull">
+                                            <li>금융상품의 중요사항에 대한 일반적인 안내 사항으로 세부내용은 상품설명서를 통해 확인 하실 수 있어요</li>
+                                        </ul>
+                                    </div>
+
+                                    <div class="sub-tit-wrap">
+                                        <p class="tit">중도해지에 따른 불이익</p>
+                                        <ul class="list-bull">
+                                            <li>만기가 도래하기 전에 중도해지를 하는 경우, 가입 기간에 따라 중도해지 이율이 적용되며, 약정이율로 지급받기 어려울 수 있으며,
+                                                추가적인 설명이 필요한 경우 "중도해지이율"항목을 다시 한번 확인해 주세요</li>
+                                        </ul>
+                                    </div>
+
+                                    <div class="sub-tit-wrap">
+                                        <p class="tit">금리변동형 상품 안내</p>
+                                        <ul class="list-bull">
+                                            <li>금리변동형 예금성 상품의 경우 금리상승에 따라 약정금리인상 가능성이 있지만 금리가 하락하는 경우 약정금리 인하로 소비자에게 불리할
+                                                수 있어요</li>
+                                        </ul>
+                                    </div>
+
+                                    <div class="table-type table-row type-left">
+                                        <table>
+                                            <caption>
+                                                금리변동형 상품 안내의 금리 상승, 하락 안내 표이며 구분, 고정금리, 변동금리, 운영형태, 특징 항목이 있습니다.
+                                            </caption>
+                                            <colgroup>
+                                                <col width="20%">
+                                                <col width="40%">
+                                                <col width="*%">
+                                            </colgroup>
+                                            <thead>
+                                                <tr>
+                                                    <th scope="col">구분</th>
+                                                    <th scope="col">고정금리</th>
+                                                    <th scope="col">변동금리</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <th scope="col">운영<br>형태</th>
+                                                    <td><img src="../../../resources/images/common/fixed_rate.png"
+                                                            alt="고정금리 운영형태"></td>
+                                                    <td><img src="../../../resources/images/common/floating_rate.png"
+                                                            alt="변동금리 운영형태"> </td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="col">특징</th>
+                                                    <td>
+                                                        <ul class="list-bull">
+                                                            <li>예금 가입 시 결정된 약정금리가 예금만기까지 동일하게 유지</li>
+                                                            <li>시장금리 하락 시 이자율 하락이 없는 반면 상승 시 이자율 변동이 없어 변동금리보다 불리</li>
+                                                        </ul>
+                                                    </td>
+                                                    <td>
+                                                        <ul class="list-bull">
+                                                            <li>일정주기(3/6개월 등)마다 예금 기준금리의 변동에 따라 약정금리가 변동</li>
+                                                            <li>시장금리 상승 시 이자 수익이 증가하는 반면 상승 시 이자수익 하락으로 고정금리보다 불리</li>
+                                                        </ul>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+
+                                    <div class="sub-tit-wrap">
+                                        <p class="tit">민원처리 및 분쟁조정 절차</p>
+                                        <ul class="list-bull">
+                                            <li>본 상품에 대한 문의사항 또는 민원 상담이 필요하시면 영업점, 고객센터(1877-7788) 또는 인터넷
+                                                홈페이지(www.yegaramsb.co.kr)를 통해 문의해주세요</li>
+                                            <li>금융소비자는 본 상품에 대하여 당 저축은행과 분쟁이 있는 경우에는 금융소비자보호법 제 36조 제 1항에 따라 금융감독원(국번없이
+                                                1322)에 분쟁조정을 신청할 수 있습니다</li>
+                                        </ul>
+                                    </div>
+
+                                    <div class="sub-tit-wrap">
+                                        <p class="tit">위법계약해지권 행사에 관한 사항</p>
+                                        <ul class="list-bull">
+                                            <li>금융회사가 금융소비자보호법상 판매원칙 위반시 일정 기간 이내에 금융소비자가 계약해지를 요구할 수 있어요</li>
+                                            <li>금융회사는 10일 이내에 수락여부를 통지해야 하며, 거절 시에는 거절사유와 함께 통지해야 해요</li>
+                                            <li>위법계약해지 요구는 계약서류를 받은 날로부터 5년, 위법 사실을 안 날로부터 1년 이내에 가능해요</li>
+                                        </ul>
+                                    </div>
+
+                                    <!--S: 대출일 경우-->
+                                    <div class="sub-tit-wrap">
+                                        <p class="tit">유의사항</p>
+                                        <ul class="list-bull">
+                                            <li>금융상품체결 전 금융상품설명서 및 약관을 확인하시기 바랍니다.</li>
+                                            <li>일반금융소비자는 금융상품 판매업자로부터 해당 상품에 대해 충분한 사전 설명을 받을 권리가 있으며, 설명을 이해한 후 거래하기
+                                                바랍니다.</li>
+                                            <li>금융소비자의 자격요건으로 연체대출금보유자, 불건전대출이 있는 자 등은 대출 취급이 제한될 수 있습니다.</li>
+                                            <li>과도한 대출은 개인신용평점 하락의 원인이 될 수 있습니다.</li>
+                                            <li>개인신용평점 하락으로 금융거래의 제약 또는 불이익이 발생할 수 있습니다.</li>
+                                            <li>연체 시 계약기간 만료 전 원리금 변제의무가 발생할 수 있습니다.</li>
+                                            <li>상품정보의 내용은 당행의 여신 및 금리정책에 따라 변경될수 있음.</li>
+                                            <li>기타 자세한 내용은 상품 취급 지점으로 문의 하여 주시기 바랍니다.</li>
+                                        </ul>
+                                    </div>
+                                    <!--E: 대출일 경우 -->
+
+                                    <!--S: 예적금일 경우-->
+                                    <div class="sub-tit-wrap">
+                                        <p class="tit">예금자보호법에 관한 사항</p>
+                                        <div class="kdic-wrap">
+                                            <img src="/resources/images/common/img-kdic.png"
+                                                alt="예금보험공사 보호금융상품 1인당 최고 5천만원">
+                                            <p>이 예금은 예금자보호법에 따라 원금과 소정의 이자를 합하여 1인당 "5천만원까지"(본 상호저축은행의 여타 보호상품과
+                                                합산)보호됩니다.</p>
+                                        </div>
+                                    </div>
+                                    <!--E: 예적금일 경우-->
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- //금융상품 중요사항 안내 탭 추가 231201-->
+                <div class="fixed-btn-wrap">
+                    <div class="btn-wrap">
+                        <a href="javascript:void(0);" class="btn" onclick="closePopup('importantNotiPop');">확인했어요</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--E: 금융상품 중요사항 안내 (팝업)-->
+
+        <!--[퍼블-2] : 금융상품 중요사항 안내 기획 반영-->
+        <!--S: 금융상품 중요사항 안내 (팝업)-->
+        <!-- <div id="importantNotiPop" class="layerpopup laypop-all" tabindex="0" data-focus-prev="btn-menu-close" style="display:none;">
+            <div class="pop-header">
+                <h2 class="pop-title">금융상품 중요사항 안내</h2>
+                <button type="button" name="button" class="btn-layer-close">닫기</button>
+            </div>
+            <div class="pop-con-wrap">
+                <div class="default-wrap">
+                    <div class="accordion-guide-wrap">
+                        <p class="accordion-tit bg-box"><span class="txt">「금융소비자 보호에 관한 법률」 제 19조 제1항에서 규정하고 있는 중요한 사항</span> 입니다. 모든 내용을 확인하시면 다음 단계로 넘어갈 수 있습니다.</p>
+                    
+                        <div class="accordion-area">
+                            <p>1. 금리 및 변동여부 <span class="accordion-check" style="display:block;">확인</span></p>
+                        </div>
+                        <div class="accordion-sub" style="display:block;">
+                            <div class="btn-cont-wrap">
+                                <a href="javascript:void(0);" class="btn btn-sm gray">용어사전</a>
+                            </div>
+                            <div class="guide-area">
+                                
+                                <div class="cont">
+                                    <div class="sub-tit-wrap">
+                                        <img src="../../resources/images/common/img_variable_rate1.png" alt="대출금리의 종류 그래프">
+                                        <p class="tit">고정금리란?</p>
+                                        <p class="txt">대출 실행 시 결정된 금리가 대출만기까지 동일하게 유지</p>
+                                    </div>
+
+                                    <div class="sub-tit-wrap">
+                                        <img src="../../resources/images/common/img_variable_rate2.png" alt="대출금리의 종류 그래프">
+                                        <p class="tit">변동금리란?</p>
+                                        <p class="txt">일정주기 (3/6/12개월 등)마다 대출 기준금리의 변동에 따라 대출금리가 변동</p>
+                                    </div>
+
+                                    <div class="sub-tit-wrap">
+                                        <p class="tit">유의사항</p>
+                                        <p class="txt">대출금리는 아래의 경우 <span class="point-red">변동될 수 있습니다.</span></p>
+                                        <ul class="list-bull">
+                                            <li class="num"><em>1.</em>약정한 항목 관련</li>
+                                            <li class="hyphen">대출기준금리의 변동,거래실적 변동 등</li>
+                                            <li class="num"><em>2.</em>대출조건의 변경관련</li>
+                                            <li class="hyphen">신용등급 변동,기간연장,채무자 변경 등</li>
+                                        </ul>
+                                    </div>
+
+                                    
+                                </div>
+                                
+                                <div class="btn-cont-wrap flexCenter">
+                                    <button type="button" name="button" class="btn btn-add" >확인</button>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="accordion-area">
+                            <p>2. 중도상환해약금 <span class="accordion-check">확인</span></p>
+                        </div>
+                        <div class="accordion-sub">
+                            <div class="btn-cont-wrap">
+                                <a href="javascript:void(0);" class="btn btn-sm gray">용어사전</a>
+                            </div>
+                            <div class="guide-area">
+                                
+                                <div class="cont">
+                                    <div class="sub-tit-wrap">
+                                        <p class="tit">중도상환해약금의 정의</p>
+                                        <p class="txt">대출의 상환 기익이 오기 전에 대출금을 상환할  경우 고객님이 부담하는 금액입니다.</p>
+                                    </div>
+
+                                    <div class="sub-tit-wrap">
+                                        <p class="tit">1.산식</p>
+                                        <p class="txt">중도상환해약금 = 중도상환대출금 X 해약금률 X (대출잔여일수÷대출기간)</p>
+                                    </div>
+                                    
+                                    <div class="sub-tit-wrap">
+                                        <p class="tit">중도상환해약금은 상품에 따라 <span class="point-red">최대 1.9%</span> 입니다.</p>
+                                        <ul class="list-bull">
+                                            <li>최초 대출실행일로부터 <span class="point-red">2년간</span> 적용됩니다.</li>
+                                            <li>대출금액이 클수록,대출잔여일수가 많이 남아있을수록 중도상환해약금 부담이 커집니다.</li>
+                                            <li>햇살론은 서민금융진흥원의 보증부대출로 중도상환수수료가 없습니다.</li>
+                                            <li>사잇돌대출은 서울보증보험의 보증서발행으로 이루어지는 보증부 대출상품으로 중도상환수수료가 없습니다.</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                
+                                <div class="btn-cont-wrap flexCenter">
+                                    <button type="button" name="button" class="btn btn-add" >확인</button>
+                                </div>
+                            </div>
+                        </div>
+                    
+                        <div class="accordion-area">
+                            <p>3. 상환금액ㆍ이자율ㆍ 시기 <span class="accordion-check">확인</span></p>
+                        </div>
+                        <div class="accordion-sub">
+                            <div class="btn-cont-wrap">
+                                <a href="javascript:void(0);" class="btn btn-sm gray">용어사전</a>
+                            </div>
+                            <div class="guide-area">
+                                
+                                <div class="cont">
+                                    <div class="sub-tit-wrap">
+                                        <p class="tit">1. 원리금 균등상환</p>
+                                        <p class="txt">원금과 이자의 합을 매월 동일한 금액으로 상환합니다.매월 상환금액이 동일합니다.</p>
+                                        <img src="../../resources/images/common/loan1.png" alt="원리금 균등상환 그래프">
+                                    </div>
+
+                                    <div class="sub-tit-wrap">
+                                        <p class="tit">2. 원금 균등상환</p>
+                                        <p class="txt">대출 원금을 대출 상환기간 동안 지속적으로 일정금액으로 상환하는 방식입니다.</p>
+                                        <img src="../../resources/images/common/loan2.png" alt="원금 균등상환 그래프">
+                                    </div>
+
+                                    <div class="sub-tit-wrap">
+                                        <p class="tit">3. 만기일시 상환</p>
+                                        <p class="txt">약정기간동안 대출 원금에 대한 상환 없이 <span class="point">이자만 부담</span>하는 방식입니다. 만기일자에 대출 원금을 모두 상환해야 하므로 상환 부담이 증가할 수 있습니다.</p>
+                                        <img src="../../resources/images/common/loan3.png" alt="만기일시 상환 그래프">
+                                    </div>
+
+                                    <div class="sub-tit-wrap">
+                                        <p class="tit">상환금액ㆍ이자율ㆍ시기</p>
+                                        <p class="txt">동일한 금리ㆍ한도로 대출을 진행하더라도 <span class="point-red">상환방법에 따라 만기까지 부담해야하는 총 원리금 부담액이 달라질 수 있습니다.</span></p>
+                                    </div>
+                                    <div class="sub-tit-wrap">
+                                        <p class="tit">유의사항</p>
+                                        <ul class="list-bull">
+                                            <li class="num"><em>1.</em>거치식 분할상환 방식의 상환부담</li>
+                                            <li class="hyphen">거치기간이 종료되면 <span class="point">거치기간 연장이 어려울 수 있으며,</span> 분할상환이 개시되어 이자와 함께 원금도 갚아나가야 하므로 상환부담이 증가할 수 있습니다.</li>
+                                            <li class="num"><em>2.</em>만기 일시상환 방식의 상환부담</li>
+                                            <li class="hyphen">대출만기가 되면 <span class="point">원금을 한꺼번에 상환</span>해야 하며, <span class="point-red">만기연장이 되지 않을 수</span> 있습니다.</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                
+                                <div class="btn-cont-wrap flexCenter">
+                                    <button type="button" name="button" class="btn btn-add" >확인</button>
+                                </div>
+                            </div>
+                        </div>
+                    
+                        <div class="accordion-area">
+                            <p>4. 담보물에 관한 사항 <span class="accordion-check">확인</span></p>
+                        </div>
+                        <div class="accordion-sub">
+                            <div class="btn-cont-wrap">
+                                <a href="javascript:void(0);" class="btn btn-sm gray">용어사전</a>
+                            </div>
+                            <div class="guide-area">
+                                
+                                <div class="cont">
+                                    <div class="sub-tit-wrap">
+                                        <p class="tit">담보권 제공 대출 실행에 따른 재산상 손실</p>
+                                        <p class="txt">대출 변제가 도래 또는 기한이익 상실에도 불구하고 대출이 상환되지 않는 경우,저축은행은 법적절차*에 따라 담보물을 처분하여 대출을 상환할 수 있으며, 이경우 담보 제공자는 담보물의 소유권을 잃을 수 있습니다.</p>
+                                        <p class="txt">* 법적절차 : 민사집행법에 따라 담보물을 경매(매각 및 급전으로 환가)한 후 그 경매대금에 대하여 다른 채권자에 우선하여 변제</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="btn-cont-wrap flexCenter">
+                                    <button type="button" name="button" class="btn btn-add" >확인</button>
+                                </div>
+                            </div>
+                        </div>
+                    
+                        <div class="accordion-area">
+                            <p>5. 금융소비자의 부담금액 <span class="accordion-check">확인</span></p>
+                        </div>
+                        <div class="accordion-sub">
+                            <div class="btn-cont-wrap">
+                                <a href="javascript:void(0);" class="btn btn-sm gray">용어사전</a>
+                            </div>
+                            <div class="guide-area">
+                                
+                                <div class="cont">
+
+                                    <div class="sub-tit-wrap">
+                                        <p class="tit">원금 및 이자</p>
+                                        <p class="txt">대출 유지기간 동안에는 아래에 정한 시점에 고객님의 원리금 상환부담이 있습니다.</p>
+                                        <div class="table-type table-row type-left">
+                                            <table>
+                                                <caption>
+                                                    원금 및 이자
+                                                </caption>
+                                                <colgroup>
+                                                    <col width="25%">
+                                                    <col width="*%">
+                                                </colgroup>
+                                                <thead>
+                                                    <tr>
+                                                        <th scope="col">구분</th>
+                                                        <th scope="col">부담시점</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>원금</td>
+                                                        <td>만기일 및 분할상환기일</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>이자</td>
+                                                        <td>매 이자납입일(통상 매월 납부)</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+
+                                    <div class="sub-tit-wrap">
+                                        <p class="tit">수수료 및 비용</p>
+                                        <p class="tit">1.인지세</p>
+                                        <p class="txt">대출약정 체결 시 <span class="point-red">인지세법에 의해 세금 납부 의무가 발생</span>합니다. 인지세는 <span style="color: red;">대출금액에 따라 차등 적용되며 저축은행과 고객이 각 50%씩 부담</span>합니다.</p>
+                                        <div class="table-type table-row type-left">
+                                            <div class="table-scroll">
+                                                <table>
+                                                    <caption>
+                                                        원금 및 이자
+                                                    </caption>
+                                                    <colgroup>
+                                                        <col width="25%">
+                                                        <col width="*%">
+                                                    </colgroup>
+                                                    <thead>
+                                                        <tr>
+                                                            <th scope="col">대출금액</th>
+                                                            <th scope="col">5천만원 이하</th>
+                                                            <th scope="col">5천만원 초과<br/> 1억원 이하</th>
+                                                            <th scope="col">1억원원 초과<br/> 10억원 이하</th>
+                                                            <th scope="col">10억원 초과</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td>인지세액</td>
+                                                            <td>비과세</td>
+                                                            <td>7만원</td>
+                                                            <td>15만원</td>
+                                                            <td>35만원</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>고객부담</td>
+                                                            <td>-</td>
+                                                            <td>3만 5천원</td>
+                                                            <td>7만 5천원</td>
+                                                            <td>17만 5천원</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>회사부담</td>
+                                                            <td>-</td>
+                                                            <td>3만 5천원</td>
+                                                            <td>7만 5천원</td>
+                                                            <td>17만 5천원</td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="sub-tit-wrap">
+                                        <p class="tit">2.보증료</p>
+                                        <p class="txt"> 보증시 담보대출의 경우 <span class="point-red">보증 기관에 납부할 소정의 보증료가 발생할 수 있으며,</span>상품별로 보증료율은 상이합니다.</p>
+                                        <p class="txt">햇살론- 서민금융진흥원의 보증부 대출</p>
+                                        <p class="txt">보증료율 연2%이내(사회적배려대상자의 경우 연1% 저소득청년의 경우 연1.5%)</p>
+                                        <p class="txt">보증료 수납:보증료는 보증 실행 시 일괄 납부 하거나 매월분할납부 중 고객 선택</p>
+                                    </div>
+                                    
+                                    <div class="sub-tit-wrap">
+                                        <p class="tit">3.중도상환해약금</p>
+                                        <p class="txt">중요사항 설명보기 『②중도상환해약금』을 참고해 주시기 바랍니다.</p>
+                                    </div>
+
+                                    <div class="sub-tit-wrap">
+                                        <p class="tit">4.기타 유의사항</p>
+                                        <ul class="list-bull">
+                                            <li><span class="point"> 상품에 따라 상기에</span> 열거되지 않은 수수료나 비용이 추가로 발생 할 수 있습니다.</li>
+                                            <li>고객님의 채무불이행으로 발생한 비용은 『상호저축은행여신거래기본약관 제4조』에 따라 고객님이 부담하셔야 합니다.</li>
+                                            <li>대출계약을 철회하는 경우 저축은행이 부담한 인지세 등 제세공과금,저당권 설정에 따른 등기비용  등은 『금융소비자 보호에 관한 법률』 제 46조 및 관련 규정에 따라 고객님이 반환하셔야 합니다.</li>
+                                        </ul>
+                                    </div>
+
+                                </div>
+                                
+                                <div class="btn-cont-wrap flexCenter">
+                                    <button type="button" name="button" class="btn btn-add">확인</button>
+                                </div>
+                            </div>
+                        </div>
+                    
+                        <div class="accordion-area">
+                            <p>6. 발생 가능한 불이익 <span class="accordion-check">확인</span></p>
+                        </div>
+                        <div class="accordion-sub">
+                            <div class="btn-cont-wrap">
+                                <a href="javascript:void(0);" class="btn btn-sm gray">용어사전</a>
+                            </div>
+                            <div class="guide-area">
+                                
+                                <div class="cont">
+                                    <div class="sub-tit-wrap">
+                                        <p class="tit">연체이자부담</p>
+                                        <div class="bg-box"><strong><span class="point-red">연체이자율</span> = 대출이자율 + 연체가산이자율</strong></div>
+                                        <ul class="list-bull">
+                                            <li>최고연체이자율 : 연 20%</li>
+                                            <li>연체가산이자율 : 3%</li>
+                                        </ul>
+                                    </div>
+
+                                    <div class="sub-tit-wrap">
+                                        <p class="tit">연체이자 납부사유</p>
+                                        <ul class="list-bull">
+                                            <li class="num"><em>①</em>이자납부일에 이자 미납</li>
+                                            <li class="hyphen">이자미납 익일~1개월까지는 약정이자에 대해 연체이자 부과</li>
+                                            <li class="hyphen">1개월 경과 (기한이익상실)부터는 대출원금에 대해 연체이자 부과</li>
+                                            <li class="num"><em>②</em>대출만기일에 원금미납</li>
+                                            <li class="hyphen">원금 미납 익일부터 대출원금에 대해 연체이자 부과</li>
+                                            <li class="num"><em>③</em>분할상환일에 분할상환원리금 미납</li>
+                                            <li class="hyphen">분할상환원리금 미납 익일부터는 해당 분할상환원리금에 대해 연체이자 부과</li>
+                                            <li class="hyphen"><span class="point-red">2회이상 (주택담보대출의 경우3회)</span>에는 연속지체시 기한의 이익상실로 인하여  대출원금잔액에 대해     연체이자 부과</li>
+                                            <li class="num"><em>④</em>기한이익상실(상호저축은행여신거래기본약관 제 7조)</li>
+                                            <li class="hyphen">기한이익상실(대출금 즉시상환 및 신용불이익)익일부터 대출원금에 대해 연체이자 부과</li>
+                                            <li class="num">* 기한이익상실사유 예시 : 당행 예금에 대해 압류통지 등 도달 ,제공한 담보물에 강제집행 등 개시</li>
+                                        </ul>
+                                    </div>
+
+                                    <div class="sub-tit-wrap">
+                                        <p class="tit">2. 그 밖의 불이익</p>
+                                        <ul class="list-bull">
+                                            <li class="num"><em>①</em>단기연체 (5영업일 이상 연체)</li>
+                                            <li class="hyphen">신용정보회사에 단기연체정보 제공->금융거래제한(신용카드 정지 등)ㆍ신용평점하락->등록사유 해제에도 불구,하락한 신용평점 회복 난항</li>
+                                            <li class="num"><em>②</em> 장기연체(3개월 이상연체)</li>
+                                            <li class="hyphen">『일반신용정보관리규약』에 따른 장기연체정보 등록->금융거래제한(대출신규ㆍ연기제한 등)ㆍ신용평점하락->등록사유 해제에도 불구,해제기록 최대 1년 및 하락한 신용평점 회복난항</li>
+                                        </ul>
+                                    </div>
+
+                                    <div class="sub-tit-wrap">
+                                        <p class="tit">신용과 관련한 불이익</p>
+                                        <ul class="list-bull">
+                                            <li>대출계약 체결 사실만으로 <span class="point-red">개인신용평점 하락 가능</span></li>
+                                            <li>대출계약 완제 후에도 <span class="point-red">일정기간 개인신용평점에 영향</span></li>
+                                        </ul>
+                                    </div>
+
+                                    <div class="sub-tit-wrap">
+                                        <p class="tit">기타 불이익</p>
+                                        <p class="txt">금리,중도상환,상환방법,담보,비용,상품에 따른 특수한 불이익은 각 중요사항 설명보기 항목을 참고 바랍니다.</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="btn-cont-wrap flexCenter">
+                                    <button type="button" name="button" class="btn btn-add">확인</button>
+                                </div>
+                            </div>
+                        </div>
+                    
+                        <div class="accordion-area">
+                            <p>7. 금융소비자의 권리 <span class="accordion-check">확인</span></p>
+                        </div>
+                        <div class="accordion-sub">
+                            <div class="btn-cont-wrap">
+                                <a href="javascript:void(0);" class="btn btn-sm gray">용어사전</a>
+                            </div>
+                            <div class="guide-area">
+                                
+                                <div class="cont">
+                                    <div class="sub-tit-wrap">
+                                        <p class="tit">14일 이내라면 <span class="point">대출 계약을 철회</span> 할 수 있습니다.</p>
+                                        <p class="txt">계약체결일, 계약서류를 받은 날,대출금 수령일 중 가장 늦은 날로부터 14일 이내에 계약을 철회할 수 있습니다.</p>
+                                        <p class="txt">대출 계약 철회 시 에는 중도상환 수수료가 발생하지 않습니다.</p>
+                                    </div>
+
+                                    <div class="sub-tit-wrap">
+                                        <p class="tit">위법한 대출 계약이라면 수수료 없이 <span class="point">대출 계약을 해</span>지 할 수 있습니다.</p>
+                                        <p class="txt">금융회사가 금융소비자 보호에 관한 법률을 위반한 경우 계약체결일로부터 5년 이내,법 위반 사실을 안 날로부터 1년 이내에 계약 해지를 요구할 수 있습니다.</p>
+                                    </div>
+
+                                    <div class="sub-tit-wrap">
+                                        <p class="tit">금리인하요구권</p>
+                                        <p class="txt">저축은행과 신용공여계약을 체결한 고객은 상호저축은행법 제 14조의 2에 따라 <span class="point">본인의 신용상태가 개선되었다고 판단되는 경우 금리인하를 요구 할 수 있습니다.</span></p>
+                                    </div>
+                                </div>
+                                
+                                <div class="btn-cont-wrap flexCenter">
+                                    <button type="button" name="button" class="btn btn-add" >확인</button>
+                                </div>
+                            </div>
+                        </div>
+                    
+                        <div class="accordion-area">
+                            <p>8. 상품별 유의사항 <span class="accordion-check">확인</span></p>
+                        </div>
+                        <div class="accordion-sub">
+                            <div class="btn-cont-wrap">
+                                <a href="javascript:void(0);" class="btn btn-sm gray">용어사전</a>
+                            </div>
+                            <div class="guide-area">
+                                
+                                <div class="cont">
+                                    <div class="sub-tit-wrap">
+                                        <p class="tit">『가계대출』은 가계가 생계유지 등 기타 사용목적으로 받는 대출상품을 총칭합니다.</p>
+                                        <ul class="list-bull">
+                                            <li>개인(신용)정보 조회는 고객님의 개인신용평점에 영향을 주지 않습니다.</li>
+                                            <li>대출 계약의 체결만으로도 개인신용평점이 하락할 수 있으며 대출계약이 변제 혹은 이에 준하는 방식으로 거래가 종료된 경우에도 일정기간 개인신용평점의 산정에 영향을 줄 수 있습니다.</li>
+                                        </ul>
+                                    </div>
+
+                                    <div class="sub-tit-wrap">
+                                        <p class="tit">『가계대출』은 가계가 생계유지 등 기타 사용목적으로 받는 대출상품을 총칭합니다.</p>
+                                        <ul class="list-bull">
+                                            <li>개인(신용)정보 조회는 고객님의 개인신용평점에 영향을 주지 않습니다.</li>
+                                            <li>대출 계약의 체결만으로도 개인신용평점이 하락할 수 있으며 대출계약이 변제 혹은 이에 준하는 방식으로 거래가 종료된 경우에도 일정기간 개인신용평점의 산정에 영향을 줄 수 있습니다.</li>
+                                        </ul>
+                                        <div class="table-type table-row type-left">
+                                            <div class="table-scroll">
+                                                <table>
+                                                    <caption>
+                                                        원금 및 이자
+                                                    </caption>
+                                                    <colgroup>
+                                                        <col width="25%">
+                                                        <col width="*%">
+                                                    </colgroup>
+                                                    <thead>
+                                                        <tr>
+                                                            <th scope="col">구분</th>
+                                                            <th scope="col">대출한도 조회</th>
+                                                            <th scope="col">대출계약 체결</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td>원개인신용평점 변동금</td>
+                                                            <td class="ta-c">X</td>
+                                                            <td class="ta-c">O</td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                        <ul class="list-bull">
+                                            <li>대출 실행전,취급 거절사유 발생 시 대출 실행이 불가할 수 있습니다.</li>
+                                            <li class="hyphen">예시)신용상태악화, 보유대출금 증가 등</li>
+                                            <li>시장금리 변동 등으로 상품설명 단계에서 고객님께 적용될 것으로 예상되는 금리와 최종적으로 적용되는 금리는 달라질 수 있습니다.</li>
+                                            <li>대출금을 중도에 상환하는 경우,  <span class="point-red">중도상환해약금</span> 이 부과될 수 있습니다.</li>
+                                            <li>대출 만기 도래 시 고객님의 의사를 확인 후 계약기간 연장이 진행됩니다.</li>
+                                            <li>*단,신용점수가 하락되거나 연체 등이 발생하는 경우, <span class="point-red">대출계약 연장이 거절될 수 있습니다. </span></li>
+                                            <li class="num">『신용대출』은 고객님의 소득 등에 따라 평가되는 개인 신용도에 기반하여 대출한도 및 금리가 산정되는 대출상품입니다.</li>
+                                            <li>신용점수가 하락하거나,대출기간 중 대출금을 충분히 사용하지 않은 경우(한도거래) 대출계약 연장 시 한도가 감액될 수 있습니다.</li>
+                                            <li>일정한 자격을 갖춘 고객을 대상으로 한 대출(직장인신용대출,공무원대출 등)의 경우,퇴직/이직/폐업 등 자격상실 사유 발생시 기한연장이 불가할 수 있습니다.</li>
+                                        </ul>
+                                    </div>
+
+                                    <div class="sub-tit-wrap">
+                                        <p class="tit">궁금하거나 불편한 점이 있다면?</p>
+                                        <p class="txt">문의는 인터넷 홈페이지(www.yegaramsb.co.kr)또는 고객센터(1877-7788)로 문의 부탁드립니다.</p>
+                                    </div>
+
+
+                                </div>
+                                
+                                <div class="btn-cont-wrap flexCenter">
+                                    <button type="button" name="button" class="btn btn-add" >확인</button>
+                                </div>
+                            </div>
+                        </div>
+                    
+                    </div>
+                </div>
+                <div class="fixed-btn-wrap">
+                    <div class="btn-wrap">
+                        <a href="javascript:void(0);" class="btn disabled">모두 확인했어요</a>
+                </div>
+            </div>
+        </div> -->
+        <!--E: 금융상품 중요사항 안내 (팝업)-->
+        <!--[퍼블-2] : 금융상품 중요사항 안내 기획 반영-->
+        
+        <!-- s: 상단 이동 버튼 -->
+        <button type="button" name="button" class="btn-circle top ir btn-top">위로</button>
+        <!-- //e: 상단 이동 버튼 -->
+
+    </div>
+    <!-- //contentsWrap -->
+</body>
+
+</html>

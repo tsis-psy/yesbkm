@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>예가람저축은행</title>
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="Content-Script-Type" content="text/javascript">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<meta name="keywords" content="예가람저축은행keywords" />
+<meta name="description" content="예가람저축은행description" />
+<!-- <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0, viewport-fit=cover"> -->
+	<meta name="viewport" content="user-scalable=no,width=375">
+<!--
+<meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"/>
+ -->
+<meta name="apple-mobile-web-app-status-bar-style" content="white" />
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta http-equiv="Expires" content="-1">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Cache-Control" content="No-Cache">
+
+<link href="/resources/css/swiper-bundle.min.css" rel="stylesheet" />
+<link href="/resources/css/default.css" rel="stylesheet" />
+<link href="/resources/css/renewal.css" rel="stylesheet" />
+
+<link rel="shortcut icon" type="image/x-icon" href="/resources/favicon.ico" />
+<link rel="icon" type="image/x-icon" href="/resources/favicon.ico" />
+
+<script type="text/javascript" src="/resources/js/lib/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="/resources/js/lib/jquery.cookie.js"></script>
+
+<script type="text/javascript" src="/resources/js/lib/swiper-bundle.min.js"></script>
+<script type="text/javascript" src="/resources/js/lib/TweenMax.min.js"></script>
+<script type="text/javascript" src="/resources/js/lib/jquery.animateSprite.min.js"></script>
+<script type="text/javascript" src="/resources/js/lib/default.js?v=20230803152139"></script>
+<script type="text/javascript" src="/resources/js/lib/ui.js?v=20230803152139"></script>
+<script type="text/javascript" src="/resources/js/lib/rolldate.js?v=20230803152139"></script>
+<script type="text/javascript" src="/resources/js/app_common_cont.js?v=20230803152139"></script>
+<script type="text/javascript" src="/resources/js/app_common_auth.js?v=20230803152139"></script>
+<script type="text/javascript" src="/resources/js/app_common_funs.js?v=20230803152139"></script>
+<script type="text/javascript" src="/resources/js/app_common_nsl.js?v=20230803152139"></script>
+<script type="text/javascript" src="/resources/js/app_common_util.js?v=20230803152139"></script>
+<script type="text/javascript" src="/resources/js/biz_common.js?version=20230803152139" id="biz_common"
+	data-menuId="dep/inq"
+	data-frameId="depList"
+	data-serviceCd="depList.frm"
+	data-serverTime="20230803152139"
+	data-activeMode="local"
+	data-activeEnv="${active.env">
+</script>
+<script type="text/javascript" src="../../../resources/js/Chart.bundle.js"></script> <!-- [퍼블] 추가 -->
+<script type="text/javascript" src="../../../resources/js/chartjs-plugin-datalabels.js"></script> <!-- [퍼블] 추가 -->
+</head>
+<body>
+	<!-- header -->
+	<header class="headerWrap">  <!--D: bg-color02 클래스 : 뒤에 색상 들어갈 경우  -->
+		<div class="headerLeft">
+			<a href="javascript:void(0)" class="btn btnBack"><img src="/resources/images/header/btn_back.png" alt="이전페이지 이동하기"></a> <!--D: 이전버튼 -->
+		</div>
+		<div class="headerCenter">
+			<h2 class="text"><span>적금납입일 변경</span></h2> 
+		</div>
+		<div class="headerRight">
+		</div>
+	</header>
+	<!-- //header -->
+
+	<!-- s: contentsWrap -->
+	<div class="contentsWrap">
+		<div class="contents">
+			<div class="default-wrap">
+
+				<div class="visaul-info-section">
+					<div class="visaul-info-box">
+						<div class="flag-tit-wrap"><em class="flag style2">정기예금</em></div><!-- [퍼블-1]: flag-tit-wrap 클래스 추가  -->
+						<strong class="info-tit">직장인 Plus 정기적금</strong>
+						<div class="account-area">
+							<p class="account">123-12-12-1234567</p>
+							<button type="button" class="btn-copy">복사하기</button>
+						</div>
+						<a href="#none" class="btn-set star" id="oftnAcct" onclick="oftnAcct(this);">관리</a>
+					</div>
+				</div>
+
+				<div class="txt-list-wrap">
+					<div class="txt-detail-area">
+						<ul class="txt-list">
+							<li>
+								<span class="tit">잔액</span>
+								<span class="txt">000,000,000원</span>
+							</li>
+							<li>
+								<span class="tit">계좌개설일</span>
+								<span class="txt">YYYY.MM.DD</span>
+							</li>
+							<li>
+								<span class="tit">세금우대구분</span>
+								<span class="txt">개인과세</span>
+							</li>
+							<li>
+								<span class="tit">최종거래일</span>
+								<span class="txt">YYYY.MM.DD</span>
+							</li>
+							<li>
+								<span class="tit">계약금액</span>
+								<span class="txt">000,000,000원</span>
+							</li>
+							<li>
+								<span class="tit">계약기간</span>
+								<span class="txt">6개월</span>
+							</li>
+							<li>
+								<span class="tit">총 납입횟수</span>
+								<span class="txt">10회</span>
+							</li>
+							<li>
+								<span class="tit">월 납입금액</span>
+								<span class="txt">000,000원</span>
+							</li>
+							<li>
+								<span class="tit">기본이율(연이율)</span>
+								<span class="txt">00.00%</span>
+							</li>
+                            <li>
+								<span class="tit">현재납입일</span>
+								<span class="txt">매달 3일</span>
+							</li>
+						</ul>
+					</div>
+				</div>
+
+                <div class="form-wrap">
+                    <div id="rolldate2" class="select-box" tabindex="1" onclick="tranDtSel();">
+                        <label for="" class="essential">변경 납입일</label>
+                        <span class="option" id="">미선택</span>
+                    </div>
+                </div>
+				<div class="check-account">
+					<input type="checkbox" id="chk01" name="check" value="">
+					<label for="chk01">
+						<span>매월 말일</span>
+					</label>
+				</div>
+				
+				<div class="kdic-wrap">
+					<img src="../../../resources/images/common/img-kdic.png" alt="예금보험공사 보호금융상품 1인당 최고 5천만원">
+					<p>이 예금은 예금자보호법에 따라 예금보험공사가 보호하되, 보호 한도는 본 예가람저축은행에 있는 귀하의 모든 예금보호 대상 금융상품의 원금과 소정의 이자를 합하여 1인당 "최고 5천만원"이며,  5천만원을 초과하는 나머지 금액은 보호하지 않습니다.</p>
+				</div>
+				<!-- // [퍼블] 추가 -->
+				
+                <div class="list-bull">
+                    <div class="border"></div>
+                    <strong>알아두세요</strong>
+                    <ul>
+                        <li>매달 정해진 날짜에 납입하시는 정액식 정기적금에 한하여 납입일을 변경하실 수 있어요</li>
+                        <li>자동이체 또는 CMS설정 계좌의 경우 정상적으로 이체되지 않을 수 있어요. 연체가 발생할 수 있으니 이체가 안될 시 창구로 방문해 주세요</li>
+                        <li>납입일 변경 시에는 변경 납입일 만큼 만기일이 변동돼요</li>
+                        <li>납입일 변경 시점에 따라 만기일이 한 달 이상 늦춰질 수 있으니 현재 납입일 이전 일자는 변경하실 수 없어요</li>
+                        <li>현재 납입일이 (D)일인 경우 (D+1)1일부터 해당 월의 말일까지 가능해요<br>
+                            예) 납입일이(10)일인 경우 (11)일부터 해당 월의 말일(30또는 31일. 2월인 경우 해당원의 말일)까지만 가능해요
+                        </li>
+                    </ul>
+                </div>
+				
+			</div>
+
+		</div>
+        <!-- s: fixedBtnWrap -->
+        <div class="fixed-btn-wrap">
+            <div class="btn-wrap">
+                <a href="#none" class="btn">다음</a>
+            </div>
+        </div>
+        <!-- e: fixedBtnWrap -->
+        <!--S: 적급납입일 변경(팝업)-->
+        <div id="lyPop2" class="layerpopup layer-up has-button show" style=" display: block;"><!-- [D] has-button 클래스 : 하단버튼 있을 경우 사용 -->
+            <div class="content-wrap">
+                <div class="pop-header">
+                    <h2 class="pop-title">적급납입일 변경</h2>
+                    <button type="button" name="button" class="btn-layer-close" data-focus="btn-layer-close">닫기</button>
+                </div>
+                <div class="ly-scroll-con">
+                    <div class="txtbox-wrap">
+                        <p>적금 납입일 변경 시 만기일이 달라질 수 있으니 전체 회차 납입 후에 이연 만기일을 확인해 주세요</p>
+                    </div>
+
+                </div>
+            </div>
+            <!--D: fixed-btn-wrap 버튼은 content-wrap 밖으로 위치-->
+            <div class="fixed-btn-wrap">
+                <div class="btn-wrap">
+                    <a href="javascript:void(0);" class="btn">변경</a>
+                </div>
+            </div>
+        </div>
+        <!--E: 적급납입일 변경 (팝업)-->
+	</div>
+    <!-- //e: contentsWrap -->
+
+
+<footer>
+<!-- 푸터 타입별 정의 -->
+</footer>
+
+<!-- 업무공통 -->
+<!-- //footer -->
+
+</body>
+</html>

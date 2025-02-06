@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>예가람저축은행</title>
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="Content-Script-Type" content="text/javascript">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<meta name="keywords" content="예가람저축은행keywords" />
+<meta name="description" content="예가람저축은행description" />
+<!-- <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0, viewport-fit=cover"> -->
+	<meta name="viewport" content="user-scalable=no,width=375">
+
+<meta name="apple-mobile-web-app-status-bar-style" content="white" />
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta http-equiv="Expires" content="-1">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Cache-Control" content="No-Cache">
+
+<link href="/resources/css/default.css" rel="stylesheet" />
+<link href="/resources/css/renewal.css" rel="stylesheet" />
+
+
+<link href="/resources/css/swiper-bundle.min.css" rel="stylesheet" />
+<link rel="shortcut icon" type="image/x-icon" href="/resources/favicon.ico" />
+<link rel="icon" type="image/x-icon" href="/resources/favicon.ico" />
+
+<script type="text/javascript" src="/resources/js/lib/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="/resources/js/lib/jquery.cookie.js"></script>
+
+<script type="text/javascript" src="/resources/js/lib/swiper-bundle.min.js"></script>
+<script type="text/javascript" src="/resources/js/lib/TweenMax.min.js"></script>
+<script type="text/javascript" src="/resources/js/lib/jquery.animateSprite.min.js"></script>
+<script type="text/javascript" src="/resources/js/lib/default.js?v=20230803152535"></script>
+<script type="text/javascript" src="/resources/js/lib/ui.js?v=20230803152535"></script>
+<script type="text/javascript" src="/resources/js/lib/rolldate.js?v=20230803152535"></script>
+<script type="text/javascript" src="/resources/js/app_common_cont.js?v=20230803152535"></script>
+<script type="text/javascript" src="/resources/js/app_common_auth.js?v=20230803152535"></script>
+<script type="text/javascript" src="/resources/js/app_common_funs.js?v=20230803152535"></script>
+<script type="text/javascript" src="/resources/js/app_common_nsl.js?v=20230803152535"></script>
+<script type="text/javascript" src="/resources/js/app_common_util.js?v=20230803152535"></script>
+<script type="text/javascript" src="/resources/js/biz_common.js?version=20230803152535" id="biz_common"
+	data-menuId="dep/prc"
+	data-frameId="depAcnoOpenPrc2"
+	data-serviceCd="depAcnoOpenPrc2.frm"
+	data-serverTime="20230803152535"
+	data-activeMode="local"
+	data-activeEnv="${active.env">
+</script>
+
+
+<body>
+    <!-- header -->
+    <div id="headerWrap">
+        <script>
+        $(document).ready(function(){
+            document.charset="euc-kr";
+            $("#headerWrap").load("../includes/header.html");
+        });
+        </script>
+    </div>
+	<!-- //header -->
+
+    <!--contentsWrap -->
+    <div class="contentsWrap">
+        <!--contents -->
+        <div class="contents">
+            <div class="default-wrap">
+				<div class="tit-wrap">
+					<p class="txt"><strong>등록하실 타기관 OTP 정보</strong>를<br/>입력하세요</p>
+					<p class="s-txt">사용 중인 OTP의 뒷면에서<br/> 일련번호 및 벤더코드를 확인하세요</p>
+				</div>
+                
+                <div class="img-wrap otp">
+                    <img src="/resources/images/common/img-otp.png" alt="주민등록증 예시이미지">
+                </div>
+
+                <!--S: FORM-->
+                <div class="form-all-wrap"><!--D: 폼 감싸주는 form-all-wrap 추가 -->
+
+                    <!--//D: 사용중인 보안매체 셀렉트 박스-->
+                    <div class="form-wrap"><!--D:<div class="form-wrap">에 <div class="input"> 삭제 , 기존 select-wrap 을 form-wrap으로 변경-->
+                        <div class="select-box on disabled" tabindex="1">
+                            <label for="">사용중인 보안매체</label>
+                            <span class="option">mOTP</span>
+                        </div>
+                    </div>
+                    <!--D: 사용중인 보안매체 셀렉트 박스//-->
+
+                    <!--//D: 벤더사 셀렉트 박스-->
+                    <div class="sub-tit-wrap">
+                        <p class="tit">신규 OTP등록</p>
+                    </div>
+                    <div class="form-wrap" id="otpVndrDiv"><!--D:<div class="form-wrap">에 <div class="input"> 삭제 , 기존 select-wrap 을 form-wrap으로 변경-->
+                        <div class="select-box" tabindex="1" onclick="biz.select('OTP 벤더코드','O001200000',vndrCallback)">
+                            <label for="OTP_VNDR_CD2">벤더사</label>
+                            <span class="option" id="otpVndrText">미선택</span>
+                            <input type="hidden" id="OTP_VNDR_CD2" class="validChk">
+                        </div>
+                    </div>
+                    <!--D: 벤더사 셀렉트 박스//-->
+
+                    <!--//D: OTP 일련번호-->
+                    <div class="form-wrap">
+                        <label for="ipt01" class="formlabel essential">OTP 일련번호</label><!--D:essentail 클래스 추가 및 텍스트 변경-->
+                        <div class="input">
+                            <input type="tel" title="OTP 일련번호" id="OTP_SRNO2" class="inp validChk" onkeyup="validChk(); removeErr(this);" name="" value=""  maxlength="12" placeholder="OTP 일련번호를 입력해 주세요" required="">
+                        </div>
+                    </div>
+                    <!--D: OTP 일련번호//-->
+
+                    <!--D: 화면설계서 기준 해당 폼이 없어 삭제 했습니다.-->
+
+                    <!-- <div class="sub-tit-wrap">
+                        <p class="tit">인증 정보 입력</p>
+                    </div>
+
+                    <div class="form-wrap" id="otpVndrDiv">
+                        <div class="select-box" tabindex="1">
+                            <label for="">인증방법</label>
+                            <span class="option" id="">미선택</span>
+                        </div>
+                    </div>
+
+                    <div class="form-wrap" id="otpVndrDiv">
+                        <div class="select-box" tabindex="1">
+                            <label for="">출금계좌</label>
+                            <span class="option" id="">미선택</span>
+                        </div>
+                    </div>
+
+                    <div class="form-wrap password">
+                        <label for="pwd_1" class="formlabel">계좌비밀번호</label>
+                        <div class="input">
+                            <input type="text" title="계좌비밀번호" id="pwd_1" class="inp" name="" value="" placeholder="비밀번호를 입력해주세요" required>
+                            <input type="hidden" id="PWD_1"/>
+                        </div>
+                        <p class="error-txt">계좌 비밀번호를 잘못 입력했어요 (<span>N</span>회)</p>
+                    </div>
+                    <p class="info-txt">
+                        3회 잘못 입력하면 서비스 이용이 중단되고,
+                        영업점을 방문하여 이용제한 해제를 하셔야 해요
+                    </p> -->
+
+                </div>
+                <!--E: FORM-->
+
+            </div>
+        </div>
+        <!-- //contents -->
+        
+        <div class="fixed-btn-wrap">
+			<div class="btn-wrap">
+				<a href="#none" class="btn" id="procBtn" >다음으로</a>
+			</div>
+		</div>
+
+        <!--S:OTP벤터코드-->
+        <div id="lySel2" class="layerpopup layer-up show" style="position: fixed; top: 343px; left: 0px; display: none;"><!-- [D] 클래스 has-button 추가 시 하단 fixed 버튼 있을 시 스타일 노출-->
+            <div class="content-wrap">
+                <div class="pop-header">
+                    <h2 class="pop-title">OTP벤더코드</h2>
+                    <button type="button" name="button" class="btn-layer-close" data-focus="btn-layer-close">닫기</button>
+                </div>
+                <div class="ly-scroll-con ly-select"><!--D: ly-select 버튼 있을 경우 추가 필요-->
+                    <ul class="ly-select-list">
+                        <li><button>001 미래 테크놀로지</button></li><!-- [D] 클래스 active 추가 시 활성화 스타일 노출 -->
+                        <li><button>002 코마스</button></li>
+                        <li><button>003 인터넷시큐리티</button></li>
+                        <li><button>004 바스코</button></li>
+                        <li><button>005 인카드</button></li>
+                    </ul>
+                </div>
+            </div>
+            
+        </div>
+        <!--E:OTP벤터코드-->
+
+    </div>
+    <!-- //contentsWrap -->
+</body>
+</html>
+

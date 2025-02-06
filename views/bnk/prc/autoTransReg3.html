@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>예가람저축은행</title>
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="Content-Script-Type" content="text/javascript">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<meta name="keywords" content="예가람저축은행keywords" />
+<meta name="description" content="예가람저축은행description" />
+<!-- <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0, viewport-fit=cover"> -->
+	<meta name="viewport" content="user-scalable=no,width=375">
+
+<meta name="apple-mobile-web-app-status-bar-style" content="white" />
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta http-equiv="Expires" content="-1">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Cache-Control" content="No-Cache">
+
+<link href="/resources/css/default.css" rel="stylesheet" />
+<link href="/resources/css/renewal.css" rel="stylesheet" />
+
+
+<link href="/resources/css/swiper-bundle.min.css" rel="stylesheet" />
+<link rel="shortcut icon" type="image/x-icon" href="/resources/favicon.ico" />
+<link rel="icon" type="image/x-icon" href="/resources/favicon.ico" />
+
+<script type="text/javascript" src="/resources/js/lib/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="/resources/js/lib/jquery.cookie.js"></script>
+
+<script type="text/javascript" src="/resources/js/lib/swiper-bundle.min.js"></script>
+<script type="text/javascript" src="/resources/js/lib/TweenMax.min.js"></script>
+<script type="text/javascript" src="/resources/js/lib/jquery.animateSprite.min.js"></script>
+<script type="text/javascript" src="/resources/js/lib/default.js?v=20230803152535"></script>
+<script type="text/javascript" src="/resources/js/lib/ui.js?v=20230803152535"></script>
+<script type="text/javascript" src="/resources/js/lib/rolldate.js?v=20230803152535"></script>
+<script type="text/javascript" src="/resources/js/app_common_cont.js?v=20230803152535"></script>
+<script type="text/javascript" src="/resources/js/app_common_auth.js?v=20230803152535"></script>
+<script type="text/javascript" src="/resources/js/app_common_funs.js?v=20230803152535"></script>
+<script type="text/javascript" src="/resources/js/app_common_nsl.js?v=20230803152535"></script>
+<script type="text/javascript" src="/resources/js/app_common_util.js?v=20230803152535"></script>
+<script type="text/javascript" src="/resources/js/biz_common.js?version=20230803152535" id="biz_common" 
+	data-menuId="dep/prc"
+	data-frameId="depAcnoOpenPrc2"
+	data-serviceCd="depAcnoOpenPrc2.frm" 
+	data-serverTime="20230803152535"
+	data-activeMode="local"
+	data-activeEnv="${active.env">
+</script>
+
+
+<body>
+    <!-- header -->
+    <header class="headerWrap">
+        <div class="headerLeft">
+            <!--D: 이전버튼-->
+            <a href="javascript:void(0)" class="btn btnBack"><img src="/resources/images/header/btn_back.png" alt="이전페이지 이동하기"></a>
+        </div>
+        <div class="headerCenter">
+            <h2 class="text"><span>자동이체</span></h2> <!--D: TEXT -->
+        </div>
+        <div class="headerRight">
+            <!--D: 전체메뉴버튼 -->
+            <a href="javascript:void(0)" class="btn btn-menu "><img src="/resources/images/header/btn_menu.png" alt="전체메뉴"></a>
+        </div>
+    </header>
+	<!-- //header -->
+
+    <!--contentsWrap -->
+    <div class="contentsWrap">
+        <!--contents -->
+        <div class="contents">
+            <div class="default-wrap">
+                <div class="tit-wrap">
+                    <p class="txt"><strong>자동이체 등록</strong>을 위해<br/>약관에 동의해 주세요</p><!--[퍼블-1] : strong 태그로 변경 및 위치 이동-->
+                </div>
+                <section class="terms-area" id="validateArea">
+
+                    <div class="terms-wrap level1 chk-all">
+                        <fieldset>
+                            <input type="checkbox" id="allChk01" class="check all"/>
+                            <label for="allChk01"><span>약관에 모두 동의할게요</span></label>
+                        </fieldset>
+                    </div>
+                    <!-- 
+                    약관목록반복
+                    약관상태저장은 본 페이지에서 해야 하므로 / 펑션을 하나 제공
+                    전체동의는 조회 카테고리로 처리 (상품코드.pdf)
+                    -->
+                    
+                    <!-- S: 자동이체 이용약관_자동이체 약관 -->
+                    <div class="terms-wrap level2">
+                        <fieldset>
+                            <input type="checkbox" id="chk02" name="check" value="" class="check"/>
+                            <label for="chk02"><span>[필수] 계좌간 자동이체 약관 </span></label>
+                        </fieldset>
+                    </div>
+                    <!-- S: 자동이체 이용약관_자동이체 약관 -->
+
+
+                    <!-- S: 자동이체 이용약관_자동이체(CMS)약관 -->
+                    <div class="terms-wrap level2">
+                        <fieldset>
+                            <input type="checkbox" id="chk01" name="check" value="" class="check"/>
+                            <label for="chk01"><span>[필수] 개인정보 수집 및 이용 동의 </span></label>
+                        </fieldset>
+                    </div>
+                    <div class="terms-wrap level2">
+                        <fieldset>
+                            <input type="checkbox" id="chk03" name="check" value="" class="check"/>
+                            <label for="chk03"><span>[필수] 개인정보 제3자 제공 동의</span></label>
+                        </fieldset>
+                    </div>
+                    <div class="terms-wrap level2">
+                        <fieldset>
+                            <input type="checkbox" id="chk04" name="check" value="" class="check"/>
+                            <label for="chk04"><span>[필수] 출금이체 동의 및 해지사실 통지안내</span></label>
+                        </fieldset>
+                    </div>
+                    <!-- S: 자동이체 이용약관_자동이체(CMS)약관 -->
+                </section>
+
+                <!-- S: 자동이체 이용약관_자동이체 약관  -->
+                <section class="list-bull">
+                    <div class="border"></div>
+                    <strong>알아두세요</strong>
+                    <ul>
+                        <li>약관 내용을 상세히 확인해 주세요</li>
+                        <li>매월 이체 설정된 일자에 출금되며 당행 계좌 입금 내역은<br/>
+                            이체 일자의 다음 영업일 14시 이후 확인 가능해요</li>
+                    </ul>
+                </section>
+                    <!-- S: 자동이체 이용약관_자동이체 약관 -->
+
+            </div>
+        </div>
+        <!-- //contents -->
+
+        <div class="fixed-btn-wrap">
+            <div class="btn-wrap flexCol">
+                <a href="#none" class="btn disabled" id="procBtn">다음</a>
+                <a href="#none" class="btn txt">그만하기</a>
+            </div>
+        </div>
+
+
+    </div>
+    <!-- //contentsWrap -->
+</body>
+</html>
+

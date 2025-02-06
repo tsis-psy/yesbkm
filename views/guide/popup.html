@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>예가람저축은행</title>
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="Content-Script-Type" content="text/javascript">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<meta name="keywords" content="예가람저축은행keywords" />
+<meta name="description" content="예가람저축은행description" />
+<!-- <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0, viewport-fit=cover"> -->
+<meta name="viewport" content="user-scalable=no,width=375">
+
+<meta name="apple-mobile-web-app-status-bar-style" content="white" />
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta http-equiv="Expires" content="-1">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Cache-Control" content="No-Cache">
+
+<link href="/resources/css/default.css" rel="stylesheet" />
+<link href="/resources/css/renewal.css" rel="stylesheet" />
+<link href="/resources/css/main_renewal.css" rel="stylesheet" />
+
+
+<link href="/resources/css/swiper-bundle.min.css" rel="stylesheet" />
+<link rel="shortcut icon" type="image/x-icon" href="/resources/favicon.ico" />
+<link rel="icon" type="image/x-icon" href="/resources/favicon.ico" />
+
+<script type="text/javascript" src="/resources/js/lib/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="/resources/js/lib/jquery.cookie.js"></script>
+
+<script type="text/javascript" src="/resources/js/lib/swiper-bundle.min.js"></script>
+<script type="text/javascript" src="/resources/js/lib/TweenMax.min.js"></script>
+<script type="text/javascript" src="/resources/js/lib/jquery.animateSprite.min.js"></script>
+<script type="text/javascript" src="/resources/js/lib/default.js?v=20230803152535"></script>
+<script type="text/javascript" src="/resources/js/lib/ui.js"></script>
+<script type="text/javascript" src="/resources/js/lib/rolldate.js?v=20230803152535"></script>
+<script type="text/javascript" src="/resources/js/app_common_cont.js?v=20230803152535"></script>
+<script type="text/javascript" src="/resources/js/app_common_auth.js?v=20230803152535"></script>
+<script type="text/javascript" src="/resources/js/app_common_funs.js?v=20230803152535"></script>
+<script type="text/javascript" src="/resources/js/app_common_nsl.js?v=20230803152535"></script>
+<script type="text/javascript" src="/resources/js/app_common_util.js?v=20230803152535"></script>
+<script type="text/javascript" src="/resources/js/biz_common.js?version=20230803152535" id="biz_common" 
+	data-menuId="dep/prc"
+	data-frameId="depAcnoOpenPrc2"
+	data-serviceCd="depAcnoOpenPrc2.frm" 
+	data-serverTime="20230803152535"
+	data-activeMode="local"
+	data-activeEnv="${active.env">
+</script>
+<style>
+    .default-wrap h3.tit-h3 {  display:block; margin:20px 0; font-size:20px; }
+    .default-wrap h4.tit-h4 {  display:block; margin:20px 0; font-size:16px; }
+    .bg-txt { background:#DDDDDD; padding:20px; font-size:16px; }
+</style>
+<script>
+    // $(window).load(function(){
+    //     var container = $('.layer-up');
+    //     var fixedBtnWrap = container.find('.fixed-btn-wrap:visible');
+    //     var fixedBtnWrapTxt = fixedBtnWrap.find('.btn.txt');
+
+    //     if (!fixedBtnWrapTxt) {
+    //         container.css('padding-bottom','90px');
+    //     }else {
+    //         container.css('padding-bottom','130px');
+    //     }
+    // });
+</script>
+<body>
+    <!-- header -->
+    <div id="headerWrap">
+        <script>
+        $(document).ready(function(){
+            document.charset="euc-kr";
+            $("#headerWrap").load("../includes/header.html");
+        });
+        </script>
+    </div>
+	<!-- //header -->
+
+    <!-- contentsWrap -->
+    <div class="contentsWrap">
+        <!--contents -->
+        <div class="contents">
+            <div class="default-wrap">
+
+                <h3 class="tit-h3">팝업/Alert</h3>
+
+                <h4 class="tit-h4">• main 이벤트 팝업 (하단 팝업)</h4>
+                <div class="btn-cont-wrap">
+                    <a href="javascript:void(0);" class="btn btn-primary" onclick="openPopupUp('event-lyPop');">버튼명</a>
+                </div>
+
+                <h4 class="tit-h4">• main 이벤트 팝업 - swiper (하단 팝업) / ( <b class="point-red">text 클래스</b> : 이미지만 들어가는 경우는 삭제 , 텍스트가 들어가는 경우는 추가 필요)</h4>
+                <div class="btn-cont-wrap">
+                    <a href="javascript:void(0);" class="btn btn-primary" onclick="openPopupUp('event-lyPop-swiper');">버튼명</a>
+                </div>
+
+                <h4 class="tit-h4">• main 이벤트 풀팝업</h4>
+                <div class="btn-cont-wrap">
+                    <a href="javascript:void(0);" class="btn btn-primary" onclick="openPopupUp('event-lyPullPop');">버튼명</a>
+                </div>
+
+                <h4 class="tit-h4">• alert ( openPopup )</h4>
+                <div class="btn-cont-wrap">
+                    <a href="javascript:void(0);" class="btn btn-primary" onclick="openPopup('lyAlert1');">버튼명</a>
+                </div>
+
+                <h4 class="tit-h4">• 팝업 버튼 없을 경우(팝업) ( openPopupUp ) </h4>
+                <div class="btn-cont-wrap">
+                    <a href="javascript:void(0);" class="btn btn-primary" onclick="openPopupUp('lyPop1');">버튼명</a>
+                </div>
+
+                <h4 class="tit-h4">• 팝업 버튼 있을 경우( has-button 클래스 : 버튼 추가)(팝업)</h4>
+                <div class="btn-cont-wrap">
+                    <a href="javascript:void(0);" class="btn btn-primary" onclick="openPopupUp('lyPop2');">버튼명</a>
+                </div>
+
+                <h4 class="tit-h4">• 팝업 버튼 있을 경우(has-button 클래스 추가) / (type-high 클래스 : 높이 추가)(팝업)</h4>
+                <div class="btn-cont-wrap">
+                    <a href="javascript:void(0);" class="btn btn-primary" onclick="openPopupUp('lyPop3');">버튼명</a>
+                </div>
+
+                <h4 class="tit-h4">• 셀렉트 (팝업)</h4>
+                <div class="btn-cont-wrap">
+                    <a href="javascript:void(0);" class="btn btn-primary" onclick="openPopupUp('lySel1');">버튼명</a>
+                </div>
+
+                <h4 class="tit-h4">• 셀렉트 -버튼 있을 경우(팝업)</h4>
+                <div class="btn-cont-wrap">
+                    <a href="javascript:void(0);" class="btn btn-primary" onclick="openPopupUp('lySel2');">버튼명</a>
+                </div>
+
+                <h4 class="tit-h4">• 셀렉트 -버튼 있을 경우/ 다건 선택(팝업)</h4>
+                <div class="btn-cont-wrap">
+                    <a href="javascript:void(0);" class="btn btn-primary" onclick="openPopupUp('lySel3');">버튼명</a>
+                </div>
+
+                <h4 class="tit-h4">• 약관 풀팝업(팝업)</h4>
+                <div class="btn-cont-wrap">
+                    <a href="javascript:void(0);" class="btn btn-primary" onclick="openPopupUp('lyTermsPop');">버튼명</a>
+                </div>
+
+                <h4 class="tit-h4">• 풀팝업(팝업)</h4>
+                <div class="btn-cont-wrap">
+                    <a href="javascript:void(0);" class="btn btn-primary" onclick="openPopupUp('lypullPop');">버튼명</a>
+                </div>
+                
+            </div>
+        </div>
+        <!-- //contents -->
+
+        
+        <!--S: 이벤트 팝업-->
+        <div id="event-lyPop" class="layerpopup layer-up show">
+			<div class="content-wrap">
+				<div class="pop-header">
+					<h2 class="pop-title">이벤트 타이틀</h2>
+				</div>
+				<div class="pop-con-wrap">
+					<div class="default-wrap">
+						<div class="pop-img">
+							<img src="/resources/images/common/event-pop-img.png" alt="이벤트 이미지">
+						</div>
+					</div>
+				</div>
+				<div class="popup-close">
+					<button type="button" name="button" class="pop-out-btn" onclick="closePopup('event-lyPop')">7일
+						그만보기</button>
+					<button type="button" name="button" class="pop-close-btn"
+						onclick="closePopup('event-lyPop')">닫기</button>
+				</div>
+			</div>
+		</div>
+        <!--E: 이벤트 팝업-->
+
+        <!--S: 이벤트 스와이퍼 팝업 -->
+		<div id="event-lyPop-swiper" class="layerpopup layer-up show">
+			<div class="content-wrap event-wrap"><!--D: evnet-wrap : swiper 사용 / pop-header 높이 줄임-->
+				<div class="pop-header">
+					<h2 class="pop-title"></h2>
+				</div>
+				<div class="pop-con-wrap">
+					<div class="default-wrap">
+						<div class="pop-img"><!--D:  text 클래스 : 관리자 - 텍스트 들어갈 경우 사용--><!--D: evnet-wrap 클래스 : pop-header 텍스트 들어갈 경우 이 위치로 이동-->
+							<div class="event-img swiper">
+								<div class="swiper-wrapper">
+									<div class="swiper-slide">
+										<a href="javascript:void(0);">
+											<div class="swiper-img">
+												<img src="/resources/images/common/event-pop-img.png" alt="이벤트 이미지">
+											</div>
+										</a>
+									</div>
+									<div class="swiper-slide">
+                                        <a href="javascript:void(0);">
+											<div class="swiper-img">
+												<img src="/resources/images/common/event-pop-img.png" alt="이벤트 이미지">
+											</div>
+										</a>
+											<!-- 텍스트 텍스트
+											<br/>
+											<br/>
+											<br/>
+											<br/>
+											<br/>
+											<br/>
+											<br/>
+											<br/>
+											<br/>
+											<br/>
+											<br/>
+											텍스트 텍스트
+											<br/>
+											<br/>
+											<br/>
+											<br/>
+											<br/>
+											<br/>
+											<br/>
+											<br/>
+											<br/>
+											<br/>
+											<br/>
+											텍스트 텍스트
+											<br/>
+											<br/>
+											<br/>
+											<br/>
+											<br/>
+											<br/>
+											<br/>
+											<br/>
+											<br/>
+											<br/>
+											<br/>
+											텍스트 텍스트 -->
+									</div>
+									<div class="swiper-slide">
+										<a href="javascript:void(0);">
+											<div class="swiper-img">
+												<img src="/resources/images/common/event-pop-img.png" alt="이벤트 이미지">
+											</div>
+										</a>
+									</div>
+								</div>
+							</div>
+							<div class="swiper-pagination"></div>
+						</div>
+						<script>
+							$(document).ready(function(){
+		
+							// 하단배너는 고정
+							var newsSlider = new Swiper('.event-img.swiper', {
+								slidesPerView: 1,
+								spaceBetween : 20,
+								pagination : {
+									el : '.swiper-pagination',
+									// clickable : true,
+								},
+								observer:true,
+								observeParents:true,
+								// autoplay: {
+								// 	delay: 3000,
+								// 	disableOnInteraction: false,
+								// },
+								loop : false,
+								// loopedSlides: 1,
+								centeredSlides: true,
+								// initialSlide: 0,
+								//   slidesPerGroup: 1,
+								//   roundLengths: true,
+								loopAdditionalSlides: 1,
+							});
+		
+							})
+						</script>
+					</div>
+				</div>
+				<div class="popup-close">
+					<button type="button" name="button" class="pop-out-btn" onclick="closePopup('event-lyPop-swiper')">7일 그만보기</button>
+					<button type="button" name="button" class="pop-close-btn" onclick="closePopup('event-lyPop-swiper')">닫기</button>
+				</div>
+			</div>
+		</div>
+		<!--E: 이벤트 스와이퍼 팝업 -->
+
+
+        <!--S: 이벤트 풀팝업-->
+        <div id="event-lyPullPop" class="layerpopup laypop-all on" tabindex="0" data-focus-prev="btn-menu-close">
+			<div class="pop-header">
+				<h2 class="pop-title">이벤트 타이틀</h2>
+			</div>
+			<div class="pop-con-wrap event-pull-wrap">
+				<div class="default-wrap ">
+					<div class="pop-img">
+						<img src="/resources/images/common/event-pop-img-pull.png" alt="이벤트 이미지">
+					</div>
+				</div>
+			</div>
+			<div class="popup-close">
+				<button type="button" name="button" class="pop-out-btn" onclick="closePopup('event-lyPullPop')">7일
+					그만보기</button>
+				<button type="button" name="button" class="pop-close-btn"
+					onclick="closePopup('event-lyPullPop')">닫기</button>
+			</div>
+		</div>
+        <!--E: 이벤트 팝풀업-->
+
+        <!--S: alert-->
+        <div id="lyAlert1" class="layerpopup type-alert">
+            <div class="content-wrap">
+                
+                <div class="pop-con-wrap">
+                    <span class="pop-con">주소를 입력해주세요</span>
+                </div>
+                <div class="btn-wrap">
+                    <a href="javascript:void(0);" class="btn btn-info" onclick="">버튼명</a>
+                    <a href="javascript:void(0);" class="btn close">확인</a>
+                </div>
+            </div>
+        </div>
+        <!--E: alert-->
+
+        <!--S: 팝업 버튼 없을 경우-->
+        <div id="lyPop1" class="layerpopup layer-up" ><!-- [D] has-button 클래스 : 하단버튼 있을 경우 사용 -->
+            <div class="content-wrap">
+                <div class="pop-header">
+                    <h2 class="pop-title">팝업 버튼</h2>
+                    <button type="button" name="button" class="btn-layer-close" data-focus="btn-layer-close">닫기</button>
+                </div>
+                <div class="ly-scroll-con">
+                    <div class="txtbox-wrap">
+                        <p>
+                            1111111<br/>
+                            1111111<br/>
+                            1111111<br/>
+                            1111111<br/>
+                            1111111<br/>
+                            1111111<br/>
+                            1111111<br/>
+                            1111111<br/>
+                            1111111<br/>
+                            1111111<br/>
+                            1111111<br/>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--E: 팝업 버튼 없을 경우-->
+
+        <!--S: 팝업 버튼 있을 경우-->
+        <div id="lyPop2" class="layerpopup layer-up has-button" ><!-- [D] has-button 클래스 : 하단버튼 있을 경우 사용 -->
+            <div class="content-wrap">
+                <div class="pop-header">
+                    <h2 class="pop-title">팝업 버튼</h2>
+                    <button type="button" name="button" class="btn-layer-close" data-focus="btn-layer-close">닫기</button>
+                </div>
+                <div class="ly-scroll-con">
+                    <div class="txtbox-wrap"><!--[퍼블-1] txtbox-wrap 구조 추가-->
+                        <p>rkrkrkrkrkrkr<br/>
+                        rkrkrkrkrkrrk<br/>
+                        rkrkrkrkrkrkrrkrkr<br/>
+                        rkrkrkrkrkrkr<br/>
+                        </p>
+                    </div>
+                </div>
+                    <!--D: fixed-btn-wrap 버튼은 content-wrap 밖으로 위치-->
+                <div class="fixed-btn-wrap">
+                    <div class="btn-wrap flexCol">
+                        <a href="javascript:void(0);" class="btn close">확인</a>
+                        <a href="javascript:void(0);" class="btn txt">버튼명</a>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+        <!--E: 팝업 버튼 있을 경우-->
+
+        <!--S: 팝업 버튼 있을 경우 - 높이 추가-->
+        <div id="lyPop3" class="layerpopup layer-up has-button" ><!-- [D] has-button 클래스 : 하단버튼 있을 경우 사용 -->
+            <div class="content-wrap">
+                <div class="pop-header">
+                    <h2 class="pop-title">팝업 버튼</h2>
+                    <button type="button" name="button" class="btn-layer-close" data-focus="btn-layer-close">닫기</button>
+                </div>
+                <div class="ly-scroll-con type-high">
+                    <div class="txtbox-wrap"><!--[퍼블-1] txtbox-wrap 구조 추가-->
+                        <p>rkrkrkrkrkrkr<br/>
+                        rkrkrkrkrkrrk<br/>
+                        rkrkrkrkrkrkrrkrkr<br/>
+                        rkrkrkrkrkrkr<br/>
+                        </p>
+                    </div>
+                </div>
+                <div class="fixed-btn-wrap" style="display:block;">
+                    <div class="btn-wrap flexCol">
+                        <a href="javascript:void(0);" class="btn" onclick="closePopup('lyPop3');">확인</a>
+                        <a href="javascript:void(0);" class="btn txt">버튼명</a>
+                    </div>
+                </div>
+                <div class="fixed-btn-wrap" style="display:none;">
+                    <div class="btn-wrap flexCol">
+                        <a href="javascript:void(0);" class="btn" onclick="closePopup('lyPop3');">확인</a>
+                        <a href="javascript:void(0);" class="btn txt">버튼명</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--E: 팝업 버튼 있을 경우 - 높이 추가-->
+
+        <!--S: 셀렉트 팝업-->
+        <div id="lySel1" class="layerpopup layer-up show">
+            <div class="content-wrap">
+                <div class="pop-header">
+                    <h2 class="pop-title">등록구분</h2>
+                    <button type="button" name="button" class="btn-layer-close" data-focus="btn-layer-close">닫기</button>
+                </div>
+                <div class="ly-scroll-con ly-select">
+                    <ul class="ly-select-list">
+                        <li><button>주민등록번호</button></li><!-- [D] 클래스 active 추가 시 활성화 스타일 노출 -->
+                        <li><button>법인(기업) 사업자번호</button></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!--S: 셀렉트 팝업-->
+
+        <!--S: 셀렉트 팝업 - 팝업이 있을 경우-->
+        <div id="lySel2" class="layerpopup layer-up has-button show"><!-- [D] 클래스 has-button 추가 시 하단 fixed 버튼 있을 시 스타일 노출-->
+            <div class="content-wrap">
+                <div class="pop-header">
+                    <h2 class="pop-title">인증서 선택</h2>
+                    <button type="button" name="button" class="btn-layer-close" data-focus="btn-layer-close">닫기</button>
+                </div>
+                <div class="ly-scroll-con ly-select"><!--D: ly-select 버튼 있을 경우 추가 필요-->
+                    <div class="txtbox-wrap">
+                        <p class="txt">자동이체 등록에 사용할 인증서를 선택하세요</p>
+                    </div>
+                    <ul class="ly-select-list">
+                        <li><button>주민등록번호</button></li><!-- [D] 클래스 active 추가 시 활성화 스타일 노출 -->
+                        <li><button>법인(기업) 사업자번호</button></li>
+                    </ul>
+                </div>
+                <div class="fixed-btn-wrap">
+                    <div class="btn-wrap">
+                        <a href="javascript:void(0);" class="btn">계속하기</a>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+        <!--S: 셀렉트 팝업 - 팝업이 있을 경우-->
+
+        <!-- s: 약관풀팝업 -->
+        <div id="lyTermsPop" class="layerpopup laypop-all agree-layer" style="display:none;">
+            <!-- s: contents -->
+            <div class="pop-header">
+                <div class="left-area"><span>약관상세</span></div>
+                <h2 class="pop-title pop-arrorw-area">
+                    <button value="prev" class="prev"><span class="blind">이전</span></button>
+                    <div class="page-num"><span>1</span>/3</div>
+                    <button value="next" class="next"><span class="blind">다음</span></button>
+                </h2>
+                <button type="button" name="button" class="btn-layer-close" onclick="closePopup('lyTermsPop')">닫기</button>
+            </div>
+            
+            <div class="pop-con-wrap">
+                <div class="default-wrap mb0 bg">
+                    <div class="info-wrap">
+                        PDF솔루션 들어갈 예정
+                        <iframe src="/resources/terms/P00001.pdf" style="width:100%; height:100%;" ></iframe>
+                    </div>
+                    <!-- <div class="plus-minus-wrap">
+                        <button type="button"><span>+</span></button>
+                        <button type="button"><span>-</span></button>
+                    </div> -->
+                </div>
+            </div>
+
+            <div class="fixed-btn-wrap">
+                <div class="btn-wrap">
+                    <a href="#none" class="btn" onclick="closePopup('lyTermsPop')">동의</a>
+                </div>
+            </div>
+        </div>
+        <!-- //e: 약관풀팝업 -->
+
+        <!-- s: 풀팝업 -->
+        <div id="lypullPop" class="layerpopup laypop-all show">
+            <!-- s: contents -->
+            <div class="pop-header">
+                <h2 class="pop-title">풀팝업</h2>
+                <button type="button" name="button" class="btn-layer-close" onclick="closePopup('lypullPop')">닫기</button>
+            </div>
+            
+            <div class="pop-con-wrap" style="padding-bottom: 93px;">
+                <div class="default-wrap">
+
+                    <section class="result-area ing">
+                        <p class="tit"><strong>신청하신 대출이<br/>심사 중이세요</strong></p>
+                        <div class="txtbox-wrap">
+                            <p>상담원이 연락 드릴 예정이에요</p>
+                        </div>
+                        <div class="txt-list-wrap">
+                            <div class="txt-detail-area">
+                                <div class="txt-detail-tit">
+                                    <strong>XX론</strong>
+                                </div>
+                                <ul class="txt-list">
+                                    <li>
+                                        <span class="tit">신청일시</span>
+                                        <span class="txt">YYYY.MM.DD hh:ss</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </section><section class="result-area ing">
+                        <p class="tit"><strong>신청하신 대출이<br/>심사 중이세요</strong></p>
+                        <div class="txtbox-wrap">
+                            <p>상담원이 연락 드릴 예정이에요</p>
+                        </div>
+                        <div class="txt-list-wrap">
+                            <div class="txt-detail-area">
+                                <div class="txt-detail-tit">
+                                    <strong>XX론</strong>
+                                </div>
+                                <ul class="txt-list">
+                                    <li>
+                                        <span class="tit">신청일시</span>
+                                        <span class="txt">YYYY.MM.DD hh:ss</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </section>
+
+                </div>
+            </div>
+
+            <div id="fixedBtn" class="fixed-btn-wrap">
+                <div class="btn-wrap flexCol">
+                    <a href="#none" id="lypullPopBtnYes" class="btn" onclick="closePopup('lypullPop')" style="display:none;">알겠어요</a>
+                    <a href="#none" id="lypullPopBtnConfirm" class="btn" onclick="closePopup('lypullPop')">확인했어요</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- <script>
+            $('#lypullPop:visible').scroll(function(){
+                var scrollTop = $(this).scrollTop();
+                var innerHeight = $(this).innerHeight();
+                var scrollHeight = $(this).prop('scrollHeight');
+
+                if (scrollTop + innerHeight >= scrollHeight){
+                    $('#lypullPopBtnYes').hide();
+                    $('#lypullPopBtnConfirm').show();
+                    
+                }else{
+                    $('#lypullPopBtnYes').show();
+                    $('#lypullPopBtnConfirm').hide();
+                }
+            })
+        </script> -->
+        <!-- //e: 풀팝업 -->
+
+
+        <!--[퍼블-2] : 240716 - 결재 팝업 - 다건 선택 추가-->
+        <div id="lySel3" class="layerpopup layer-up  has-button">
+            <div class="content-wrap">
+                <div class="pop-header">
+                    <h2 class="pop-title">결재</h2>
+                    <button type="button" name="button" class="btn-layer-close" data-focus="btn-layer-close">닫기</button>
+                </div>
+                <div class="ly-scroll-con ly-select">
+                    <ul class="ly-check-area">
+                        <li class="check-box">
+                            <input type="checkbox" name="check" id="check01" value="">
+                            <label for="check01">보험료납부</label>
+                        </li>
+                        <li class="check-box">
+                            <input type="checkbox" name="check" id="check02" value="">
+                            <label for="check02">공과금납부</label>
+                        </li>
+                        <li class="check-box">
+                            <input type="checkbox" name="check" id="check03" value="">
+                            <label for="check03">카드대금</label>
+                        </li>
+                    </ul>
+                </div>
+                <div class="fixed-btn-wrap">
+                    <div class="btn-wrap">
+                        <a href="#none" class="btn" onclick="closePopup('lySel3')">확인</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--[퍼블-2] : 240716 - 결재 팝업 - 다건 선택 추가-->
+
+    </div>
+    <!-- //contentsWrap -->
+
+</body>
+</html>
+

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>예가람저축은행</title>
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="Content-Script-Type" content="text/javascript">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<meta name="keywords" content="예가람저축은행keywords" />
+<meta name="description" content="예가람저축은행description" />
+<!-- <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0, viewport-fit=cover"> -->
+	<meta name="viewport" content="user-scalable=no,width=375">
+
+<meta name="apple-mobile-web-app-status-bar-style" content="white" />
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta http-equiv="Expires" content="-1">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Cache-Control" content="No-Cache">
+
+<link href="/resources/css/default.css" rel="stylesheet" />
+<link href="/resources/css/renewal.css" rel="stylesheet" />
+
+
+<link href="/resources/css/swiper-bundle.min.css" rel="stylesheet" />
+<link rel="shortcut icon" type="image/x-icon" href="/resources/favicon.ico" />
+<link rel="icon" type="image/x-icon" href="/resources/favicon.ico" />
+
+<script type="text/javascript" src="/resources/js/lib/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="/resources/js/lib/jquery.cookie.js"></script>
+
+<script type="text/javascript" src="/resources/js/lib/swiper-bundle.min.js"></script>
+<script type="text/javascript" src="/resources/js/lib/TweenMax.min.js"></script>
+<script type="text/javascript" src="/resources/js/lib/jquery.animateSprite.min.js"></script>
+<script type="text/javascript" src="/resources/js/lib/default.js?v=20230803152535"></script>
+<script type="text/javascript" src="/resources/js/lib/ui.js?v=20230803152535"></script>
+<script type="text/javascript" src="/resources/js/lib/rolldate.js?v=20230803152535"></script>
+<script type="text/javascript" src="/resources/js/app_common_cont.js?v=20230803152535"></script>
+<script type="text/javascript" src="/resources/js/app_common_auth.js?v=20230803152535"></script>
+<script type="text/javascript" src="/resources/js/app_common_funs.js?v=20230803152535"></script>
+<script type="text/javascript" src="/resources/js/app_common_nsl.js?v=20230803152535"></script>
+<script type="text/javascript" src="/resources/js/app_common_util.js?v=20230803152535"></script>
+<script type="text/javascript" src="/resources/js/biz_common.js?version=20230803152535" id="biz_common" 
+	data-menuId="dep/prc"
+	data-frameId="depAcnoOpenPrc2"
+	data-serviceCd="depAcnoOpenPrc2.frm" 
+	data-serverTime="20230803152535"
+	data-activeMode="local"
+	data-activeEnv="${active.env">
+</script>
+
+
+<body>
+    <!-- header -->
+    <header class="headerWrap">
+        <div class="headerLeft">
+        </div>
+        <div class="headerCenter">
+            <h2 class="text"><span>입금지정계좌관리</span></h2> <!--D: TEXT -->
+        </div>
+        <div class="headerRight">
+            <a href="javascript:void(0)" class="btn btn-menu"><img src="/resources/images/header/btn_menu.png" alt="전체메뉴"></a>  <!--D: 전체메뉴버튼 -->
+        </div>
+    </header>
+	<!-- //header -->
+
+    <!--contentsWrap -->
+    <div class="contentsWrap">
+        <!-- s:contents -->
+            <div class="contents">
+                <div class="default-wrap">
+                    <!-- D : 변경 숨김, 표시 영역  div 대신 sectioin으로 확인  -->
+                    <!--s : 즉시입금지정계좌 등록시  -->
+                    <section class="result-area checking" style="display:block;">
+                        <p class="tit"><strong>즉시입금지정계좌가<br>등록됐어요</strong></p>
+                        <div class="txtbox-wrap">
+                            <a href="javascript:void(0);" class="btn-txt" onclick="">즉시입금지정계좌목록</a><!--[퍼블-2] p태그 삭제, 클래스 추가, 텍스트 변경-->
+                        </div>
+                    </section>
+                    <!--e : 즉시입금지정계좌 등록시  -->
+                    <!-- s : 즉시입금지정계좌 등록 중 오류시 -->
+                    <section class="result-area exclamation">
+                        <p class="tit"><strong>즉시입금지정계좌<br>등록 중 오류가 발생했어요</strong></p>
+                        <div class="txtbox-wrap">
+                            <p>잠시 후 다시 시도해주세요</p>
+                        </div>
+                    </section>
+                    <!-- e : 즉시입금지정계좌 등록 중 오류시 -->
+    
+                    <!-- s : 즉시입금지정계좌 해지시 -->
+                    <section class="result-area checking">
+                        <p class="tit"><strong>즉시입금지정계좌를<br>해지했어요</strong></p>
+                        <div class="txtbox-wrap">
+                            <a href="javascript:void(0);" class="btn-txt" onclick="">즉시입금지정계좌목록</a><!--[퍼블-2] p태그 삭제, 클래스 추가, 텍스트 변경-->
+                        </div>
+                    </section>
+                    <!-- e :  즉시입금지정계좌 해지시 -->
+    
+                    <!-- s : 즉시입금지정계좌 해지 중 오류시 -->
+                    <section class="result-area exclamation">
+                        <p class="tit"><strong>즉시입금지정계좌 해지 중<br>오류가 발생했어요</strong></p>
+                        <div class="txtbox-wrap">
+                            <p>잠시 후 다시 시도해주세요</p>
+                        </div>
+                    </section>
+                    <!-- e : 즉시입금지정계좌 해지 중 오류시 -->
+                </div>
+    
+            </div>
+            <!-- //e:contents -->
+    
+            <!-- s: btn-wrap -->
+            <div class="fixed-btn-wrap">
+                <div class="btn-wrap">
+                    <a href="javascript:void(0);" class="btn" onclick="PageFunc.cancel();">홈으로</a>
+                </div>
+            </div>
+            <!-- e: btn-wrap -->
+    
+        </div>
+    <!-- //contentsWrap -->
+</body>
+</html>
+

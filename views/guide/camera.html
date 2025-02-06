@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>예가람저축은행</title>
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="Content-Script-Type" content="text/javascript">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<meta name="keywords" content="예가람저축은행keywords" />
+<meta name="description" content="예가람저축은행description" />
+<!-- <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0, viewport-fit=cover"> -->
+	<meta name="viewport" content="user-scalable=no,width=375">
+
+<meta name="apple-mobile-web-app-status-bar-style" content="white" />
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta http-equiv="Expires" content="-1">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Cache-Control" content="No-Cache">
+
+<link href="/resources/css/default.css" rel="stylesheet" />
+<link href="/resources/css/renewal.css" rel="stylesheet" />
+
+
+<link href="/resources/css/swiper-bundle.min.css" rel="stylesheet" />
+<link rel="shortcut icon" type="image/x-icon" href="/resources/favicon.ico" />
+<link rel="icon" type="image/x-icon" href="/resources/favicon.ico" />
+
+<script type="text/javascript" src="/resources/js/lib/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="/resources/js/lib/jquery.cookie.js"></script>
+
+<script type="text/javascript" src="/resources/js/lib/swiper-bundle.min.js"></script>
+<script type="text/javascript" src="/resources/js/lib/TweenMax.min.js"></script>
+<script type="text/javascript" src="/resources/js/lib/jquery.animateSprite.min.js"></script>
+<script type="text/javascript" src="/resources/js/lib/default.js?v=20230803152535"></script>
+<script type="text/javascript" src="/resources/js/lib/ui.js?v=20230803152535"></script>
+<script type="text/javascript" src="/resources/js/lib/rolldate.js?v=20230803152535"></script>
+<script type="text/javascript" src="/resources/js/app_common_cont.js?v=20230803152535"></script>
+<script type="text/javascript" src="/resources/js/app_common_auth.js?v=20230803152535"></script>
+<script type="text/javascript" src="/resources/js/app_common_funs.js?v=20230803152535"></script>
+<script type="text/javascript" src="/resources/js/app_common_nsl.js?v=20230803152535"></script>
+<script type="text/javascript" src="/resources/js/app_common_util.js?v=20230803152535"></script>
+<script type="text/javascript" src="/resources/js/biz_common.js?version=20230803152535" id="biz_common"
+	data-menuId="dep/prc"
+	data-frameId="depAcnoOpenPrc2"
+	data-serviceCd="depAcnoOpenPrc2.frm"
+	data-serverTime="20230803152535"
+	data-activeMode="local"
+	data-activeEnv="${active.env">
+</script>
+</head>
+
+<body>
+    <!-- header -->
+    <div id="headerWrap">
+        <script>
+        $(document).ready(function(){
+            document.charset="euc-kr";
+            $("#headerWrap").load("../includes/header.html");
+        });
+        </script>
+    </div>
+	<!-- //header -->
+
+    <!--contentsWrap -->
+    <div class="contentsWrap">
+        <!--contents -->
+        <div class="contents">
+            <div class="default-wrap">
+                
+
+            </div>
+        </div>
+        <!-- //contents -->
+
+        <div class="pop-con-wrap" id="initDiv" style="display: none;">
+            <div class="default-wrap"><!-- [퍼블] 클래스 변경 -->
+               <div class="tit-wrap">
+                    <p class="txt"><b>사진으로 제출하실</b> <b>문서</b>를<br/>준비해 주세요</p>
+                </div>
+                
+                <dl class="list-bull ico">
+                    <dt><b>촬영 전 확인해 주세요</b></dt>
+                    <dd>타인의 문서 촬영은 법적 처벌을 받을 수 있어요</dd>
+                </dl>
+            </div>
+        </div>
+
+        <div class="pop-con-wrap" id="cameraDiv" style="display:none;">
+            <div class="default-wrap">
+                <div class="tit-wrap">
+                    <p class="txt"><strong>신분증</strong>을<br/><strong>기준선</strong> 안에 맞춰주세요</p>
+                </div>
+                <div class="imgbox-wrap ocr-wrap type-high"><!-- 2023-07-19 클래스 type-high 추가시 카메라 영역 길쭉한 case 노출, mb40 삭제 -->
+                    <div id="camera-area">
+                        <div class="idcard-div">
+                            <div class="idcard-cam-cont mt10">
+                                <div class="img-line-wrap camera-area-body">
+                                    <img src="/resources/images/common/cam_line.png" alt="" id="capture-guide" />
+                                    <canvas class="camera-area-body-canvas"></canvas>
+                                    <video class="camera-area-body-video" playsinline autoplay></video>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <canvas class="extract-image"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="pop-con-wrap" id="resultDiv" style="display:none;">
+            <div class="default-wrap mt20">
+                <div class="tit-wrap">
+                    <p class="txt" id="ocrResultMessage"><b>촬영된 사진을 </b>확인해주세요 </p>
+                </div>
+                <!-- D: 2023-06-14, 신분증이미지 구조변경 -->
+                <div class="imgbox-wrap ocr-wrap type-high">
+                    <img id="resultImg" src=""/>
+                </div>
+                
+                <div class="btn-cont-wrap btn-add mt20" id="retryCameraBtn" style="display: none;">
+                    <a href="#none" class="btn" >다시촬영 </a>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- s: 풀팝업 -->
+        <div id="lypullPop" class="layerpopup laypop-all" style="display:none;">
+            <!-- s: contents -->
+            <div class="pop-header">
+                <h2 class="pop-title">신분증 촬영</h2>
+                <button type="button" name="button" class="btn-layer-close" onclick="closePopup('lypullPop')">닫기</button>
+            </div>
+            
+            <div class="pop-con-wrap">
+                <div class="default-wrap">
+                    <div class="tit-wrap">
+                        <p class="txt"><strong>신분증</strong>을<br/><strong>기준선</strong> 안에 맞춰주세요</p>
+                    </div>
+                    <div class="imgbox-wrap ocr-wrap"><!-- 클래스 type-high 추가시 카메라 영역 길쭉한 case 노출 -->
+                        <div id="camera-area">
+                            <div class="idcard-div">
+                                <div class="idcard-cam-cont mt10">
+                                    <div class="img-line-wrap camera-area-body">
+                                        <img src="/resources/images/common/cam_line.png" alt="" id="capture-guide" />
+                                        <canvas class="camera-area-body-canvas"></canvas>
+                                        <video class="camera-area-body-video" playsinline autoplay></video>
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <canvas class="extract-image"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="list-bull">
+                        <div class="border"></div>
+                        <strong>촬영 TIP</strong>
+                        <ul>
+                            <li>매달 정해진 날짜에 납입하시는 정액식 정기적금에 한하여 납입일을 변경하실 수 있어요</li>
+                            <li>자동이체 또는 CMS설정 계좌의 경우 정상적으로 이체되지 않아 연체가 발생될 수 있으니 창구로 내방하시어 처리해 주세요</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="fixed-btn-wrap">
+                <div class="btn-wrap flexCol">
+                    <a href="#none" class="btn" onclick="closePopup('lypullPop')">확인</a>
+                    <a href="#none" class="btn txt">그만하기</a>
+                </div>
+            </div>
+            
+
+        </div>
+        <!-- //e: 풀팝업 -->
+
+    </div>
+    <!-- //contentsWrap -->
+</body>
+</html>
+

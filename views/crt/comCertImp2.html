@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>예가람저축은행</title>
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="Content-Script-Type" content="text/javascript">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<meta name="keywords" content="예가람저축은행keywords" />
+<meta name="description" content="예가람저축은행description" />
+<!-- <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0, viewport-fit=cover"> -->
+	<meta name="viewport" content="user-scalable=no,width=375">
+
+<meta name="apple-mobile-web-app-status-bar-style" content="white" />
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta http-equiv="Expires" content="-1">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Cache-Control" content="No-Cache">
+
+<link href="/resources/css/default.css" rel="stylesheet" />
+<link href="/resources/css/renewal.css" rel="stylesheet" />
+
+
+<link href="/resources/css/swiper-bundle.min.css" rel="stylesheet" />
+<link rel="shortcut icon" type="image/x-icon" href="/resources/favicon.ico" />
+<link rel="icon" type="image/x-icon" href="/resources/favicon.ico" />
+
+<script type="text/javascript" src="/resources/js/lib/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="/resources/js/lib/jquery.cookie.js"></script>
+
+<script type="text/javascript" src="/resources/js/lib/swiper-bundle.min.js"></script>
+<script type="text/javascript" src="/resources/js/lib/TweenMax.min.js"></script>
+<script type="text/javascript" src="/resources/js/lib/jquery.animateSprite.min.js"></script>
+<script type="text/javascript" src="/resources/js/lib/default.js?v=20230803152535"></script>
+<script type="text/javascript" src="/resources/js/lib/ui.js?v=20230803152535"></script>
+<script type="text/javascript" src="/resources/js/lib/rolldate.js?v=20230803152535"></script>
+<script type="text/javascript" src="/resources/js/app_common_cont.js?v=20230803152535"></script>
+<script type="text/javascript" src="/resources/js/app_common_auth.js?v=20230803152535"></script>
+<script type="text/javascript" src="/resources/js/app_common_funs.js?v=20230803152535"></script>
+<script type="text/javascript" src="/resources/js/app_common_nsl.js?v=20230803152535"></script>
+<script type="text/javascript" src="/resources/js/app_common_util.js?v=20230803152535"></script>
+<script type="text/javascript" src="/resources/js/biz_common.js?version=20230803152535" id="biz_common"
+	data-menuId="dep/prc"
+	data-frameId="depAcnoOpenPrc2"
+	data-serviceCd="depAcnoOpenPrc2.frm"
+	data-serverTime="20230803152535"
+	data-activeMode="local"
+	data-activeEnv="${active.env">
+</script>
+
+
+<body>
+    <!-- header -->
+    <div id="headerWrap">
+        <script>
+        $(document).ready(function(){
+            document.charset="euc-kr";
+            $("#headerWrap").load("../includes/header.html");
+        });
+        </script>
+    </div>
+	<!-- //header -->
+
+    <!--contentsWrap -->
+    <div class="contentsWrap">
+        <!--contents -->
+        <div class="contents">
+            <div class="default-wrap">
+
+                <!--D: 기존 list-bull 구조만 info-txt 구조로 변경 그 외는 변경 없음-->
+
+                <div class="tit-wrap">
+					<p class="txt"><strong>PC화면</strong>에 보여지는<strong>인증번호</strong>를<br/> 입력해주세요</p>
+				</div>
+				<div class="form-wrap form-cert">
+					<div class="input">
+						<span>
+							<input type="tel" title="" id="iptCert01_1" name="iptCert01" value="" placeholder="" required="" numberonly="" maxlength="4">
+						</span>
+						<span>
+							<input type="tel" title="" id="iptCert01_2" name="iptCert01" value="" placeholder="" required="" numberonly="" maxlength="4">
+						</span>
+						<span>
+							<input type="tel" title="" id="iptCert01_3" name="iptCert01" value="" placeholder="" required="" numberonly="" maxlength="4">
+						</span>
+					</div>
+				</div>
+
+                <!--D: 기존 list-bull 구조 info-txt 로 변경-->
+                <p class="info-txt">PC화면에 보이는 인증번호를 입력 후 '공동인증서 가져오기' 버튼을 눌러주세요</p>
+                <p class="info-txt">인증서 가져오기가 완료되기 전까지 PC화면 페이지를 닫지 말아주세요</p>
+                
+            </div>
+        </div>
+        <!-- //contents -->
+
+        <div class="fixed-btn-wrap">
+			<div class="btn-wrap">
+				<a href="#none disabled" class="btn disabled">공동인증서 가져오기</a><!--D: disabled 클래스 삭제 시 활성화-->
+			</div>
+		</div>
+
+        <!-- S: 인증번호 잘못 입력 (Alert) -->
+        <div id="lyAlert1" class="layerpopup type-alert on" style="display: block;">
+            <div class="content-wrap">
+                
+                <div class="pop-con-wrap">
+                    <span class="pop-con">인증번호가 잘못 입력되었어요<br/>확인 후 다시 입력해 주세요</span>
+                </div>
+                <div class="btn-wrap">
+                    <a href="javascript:void(0);" class="btn">확인</a>
+                </div>
+            </div>
+        </div>
+        <!-- E: 인증번호 잘못 입력 (Alert) -->
+
+    </div>
+    <!-- //contentsWrap -->
+</body>
+</html>
+

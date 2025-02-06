@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>예가람저축은행</title>
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="Content-Script-Type" content="text/javascript">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<meta name="keywords" content="예가람저축은행keywords" />
+<meta name="description" content="예가람저축은행description" />
+<!-- <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0, viewport-fit=cover"> -->
+	<meta name="viewport" content="user-scalable=no,width=375">
+
+<meta name="apple-mobile-web-app-status-bar-style" content="white" />
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta http-equiv="Expires" content="-1">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Cache-Control" content="No-Cache">
+
+<link href="/resources/css/default.css" rel="stylesheet" />
+<link href="/resources/css/renewal.css" rel="stylesheet" />
+
+
+<link href="/resources/css/swiper-bundle.min.css" rel="stylesheet" />
+<link rel="shortcut icon" type="image/x-icon" href="/resources/favicon.ico" />
+<link rel="icon" type="image/x-icon" href="/resources/favicon.ico" />
+
+<script type="text/javascript" src="/resources/js/lib/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="/resources/js/lib/jquery.cookie.js"></script>
+
+<script type="text/javascript" src="/resources/js/lib/swiper-bundle.min.js"></script>
+<script type="text/javascript" src="/resources/js/lib/TweenMax.min.js"></script>
+<script type="text/javascript" src="/resources/js/lib/jquery.animateSprite.min.js"></script>
+<script type="text/javascript" src="/resources/js/lib/default.js?v=20230803152535"></script>
+<script type="text/javascript" src="/resources/js/lib/ui.js?v=20230803152535"></script>
+<script type="text/javascript" src="/resources/js/lib/rolldate.js?v=20230803152535"></script>
+<script type="text/javascript" src="/resources/js/app_common_cont.js?v=20230803152535"></script>
+<script type="text/javascript" src="/resources/js/app_common_auth.js?v=20230803152535"></script>
+<script type="text/javascript" src="/resources/js/app_common_funs.js?v=20230803152535"></script>
+<script type="text/javascript" src="/resources/js/app_common_nsl.js?v=20230803152535"></script>
+<script type="text/javascript" src="/resources/js/app_common_util.js?v=20230803152535"></script>
+<script type="text/javascript" src="/resources/js/biz_common.js?version=20230803152535" id="biz_common"
+	data-menuId="dep/prc"
+	data-frameId="depAcnoOpenPrc2"
+	data-serviceCd="depAcnoOpenPrc2.frm"
+	data-serverTime="20230803152535"
+	data-activeMode="local"
+	data-activeEnv="${active.env">
+</script>
+
+
+<body>
+    <!-- header -->
+    <header class="headerWrap"> <!--D: bg-color02 클래스 : 뒤에 색상 들어갈 경우  -->
+        <div class="headerLeft">
+    
+            <!--D: 이전버튼-->
+            <!-- <a href="javascript:void(0)" class="btn btnBack"><img src="/resources/images/header/btn_back.png" alt="이전페이지 이동하기"></a> -->
+    
+        </div>
+        <div class="headerCenter">
+            <h2 class="text"><span>대출신청</span></h2> <!--D: TEXT -->
+        </div>
+        <div class="headerRight">
+            <!--D: 전체메뉴버튼 -->
+            <a href="javascript:void(0)" class="btn btn-menu "><img src="/resources/images/header/btn_menu.png" alt="전체메뉴"></a>
+        </div>
+    </header>
+	<!-- //header -->
+
+        <!--contentsWrap -->
+        <div class="contentsWrap grid"><!--list / 이용문의 하단 고정으로 grid 클래스 추가 - section 구조 필요-->
+            <!--contents -->
+            <div class="contents">
+                <!--- [퍼블-1] 5/28 : gray-wrap 클래스 추가 -->
+                <div class="default-wrap gray-wrap">
+
+                    <!-- D: step_bar 단계 삭제 -->
+
+                    <section style="display:block;"><!--D: section 태그 추가-->
+                        <div class="tit-wrap">
+                            <p class="txt"><strong>대출한도 조회 결과</strong>입니다</p>
+                        </div>
+                        <!--[퍼블-1] 5/28 : line 클래스 삭제-->
+                        <ul class="prod-box-list"><!--D: 디자인 변경으로 공통사용으로 prod-box-list  구조로 변경-->
+                            <!--S: 반복-->
+                            <li>
+                                <div class="prod-box">
+                                    <div class="icon-exp">
+                                        <p>직장인, 자영어바, 프리랜서를 위한</p>
+                                    </div>
+                                    <div class="flag-tit-wrap">
+                                        <em class="flag style3 ">신용대출</em>
+                                        <strong class="tit">빅머니U론</strong>
+                                    </div>
+                                    <ul class="text-bar-list">
+                                        <li>고금리</li>
+                                        <li>비대면</li>
+                                        <li>대출통합</li>
+                                    </ul>
+                                    <div class="label-info-wrap">
+                                        <p>최대 1억원</p>
+                                        <strong class="info">연<span>6.80</span>% ~ <span>18.20</span>%</strong>
+                                    </div>
+                                    <div class="account-ex">
+                                        <div>
+                                            월 상환금 예시
+                                            <div class="tooltip-wrap">
+                                                <a href="#none" class="tooltip-btn">?</a>
+                                                <div class="tooltip-txt">
+                                                    <p>월 상환금은 예시로 실제 대출<br>월 상환금액과는 다를 수 있어요</p>
+                                                    <button href="#none" class="tooltip-close">닫기</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <p><span>(최대금액)</span>원/5년/이율 10% 빌릴때<br>(원금+이자)</p>
+                                            <p>월 <span>87,674</span>원</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="btn-cont-wrap">
+                                    <a href="#none" class="btn">대출신청</a>
+                                </div>
+                            </li>
+
+                            <li>
+                                <div class="prod-box">
+                                    <div class="icon-exp">
+                                        <p>요즘 관심받는 상품이에요</p>
+                                    </div>
+                                    <div class="flag-tit-wrap">
+                                        <em class="flag style3">햇살론</em>
+                                        <strong class="tit">햇살론</strong>
+                                    </div>
+                                    <ul class="text-bar-list">
+                                        <li>서민금융대출</li>
+                                        <li>저신용소득</li>
+                                        <li>최대 5년 분할상환</li>
+                                    </ul>
+                                    <div class="label-info-wrap">
+                                        <p>최대 2,000만원</p>
+                                        <strong class="info">연<span>8.7</span>%</strong>
+                                    </div>
+                                    <div class="account-ex">
+                                        <div>
+                                            월 상환금 예시
+                                            <div class="tooltip-wrap">
+                                                <a href="#none" class="tooltip-btn">?</a>
+                                                <div class="tooltip-txt">
+                                                    <p>월 상환금은 예시로 실제 대출<br>월 상환금액과는 다를 수 있어요</p>
+                                                    <button href="#none" class="tooltip-close">닫기</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <p><span>1,500</span>만원/5년 빌릴때<br>(원금+이자)</p>
+                                            <p>월 <span>87,674</span>원</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="btn-cont-wrap">
+                                    <a href="#none" class="btn">대출신청</a>
+                                </div>
+                            </li>
+                            <!--E: 반복-->
+                        </ul>
+                    </section>
+
+
+                    <section style="display:block;"><!--D: section 추가-->
+                        <div class="sub-info-wrap">
+                            <div class="tel">이용문의 <strong>1877-7788</strong></div>
+                            <p>평일 09:00 ~ 18:00<br>(주말 및 공휴일 휴무)</p>
+                        </div>
+
+                        <div class="list-bull">
+                            <div class="border"></div>
+                            <strong>알아두세요</strong>
+                            <ul>
+                                <li>보다 정확한 한도를 확인하시려면 상품상세 버튼을 눌러주세요</li>
+                            </ul>
+                        </div>
+                    </section>
+                </div>
+            </div>
+            <!-- //contents -->
+
+        </div>
+        <!-- //contentsWrap -->
+</body>
+</html>
+

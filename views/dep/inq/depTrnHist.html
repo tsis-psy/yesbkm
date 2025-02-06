@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>예가람저축은행</title>
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="Content-Script-Type" content="text/javascript">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<meta name="keywords" content="예가람저축은행keywords" />
+<meta name="description" content="예가람저축은행description" />
+<!-- <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0, viewport-fit=cover"> -->
+	<meta name="viewport" content="user-scalable=no,width=375">
+<!--
+<meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"/>
+ -->
+<meta name="apple-mobile-web-app-status-bar-style" content="white" />
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta http-equiv="Expires" content="-1">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Cache-Control" content="No-Cache">
+
+<link href="/resources/css/swiper-bundle.min.css" rel="stylesheet" />
+<link href="/resources/css/default.css" rel="stylesheet" />
+<link href="/resources/css/renewal.css" rel="stylesheet" />
+
+<link rel="shortcut icon" type="image/x-icon" href="/resources/favicon.ico" />
+<link rel="icon" type="image/x-icon" href="/resources/favicon.ico" />
+
+<script type="text/javascript" src="/resources/js/lib/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="/resources/js/lib/jquery.cookie.js"></script>
+
+<script type="text/javascript" src="/resources/js/lib/swiper-bundle.min.js"></script>
+<script type="text/javascript" src="/resources/js/lib/TweenMax.min.js"></script>
+<script type="text/javascript" src="/resources/js/lib/jquery.animateSprite.min.js"></script>
+<script type="text/javascript" src="/resources/js/lib/default.js?v=20230803152139"></script>
+<script type="text/javascript" src="/resources/js/lib/ui.js?v=20230803152139"></script>
+<script type="text/javascript" src="/resources/js/lib/rolldate.js?v=20230803152139"></script>
+<script type="text/javascript" src="/resources/js/app_common_cont.js?v=20230803152139"></script>
+<script type="text/javascript" src="/resources/js/app_common_auth.js?v=20230803152139"></script>
+<script type="text/javascript" src="/resources/js/app_common_funs.js?v=20230803152139"></script>
+<script type="text/javascript" src="/resources/js/app_common_nsl.js?v=20230803152139"></script>
+<script type="text/javascript" src="/resources/js/app_common_util.js?v=20230803152139"></script>
+<script type="text/javascript" src="/resources/js/biz_common.js?version=20230803152139" id="biz_common"
+	data-menuId="dep/inq"
+	data-frameId="depList"
+	data-serviceCd="depList.frm"
+	data-serverTime="20230803152139"
+	data-activeMode="local"
+	data-activeEnv="${active.env">
+</script>
+<script type="text/javascript" src="../../../resources/js/Chart.bundle.js"></script> <!-- [퍼블] 추가 -->
+<script type="text/javascript" src="../../../resources/js/chartjs-plugin-datalabels.js"></script> <!-- [퍼블] 추가 -->
+</head>
+<body>
+	<!-- header -->
+	<header class="headerWrap">  <!--D: bg-color02 클래스 : 뒤에 색상 들어갈 경우  -->
+		<div class="headerLeft">
+			<a href="javascript:void(0)" class="btn btnBack"><img src="/resources/images/header/btn_back.png" alt="이전페이지 이동하기"></a> <!--D: 이전버튼 -->
+		</div>
+		<div class="headerCenter">
+			<h2 class="text"><span>계좌상세</span></h2> 
+		</div>
+		<div class="headerRight">
+		</div>
+	</header>
+	<!-- //header -->
+
+	<!-- s: contentsWrap -->
+	<div class="contentsWrap">
+		<div class="contents">
+			
+			<!-- [퍼블] 전체 변경 -->
+			<div class="default-wrap">
+				<section class="visaul-info-section">
+					<div class="visaul-info-box">
+						<div class="flag-tit-wrap"><!-- [퍼블-1] 5/21 : flag-tit-wrap 클래스 추가  -->
+                            <em class="flag style4">종합통장대출</em>
+                            <strong class="tit">E-RUN 파킹통장(개인)</strong>
+                        </div>
+						<div class="account-area">
+							<p class="account">123-12-12-1234567</p>
+							<button type="button" class="btn-copy">복사하기</button>
+						</div>
+						<div class="account-amount">
+							<p class="amount-on">
+								잔액 <span>1,600,000</span>원
+							</p>
+							<p class="amount-desc">출금가능금액 <span>21,500,000</span>원</p>
+						</div>
+
+						<a href="javascript:void(0);" class="btn-set" onclick="acnoSetBtn();">관리</a>
+						<div class="btn-cont-wrap">
+							<a href="javascript:void(0);" class="btn btn-primary">이체</a>
+						</div>
+					</div>
+				</section>
+
+					
+				<section class="chart-wrap">
+					<div class="inquiry-set-wrap list-style-wrap">
+						<div class="type-area">
+							<ul class="radio-list txt-button">
+								<li class="active"><button type="button">1개월</button></li>
+								<li><button type="button">3개월</button></li>
+								<li><button type="button">6개월</button></li>
+								<li><button type="button">12개월</button></li>
+							</ul>
+						</div>
+					</div>
+
+					<div class="chart-con">
+						<div class="container">
+							<canvas id="chart" width="600" height="400"></canvas>
+						</div>
+                        
+                        <script>
+                            //문구 및 색상만 변경할것 D 주석확인
+							var ctx = document.getElementById('chart').getContext('2d');
+							var gradient = ctx.createLinearGradient(0, 0, 0, 250);
+                            //D : 그라데이션 색상 변경
+                            gradient.addColorStop(0, 'rgba(233,219,255,1)');
+						    gradient.addColorStop(1, 'rgba(212,231,243,0)');
+								
+							var chart = new Chart(ctx, {
+								type: 'line',
+								data: {
+									labels: ['Dairy', 'Fruits', 'Lean meats', 'Vegetables', 'Whole grains'],
+									datasets: [{
+										data: [2.92, 17.53, 14.94, 26.62, 12.99],
+										backgroundColor: gradient,
+										borderColor: [
+											'#AD85FF',
+										],
+										borderWidth: 2,
+                                        pointRadius: 0 // 여기를 추가시 심볼 제거
+									}]
+								},
+								options: {
+									title: {
+										display: true,
+										position: 'top',
+										fontSize: 16,
+										fontColor: '#111',
+										padding: 20
+									},
+									legend: {
+										display: false,
+									},
+									tooltips: {
+										enabled: false,
+									},
+									scales: {
+										xAxes: [{
+											display: false,
+										}],
+										yAxes: [{
+											beginAtZero: true,
+											// 선 boolan
+											display: true,
+											scaleLabel: {
+												display: false,
+											},
+										}]
+									},
+									plugins: {
+										tooltip: {
+											enabled: true,
+										},
+										legend: {
+											position: 'bottom',
+										},
+										datalabels: {
+											display: true,
+											color: '#612AD0',
+											textAlign: 'center',
+											font: {
+												size:12,
+											},
+                                            //D : 문구변경
+											formatter: function(value, ctx) {
+												return '저축을 가장 많이 하신 날이에요'
+											},
+											align: 'left',
+											backgroundColor: '#E7DBFF',
+											borderRadius: 10,
+											padding :{
+												top : 11,
+												bottom : 11,
+												left : 15,
+												right : 15,
+											},
+										}
+									}
+								}
+							});
+					    </script>
+					</div>
+
+				</section>
+
+
+				<!-- s: 조회기간 호출 영역 -->
+				<section>
+					<!-- <div class="btn-cont-wrap flexRight">
+						<a href="javascript:void(0);" class="btn btn-gray btn-sm">거래내역 다운로드</a>
+					</div> -->
+					<div class="inquiry-choice-area type-spread ">
+						<button type="button" class="btn-inquiry-choice" onclick="">
+							<span id="">3개월</span>
+							<span id="">전체</span>
+							<span id="">최신순</span>
+						</button>
+						<a href="javascript:void(0);" class="btn btn-sm">거래내역 다운로드</a>
+					</div>
+					<div class="inquiry-result-area">
+						<div class="inquiry-summary type-spread">
+							<p class="period" id="inqDateTxt">2023. 03. 15 ~ 2023. 06. 15</p>
+							<div class="toggle-wrap">
+								<input type="checkbox" id="check01">
+								<label for="check01">
+									<span>잔액보기</span> <!-- [퍼블] 텍스트 변경 -->
+									<div class="switch-btn">
+										<span class="off">OFF</span>
+										<span class="on">ON</span>
+										<div class="inside"></div>
+									</div>
+								</label>
+							</div>
+						</div>
+
+						<!-- s : 종합통장대출일경우 노출 -->	
+						<!-- <p class="month-divide" class="prodGbnLon" style="display:none">2023.04</p> -->
+						<!-- e : 종합통장대출일경우 노출 -->	
+
+						<!-- s : [예적금담보대출], [아파트.일반부동산 담보대출 - 만기일시상환] 일 경우 -->
+						<p class="month-divide type-spread">2023.05</p> <!-- [퍼블] 추가 -->
+						<ul class="result-list">
+							<li>
+								<p class="date">2023.05.04 13:24:56</p>
+								<a href="#none">
+									<div class="txt-wrap">
+										<strong class="tit">정기예금신규</strong>
+									</div>
+									<div class="amount-wrap">
+										<strong class="amount"><span class="tit">출금</span> 350,000원</strong>
+										<strong class="balance"><span class="tit">잔액</span> 550,000원</strong>
+									</div>
+								</a>
+							</li>
+							<li>
+								<p class="date">2023.05.04 13:24:56</p>
+								<a href="#none">
+									<div class="txt-wrap">
+										<strong class="tit">보고파적금</strong>
+									</div>
+									<div class="amount-wrap">
+										<strong class="amount"><span class="tit">출금</span> 350,000원</strong>
+										<strong class="balance"><span class="tit">잔액</span> 550,000원</strong>
+									</div>
+								</a>
+							</li>
+							<li>
+								<p class="date">2023.05.04 13:24:56</p>
+								<a href="#none">
+									<div class="txt-wrap">
+										<strong class="tit">홍길동</strong>
+									</div>
+									<div class="amount-wrap">
+										<strong class="amount deposit"><span class="tit">입금</span> 350,000원</strong>
+										<strong class="balance"><span class="tit">잔액</span> 550,000원</strong>
+									</div>
+								</a>
+							</li>
+							<li>
+								<p class="date">2023.05.04 13:24:56</p>
+								<a href="#none">
+									<div class="txt-wrap">
+										<strong class="tit">홍예가람</strong>
+									</div>
+									<div class="amount-wrap">
+										<strong class="amount deposit"><span class="tit">입금</span> 50,000원</strong>
+										<strong class="balance"><span class="tit">잔액</span> 550,000원</strong>
+									</div>
+								</a>
+							</li>
+						</ul>
+
+						<p class="month-divide type-spread">2023.04</p>
+						<ul class="result-list">
+							<li>
+								<p class="date">2023.04.04 13:24:56</p>
+								<a href="#none">
+									<div class="txt-wrap">
+										<strong class="tit">정기예금신규</strong>
+									</div>
+									<div class="amount-wrap">
+										<strong class="amount"><span class="tit">출금</span> 50,000원</strong>
+										<strong class="balance"><span class="tit">잔액</span> 550,000원</strong>
+									</div>
+								</a>
+							</li>
+						</ul>
+
+						<!-- s : [신용대출], [아파트.일반부동산 담보대출-원리금균등분할상환] 일 경우 -->
+						<div id="trnHistDiv" name="trnHistDiv"></div>
+						
+						<div id="trnHistTemp" name="trnHistTemp" style="display:none;">
+						<div class="txt-list-wrap">
+							<div class="txt-detail-area">
+								<div class="txt-detail-tit">
+									<strong>{idx}</strong>
+								</div>
+								<ul class="txt-list">
+									<li>
+										<span class="tit">납입일자</span>
+										<span class="txt">{trnDt}</span>
+									</li>
+									<li>
+										<span class="tit">상환원금</span>
+										<span class="txt">{prnc}원</span>
+									</li>
+									<li>
+										<span class="tit">정상이자</span>
+										<span class="txt">{ints}원</span>
+									</li>
+									<li>
+										<span class="tit">연체료</span>
+										<span class="txt">{ovfe}원</span>
+									</li>
+									<li>
+										<span class="tit">연체이자</span>
+										<span class="txt">{ovrdInts}원</span>
+									</li>
+									<li>
+										<span class="tit">총 납입금액</span>
+										<span class="txt">{totAmt}원</span>
+									</li>
+								</ul>
+							</div>
+						</div>
+						<!-- e : [신용대출], [아파트.일반부동산 담보대출-원리금균등분할상환] 일 경우 //-->
+						</div>
+					</div>
+					<!--  조회 결과 없음 -->
+					<div class="result-area nodata" id="transRsltNoData" style="display:block;">
+						<p>조회된 거래내역이 없어요</p>
+					</div>
+					<!--  조회 결과 없음 -->
+				</section>
+			</div>
+
+		</div>
+
+		<!-- <div class="fixed-btn-wrap">
+			<div class="btn-wrap type-popup">
+				<a href="javascript:void(0);" class="btn" >다운로드</a>
+			</div>
+		</div> -->
+
+	</div>
+    <!-- //e: contentsWrap -->
+
+
+<footer>
+<!-- 푸터 타입별 정의 -->
+</footer>
+
+<!-- 업무공통 -->
+<!-- //footer -->
+
+</body>
+</html>

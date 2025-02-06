@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>예가람저축은행</title>
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="Content-Script-Type" content="text/javascript">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<meta name="keywords" content="예가람저축은행keywords" />
+<meta name="description" content="예가람저축은행description" />
+<!-- <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0, viewport-fit=cover"> -->
+	<meta name="viewport" content="user-scalable=no,width=375">
+
+<meta name="apple-mobile-web-app-status-bar-style" content="white" />
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta http-equiv="Expires" content="-1">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Cache-Control" content="No-Cache">
+
+<link href="/resources/css/default.css" rel="stylesheet" />
+<link href="/resources/css/renewal.css" rel="stylesheet" />
+
+
+<link href="/resources/css/swiper-bundle.min.css" rel="stylesheet" />
+<link rel="shortcut icon" type="image/x-icon" href="/resources/favicon.ico" />
+<link rel="icon" type="image/x-icon" href="/resources/favicon.ico" />
+
+<script type="text/javascript" src="/resources/js/lib/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="/resources/js/lib/jquery.cookie.js"></script>
+
+<script type="text/javascript" src="/resources/js/lib/swiper-bundle.min.js"></script>
+<script type="text/javascript" src="/resources/js/lib/TweenMax.min.js"></script>
+<script type="text/javascript" src="/resources/js/lib/jquery.animateSprite.min.js"></script>
+<script type="text/javascript" src="/resources/js/lib/default.js?v=20230803152535"></script>
+<script type="text/javascript" src="/resources/js/lib/ui.js?v=20230803152535"></script>
+<script type="text/javascript" src="/resources/js/lib/rolldate.js?v=20230803152535"></script>
+<script type="text/javascript" src="/resources/js/app_common_cont.js?v=20230803152535"></script>
+<script type="text/javascript" src="/resources/js/app_common_auth.js?v=20230803152535"></script>
+<script type="text/javascript" src="/resources/js/app_common_funs.js?v=20230803152535"></script>
+<script type="text/javascript" src="/resources/js/app_common_nsl.js?v=20230803152535"></script>
+<script type="text/javascript" src="/resources/js/app_common_util.js?v=20230803152535"></script>
+<script type="text/javascript" src="/resources/js/biz_common.js?version=20230803152535" id="biz_common"
+	data-menuId="dep/prc"
+	data-frameId="depAcnoOpenPrc2"
+	data-serviceCd="depAcnoOpenPrc2.frm"
+	data-serverTime="20230803152535"
+	data-activeMode="local"
+	data-activeEnv="${active.env">
+</script>
+
+
+<body>
+    <!-- header -->
+    <div id="headerWrap">
+        <script>
+        $(document).ready(function(){
+            document.charset="euc-kr";
+            $("#headerWrap").load("../includes/header.html");
+        });
+        </script>
+    </div>
+	<!-- //header -->
+
+    <!--contentsWrap -->
+    <div class="contentsWrap">
+        <!--contents -->
+        <div class="contents">
+            <div class="default-wrap">
+
+                <div class="form-all-wrap">
+
+                    <!--D: 삭제  <div class="form-wrap">
+						<div class="txtbox-wrap ta-r">
+							<a href="#none" class="chk-txt">사고신고 내역 조회  &gt;</a>
+						</div>
+						<div class="input"> -->
+							<div class="form-wrap"><!--D: 공통 : form-wrap / txtbox-wrap / input 삭제 후 select-wrap > form-wrap 클래스로 변경 -->
+                                <div class="btn-cont-wrap flexRight"><!--D: 버튼 통일 위하여 클래스 변경 /  사고신고 내역이 있는 경우에만 노출 -->
+                                    <a href="#none" class="btn-txt">사고신고내역조회</a>
+                                </div>
+								<div class="select-box on" tabindex="1" onclick="acdtKndClickEvt()"><!--D: on 클래스 : 선택 됐을 경우-->
+									<label for="">사고신고구분</label>
+									<span class="option" id="bzwrDvcd_span">통합분실</span>
+								</div>
+							</div>
+						<!-- </div>
+					</div> -->
+
+
+                    <!--D: <div class="form-wrap">
+                        <div class="input">-->
+                            <div class="form-wrap"><!--D: select-wrap > form-wrap 클래스로 변경-->
+                                <div class="select-box on" tabindex="1" onclick="openPopupUp('question3');"><!--D: on 클래스 : 선택 됐을 경우-->
+                                    <label for="">계좌번호</label>
+                                    <span class="option" id="ACTNO_span">123-01-01-1234567</span>
+                                </div>
+                            </div>
+                        <!-- </div>
+                        <p class="error-txt">계좌번호을 선택해주세요</p>
+                    </div> -->
+
+
+                    <div class="form-wrap">
+                        <label for="CANO" class="formlabel">카드번호</label><!--D: 안에 <span class="essential">*</span> 삭제-->
+                        <div class="input">
+                            <input type="text" title="카드번호" id="CANO" class="inp" name="" value="" placeholder="카드번호 입력" required="">
+                        </div>
+                    </div>
+
+
+                </div>
+
+                <!--S: 통장, 안감, 통장/안감 시 안내문구-->
+                <div class="list-bull"><!--D: 구조 변경-->
+                    <div class="border"></div>
+                    <strong>알아두세요</strong>
+                    <ul>
+                        <li>인터넷으로 신규 개설된 전자통장(실물이 없는 통장)은 사고신고를 할 수 없어 사고계좌번호 목록에 표시되지 않아요</li>
+                        <li>모든 사고신고해제는 영업점에 직접 방문하여 해제신청을 하셔야 해요</li>
+                        <li class="point-red">본인 신분증을 필히 지참하세요</li>
+                    </ul>
+                </div>
+                <!--E: 통장, 안감, 통장/안감 시 안내문구-->
+
+                <!--S: 보안카드, OTP 시 안내문구-->
+                <div class="list-bull"><!--D: 구조 변경-->
+                    <div class="border"></div>
+                    <strong>알아두세요</strong>
+                    <ul>
+                        <li>보안카드/OTP 분실신고 후에는 이체서비스가 제한되니 은행에서 신규보안카드 및 다른 보안매체를 발급 받으셔야 해요</li>
+                        <li>모든 사고신고해제는 영업점에 직접 방문하여 해제신청을 하셔야 해요</li>
+                        <li class="point-red">본인 신분증을 필히 지참하세요</li>
+                    </ul>
+                </div>
+                <!--E: 보안카드, OTP 시 안내문구-->
+
+                <!--S: 현금카드 체크카드 분실신고 안내문구-->
+                <div class="list-bull"><!--D: 구조 변경-->
+                    <div class="border"></div>
+                    <strong>알아두세요</strong>
+                    <ul>
+                        <li>모든 사고신고해제는 영업점에 직접 방문하여 해제신청을 하셔야 해요</li>
+                        <li class="point-red">본인 신분증을 필히 지참하세요</li>
+                    </ul>
+                </div>
+                <!--E: 현금카드 체크카드 분실신고 안내문구-->
+
+            </div>
+        </div>
+        <!-- //contents -->
+        
+        <!--S: 사고신고(통장, 안감, 통장/안감, 보안카드, OTP)구분 (팝업) -->
+        <div id="lySel1" class="layerpopup layer-up show" style="position: fixed; top: 399px; left: 0px; display: none;">
+            <div class="content-wrap">
+                <div class="pop-header">
+                    <h2 class="pop-title">사고신고 등록코드</h2>
+                    <button type="button" name="button" class="btn-layer-close" data-focus="btn-layer-close">닫기</button>
+                </div>
+                <div class="ly-scroll-con ly-select">
+                    <ul class="ly-select-list">
+                        <li><button>통장분실</button></li><!-- [D] 클래스 active 추가 시 활성화 스타일 노출 -->
+                        <li><button>인감분실</button></li>
+                        <li><button>통장/인감분실</button></li>
+                        <li><button>보안카드분실</button></li>
+                        <li><button>OTP분실</button></li>
+                        <li><button>체크카드</button></li>
+                        <li><button>현금카드</button></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!--E: 사고신고(통장, 안감, 통장/안감, 보안카드, OTP)구분 (팝업) -->
+        
+        
+        <!--S: 사고신고(통장, 안감, 통장/안감, 보안카드, OTP) 구분별 신고 확인 (Alert) -->
+        <div id="lyAlert1" class="layerpopup type-alert on" style="display: none;">
+            <div class="content-wrap">
+                
+                <div class="pop-con-wrap">
+                    <span class="pop-con">통장분실 사고신고를 진행하시겠어요?</span>
+                </div>
+                <div class="btn-wrap">
+                    <a href="javascript:void(0);" class="btn btn-info" onclick="">취소</a>
+                    <a href="javascript:void(0);" class="btn">확인</a>
+                </div>
+            </div>
+        </div>
+        <!--E: 사고신고(통장, 안감, 통장/안감, 보안카드, OTP) 구분별 신고 확인 (Alert) -->
+        
+        <!--S: 사고신고(현금카드, 체크카드) 구분별 신고 확인 (Alert) -->
+        <div id="lyAlert1" class="layerpopup type-alert on" style="display: none;">
+            <div class="content-wrap">
+                
+                <div class="pop-con-wrap">
+                    <span class="pop-con">현금카드 사고신고를 진행하시겠어요?</span>
+                </div>
+                <div class="btn-wrap">
+                    <a href="javascript:void(0);" class="btn btn-info" onclick="">취소</a>
+                    <a href="javascript:void(0);" class="btn">확인</a>
+                </div>
+            </div>
+        </div>
+        <!--E: 사고신고(현금카드, 체크카드) 구분별 신고 확인 (Alert) -->
+
+        <!--S: 사고신고(현금카드, 체크카드)_가능 계좌/카드 없을 경우 (Alert) -->
+        <!--D: 계좌가 없을 겨우-->
+        <div id="lyAlert1" class="layerpopup type-alert on" style="display: none;">
+            <div class="content-wrap">
+                
+                <div class="pop-con-wrap">
+                    <span class="pop-con">신고 가능한 계좌가 없어요</span>
+                </div>
+                <div class="btn-wrap">
+                    <a href="javascript:void(0);" class="btn btn-info" onclick="">취소</a>
+                    <a href="javascript:void(0);" class="btn">확인</a>
+                </div>
+            </div>
+        </div>
+
+        <!--D: 카드가 없을 겨우-->
+        <div id="lyAlert1" class="layerpopup type-alert on" style="display: none;">
+            <div class="content-wrap">
+                
+                <div class="pop-con-wrap">
+                    <span class="pop-con">신고 가능한 카드가 없어요</span>
+                </div>
+                <div class="btn-wrap">
+                    <a href="javascript:void(0);" class="btn btn-info" onclick="">취소</a>
+                    <a href="javascript:void(0);" class="btn">확인</a>
+                </div>
+            </div>
+        </div>
+        <!--E: 사고신고(현금카드, 체크카드)_가능 계좌/카드 없을 경우 (Alert) -->
+
+    </div>
+    <!-- //contentsWrap -->
+</body>
+</html>
+

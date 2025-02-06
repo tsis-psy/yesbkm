@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>예가람저축은행</title>
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="Content-Script-Type" content="text/javascript">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<meta name="keywords" content="예가람저축은행keywords" />
+<meta name="description" content="예가람저축은행description" />
+<!-- <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0, viewport-fit=cover"> -->
+	<meta name="viewport" content="user-scalable=no,width=375">
+<!--
+<meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"/>
+ -->
+<meta name="apple-mobile-web-app-status-bar-style" content="white" />
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta http-equiv="Expires" content="-1">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Cache-Control" content="No-Cache">
+
+<link href="/resources/css/swiper-bundle.min.css" rel="stylesheet" />
+<link href="/resources/css/default.css" rel="stylesheet" />
+<link href="/resources/css/renewal.css" rel="stylesheet" />
+
+<link rel="shortcut icon" type="image/x-icon" href="/resources/favicon.ico" />
+<link rel="icon" type="image/x-icon" href="/resources/favicon.ico" />
+
+<script type="text/javascript" src="/resources/js/lib/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="/resources/js/lib/jquery.cookie.js"></script>
+
+<script type="text/javascript" src="/resources/js/lib/swiper-bundle.min.js"></script>
+<script type="text/javascript" src="/resources/js/lib/TweenMax.min.js"></script>
+<script type="text/javascript" src="/resources/js/lib/jquery.animateSprite.min.js"></script>
+<script type="text/javascript" src="/resources/js/lib/default.js?v=20230803152139"></script>
+<script type="text/javascript" src="/resources/js/lib/ui.js?v=20230803152139"></script>
+<script type="text/javascript" src="/resources/js/lib/rolldate.js?v=20230803152139"></script>
+<script type="text/javascript" src="/resources/js/app_common_cont.js?v=20230803152139"></script>
+<script type="text/javascript" src="/resources/js/app_common_auth.js?v=20230803152139"></script>
+<script type="text/javascript" src="/resources/js/app_common_funs.js?v=20230803152139"></script>
+<script type="text/javascript" src="/resources/js/app_common_nsl.js?v=20230803152139"></script>
+<script type="text/javascript" src="/resources/js/app_common_util.js?v=20230803152139"></script>
+<script type="text/javascript" src="/resources/js/biz_common.js?version=20230803152139" id="biz_common"
+	data-menuId="dep/inq"
+	data-frameId="depList"
+	data-serviceCd="depList.frm"
+	data-serverTime="20230803152139"
+	data-activeMode="local"
+	data-activeEnv="${active.env">
+</script>
+<script type="text/javascript" src="../../../resources/js/Chart.bundle.js"></script> <!-- [퍼블] 추가 -->
+<script type="text/javascript" src="../../../resources/js/chartjs-plugin-datalabels.js"></script> <!-- [퍼블] 추가 -->
+</head>
+<body>
+	<!-- header -->
+	<header class="headerWrap">  <!--D: bg-color02 클래스 : 뒤에 색상 들어갈 경우  -->
+		<div class="headerLeft">
+			<a href="javascript:void(0)" class="btn btnBack"><img src="/resources/images/header/btn_back.png" alt="이전페이지 이동하기"></a> <!--D: 이전버튼 -->
+		</div>
+		<div class="headerCenter">
+			<h2 class="text"><span>만기자동재예치 변경 완료</span></h2> 
+		</div>
+		<div class="headerRight">
+		</div>
+	</header>
+	<!-- //header -->
+
+	<!-- s: contentsWrap -->
+	<div class="contentsWrap">
+		<div class="contents">
+			<div class="default-wrap">
+
+				<!--  s: 자동연장 원금설정 일때 -->
+				<section class="result-area checking">
+					<p class="tit"><strong>만기자동 재예치(재가입)를<br>변경했어요</strong></p>
+					<div class="result-msg">
+						<ul class="txt-list">
+							<li>
+								<span class="tit">만기자동재예치<br>(재가입)</span>
+								<span class="txt">자동연장(원금)</span>
+							</li>
+						</ul>
+					</div>
+				</section>
+				<!--  e: 자동연장 원금설정 일때 -->
+				<!--  s: 자동연장 원리금설정 일때 -->
+				<section class="result-area checking">
+					<p class="tit"><strong>만기자동 재예치(재가입)를<br>변경했어요</strong></p>
+					<div class="result-msg">
+						<ul class="txt-list">
+							<li>
+								<span class="tit">만기자동재예치<br>(재가입)</span>
+								<span class="txt">자동연장(원리금)</span>
+							</li>
+						</ul>
+					</div>
+				</section>
+				<!--  s: 자동연장 원리금설정 일때 -->
+				<!-- S : 자동해지 송금변경 일때 -->
+				<section class="result-area checking">
+					<p class="tit"><strong>자동해지송금을<br>변경했어요</strong></p>
+
+				</section>
+				<!--e: 자동해지 송금변경  일때 -->
+
+				<!--s:만기자동재예치(재가입) 오류 일때 -->
+				<section class="result-area exclamation">
+					<p class="tit"><strong>만기자동 재예치(재가입)<br>변경 처리 중 오류가 발생했어요</strong></p>
+					<div class="txtbox-wrap">
+						<p>(111-1111-1111-111)실명계좌여부(을)를<br>
+							확인하시기 바랍니다.</p>
+					</div>
+				</section>
+				<!-- e: 만기자동재예치(재가입) 오류 일때 -->
+
+			</div>
+
+		</div>
+        <!-- s: fixedBtnWrap -->
+        <div class="fixed-btn-wrap">
+            <div class="btn-wrap">
+                <a href="#none" class="btn">홈으로</a>
+            </div>
+        </div>
+       
+	</div>
+    <!-- //e: contentsWrap -->
+
+
+<footer>
+<!-- 푸터 타입별 정의 -->
+</footer>
+
+<!-- 업무공통 -->
+<!-- //footer -->
+
+</body>
+</html>

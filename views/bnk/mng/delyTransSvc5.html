@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="KO">
+
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>예가람저축은행</title>
+	<meta charset="utf-8">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta http-equiv="Content-Script-Type" content="text/javascript">
+	<meta http-equiv="Content-Style-Type" content="text/css">
+	<meta name="keywords" content="예가람저축은행keywords">
+	<meta name="description" content="예가람저축은행description">
+	<!-- <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0, viewport-fit=cover"> -->
+	<meta name="viewport" content="user-scalable=no,width=375">
+	
+	<meta name="apple-mobile-web-app-status-bar-style" content="white">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="mobile-web-app-capable" content="yes">
+	<meta http-equiv="Expires" content="-1">
+	<meta http-equiv="Pragma" content="no-cache">
+	<meta http-equiv="Cache-Control" content="No-Cache">
+	
+	<link href="/resources/css/default.css" rel="stylesheet">
+	<link href="/resources/css/renewal.css" rel="stylesheet">
+	
+	
+	<link href="/resources/css/swiper-bundle.min.css" rel="stylesheet">
+	<link rel="shortcut icon" type="image/x-icon" href="/resources/favicon.ico">
+	<link rel="icon" type="image/x-icon" href="/resources/favicon.ico">
+	
+	<script type="text/javascript" src="/resources/js/lib/jquery-1.12.4.min.js"></script>
+	<script type="text/javascript" src="/resources/js/lib/jquery.cookie.js"></script>
+	
+	<script type="text/javascript" src="/resources/js/lib/swiper-bundle.min.js"></script>
+	<script type="text/javascript" src="/resources/js/lib/TweenMax.min.js"></script>
+	<script type="text/javascript" src="/resources/js/lib/jquery.animateSprite.min.js"></script>
+	<script type="text/javascript" src="/resources/js/lib/default.js?v=20230803152535"></script>
+	<script type="text/javascript" src="/resources/js/lib/ui.js?v=20230803152535"></script>
+	<script type="text/javascript" src="/resources/js/lib/rolldate.js?v=20230803152535"></script>
+	<script type="text/javascript" src="/resources/js/app_common_cont.js?v=20230803152535"></script>
+	<script type="text/javascript" src="/resources/js/app_common_auth.js?v=20230803152535"></script>
+	<script type="text/javascript" src="/resources/js/app_common_funs.js?v=20230803152535"></script>
+	<script type="text/javascript" src="/resources/js/app_common_nsl.js?v=20230803152535"></script>
+	<script type="text/javascript" src="/resources/js/app_common_util.js?v=20230803152535"></script>
+	<script type="text/javascript" src="/resources/js/biz_common.js?version=20230803152535" id="biz_common" data-menuid="dep/prc" data-frameid="depAcnoOpenPrc2" data-servicecd="depAcnoOpenPrc2.frm" data-servertime="20230803152535" data-activemode="local" data-activeenv="${active.env">
+	</script>
+	
+	
+	</head>
+
+<body>
+
+<div class="wrap">
+	<!-- s:header -->
+	<header class="headerWrap">
+		<div class="headerLeft">
+			<a href="javascript:void(0)" class="btn btnBack"><img src="/resources/images/header/btn_back.png" alt="이전페이지 이동하기"></a>
+		</div>
+		<div class="headerCenter">
+			<h2 class="text"><span>지연이체 서비스 관리</span></h2> <!--D: TEXT -->
+		</div>
+		<div class="headerRight">
+			<!-- <a href="javascript:void(0)" class="btn btn-menu "><img src="/resources/images/header/btn_menu.png" alt="전체메뉴"></a> -->
+		</div>
+	</header>
+    <!-- e:header -->
+
+    <!-- s: contentsWrap -->
+    <div class="contentsWrap">
+    <!-- s:contents -->
+		<div class="contents">
+			<div class="default-wrap">
+
+				<!-- [퍼블] 계좌 나온 경우 -->
+				<section>
+					<div class="tit-wrap">
+						<p class="txt"><strong>즉시이체 지정계좌</strong>를 <br>확인하세요</p>
+					</div>
+					<!--D : 구조 변경-->
+					<div class="select-wrap">
+						<div class="select-box ht80 on">
+							<label for="">즉시이체 1일 한도</label>
+							<span class="option" id="">10,000,000원</span>
+						</div>
+					</div>
+					<div class="txt-list-wrap mt20">
+						<div class="txt-detail-area">
+							<div class="txt-detail-tit">
+								<strong>우리은행</strong>
+								<!--[퍼블-1] 5/21 : 버튼클래스 공통으로 변경  btn-gray ->  btn btn-sm gray-->
+								<span><button type="button" class="btn btn-sm gray" onclick="javascript:fnRemoveAcno('004','44990101149827');">해지</button></span>
+							</div>
+							<ul class="txt-list">
+								<li>
+									<span class="tit">계좌번호</span>
+									<span class="txt">123-12-12-1234567</span>
+								</li>
+							</ul>
+						</div>
+					</div>
+
+					<div class="txt-list-wrap">
+						<div class="txt-detail-area">
+							<div class="txt-detail-tit">
+								<strong>국민은행</strong>
+								<!--[퍼블-1] 5/21 : 버튼클래스 공통으로 변경  btn-gray ->  btn btn-sm gray-->
+								<span><button type="button" class="btn btn-sm gray" onclick="">해지</button></span>
+							</div>
+							<ul class="txt-list">
+								<li>
+									<span class="tit">계좌번호</span>
+									<span class="txt">123-12-12-1234567</span>
+								</li>
+							</ul>
+						</div>
+					</div>
+
+					<div class="btn-cont-wrap flexCenter">
+                        <a href="javascript:void(0);" class="btn btn-add">+추가</a>
+                    </div>
+
+					<div class="list-bull">
+                        <div class="border"></div>
+                        <strong>알아두세요</strong>
+                        <ul>
+                            <li>지정계좌로 등록하지 않아도 즉시이체가 가능하지만, 1일
+								100만원 한도로 제한돼요</li>
+                        </ul>
+                    </div>
+				</section>
+				<!-- // [퍼블] 계좌 나온 경우 -->
+
+				<!-- [퍼블] 계좌 없는 경우 -->
+				<section>
+					<div class="tit-wrap">
+						<p class="txt"><strong>즉시이체 지정계좌</strong>가<br>없어요</p>
+					</div>
+					<!--D : 구조 변경-->
+					<div class="select-wrap">
+						<div class="select-box ht80 on">
+							<label for="">즉시이체 1일 한도</label>
+							<span class="option" id="">10,000,000원</span>
+						</div>
+					</div>
+					
+					<div class="btn-cont-wrap flexCenter mt20">
+                        <a href="javascript:void(0);" class="btn btn-add">+추가</a>
+                    </div>
+					<div class="list-bull">
+                        <div class="border"></div>
+                        <strong>알아두세요</strong>
+                        <ul>
+                            <li>지정계좌로 등록하지 않아도 즉시이체가 가능하지만, 1일
+								100만원 한도로 제한돼요</li>
+                        </ul>
+                    </div>
+				</section>
+				<!-- // [퍼블] 계좌 없는 경우 -->
+			</div>
+
+		</div>
+		<!-- //e:contents -->
+
+        <!-- s: fixedBtnWrap -->
+		<div class="fixed-btn-wrap">
+            <div class="btn-wrap">
+                <a href="#none" class="btn">해지하기</a>
+            </div>
+        </div>
+        <!-- //e: fixedBtnWrap -->
+
+    </div>
+    <!-- e: contentsWrap -->
+</div>
+
+</body>
+
+</html>

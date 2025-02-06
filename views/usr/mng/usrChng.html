@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>예가람저축은행</title>
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="Content-Script-Type" content="text/javascript">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<meta name="keywords" content="예가람저축은행keywords" />
+<meta name="description" content="예가람저축은행description" />
+<!-- <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0, viewport-fit=cover"> -->
+	<meta name="viewport" content="user-scalable=no,width=375">
+
+<meta name="apple-mobile-web-app-status-bar-style" content="white" />
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta http-equiv="Expires" content="-1">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Cache-Control" content="No-Cache">
+
+<link href="/resources/css/default.css" rel="stylesheet" />
+<link href="/resources/css/renewal.css" rel="stylesheet" />
+
+
+<link href="/resources/css/swiper-bundle.min.css" rel="stylesheet" />
+<link rel="shortcut icon" type="image/x-icon" href="/resources/favicon.ico" />
+<link rel="icon" type="image/x-icon" href="/resources/favicon.ico" />
+
+<script type="text/javascript" src="/resources/js/lib/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="/resources/js/lib/jquery.cookie.js"></script>
+
+<script type="text/javascript" src="/resources/js/lib/swiper-bundle.min.js"></script>
+<script type="text/javascript" src="/resources/js/lib/TweenMax.min.js"></script>
+<script type="text/javascript" src="/resources/js/lib/jquery.animateSprite.min.js"></script>
+<script type="text/javascript" src="/resources/js/lib/default.js?v=20230803152535"></script>
+<script type="text/javascript" src="/resources/js/lib/ui.js?v=20230803152535"></script>
+<script type="text/javascript" src="/resources/js/lib/rolldate.js?v=20230803152535"></script>
+<script type="text/javascript" src="/resources/js/app_common_cont.js?v=20230803152535"></script>
+<script type="text/javascript" src="/resources/js/app_common_auth.js?v=20230803152535"></script>
+<script type="text/javascript" src="/resources/js/app_common_funs.js?v=20230803152535"></script>
+<script type="text/javascript" src="/resources/js/app_common_nsl.js?v=20230803152535"></script>
+<script type="text/javascript" src="/resources/js/app_common_util.js?v=20230803152535"></script>
+<script type="text/javascript" src="/resources/js/biz_common.js?version=20230803152535" id="biz_common"
+	data-menuId="dep/prc"
+	data-frameId="depAcnoOpenPrc2"
+	data-serviceCd="depAcnoOpenPrc2.frm"
+	data-serverTime="20230803152535"
+	data-activeMode="local"
+	data-activeEnv="${active.env">
+</script>
+
+
+<body>
+    <!-- header -->
+    <div id="headerWrap">
+        <script>
+        $(document).ready(function(){
+            document.charset="euc-kr";
+            $("#headerWrap").load("../includes/header.html");
+        });
+        </script>
+    </div>
+	<!-- //header -->
+
+    <!--contentsWrap -->
+    <div class="contentsWrap">
+        <!--contents -->
+        <div class="contents">
+            <div class="default-wrap">
+                <!--D : 로그인시 노출-->
+				<section>
+					<div class="user-imgbox"><!--D: plus 클래스 추가 : 이미지 들어갈 경우 plus 클래스 삭제-->
+						<p class="user-img plus"><img src="../../../resources/images/common/user-img.png" alt="고객 이미지프로필"><span class="img-plus">이미지 추가</span></p><!--D: img-plus 태그 추가-->
+						<p><b>예가람(test000819)</b></p>
+						<p class="user-email">testkorea@naver.com</p>
+					</div>
+
+					<div class="product-more-wrap">
+						<ul class="more-bg-box">
+							<li class="tit">관심상품</li>
+							<li><a href="#none">예/적금 <span>3</span></a></li>
+							<li><a href="#none">대출 <span>2</span></a></li>
+						</ul>
+						<ul class="more-bg-box">
+							<li class="tit">상품비교</li>
+							<li><a href="#none">예/적금 <span>3</span></a></li>
+							<li><a href="#none">대출 <span>2</span></a></li>
+						</ul>
+					</div>
+
+					<dl class="userinfo-wrap ico">
+						<dt>나의 정보 <a href="#none" class="btn btn-gray " onclick="usrChngPwdCall();">비밀번호 변경</a></dt><!--D: 버튼 클래스 변경-->
+						<dd class="user-name">
+							<p class="tit">이름</p>
+							<p class="txt">김가람</p>
+						</dd>
+						<dd class="user-birth">
+							<p class="tit">생년월일</p>
+							<p class="txt">1999.05.01</p>
+						</dd>
+						<dd class="user-call">
+							<p class="tit">휴대폰<a href="#none" class="btn btn-sm" onclick="usrChngTelCall();">변경</a></p><!--D: 버튼 클래스 변경-->
+							<p class="txt">010-8568-6730</p>
+						</dd>
+						<dd class="user-email">
+							<p class="tit">이메일<a href="#none" class="btn btn-sm" onclick="usrChngEmadCall();">변경</a></p><!--D: 버튼 클래스 변경-->
+							<p class="txt">testkorea@naver.com</p>
+						</dd>
+						<dd class="user-job">
+							<p class="tit">직업<a href="#none" class="btn btn-sm" onclick="usrChngJobCall();">변경</a></p><!--D: 버튼 클래스 변경-->
+							<p class="txt" id="jobName">국회의원</p>
+						</dd>
+						<dd class="user-home">
+							<p class="tit">자택<a href="#none" class="btn btn-sm" onclick="usrChngJobCall();">변경</a></p><!--D: 버튼 클래스 변경-->
+							<p class="txt">051-640-9000<br/>부산광역시 동구 좌천1동 520-1</p>
+						</dd>
+						<dd class="user-office">
+							<p class="tit">직장<a href="#none" class="btn btn-sm" onclick="usrChngJobCall();">변경</a></p><!--D: 버튼 클래스 변경-->
+							<p class="txt">051-640-9000<br/>부산광역시 동구 좌천1동 520-1</p>
+						</dd>
+					</dl>
+
+					<!--배너 영역 마크업 변경 : 메인배너와 일원화 -->
+					<!--D: 삭제 <div class="banner-area">
+						<a href="javascript:void(0);" class="banner-box">
+							<p class="banner-tit">
+								<span>예/적금과 대출, 현명하게 관리하려면</span>
+								잉여생활자금 계산하고<br>적정 금액을 정해 보세요
+							</p>
+							<div class="go-link-wrap">
+								<span class="btn-go-link" onclick="doActionFrame('etc/inq/freeCashCalc1');">여유생활자금계산</span>
+							</div>
+						</a>
+					</div> -->
+					<!-- 배너 영역 마크업 변경 : 메인배너와 일원화 -->
+
+                    <div class="arrow-button-wrap"><!--D: 감싸주는 arrow-button-wrap 태그 추가 -->
+                        <ul class="arrow-button-list">
+                            <li><a href="#none" onclick="usrAlertCall();">알림 설정</a></li>
+                            <li><a href="#none" onclick="doActionFrame('usr/mng/usrReReg1');">비밀번호 분실/재등록</a></li><!--D: 텍스트 변경-->
+                            <li><a href="#none" onclick="doActionFrame('usr/mng/usrFrtPswd1');">최초 비밀번호 등록</a></li>
+                            <li><a href="#none" onclick="doActionFrame('usr/mng/usrPwErr1');">비밀번호 오류 해제</a></li><!--D: 텍스트 변경-->
+                        </ul>
+                    </div>
+
+					<div class="custom-setting-list">
+						<div class="item">
+							<div class="toggle-wrap">
+								<div class="flex-between-center">
+									<p class="tit">Push 알림 설정</p>
+									<input type="checkbox" id="smsChk">
+									<label for="smsChk">
+										<div class="switch-btn">
+											<span class="off">OFF</span>
+											<span class="on">ON</span>
+											<div class="inside"></div>
+										</div>
+									</label>
+								</div>
+							</div>
+							<p class="txt">Push 알림을 해제하시면 예스뱅킹APP에서 발송하는 다양한 정보 및 인증에 필요한 알림을 수신할 수 없으세요</p><!--D: 텍스트 변경-->
+						</div>
+
+						<div class="item">
+							<div class="flex-between-center">
+								<p class="tit">로그인 방법</p><!--D:텍스트 수정-->
+								<button type="button" class="btn btn-sm">설정</button><!--D: 버튼 클래스 변경-->
+							</div>
+						</div>
+	
+						<div class="item">
+							<div class="flex-between-center">
+								<p class="tit">큰글씨</p>
+								<button type="button" class="btn btn-sm">설정</button><!--D: 버튼 클래스 변경-->
+							</div>
+						</div>
+	
+						<div class="item">
+							<p class="tit">앱 버전</p>
+							<ul class="list-bull">
+								<li>현재버전 1.30</li>
+								<li>최신버전 1.30</li>
+							</ul>
+						</div>
+
+						<div class="item">
+							<p class="tit">지난 로그인 시간</p>
+							<ul class="list-bull">
+								<li>2023-06-20 12:00</li>
+							</ul>
+						</div>
+
+					</div>
+
+					<!--D: 삭제 <div class="logout-btn-wrap">
+						<div>
+							<a href="javascript:void(0);" class="btn">로그아웃</a>
+						</div>
+					</div> -->
+				</section>
+				<!--D : 로그인시 노출 //-->
+
+            </div>
+        </div>
+        <!-- //contents -->
+
+        <!--D: 로그아웃 버튼 fixed 버튼으로 이동-->
+        <div class="fixed-btn-wrap">
+            <div class="btn-wrap">
+                <a href="javascript:void(0);" class="btn">로그아웃</a>
+            </div>
+        </div>
+
+    </div>
+    <!-- //contentsWrap -->
+</body>
+</html>
+

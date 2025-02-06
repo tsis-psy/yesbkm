@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>예가람저축은행</title>
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="Content-Script-Type" content="text/javascript">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<meta name="keywords" content="예가람저축은행keywords" />
+<meta name="description" content="예가람저축은행description" />
+<!-- <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0, viewport-fit=cover"> -->
+	<meta name="viewport" content="user-scalable=no,width=375">
+
+<meta name="apple-mobile-web-app-status-bar-style" content="white" />
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta http-equiv="Expires" content="-1">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Cache-Control" content="No-Cache">
+
+<link href="/resources/css/default.css" rel="stylesheet" />
+<link href="/resources/css/renewal.css" rel="stylesheet" />
+
+
+<link href="/resources/css/swiper-bundle.min.css" rel="stylesheet" />
+<link rel="shortcut icon" type="image/x-icon" href="/resources/favicon.ico" />
+<link rel="icon" type="image/x-icon" href="/resources/favicon.ico" />
+
+<script type="text/javascript" src="/resources/js/lib/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="/resources/js/lib/jquery.cookie.js"></script>
+
+<script type="text/javascript" src="/resources/js/lib/swiper-bundle.min.js"></script>
+<script type="text/javascript" src="/resources/js/lib/TweenMax.min.js"></script>
+<script type="text/javascript" src="/resources/js/lib/jquery.animateSprite.min.js"></script>
+<script type="text/javascript" src="/resources/js/lib/default.js?v=20230803152535"></script>
+<script type="text/javascript" src="/resources/js/lib/ui.js?v=20230803152535"></script>
+<script type="text/javascript" src="/resources/js/lib/rolldate.js?v=20230803152535"></script>
+<script type="text/javascript" src="/resources/js/app_common_cont.js?v=20230803152535"></script>
+<script type="text/javascript" src="/resources/js/app_common_auth.js?v=20230803152535"></script>
+<script type="text/javascript" src="/resources/js/app_common_funs.js?v=20230803152535"></script>
+<script type="text/javascript" src="/resources/js/app_common_nsl.js?v=20230803152535"></script>
+<script type="text/javascript" src="/resources/js/app_common_util.js?v=20230803152535"></script>
+<script type="text/javascript" src="/resources/js/biz_common.js?version=20230803152535" id="biz_common"
+	data-menuId="dep/prc"
+	data-frameId="depAcnoOpenPrc2"
+	data-serviceCd="depAcnoOpenPrc2.frm"
+	data-serverTime="20230803152535"
+	data-activeMode="local"
+	data-activeEnv="${active.env">
+</script>
+
+
+<body>
+    <!-- header -->
+    <header class="headerWrap">
+		<div class="headerLeft">
+			<a href="javascript:void(0)" class="btn btnBack"><img src="/resources/images/header/btn_back.png" alt="이전페이지 이동하기"></a>
+		</div>
+		<div class="headerCenter">
+			<h2 class="text"><span>대출신청</span></h2> <!--D: TEXT -->
+		</div>
+		<div class="headerRight">
+			<a href="javascript:void(0)" class="btn btn-menu "><img src="/resources/images/header/btn_menu.png" alt="전체메뉴"></a>
+		</div>
+	</header>
+	<!-- //header -->
+
+    <!--contentsWrap -->
+    <div class="contentsWrap grid"><!--D: 리스트 하단 고정으로 grid 클래스 추가 - section 필요-->
+        <!--contents -->
+        <div class="contents">
+            <div class="default-wrap">
+
+                <div class="tit-wrap">
+                    <p class="txt"><strong>적합성&#183;적정성 정보</strong>를<br/> 확인할게요</p>
+                </div>
+
+                <!--S: FORM -->
+                <div class="form-all-wrap"><!--D: 5/13 - form 전체 감쌀 경우 : form-all-wrap / slect-box를 감쌀 경우 slect-wrap이 아닌 form-wrap으로 감싸주세요-->
+
+                    <div class="form-wrap error"><!--D: 5/13  개발 포커스 및 error 적용 문제로 select-wrap을 form-wrap으로 변경-->
+                        <div id="" class="select-box openSel" tabindex="1"><!--D: error 클래스 : 미선택 됐을 경우-->
+                            <label for="qValue1">연령</label>
+                            <span class="option" id="qText1">미선택</span>
+                        </div>
+                    </div>
+
+                    <div class="form-wrap"><!--D: 5/13  개발 포커스 및 error 적용 문제로 select-wrap을 form-wrap으로 변경-->
+                        <div  id="" class="select-box openSel" tabindex="1">
+                            <label for="qValue2">대출목적</label>
+                            <span class="option" id="qText2">미선택</span>
+                        </div>
+                    </div>
+
+                    <div class="form-wrap"><!--D: 5/13  개발 포커스 및 error 적용 문제로 select-wrap을 form-wrap으로 변경-->
+                        <div id="" class="select-box openSel" tabindex="1">
+                            <label for="qValue3">연간소득</label>
+                            <span class="option" id="qText3">미선택</span>
+                        </div>
+                    </div>
+
+                    <div class="form-wrap"><!--D: 5/13  개발 포커스 및 error 적용 문제로 select-wrap을 form-wrap으로 변경-->
+                        <div id="" class="select-box openSel" tabindex="1">
+                            <label for="qValue4">총 자산(순자산)</label>
+                            <span class="option" id="qText4">미선택</span>
+                        </div>
+                    </div>
+
+                    <div class="form-wrap"><!--D: 5/13  개발 포커스 및 error 적용 문제로 select-wrap을 form-wrap으로 변경-->
+                        <div id="" class="select-box openSel" tabindex="1">
+                            <label for="qValue5">부채</label>
+                            <span class="option" id="qText5">미선택</span>
+                        </div>
+                    </div>
+
+                    <div class="form-wrap"><!--D: 5/13  개발 포커스 및 error 적용 문제로 select-wrap을 form-wrap으로 변경-->
+                        <div  id="" class="select-box openSel" tabindex="1">
+                            <label for="qValue6">신용점수</label>
+                            <span class="option" id="qText6">미선택</span>
+                        </div>
+                    </div>
+
+                    <div class="form-wrap"><!--D: 5/13  개발 포커스 및 error 적용 문제로 select-wrap을 form-wrap으로 변경-->
+                        <div id="" class="select-box openSel" tabindex="1">
+                            <label for="qValue7">변제방법</label>
+                            <span class="option" id="qText7">미선택</span>
+                        </div>
+                    </div>
+
+                    <div class="form-wrap"><!--D: 5/13  개발 포커스 및 error 적용 문제로 select-wrap을 form-wrap으로 변경-->
+                        <div id="" class="select-box openSel" tabindex="1">
+                            <label for="qValue8">연소득 대비 고정지출</label>
+                            <span class="option" id="qText8">미선택</span>
+                        </div>
+                    </div>
+
+                    <div class="form-wrap">
+                        <div id="" class="select-box openSel" tabindex="1">
+                            <label for="qValue8">개인 거래목적</label>
+                            <span class="option" id="qText8">미선택</span>
+                        </div>
+                    </div>
+                    <div class="check-result-wrap">
+                        <ul class="check-result-area">
+                            <li class="check-box">
+                                <input type="checkbox" name="check" id="check01" value="">
+                                <label for="check01">보험료납부</label>
+                            </li>
+                            <li class="check-box">
+                                <input type="checkbox" name="check" id="check02" value="">
+                                <label for="check02">공과금납부</label>
+                            </li>
+                            <li class="check-box">
+                                <input type="checkbox" name="check" id="check03" value="">
+                                <label for="check03">카드대금</label>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="form-wrap">
+                        <div id="" class="select-box openSel" tabindex="1">
+                            <label for="qValue8">거래자금원천</label>
+                            <span class="option" id="qText8">미선택</span>
+                        </div>
+                    </div>
+
+                </div>
+                <!--E: FORM -->
+
+                <div><!--D: 리스트 구조 변경-->
+                    <div class="list-bull">
+                        <div class="border"></div>
+                        <strong>알아두세요</strong>
+                        <ul>
+                            <li>적합성 확인은 금융소비자보호에 관한 법률 제17조에 따라 진행돼요</li>
+                            <li>기입 정보가 정확하지 않거나 변경사항이 있으면 적합성 판단이 달라져서 대출신청이 어려울 수 있어요</li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <!-- //contents -->
+
+        <div class="fixed-btn-wrap">
+            <div class="btn-wrap flexCol"><!--D: flexCol추가-->
+                <a href="javascript:void(0);" class="btn disabled">다음</a><!-- D: disabled 삭제 시 활성화-->
+                <a href="javascript:void(0);" class="btn txt">그만하기</a><!--D: btn txt로 변경-->
+            </div>
+        </div>
+
+        <!--S:연령 (팝업)-->
+        <div id="lySel1" class="layerpopup layer-up show" style="display: none;">
+            <div class="content-wrap">
+                <div class="pop-header">
+                    <h2 class="pop-title">연령</h2>
+                    <button type="button" name="button" class="btn-layer-close" data-focus="btn-layer-close">닫기</button>
+                </div>
+                <div class="ly-scroll-con ly-select">
+                    <ul class="ly-select-list">
+                        <li><button>20대 이하</button></li>
+                        <li><button>30대</button></li>
+                        <li><button>40대</button></li>
+                        <li><button>50대</button></li>
+                        <li><button>60대 이상</button></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!--E:연령 (팝업)-->
+
+        
+
+        <!--S:대출 목적(팝업)-->
+        <div id="lySel2" class="layerpopup layer-up show" style="display: none;">
+            <div class="content-wrap">
+                <div class="pop-header">
+                    <h2 class="pop-title">대출 목적</h2>
+                    <button type="button" name="button" class="btn-layer-close" data-focus="btn-layer-close">닫기</button>
+                </div>
+                <div class="ly-scroll-con ly-select">
+                    <ul class="ly-select-list">
+                        <li><button>가계자금</button></li>
+                        <li><button>사업자금</button></li>
+                        <li><button>주택자금</button></li>
+                        <li><button>타기관 대출금상환</button></li>
+                        <li><button>의료비</button></li>
+                        <li><button>교육비</button></li>
+                        <li><button>기타</button>
+                            <div class="form-wrap  view-wrap form-type2">
+                                <div class="input">
+                                    <input type="text" title="기타" id="ipt02" class="inp" name="" value="" placeholder="대출 목적 입력" required="">
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!--E:대출 목적(팝업)-->
+
+        <!--S: 대출 목적 입력 (Alert)-->
+        <div id="lyAlert1" class="layerpopup type-alert on" style="display: none;">
+            <div class="content-wrap">
+                <div class="pop-con-wrap">
+                    <span class="pop-con">대출 목적을 입력해 주세요</span>
+                </div>
+                <div class="btn-wrap">
+                    <a href="javascript:void(0);" class="btn">확인</a>
+                </div>
+            </div>
+        </div>
+        <!--E: 대출 목적 입력 (Alert)-->
+
+        <!--S: 연간 소득 (팝업)-->
+        <div id="lySel2" class="layerpopup layer-up show" style="display: none;">
+            <div class="content-wrap">
+                <div class="pop-header">
+                    <h2 class="pop-title">연간 소득</h2>
+                    <button type="button" name="button" class="btn-layer-close" data-focus="btn-layer-close">닫기</button>
+                </div>
+                <div class="ly-scroll-con ly-select">
+                    <ul class="ly-select-list">
+                        <li><button>6백만원 이상 5천만원 미만</button></li>
+                        <li><button>5천만원 이상 1억원 미만</button></li>
+                        <li><button>1억원 이상</button></li>
+                        <li><button>해당없음</button>
+                            <div class="form-wrap  view-wrap form-type2">
+                                <div class="input">
+                                    <input type="text" title="해당없음" id="ipt02" class="inp" name="" value="" placeholder="연간 소득 입력" required="">
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!--E: 연간 소득 (팝업)-->
+
+        <!--S: 연간 소득 입력 (Alert)-->
+        <div id="lyAlert2" class="layerpopup type-alert on" style="display: none;">
+            <div class="content-wrap">
+                <div class="pop-con-wrap">
+                    <span class="pop-con">연간 소득을 입력해 주세요</span>
+                </div>
+                <div class="btn-wrap">
+                    <a href="javascript:void(0);" class="btn">확인</a>
+                </div>
+            </div>
+        </div>
+        <!--E: 연간 소득 입력 (Alert)-->
+
+        <!--S: 총 자산(순자산) (팝업)-->
+        <div id="lySel3" class="layerpopup layer-up show" style="display: none;">
+            <div class="content-wrap">
+                <div class="pop-header">
+                    <h2 class="pop-title">총 자산(순자산)</h2>
+                    <button type="button" name="button" class="btn-layer-close" data-focus="btn-layer-close">닫기</button>
+                </div>
+                <div class="ly-scroll-con ly-select">
+                    <ul class="ly-select-list">
+                        <li><button>1억원 미만</button></li>
+                        <li><button>1억원 이상 5억원 미만</button></li>
+                        <li><button>5억원 이상 10억원 미만</button></li>
+                        <li><button>10억원 이상</button></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!--E: 총 자산(순자산) (팝업)-->
+
+        <!--S:부채 (팝업)-->
+        <div id="lySel4" class="layerpopup layer-up show" style="display: none;">
+            <div class="content-wrap">
+                <div class="pop-header">
+                    <h2 class="pop-title">부채</h2>
+                    <button type="button" name="button" class="btn-layer-close" data-focus="btn-layer-close">닫기</button>
+                </div>
+                <div class="ly-scroll-con ly-select">
+                    <ul class="ly-select-list">
+                        <li><button>1천만원 미만</button></li>
+                        <li><button>1천만원 이상 1억원 미만</button></li>
+                        <li><button>1억원 이상</button></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!--E: 부채 (팝업)-->
+
+        <!--S: 신용 점수 (팝업)-->
+        <div id="lySel5" class="layerpopup layer-up show" style="display: none;">
+            <div class="content-wrap">
+                <div class="pop-header">
+                    <h2 class="pop-title">신용점수</h2>
+                    <button type="button" name="button" class="btn-layer-close" data-focus="btn-layer-close">닫기</button>
+                </div>
+                <div class="ly-scroll-con ly-select">
+                    <ul class="ly-select-list">
+                        <li><button>600점 이하</button></li>
+                        <li><button>600점 이상</button></li>
+                        <li><button>모름</button></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!--E: 신용 점수 (팝업)-->
+
+        <!--S: 변제방법 (팝업)-->
+        <div id="lySel6" class="layerpopup layer-up show" style="display: none;">
+            <div class="content-wrap">
+                <div class="pop-header">
+                    <h2 class="pop-title">변제방법</h2>
+                    <button type="button" name="button" class="btn-layer-close" data-focus="btn-layer-close">닫기</button>
+                </div>
+                <div class="ly-scroll-con ly-select">
+                    <ul class="ly-select-list">
+                        <li><button>근로소득</button></li>
+                        <li><button>사업소득</button></li>
+                        <li><button>임대소득</button></li>
+                        <li><button>연금소득</button></li>
+                        <li><button>기타</button>
+                            <div class="form-wrap  view-wrap form-type2">
+                                <div class="input">
+                                    <input type="text" title="기타" id="ipt02" class="inp" name="" value="" placeholder="변제방법 입력" required="">
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!--E: 변제방법 (팝업)-->
+
+        <!--S: 변제방법 입력 (Alert)-->
+        <div id="lyAlert3" class="layerpopup type-alert on" style="display: none;">
+            <div class="content-wrap">
+                <div class="pop-con-wrap">
+                    <span class="pop-con">대출금 변제방법을 입력해 주세요</span>
+                </div>
+                <div class="btn-wrap">
+                    <a href="javascript:void(0);" class="btn">확인</a>
+                </div>
+            </div>
+        </div>
+        <!--E: 변제방법 입력 (Alert)-->
+
+        <!--S: 연소득 대비 고정지출 (팝업)-->
+        <div id="lySel7" class="layerpopup layer-up show" style="display: none;">
+            <div class="content-wrap">
+                <div class="pop-header">
+                    <h2 class="pop-title">연소득 대비 고정지출</h2>
+                    <button type="button" name="button" class="btn-layer-close" data-focus="btn-layer-close">닫기</button>
+                </div>
+                <div class="ly-scroll-con ly-select">
+                    <ul class="ly-select-list">
+                        <li><button>연간 소득을 초과하지 않음</button></li>
+                        <li><button>연간 소득을 초과</button></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!--E: 연소득 대비 고정지출-->
+
+        <!--S: 연령 선택 필요 (Alert)-->
+        <div id="lyAlert5" class="layerpopup type-alert on" style="display: none;">
+            <div class="content-wrap">
+                <div class="pop-con-wrap">
+                    <span class="pop-con">연령을 입력해 주세요</span>
+                </div>
+                <div class="btn-wrap">
+                    <a href="javascript:void(0);" class="btn">확인</a>
+                </div>
+            </div>
+        </div>
+        <!--E: 연령 선택 필요(Alert)-->
+
+        <!--S: 적합성 적정성 정보 동의 (팝업)-->
+        <div id="lySel8" class="layerpopup layer-up show has-button" style="display: none;">
+            <div class="content-wrap">
+                <div class="pop-header">
+                    <h2 class="pop-title">적합성&#183;적정성 정보 동의</h2>
+                    <button type="button" name="button" class="btn-layer-close" data-focus="btn-layer-close">닫기</button>
+                </div>
+                <div class="ly-scroll-con ">
+                    <p class="fw-500">고객님이 제공한 정보의 내용을 정확히 인지하고 입력하셨나요?</p>
+
+                    <div class="confirm-wrap">
+                        <div class="confirm-apl-txt">
+                            1. 재산상황, 용도 등의 정확한 정보 입력하였음
+                        </div>
+                        <div class="confirm-apl-txt">
+                            2. 가입한 정보가 틀리거나 정보에 변경사항 있으면 대출 신청이 어려울 수 있음을 인지함
+                        </div>
+                        <div class="confirm-apl-txt">
+                            3. 개인(신용)정보 수집·이용·제공 및 신용정보점수 조회하는 것에 동의함
+                        </div>
+                    </div>
+                </div>
+
+                <div class="fixed-btn-wrap">
+                    <div class="btn-wrap type-popup">
+                        <a href="javascript:void(0);" class="btn">확인했어요</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--E: 적합성 적정성 정보 동의 (팝업)-->
+
+        <!--S: 적합성 적정성 작성 동의 (Alert)-->
+        <div id="lyAlert5" class="layerpopup type-alert on" style="display: none;">
+            <div class="content-wrap">
+                <div class="pop-con-wrap">
+                    <span class="pop-con">적합성&#183;적정성 작성에 동의하셔야<br/>대출이 가능해요</span>
+                </div>
+                <div class="btn-wrap">
+                    <a href="javascript:void(0);" class="btn">확인</a>
+                </div>
+            </div>
+        </div>
+        <!--E: 적합성 적정성 작성 동의 (Alert)-->
+
+        <!--S:-->
+        <!--E:-->
+    </div>
+    <!-- //contentsWrap -->
+</body>
+</html>
+

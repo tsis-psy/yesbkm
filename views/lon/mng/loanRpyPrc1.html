@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>예가람저축은행</title>
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="Content-Script-Type" content="text/javascript">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<meta name="keywords" content="예가람저축은행keywords" />
+<meta name="description" content="예가람저축은행description" />
+<!-- <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0, viewport-fit=cover"> -->
+	<meta name="viewport" content="user-scalable=no,width=375">
+
+<meta name="apple-mobile-web-app-status-bar-style" content="white" />
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta http-equiv="Expires" content="-1">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Cache-Control" content="No-Cache">
+
+<link href="/resources/css/default.css" rel="stylesheet" />
+<link href="/resources/css/renewal.css" rel="stylesheet" />
+
+
+<link href="/resources/css/swiper-bundle.min.css" rel="stylesheet" />
+<link rel="shortcut icon" type="image/x-icon" href="/resources/favicon.ico" />
+<link rel="icon" type="image/x-icon" href="/resources/favicon.ico" />
+
+<script type="text/javascript" src="/resources/js/lib/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="/resources/js/lib/jquery.cookie.js"></script>
+
+<script type="text/javascript" src="/resources/js/lib/swiper-bundle.min.js"></script>
+<script type="text/javascript" src="/resources/js/lib/TweenMax.min.js"></script>
+<script type="text/javascript" src="/resources/js/lib/jquery.animateSprite.min.js"></script>
+<script type="text/javascript" src="/resources/js/lib/default.js?v=20230803152535"></script>
+<script type="text/javascript" src="/resources/js/lib/ui.js?v=20230803152535"></script>
+<script type="text/javascript" src="/resources/js/lib/rolldate.js?v=20230803152535"></script>
+<script type="text/javascript" src="/resources/js/app_common_cont.js?v=20230803152535"></script>
+<script type="text/javascript" src="/resources/js/app_common_auth.js?v=20230803152535"></script>
+<script type="text/javascript" src="/resources/js/app_common_funs.js?v=20230803152535"></script>
+<script type="text/javascript" src="/resources/js/app_common_nsl.js?v=20230803152535"></script>
+<script type="text/javascript" src="/resources/js/app_common_util.js?v=20230803152535"></script>
+<script type="text/javascript" src="/resources/js/biz_common.js?version=20230803152535" id="biz_common"
+	data-menuId="dep/prc"
+	data-frameId="depAcnoOpenPrc2"
+	data-serviceCd="depAcnoOpenPrc2.frm"
+	data-serverTime="20230803152535"
+	data-activeMode="local"
+	data-activeEnv="${active.env">
+</script>
+
+
+<body>
+    <!-- header -->
+    <div id="headerWrap">
+        <script>
+        $(document).ready(function(){
+            document.charset="euc-kr";
+            $("#headerWrap").load("../includes/header.html");
+        });
+        </script>
+    </div>
+	<!-- //header -->
+
+    <!--contentsWrap -->
+    <div class="contentsWrap">
+        <!--contents -->
+        <div class="contents">
+            <div class="default-wrap">
+
+				<div class="tit-wrap">
+					<p class="txt"><strong>상환하실 금액</strong>을 입력해주세요</p>
+				</div>
+                
+                <!--S: FORM-->
+                <div class="form-all-wrap"><!--D: 폼 가싸는 form-all-wrap 태그 추가 -->
+
+                    <!-- <div class="form-wrap type2">
+
+                        <label for="RPY_AMT" class="essential">상환금액</label>
+                        <div class="input">
+                            <input type="tel" id="RPY_AMT" name="RPY_AMT" class="validChk" onkeyup="validChk(); removeErr(this);" value="" placeholder="상환금액을 입력해주세요." required="">
+                            <div class="value-wrap">
+                                <strong class="value"></strong>
+                                <span class="unit">원</span>
+                                <button type="reset" class="btn-delete">삭제</button>
+                            </div>
+                        </div>
+
+                        <div class="check-account">
+                            <input type="checkbox" id="CMPY_YN" name="CMPY_YN" value="Y">
+                            <label for="CMPY_YN">
+                                <span>전액 상환</span>
+                            </label>
+                        </div>
+                        <div class="info-txt">전액상환을 선택하면 남은 대출금 전액을 상환해요</div>
+                    </div> -->
+
+                    <!--[퍼블-1]: 다른 페이지에서 썻던 레이아웃 적용-->
+                    <div class="form-wrap type2">
+                        <label for="LA" class="essential">상환금액</label>
+                        <div class="input">
+                            <input type="tel" title="" class="" id="LA" name="PYMN_AMT" value="0" placeholder="상환금액을 입력해주세요." required="">
+                            <div class="value-wrap">
+                                <strong class="value PYMN_AMT">0</strong>
+                                <span class="unit">원</span>
+                                <button type="reset" class="btn-delete">검색어 삭제</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="check-account">
+                        <input type="checkbox" id="CMPY_YN" name="CMPY_YN" value="Y">
+                        <label for="CMPY_YN">
+                            <span>전액 상환</span>
+                        </label>
+                    </div>
+                    <div class="info-txt">전액상환을 선택하면 남은 대출금 전액을 상환해요</div>
+                    
+                    <!--[퍼블-1]: 다른 페이지에서 썻던 레이아웃 적용//-->
+
+                    <div class="txt-list-wrap">
+                        <div class="txt-detail-area">
+                            <div class="txt-detail-tit">
+                                <strong>예스론</strong>
+                            </div>
+                            <ul class="txt-list">
+                                <li>
+                                    <span class="tit">계좌번호</span>
+                                    <span class="txt">123-123-5645</span>
+                                </li>
+                                <li>
+                                    <span class="tit">남은 대출금</span><!--D: 텍스트 변경-->
+                                    <span class="txt">원</span>
+                                </li>
+                                <li>
+                                    <span class="tit">대출신청일</span>
+                                    <span class="txt">2022.05.04</span>
+                                </li>
+                                <li>
+                                    <span class="tit">대출만기일</span>
+                                    <span class="txt">2022.05.04</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!--D: 삭제 <div class="form-wrap">
+                        <div class="input"> -->
+                            <div id="wtchAcnoDiv" class="form-wrap"><!--D: 클래스 변경-->
+                                <div class="select-box" tabindex="1"  onclick="biz.acnoList('1', selWtchAcno);">
+                                    <label for="WTCH_ACNO_16" class="essential">출금계좌</label><!--D: essential 클래스 추가-->
+                                    <span class="option" id="wtchAcnoText">미선택</span>
+                                    <input type="hidden" id="WTCH_ACNO_16" name="WTCH_ACNO_16" class="validChk">
+                                </div>
+                            </div>
+                        <!-- </div>
+                    </div> -->
+
+                    <div class="form-wrap password">
+                        <label for="ACCO_PWD" class="formlabel essential">출금계좌 비밀번호</label><!--D: essential 클래스 추가 / 텍스트 변경-->
+                        <div class="input">
+                            <input type="tel" title="출금계좌 비밀번호" id="ACCO_PWD" class="inp validChk" value="" placeholder="비밀번호 입력" required="" onclick="accoPwd();" readonly="readonly">
+                            <input type="hidden" id="REQ_ACCO_PWD" name="REQ_ACCO_PWD">
+                        </div>
+                        <p class="error-txt">출금계좌 비밀번호를 입력해주세요</p>
+                    </div>
+                
+                </div>
+                <!--E: FORM-->
+
+
+			</div>
+        </div>
+        <!-- //contents -->
+
+
+        <div class="fixed-btn-wrap">
+			<div class="btn-wrap">
+				<a href="#none" class="btn disabled">다음</a>
+			</div>
+		</div>
+
+        <!-- S: 진행 전 유의사항 안내 (팝업)-->
+        <div id="lyPop" class="layerpopup layer-up has-button show" style="display:block;">
+            <div class="content-wrap">
+                <div class="pop-header">
+                    <h2 class="pop-title">진행 전 확인해 주세요!</h2>
+                    <button type="button" name="button" class="btn-layer-close" data-focus="btn-layer-close"  onclick="closePopupUp('lyPop');">닫기</button>
+                </div>
+                <div class="default-wrap">
+                    <div class="txtbox-wrap">
+                        <p>상환하실 계좌로 오늘 제증명서를 발급하셨으면 오늘은 원금상환/한도해지를 진행할 수 없어요</p><!--D: 텍스트 수정-->
+                    </div>
+                </div>
+            </div>
+            <div class="fixed-btn-wrap">
+                <div class="btn-wrap type-popup">
+                    <a href="#none" class="btn" onclick="closePopupUp('lyPop');">확인</a>
+                </div>
+            </div>
+        </div>
+        <!-- E: 진행 전 유의사항 안내 (팝업)-->
+
+        <!-- S: 대출철회권안내 (팝업)-->
+        <div id="lyPop2" class="layerpopup layer-up has-button show"  style="display:none;">
+            <div class="content-wrap">
+                <div class="pop-header">
+                    <h2 class="pop-title">대출철회권 안내</h2>
+                    <button type="button" name="button" class="btn-layer-close" data-focus="btn-layer-close" onclick="closePopupUp('lyPop2');">닫기</button>
+                </div>
+                <div class="ly-scroll-con ly-select">
+                    <div class="txtbox-wrap"><!--D: 구조 변경 및 텍스트 변경-->
+                        <p>대출신청일로 부터 14일 이내에 전액 상환을 하실 경우에는 중도상환 수수료가 면제되는 대출 철회권으로 진행할 수 있어요</p>
+                        <p>대출철회 신청으로 진행하시겠어요?</p>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="fixed-btn-wrap">
+                <div class="btn-wrap flexCol"><!--D: flexCol 클래스 변경 -->
+                    <a href="#none" class="btn">대출철회 신청으로 진행</a><!--D: 텍스트 수정 -->
+                    <a href="#none" class="btn txt">그냥 진행할게요</a><!--D: btn txt 클래스 변경 / 텍스트 변경-->
+                </div>
+            </div>
+        </div>
+        <!-- E: 대출철회권안내 (팝업)-->
+
+
+        <!-- S: 중도상환처리동의 (팝업)-->
+        <div id="lyPop3" class="layerpopup layer-up has-button show"  style="display:none;">
+            <div class="content-wrap">
+                <div class="pop-header">
+                    <h2 class="pop-title">중도상환 처리 동의</h2><!--D: 텍스트 변경-->
+                    <button type="button" name="button" class="btn-layer-close" data-focus="btn-layer-close" onclick="closePopupUp('lyPop3');">닫기</button>
+                </div>
+                <div class="ly-scroll-con ly-select">
+                    <div class="txtbox-wrap"><!--D: 텍스트 변경 / 구조 변경-->
+                        <p><b>중도상환 수수료가 면제되는</b> 대출철회권에 대한 설명을 확인 하였으며, 대출철회신청이 아닌 중도 상환으로 처리하는데 동의합니다.</p>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="fixed-btn-wrap">
+                <div class="btn-wrap flexCol"><!--D: flexCol 클래스 추가-->
+                    <a href="#none" class="btn" onclick="closePopupUp('lyPop3');">동의함</a><!--D: 텍스트 변경-->
+                    <a href="#none" class="btn txt">동의하지 않음</a><!--D: btn txt 클래스 변경 / 텍스트 변경-->
+                </div>
+            </div>
+        </div>
+	    <!--E: 중도상환처리동의 (팝업)-->
+
+        
+
+    </div>
+    <!-- //contentsWrap -->
+</body>
+</html>
+

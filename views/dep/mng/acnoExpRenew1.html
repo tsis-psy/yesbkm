@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>예가람저축은행</title>
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="Content-Script-Type" content="text/javascript">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<meta name="keywords" content="예가람저축은행keywords" />
+<meta name="description" content="예가람저축은행description" />
+<!-- <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0, viewport-fit=cover"> -->
+	<meta name="viewport" content="user-scalable=no,width=375">
+
+<meta name="apple-mobile-web-app-status-bar-style" content="white" />
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta http-equiv="Expires" content="-1">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Cache-Control" content="No-Cache">
+
+<link href="/resources/css/default.css" rel="stylesheet" />
+<link href="/resources/css/renewal.css" rel="stylesheet" />
+
+
+<link href="/resources/css/swiper-bundle.min.css" rel="stylesheet" />
+<link rel="shortcut icon" type="image/x-icon" href="/resources/favicon.ico" />
+<link rel="icon" type="image/x-icon" href="/resources/favicon.ico" />
+
+<script type="text/javascript" src="/resources/js/lib/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="/resources/js/lib/jquery.cookie.js"></script>
+
+<script type="text/javascript" src="/resources/js/lib/swiper-bundle.min.js"></script>
+<script type="text/javascript" src="/resources/js/lib/TweenMax.min.js"></script>
+<script type="text/javascript" src="/resources/js/lib/jquery.animateSprite.min.js"></script>
+<script type="text/javascript" src="/resources/js/lib/default.js?v=20230803152535"></script>
+<script type="text/javascript" src="/resources/js/lib/ui.js?v=20230803152535"></script>
+<script type="text/javascript" src="/resources/js/lib/rolldate.js?v=20230803152535"></script>
+<script type="text/javascript" src="/resources/js/app_common_cont.js?v=20230803152535"></script>
+<script type="text/javascript" src="/resources/js/app_common_auth.js?v=20230803152535"></script>
+<script type="text/javascript" src="/resources/js/app_common_funs.js?v=20230803152535"></script>
+<script type="text/javascript" src="/resources/js/app_common_nsl.js?v=20230803152535"></script>
+<script type="text/javascript" src="/resources/js/app_common_util.js?v=20230803152535"></script>
+<script type="text/javascript" src="/resources/js/biz_common.js?version=20230803152535" id="biz_common" 
+	data-menuId="dep/prc"
+	data-frameId="depAcnoOpenPrc2"
+	data-serviceCd="depAcnoOpenPrc2.frm" 
+	data-serverTime="20230803152535"
+	data-activeMode="local"
+	data-activeEnv="${active.env">
+</script>
+
+
+<body>
+    <!-- header -->
+    <header class="headerWrap">
+        <div class="headerLeft">
+        </div>
+        <div class="headerCenter">
+            <h2 class="text"><span>만기자동재예치/만기해지송금 해지</span></h2> <!--D: TEXT -->
+        </div>
+        <div class="headerRight">
+            <a href="javascript:void(0)" class="btn btn-menu"><img src="/resources/images/header/btn_menu.png" alt="전체메뉴"></a>  <!--D: 전체메뉴버튼 -->
+        </div>
+    </header>
+	<!-- //header -->
+
+        <!--contentsWrap -->
+        <div class="contentsWrap">
+            <!--contents -->
+            <div class="contents">
+                <div class="default-wrap"> <!-- [퍼블] .mt0 삭제 -->
+
+                    <!-- [퍼블] 전체 변경 -->
+                    <div class="visaul-info-section">
+                        <div class="visaul-info-box">
+                            <div class="flag-tit-wrap"><em class="flag style2">정기예금</em></div>
+                            <strong class="info-tit">e정기예금 단리</strong>
+                            <div class="account-area">
+                                <p class="account">123-12-12-1234567</p>
+                                <button type="button" class="btn-copy">복사하기</button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- // [퍼블] 전체 변경 -->
+    
+                    <!-- <div class="mt40 mb20">
+                        <span class="label-txt">계약금액</span>
+                        <div class="value-wrap">
+                            <strong class="value" id="amtTxt"></strong>
+                            <span class="unit">원</span>
+                        </div>
+                    </div> [퍼블] 주석 처리 -->
+    
+                    <!-- [퍼블] 전체 변경 -->
+                    <div class="txt-list-wrap">
+                        <div class="txt-detail-area">
+                            <ul class="txt-list">
+                                <li>
+                                    <span class="tit">가입금액</span>
+                                    <span class="txt">000,000,000원</span>
+                                </li>
+                                <li>
+                                    <span class="tit">예금 개설일</span>
+                                    <span class="txt">YYYY.MM.DD</span>
+                                </li>
+                                <li>
+                                    <span class="tit">예금 만기일</span>
+                                    <span class="txt">YYYY.MM.DD</span>
+                                </li>
+                                <li>
+                                    <span class="tit">자동만기연장</span>
+                                    <span class="txt" id="sttTxt">미설정</span>
+                                </li>
+                                <li>
+                                    <span class="tit">만기해지송금</span>
+                                    <span class="txt" id="">미설정</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!--D : form-wrap을 form-all-wrap로 감싸기-->
+                    <div class="form-all-wrap">
+                        <div class="form-wrap">
+                            <div class="input">
+                                <div class="select-wrap on" id="exptYnDiv">
+                                    <div class="select-box" tabindex="1" onclick="openPopupUp('exptYn');">
+                                        <label for="exptYnVal" class="essential">자동만기연장여부</label>
+                                        <span class="option" id="exptYnText">자동연장(원금)</span>
+                                    </div>
+                                    <input type="hidden" id="exptYnVal" name="" value="1" class="validChk">
+                                </div>
+                            </div>
+                            <p class="error-txt">자동만기연장여부를 선택해주세요</p>
+                        </div>
+                        <div id="displayYN"	style="display:block;">
+                            <div class="form-wrap" id="divBank">
+                                <div class="input">
+                                    <div class="select-wrap" id="div_WTCH_BKNM">
+                                        <div class="select-box" tabindex="1" onclick="removeErr(this); biz.bank(wtchBankCallback);">
+                                            <label for="WTCH_BKNM" class="essential">은행선택</label>
+                                            <span class="option" id="WTCH_BKNM" >미선택</span>
+                                        </div>
+                                        <input type="hidden" id="WTCH_BKCD" name="WTCH_BKCD" value="" class="validChk"/><!-- 출금은행코드 -->
+                                    </div>
+                                </div>
+                                <p class="error-txt">출금은행을 선택해주세요</p>
+                            </div>
+                            <div class="form-wrap" id="divAcno">
+                                <label for="TRNF_ACNO" class="formlabel essential">계좌번호</label>
+                                <div class="input">
+                                    <input type="tel" title="계좌번호" id="TRNF_ACNO" 
+                                    class="inp validChk" name="TRNF_ACNO" value="" 
+                                    placeholder="계좌번호 입력" pattern="[0-9]*" oninput="UtilFunc.inputMaxLength(this);" onkeyup="removeErr(this); validChk();" onclick="removeErr(this);" onchange="validChk();" maxlength="16" required numberOnly>
+                                </div>
+                                <p class="error-txt">계좌번호를 입력해주세요</p>
+                            </div>
+                        </div>
+                    </div>
+
+    
+                    <!-- D : 구조변경 -->
+                    <div class="list-bull">
+                        <div class="border"></div>
+                        <strong>알아두세요</strong>
+                        <ul>
+                            <li>예금 만기 시 원금 또는 원리금(원금+이자)을 계좌의 변경 없이 최대 3회차까지 자동으로 재예치 가능해요</li>
+                            <li>재예치 회차에 관계없이 중도해지를 할 수 있어요</li>
+                            <li>3회차 재예치 이후 계좌 해지는 인터넷뱅킹 또는 창구 방문을 통해 해지가 가능해요</li>
+                            <!-- <li>
+                                <strong class="color-666666">만기이자이체구분</strong>
+                                <ul>
+                                    <li class="hyphen">
+                                        내부(타행) 이체
+                                        <ul class="list-bull mt0">
+                                            <li>만기 당일 발생한 세후 이자 금액을 제외한 원금만을 재예치해요 (발생한 세후 이자 금액은 등록하신 당 저축은행 또는 타행 본인 소유 입출금 가능 계좌로 자동 입금)</li>
+                                        </ul>
+                                    <li class="hyphen">
+                                        원금+이자
+                                        <ul class="list-bull mt0">
+                                            <li>만기당일 발생한 원금과 세후이자 금액을 합산하여 재예치해요(비과세 종합저축 계좌의 경우 만기자동재예치 시 바과세 한도초과에 따른 재예치 오류가 발생할 수 있어요</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li> -->
+                        </ul>
+                    </div>
+
+                    <div class="list-bull">
+                        <strong>만기이자이체구분</strong>
+                        <ul>
+                            <li>자동 연장(원금)<br/>
+                                만기 당일 발생한 세후 이자 금액을 제외한 원금만을 재예치해요 (발생한 세후 이자 금액은 등록하신 당 저축은행 또는 타행 본인 소유 입출금 가능 계좌로 자동 입금)
+                            </li>
+                            <li>
+                                자동 연장(원리금)<br/>
+                                만기당일 발생한 원금과 세후이자 금액을 합산하여 재예치해요(비과세 종합저축 계좌의 경우 만기자동재예치 시 바과세 한도초과에 따른 재예치 오류가 발생할 수 있어요)
+                            </li>
+                        </ul>
+                    </div>
+    
+                </div>
+            </div>
+            <!-- //contents -->
+            <div class="fixed-btn-wrap">
+                <div class="btn-wrap">
+                    <a href="javascript:void(0);" class="btn">등록</a>
+                </div>
+            </div>
+
+              <!--S: 자동만기여부 선택(팝업)-->
+            <div id="lyPop2" class="layerpopup layer-up show" style=" display: none;"><!-- [D] has-button 클래스 : 하단버튼 있을 경우 사용 -->
+                <div class="content-wrap">
+                    <div class="pop-header">
+                        <h2 class="pop-title">자동만기여부</h2>
+                        <button type="button" name="button" class="btn-layer-close" data-focus="btn-layer-close">닫기</button>
+                    </div>
+                    <div class="ly-scroll-con ly-select">
+                        <ul class="ly-select-list">
+                            <li class="active"><button>자동연장(원금)</button></li>
+                            <li><button>자동연장(원리금)</button></li>
+                            <li><button>자동해지송금</button></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!--E: 자동만기여부 선택(팝업)-->
+            <!--S: 만기자동 재예치/만기해지송금 안내(팝업)-->
+        <div id="lyPop2" class="layerpopup layer-up has-button show" style=" display: none;"><!-- [D] has-button 클래스 : 하단버튼 있을 경우 사용 -->
+            <div class="content-wrap">
+                <div class="pop-header">
+                    <h2 class="pop-title">만기자동 재예치/만기해지송금 안내</h2>
+                    <button type="button" name="button" class="btn-layer-close" data-focus="btn-layer-close">닫기</button>
+                </div>
+                <div class="ly-scroll-con">
+                    <div class="txtbox-wrap">
+                        <p>만기자동재예치/만기해지송금 설정을 변경 하시겠어요?</p>
+                    </div>
+
+                </div>
+            </div>
+            <!--D: fixed-btn-wrap 버튼은 content-wrap 밖으로 위치-->
+            <div class="fixed-btn-wrap">
+                <div class="btn-wrap">
+                    <a href="javascript:void(0);" class="btn">변경</a>
+                </div>
+            </div>
+        </div>
+        <!--E: 만기자동 재예치/만기해지송금 안내(팝업)-->
+    
+
+        </div>
+        <!-- //contentsWrap -->
+</body>
+</html>
+

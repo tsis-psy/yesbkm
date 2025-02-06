@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>예가람저축은행</title>
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="Content-Script-Type" content="text/javascript">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<meta name="keywords" content="예가람저축은행keywords" />
+<meta name="description" content="예가람저축은행description" />
+<!-- <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0, viewport-fit=cover"> -->
+	<meta name="viewport" content="user-scalable=no,width=375">
+
+<meta name="apple-mobile-web-app-status-bar-style" content="white" />
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta http-equiv="Expires" content="-1">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Cache-Control" content="No-Cache">
+
+<link href="/resources/css/default.css" rel="stylesheet" />
+<link href="/resources/css/renewal.css" rel="stylesheet" />
+
+
+<link href="/resources/css/swiper-bundle.min.css" rel="stylesheet" />
+<link rel="shortcut icon" type="image/x-icon" href="/resources/favicon.ico" />
+<link rel="icon" type="image/x-icon" href="/resources/favicon.ico" />
+
+<script type="text/javascript" src="/resources/js/lib/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="/resources/js/lib/jquery.cookie.js"></script>
+
+<script type="text/javascript" src="/resources/js/lib/swiper-bundle.min.js"></script>
+<script type="text/javascript" src="/resources/js/lib/TweenMax.min.js"></script>
+<script type="text/javascript" src="/resources/js/lib/jquery.animateSprite.min.js"></script>
+<script type="text/javascript" src="/resources/js/lib/default.js?v=20230803152535"></script>
+<script type="text/javascript" src="/resources/js/lib/ui.js?v=20230803152535"></script>
+<script type="text/javascript" src="/resources/js/lib/rolldate.js?v=20230803152535"></script>
+<script type="text/javascript" src="/resources/js/app_common_cont.js?v=20230803152535"></script>
+<script type="text/javascript" src="/resources/js/app_common_auth.js?v=20230803152535"></script>
+<script type="text/javascript" src="/resources/js/app_common_funs.js?v=20230803152535"></script>
+<script type="text/javascript" src="/resources/js/app_common_nsl.js?v=20230803152535"></script>
+<script type="text/javascript" src="/resources/js/app_common_util.js?v=20230803152535"></script>
+<script type="text/javascript" src="/resources/js/biz_common.js?version=20230803152535" id="biz_common"
+	data-menuId="dep/prc"
+	data-frameId="depAcnoOpenPrc2"
+	data-serviceCd="depAcnoOpenPrc2.frm"
+	data-serverTime="20230803152535"
+	data-activeMode="local"
+	data-activeEnv="${active.env">
+</script>
+
+
+<body>
+    <!-- header -->
+    <div id="headerWrap">
+        <script>
+        $(document).ready(function(){
+            document.charset="euc-kr";
+            $("#headerWrap").load("../includes/header.html");
+        });
+        </script>
+    </div>
+	<!-- //header -->
+
+    <!--contentsWrap -->
+    <div class="contentsWrap">
+        <!--contents -->
+        <div class="contents">
+            <div class="default-wrap">
+                <div class="tit-wrap">
+                    <p class="txt"><strong>사고신고 내역조회</strong></p>
+                </div>
+
+                <!--S: txt-list-wrap-->
+                <div class="txt-list-wrap"><!--D: txt-list-wrap 안에 txt-detail-area 리스트 뿌려짐-->
+
+                    <!--S:반복문-->
+                    <!--D: 통장분실 -->
+                    <div class="txt-detail-area">
+                        <div  class="txt-detail-tit">
+                            <strong>e-정기예금 단리</strong><span><em class="flag style8">통장분실</em></span><!--D: 텍스트 변경 /em 구조에 style8 클래스로 변경-->
+                        </div>
+                        <ul class="txt-list">
+                            <li>
+                                <span class="tit">계좌번호</span>
+                                <span class="txt" id="OTP_VNDR_CD">12324-123-1234-12</span>
+                            </li>
+                            <li>
+                                <span class="tit">신고일</span>
+                                <span class="txt" id="OTP_SRNO1">2023.06.08</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!--D: 인감분실 -->
+                    <div class="txt-detail-area">
+                        <div  class="txt-detail-tit">
+                            <strong>E-RUN정기적금</strong><span><em class="flag style8">인감분실</em></span><!--D: em 구조에 style8 클래스로 변경-->
+                        </div>
+                        <ul class="txt-list">
+                            <li>
+                                <span class="tit">계좌번호</span>
+                                <span class="txt" id="OTP_VNDR_CD">12324-123-1234-12</span>
+                            </li>
+                            <li>
+                                <span class="tit">신고일</span>
+                                <span class="txt" id="OTP_SRNO1">2023.06.08</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!--D: IC카드 분실 -->
+                    <div class="txt-detail-area">
+                        <div  class="txt-detail-tit">
+                            <strong>현금카드</strong><span><em class="flag style8">IC카드 분실</em></span><!--D: em 구조에 style8 클래스로 변경-->
+                        </div>
+                        <ul class="txt-list">
+                            <li>
+                                <span class="tit">카드번호</span>
+                                <span class="txt" id="CANO">1234-<span class="num-masking">●●●●-●●●●</span>-1234</span><!--D: num-masking 입력된 번호 마스킹 클래스 사용해주세요-->
+                            </li>
+                            <li>
+                                <span class="tit">계좌번호</span>
+                                <span class="txt" id="OTP_VNDR_CD">12324-123-1234-12</span>
+                            </li>
+                            <li>
+                                <span class="tit">유효기간</span>
+                                <span class="txt" id="OTP_SRNO1">2023.06.08</span>
+                            </li>
+                            <li>
+                                <span class="tit">신고일</span>
+                                <span class="txt" id="OTP_SRNO1">2023.06.08</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!--D: OTP 분실 -->
+                    <div class="txt-detail-area">
+                        <div class="txt-detail-tit">
+                            <strong>OTP</strong><span><em class="flag style8">OTP 분실</em></span><!--D: em 구조에 style8 클래스로 변경-->
+                        </div>
+                        <ul class="txt-list">
+                            <li>
+                                <span class="tit">벤더</span>
+                                <span class="txt" id="OTP_VNDR_CD">미래테크놀로지</span>
+                            </li>
+                            <li>
+                                <span class="tit">일련번호</span>
+                                <span class="txt" id="OTP_SRNO1">124551234</span>
+                            </li>
+                            <li>
+                                <span class="tit">등록일</span>
+                                <span class="txt" id="UZ_REG_DTM">2023.06.08</span>
+                            </li>
+                            <li>
+                                <span class="tit">신고일</span>
+                                <span class="txt" id="ACDT_APLC_DTM">2023.06.08</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <!--E:반복문-->
+
+                </div>
+                <!--E: txt-list-wrap-->
+
+                <div class="list-bull"><!--D: 구조 변경-->
+                    <div class="border"></div>
+                    <strong>알아두세요</strong>
+                    <ul>
+                        <li>모든 사고신고해제는 영업점에 직접 방문하여 해제신청을 하셔야해요</li>
+                        <li class="point-red">본인 신분증을 필히 지참하세요</li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+        <!-- //contents -->
+
+        <div class="fixed-btn-wrap">
+            <div class="btn-wrap"> 
+                <a href="javascript:void(0);" class="btn">홈으로</a>
+            </div>
+        </div>
+
+    </div>
+    <!-- //contentsWrap -->
+</body>
+</html>
+

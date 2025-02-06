@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>예가람저축은행</title>
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="Content-Script-Type" content="text/javascript">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<meta name="keywords" content="예가람저축은행keywords" />
+<meta name="description" content="예가람저축은행description" />
+<!-- <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0, viewport-fit=cover"> -->
+	<meta name="viewport" content="user-scalable=no,width=375">
+
+<meta name="apple-mobile-web-app-status-bar-style" content="white" />
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta http-equiv="Expires" content="-1">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Cache-Control" content="No-Cache">
+
+<link href="/resources/css/default.css" rel="stylesheet" />
+<link href="/resources/css/renewal.css" rel="stylesheet" />
+
+
+<link href="/resources/css/swiper-bundle.min.css" rel="stylesheet" />
+<link rel="shortcut icon" type="image/x-icon" href="/resources/favicon.ico" />
+<link rel="icon" type="image/x-icon" href="/resources/favicon.ico" />
+
+<script type="text/javascript" src="/resources/js/lib/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="/resources/js/lib/jquery.cookie.js"></script>
+
+<script type="text/javascript" src="/resources/js/lib/swiper-bundle.min.js"></script>
+<script type="text/javascript" src="/resources/js/lib/TweenMax.min.js"></script>
+<script type="text/javascript" src="/resources/js/lib/jquery.animateSprite.min.js"></script>
+<script type="text/javascript" src="/resources/js/lib/default.js?v=20230803152535"></script>
+<script type="text/javascript" src="/resources/js/lib/ui.js?v=20230803152535"></script>
+<script type="text/javascript" src="/resources/js/lib/rolldate.js?v=20230803152535"></script>
+<script type="text/javascript" src="/resources/js/app_common_cont.js?v=20230803152535"></script>
+<script type="text/javascript" src="/resources/js/app_common_auth.js?v=20230803152535"></script>
+<script type="text/javascript" src="/resources/js/app_common_funs.js?v=20230803152535"></script>
+<script type="text/javascript" src="/resources/js/app_common_nsl.js?v=20230803152535"></script>
+<script type="text/javascript" src="/resources/js/app_common_util.js?v=20230803152535"></script>
+<script type="text/javascript" src="/resources/js/biz_common.js?version=20230803152535" id="biz_common"
+	data-menuId="dep/prc"
+	data-frameId="depAcnoOpenPrc2"
+	data-serviceCd="depAcnoOpenPrc2.frm"
+	data-serverTime="20230803152535"
+	data-activeMode="local"
+	data-activeEnv="${active.env">
+</script>
+
+
+<body>
+    <!-- header -->
+    <header class="headerWrap">
+        <div class="headerLeft">
+            <!--D: 이전버튼-->
+            <a href="javascript:void(0)" class="btn btnBack"><img src="/resources/images/header/btn_back.png" alt="이전페이지 이동하기"></a>
+        </div>
+        <div class="headerCenter">
+            <h2 class="text"><span>공지사항</span></h2> <!--D: TEXT -->
+        </div>
+        <div class="headerRight">
+            <!--D: 전체메뉴버튼 -->
+            <a href="javascript:void(0)" class="btn btn-menu "><img src="/resources/images/header/btn_menu.png" alt="전체메뉴"></a>
+        </div>
+    </header>
+	<!-- //header -->
+
+        <!--contentsWrap -->
+        <div class="contentsWrap">
+            <!--contents -->
+            <div class="contents">
+                <div class="default-wrap">
+
+                    <div class="search-area"><!-- D: 클래스 삭제 -->
+                        <div class="form-wrap type-box"><!-- D: 클래스 추가 -->
+                            <div class="input">
+                                <input type="search" title="" id="NOTICE_SEARCH_KEYWORD" class="" name="" value="" maxlength="30" placeholder="검색어를 입력해주세요" required="">
+                            </div>
+                            <button type="button" class="btn-search">검색</button>
+                            <button type="button" class="btn-delete" >검색어 삭제</button><!--D: 검색창에 text가 있을 경우 나타남 / 검색어 삭제 아래로 위치 변경-->
+                        </div>
+                    </div>
+
+                    <ul class="terms-list" id=""><!--D:  10건 씩 노출 -->
+                        <!--D:<span class="file-clip"></span> 첨부파일이 업로드 된 게시 글의 경우에는 아이콘이 노출됨 -->
+                        <li  class="fix"><!-- D:  active 클래스 : 상단 고정일 경우-->
+                            <a href="javascript:void(0);">
+                                <p>2023년 2분기 4월 캠코매각 대상 (개인) 신용정보 제공 사실 공지<span class="file-clip"></span></p><!--D:<span class="file-clip"></span> 첨부파일이 업로드 된 게시 글의 경우에는 아이콘이 노출됨 -->
+                                <span>2023.04.18</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0);">
+                                <p>2023년 2분기 4월 캠코매각 대상 (개인) 신용정보 제공 사실 공지<span class="file-clip"></span></p><!--D:<span class="file-clip"></span> 첨부파일이 업로드 된 게시 글의 경우에는 아이콘이 노출됨 -->
+                                <span>2023.04.18</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0);">
+                                <p>2023년 2분기 4월 캠코매각 대상 (개인) 신용정보 제공 사실 공지</p>
+                                <span>2023.04.18</span>
+                            </a>
+                        </li>
+                    </ul>
+
+                    <!--S: 등록된 게시글이 없을 경우-->
+                    <div class="result-area nodata" id="">
+                        <p>등록된 게시글이 없어요</p>
+                    </div>
+                    <!--S: 등록된 게시글이 없을 경우-->
+
+                    <!--S: 등록된 게시글이 없을 경우-->
+                    <div class="result-area nodata" id="">
+                        <p>입력하신 검색어에<br/>해당하는 결과가 없어요</p>
+                    </div>
+                    <!--S: 등록된 게시글이 없을 경우-->
+
+                    <div class="btn-cont-wrap flexCenter mt40"><!--D:flexCenter 클래스 변경-->
+                        <a href="javascript:void(0);" class="btn btn-add">+ 더보기</a><!--D:btn-add 클래스 변경-->
+                    </div>
+
+                </div>
+            </div>
+            <!-- //contents -->
+
+        </div>
+        <!-- //contentsWrap -->
+</body>
+</html>
+

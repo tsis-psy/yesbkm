@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>예가람저축은행</title>
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="Content-Script-Type" content="text/javascript">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<meta name="keywords" content="예가람저축은행keywords" />
+<meta name="description" content="예가람저축은행description" />
+<!-- <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0, viewport-fit=cover"> -->
+	<meta name="viewport" content="user-scalable=no,width=375">
+
+<meta name="apple-mobile-web-app-status-bar-style" content="white" />
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta http-equiv="Expires" content="-1">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Cache-Control" content="No-Cache">
+
+<link href="/resources/css/default.css" rel="stylesheet" />
+<link href="/resources/css/renewal.css" rel="stylesheet" />
+
+
+<link href="/resources/css/swiper-bundle.min.css" rel="stylesheet" />
+<link rel="shortcut icon" type="image/x-icon" href="/resources/favicon.ico" />
+<link rel="icon" type="image/x-icon" href="/resources/favicon.ico" />
+
+<script type="text/javascript" src="/resources/js/lib/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="/resources/js/lib/jquery.cookie.js"></script>
+
+<script type="text/javascript" src="/resources/js/lib/swiper-bundle.min.js"></script>
+<script type="text/javascript" src="/resources/js/lib/TweenMax.min.js"></script>
+<script type="text/javascript" src="/resources/js/lib/jquery.animateSprite.min.js"></script>
+<script type="text/javascript" src="/resources/js/lib/default.js?v=20230803152535"></script>
+<script type="text/javascript" src="/resources/js/lib/ui.js?v=20230803152535"></script>
+<script type="text/javascript" src="/resources/js/lib/rolldate.js?v=20230803152535"></script>
+<script type="text/javascript" src="/resources/js/app_common_cont.js?v=20230803152535"></script>
+<script type="text/javascript" src="/resources/js/app_common_auth.js?v=20230803152535"></script>
+<script type="text/javascript" src="/resources/js/app_common_funs.js?v=20230803152535"></script>
+<script type="text/javascript" src="/resources/js/app_common_nsl.js?v=20230803152535"></script>
+<script type="text/javascript" src="/resources/js/app_common_util.js?v=20230803152535"></script>
+<script type="text/javascript" src="/resources/js/biz_common.js?version=20230803152535" id="biz_common"
+	data-menuId="dep/prc"
+	data-frameId="depAcnoOpenPrc2"
+	data-serviceCd="depAcnoOpenPrc2.frm"
+	data-serverTime="20230803152535"
+	data-activeMode="local"
+	data-activeEnv="${active.env">
+</script>
+</head>
+
+<body>
+    <!-- header -->
+    <div id="headerWrap">
+        <script>
+        $(document).ready(function(){
+            document.charset="euc-kr";
+            $("#headerWrap").load("../includes/header.html");
+        });
+        </script>
+    </div>
+	<!-- //header -->
+
+    <!--contentsWrap -->
+    <div class="contentsWrap">
+        <!--contents -->
+        <div class="contents">
+            <div class="default-wrap dsr_con-wrap">
+                <div class="tit-wrap">
+                    <p class="txt"><strong>브라우저 인증서 가져오기</strong></p>
+                </div>
+
+                <div class="txtbox-wrap ta-c">
+                    <p class="img certi"><span class="blind">인증 이미지</span></p>
+                    <p class="b-tit">브라우저 인증서 복사는?</p>
+                    <div class="list-bull type-large ta-l">
+                        <ul>
+                            <li class="num"><em>1.</em>PC나 스마트폰에서 인증서 프로그램의 별도 설치없이, PC에서 스마트폰 브라우저별로 인증서 복사가 가능합니다.</li>
+                            <li class="num"><em>2.</em>브라우저 방식의 인증서 복사기능은 HTML5방식을 지원하는 경우에만 이용이 가능합니다.</li>
+                            <li class="num"><em>3.</em>웹브라우저 초기화를 하시면 저장된 인증서는 삭제됩니다.</li>
+                            <li class="num"><em>4.</em>웹브라우저는 타 브라우저간에 인증서 연동이 불가합니다.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="sub-tit-wrap">
+					<p class="tit">공동인증서 가져오기</p>
+				</div>
+
+                <div class="choice-box">
+                    <div class="in"><!--[퍼블-1] : a링크 div로 변경-->
+                        <p>PC → 스마트폰 브라우저</p>
+						<p>(인증서 가져오기)</p>
+                        <div class="btn-cont-wrap"><!--[퍼블-1] : 버튼 추가-->
+                            <a href="javascript:void(0);" class="btn btn-info">공동인증서 가져오기 </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="step-cont-wrap">
+                    <p class="tit">다음과 같은 단계를 거치세요</p>
+                    <div class="step-img">
+                        <img src="/resources/images/dsr/page/img_auth_center.png" alt="1단계:모바일 모집인 상담사 사이트 접속 / 2단계: 공동인증센터 > '브라우저 공동인증서 내보내기 (PC→스마트폰)'를 클릭 / 3단계:'공동인증서 이동'창에서 복사할 인증서를 선택 및 비밀번호 입력 후 생성된 인증번호(12자리)를 스마트폰에 입력 / 4단계:스마트폰 브라우저에서 인증서 복사 완료 확인">
+                    </div>
+                </div>
+                
+
+            </div>
+        </div>
+        <!-- //contents -->
+
+        <!-- s: 상단 이동 버튼 -->
+	    <button type="button" name="button" class="btn-circle top ir btn-top">위로</button>
+	    <!-- //e: 상단 이동 버튼 -->
+
+    </div>
+    <!-- //contentsWrap -->
+</body>
+</html>
+

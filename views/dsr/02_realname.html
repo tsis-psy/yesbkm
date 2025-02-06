@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>예가람저축은행</title>
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="Content-Script-Type" content="text/javascript">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<meta name="keywords" content="예가람저축은행keywords" />
+<meta name="description" content="예가람저축은행description" />
+<!-- <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0, viewport-fit=cover"> -->
+	<meta name="viewport" content="user-scalable=no,width=375">
+
+<meta name="apple-mobile-web-app-status-bar-style" content="white" />
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta http-equiv="Expires" content="-1">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Cache-Control" content="No-Cache">
+
+<link href="/resources/css/default.css" rel="stylesheet" />
+<link href="/resources/css/renewal.css" rel="stylesheet" />
+
+
+<link href="/resources/css/swiper-bundle.min.css" rel="stylesheet" />
+<link rel="shortcut icon" type="image/x-icon" href="/resources/favicon.ico" />
+<link rel="icon" type="image/x-icon" href="/resources/favicon.ico" />
+
+<script type="text/javascript" src="/resources/js/lib/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="/resources/js/lib/jquery.cookie.js"></script>
+
+<script type="text/javascript" src="/resources/js/lib/swiper-bundle.min.js"></script>
+<script type="text/javascript" src="/resources/js/lib/TweenMax.min.js"></script>
+<script type="text/javascript" src="/resources/js/lib/jquery.animateSprite.min.js"></script>
+<script type="text/javascript" src="/resources/js/lib/default.js?v=20230803152535"></script>
+<script type="text/javascript" src="/resources/js/lib/ui.js?v=20230803152535"></script>
+<script type="text/javascript" src="/resources/js/lib/rolldate.js?v=20230803152535"></script>
+<script type="text/javascript" src="/resources/js/app_common_cont.js?v=20230803152535"></script>
+<script type="text/javascript" src="/resources/js/app_common_auth.js?v=20230803152535"></script>
+<script type="text/javascript" src="/resources/js/app_common_funs.js?v=20230803152535"></script>
+<script type="text/javascript" src="/resources/js/app_common_nsl.js?v=20230803152535"></script>
+<script type="text/javascript" src="/resources/js/app_common_util.js?v=20230803152535"></script>
+<script type="text/javascript" src="/resources/js/biz_common.js?version=20230803152535" id="biz_common"
+	data-menuId="dep/prc"
+	data-frameId="depAcnoOpenPrc2"
+	data-serviceCd="depAcnoOpenPrc2.frm"
+	data-serverTime="20230803152535"
+	data-activeMode="local"
+	data-activeEnv="${active.env">
+</script>
+</head>
+<body>
+    <!-- header -->
+    <div id="headerWrap">
+        <script>
+        $(document).ready(function(){
+            document.charset="euc-kr";
+            $("#headerWrap").load("../includes/header.html");
+        });
+        </script>
+    </div>
+	<!-- //header -->
+
+    <!--contentsWrap -->
+    <div class="contentsWrap">
+        <!--contents -->
+        <div class="contents">
+            <div class="default-wrap dsr-con-wrap">
+                
+                <div class="step-wrap">
+                    <div class="step-line" aria-label="총 3단계 중 1단계 진행중">
+                        <div class="step-bar" style="width: 33.3333%;"></div>
+                    </div>
+                    <div class="num"><strong class="current">1</strong>/<span class="tot">3</span></div>
+                </div>
+
+                <div class="loan-info-wrap">
+                    
+                    <div class="tit-wrap">
+                        <p class="txt"><strong>대출정보 입력</strong></p>
+                    </div>
+
+                    <!--S: 대출정보 입력-->
+                    <div class="form-all-wrap">
+
+                        <div class="form-wrap">
+                            <div class="form-tit">
+                                <span class="txt">대출상품</span>
+                            </div>
+                            <div class="select-box" tabindex="1">
+                                <label for="">대출상품 선택</label>
+                                <span class="option" id="">미선택</span>
+                            </div>
+                        </div>
+
+                        <div class="form-wrap">
+                            <label for="" class="formlabel">이름</label>
+                            <div class="input">
+                                <input type="text" title="이름" id="" class="inp" name="" value="" placeholder="이름 입력" required="" >
+                            </div>
+                        </div>
+
+                        <div class="form-wrap phone">
+                            <label for="" class="formlabel essential">휴대폰번호</label>
+                            <div class="input">
+                                <div class="select-wrap">
+                                    <div class="select-box  type-line" tabindex="1">
+                                        <span class="option">통신사</span>
+                                    </div>
+                                </div>
+                                <span>
+                                    <input type="tel" title="" class="inp " id="" name="" value="" placeholder="휴대폰번호 입력" maxlength="11" required="" numberonly="">
+                                    <!-- <button type="reset" class="btn-delete">검색어 삭제</button> -->
+                                </span>
+                            </div>
+                        </div>
+
+                        <div class="form-wrap password form-line"><!--D: form-line클래스 : input에 버튼(btnInput) 있을 경우 -->
+                            <label for="ipt05" class="formlabel">인증번호</label>
+                            <div class="input">
+                                <input type="number" title="은행선택" id="ipt05" class="inp" name="" value="" required="" placeholder="인증번호">
+                                <div class="btn-input"><!--D: 클래스 변경-->
+                                    <span class="txt-numb" id="">03:00</span>
+                                    <button type="button" class="btn btn-sm">인증번호요청</button>
+                                <!-- <button type="button" class="btn-certi">재전송</button> --><!--D: 인증번호 재전송 -->
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-wrap password w50">
+                            <label for="ipt02" class="formlabel">주민등록번호</label>
+                            <div class="input">
+                                <span>
+                                    <input type="number" title="주민등록번호 앞자리" id="ipt02" class="inp" name="" value="" maxlength="6" required="">
+                                </span>
+                                <span class="inputTextHyphen">-</span>
+                                <span class="jummin">
+                                    <input type="number" title="주민등록번호 뒷자리(첫번째 숫자)" id="jumin1" class="inp" name="jumin1" value="" maxlength="0" required="">
+                                    <span class="jumintext">●●●●●●●</span>
+                                </span>
+                            </div>
+                            <p class="info-txt">당 저축은행은 신용정보의 이용 및 보호에 관한 법률 시행령 제37조의 2에 의거하여 주민등록번호를 수집합니다.</p>
+                        </div>
+
+                    </div>
+                    <!--E: 대출정보 입력-->
+
+                    <hr class="hr-line">
+
+                    <!--S: 담보종류-->
+                    <div class="form-all-wrap">
+
+                        <div class="radio-wrap">
+                            <div class="form-tit">
+                                <p class="tit">담보종류</p>
+                            </div>
+                            
+                            <ul class="radio-list">
+                                <li>
+                                    <input type="radio" name="radio01" id="radio01_1" value="" onclick="">
+                                    <label for="radio01_1" class="">아파트</label>
+                                </li>
+                                <li>
+                                    <input type="radio" name="radio01" id="radio01_2" value="" onclick="">
+                                    <label for="radio01_2" class="">다세대</label>
+                                </li>
+                                <li>
+                                    <input type="radio" name="radio01" id="radio01_3" value="" onclick="">
+                                    <label for="radio01_3" class="">연람(빌라)</label>
+                                </li>
+                                <li>
+                                    <input type="radio" name="radio01" id="radio01_4" value="" onclick="">
+                                    <label for="radio01_4" class="">오피스텔</label>
+                                </li>
+                                <li>
+                                    <input type="radio" name="radio01" id="radio01_5" value="" onclick="">
+                                    <label for="radio01_5" class="">기타</label>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="form-all-wrap">
+
+                            <!--//[퍼블-1]: 신용대출 - 6/25 추가-->
+                            <div class="form-wrap">
+                                <label for="" class="formlabel">연소득</label>
+                                <div class="input">
+                                    <input type="tel" title="연소득" id="" class="inp" value="" placeholder="만원 단위 입력" required="">
+                                    <span class="static-unit">만원</span>
+                                </div>
+                            </div>
+
+                            <div class="form-wrap">
+                                <div class="form-tit">
+                                    <span class="txt">주택소유형태</span>
+                                </div>
+                                <div class="select-box" tabindex="1">
+                                    <label for="">주택소유형태 구분 선택</label>
+                                    <span class="option" id="">미선택</span>
+                                </div>
+                            </div>
+
+                            <div class="form-wrap">
+                                <div class="form-tit">
+                                    <span class="txt">고객구분</span>
+                                </div>
+                                <div class="select-box" tabindex="1">
+                                    <label for="">고객구분 선택</label>
+                                    <span class="option" id="">미선택</span>
+                                </div>
+                            </div>
+
+                            <div class="form-wrap">
+                                <div class="form-tit">
+                                    <span class="txt">직업구분</span>
+                                </div>
+                                <div class="select-box" tabindex="1">
+                                    <label for="">직업구분 선택</label>
+                                    <span class="option" id="">미선택</span>
+                                </div>
+                            </div>
+
+                            <div class="form-wrap">
+                                <label for="" class="formlabel">직장명</label>
+                                <div class="input">
+                                    <input type="text" title="직장명" id="" class="inp" value="" placeholder="직장명 입력" required="">
+                                </div>
+                            </div>
+
+                            <div class="form-wrap">
+                                <div class="form-tit">
+                                    <span class="txt">입사일</span>
+                                </div>
+                                <div id="rolldate" class="select-box type2 type-dd" tabindex="1">
+                                    <label for="">입사일 선택</label>
+                                    <span class="option">미선택</span>
+                                </div>
+                            </div>
+
+                            <div class="form-wrap">
+                                <label for="" class="formlabel">재직기간</label>
+                                <div class="input">
+                                    <input type="tel" title="재직기간" id="" class="inp" value="" placeholder="입사일 기준 자동 계산" required="">
+                                </div>
+                            </div>
+
+                            <div class="form-wrap">
+                                <div class="form-tit">
+                                    <span class="txt">직장의료보험구분</span>
+                                </div>
+                                <div class="select-box" tabindex="1">
+                                    <label for="">의료보험구분 선택</label>
+                                    <span class="option" id="">미선택</span>
+                                </div>
+                            </div>
+                            <!--[퍼블-1]: 신용대출 - 6/25 추가//-->
+
+                            <!--//[퍼블-1]: 스크린골프동산담보대출 - 6/25 추가-->
+                            <div class="form-wrap">
+                                <div class="form-tit">
+                                    <span class="txt">대출구분</span>
+                                </div>
+                                <div class="select-box" tabindex="1">
+                                    <label for="">대출구분 선택</label>
+                                    <span class="option" id="">미선택</span>
+                                </div>
+                            </div>
+
+                            <div class="form-wrap">
+                                <div class="form-tit">
+                                    <span class="txt">기기모델</span>
+                                </div>
+                                <div class="select-box" tabindex="1">
+                                    <label for="">기기모델 선택</label>
+                                    <span class="option" id="">미선택</span>
+                                </div>
+                            </div>
+                            <!-- [퍼블-1]: 스크린골프동산담보대출 - 6/25 추가//-->
+                            
+                            <div class="form-wrap">
+                                <label for="" class="formlabel">대출신청금액</label>
+                                <div class="input">
+                                    <input type="tel" title="대출신청금액" id="" class="inp" value="" placeholder="백만원 단위 입력" required="">
+                                    <span class="static-unit">백만원</span>
+                                </div>
+                            </div>
+
+                            <!--//[퍼블-1]: 스크린골프동산담보대출 - 6/25 추가-->
+                            <div class="form-wrap">
+                                <label for="" class="formlabel">수량</label>
+                                <div class="input">
+                                    <input type="tel" title="수량" id="" class="inp" value="" placeholder="수량 입력" required="">
+                                    <!-- <span class="static-unit"></span> -->
+                                </div>
+                            </div>
+
+                            <div class="form-wrap">
+                                <div class="form-tit">
+                                    <span class="txt">비고</span>
+                                </div>
+                                <div class="input">
+                                    <textarea type="text" title="성명" id="ipt02" class="inp" name="" value="" placeholder="내용을 입력해주세요" maxlength="" required="">
+                                    </textarea>
+                                </div>
+                            </div>
+                            <!-- [퍼블-1]: 스크린골프동산담보대출 - 6/25 추가//-->
+
+                            <div class="form-wrap form-line">
+                                <label for="" class="formlabel">주소(현재거주지)</label>
+                                <div class="input"><!--D: 클릭 시 개발 공통 페이지 : addr_select 팝업 사용 -->
+                                    <input type="text" title="우편번호" id="" class="inp" name="" value="" placeholder="우편번호 입력" required="">
+                                    <button type="button" class="btn btn-sm">우편번호찾기</button>
+                                </div>
+                                <div class="input">
+                                    <input type="text" title="주소" id="" class="inp" name="" value="" placeholder="기본주소 입력" required="">
+                                </div>
+                                <div class="input">
+                                    <input type="text" title="상세주소" id="" class="inp" name="" value="" placeholder="상세주소 직접입력" required="">
+                                </div>
+                                <!-- <div class="input">
+                                    <input type="text" title="직장전화" id="" class="inp" name="" value="" placeholder="직장전화 입력" required="">
+                                </div> -->
+                            </div>
+
+                        </div>
+
+                    </div>
+                    <!--E: 담보종류-->
+                    
+                    <hr class="hr-line">
+
+                    <!--S: 대출상담사 설명확인-->
+                    <div class="terms-area">
+                        <div class="tit-wrap">
+                            <p class="tit"><strong>대출상담사 설명확인</strong></p>
+                            <p class="s-txt">금융회사는 대출모집상담사를 통해 접수된 대출의 경
+                                우, “대출모집인 제도 모범규준 제 10조 제1항 2호”에
+                                따라 대출 실행 이전에 대출신청인에게 아래 각 사항을
+                                확인하여야 합니다. 아래의 질문사항에 대하여 직접 사
+                                실대로 작성하여 주시기 바랍니다.</p>
+                        </div>
+                        <div class="q-wrap">
+                            <div class="bg-box q-icon">
+                                <p class="txt-style3">
+                                    <em class="color-4E32A5">Q.</em>
+                                    대출계약을 체결하기 전에 대출상담사로부터 대출상품의 조건 및 대출내용 등에 관하여 충분한 설명을 받으셨나요?<br/>
+                                    대출계약 중요사항(금리, 대출금액, 대출기간, 중도상환수수료등)에 대한 설명 포함
+                                </p>
+                            </div>
+                            <ul>
+                                <li>
+                                    <input type="radio" name="q1" id="q01" value="Y">
+                                    <label for="q01" class="rd">예</label>
+                                </li>
+                                <li>
+                                    <input type="radio" name="q1" id="q02" value="N">
+                                    <label for="q02" class="rd">아니오</label>
+                                </li>
+                            </ul>
+                        </div>
+                    
+                        <div class="q-wrap">
+                            <div class="bg-box">
+                                <p class="txt-style3">
+                                    <em class="color-4E32A5">Q.</em>
+                                    대출상담사로부터 대출모집인은 금융회사의 업무위탁을 받아 대출모집 및 소개등의 섭외 활동을 한다는 사실에 대하여 사전에 고지 받으셨나요?
+                                </p>
+                            </div>
+
+                            <ul>
+                                <li>
+                                    <input type="radio" name="q2" id="q03" value="Y">
+                                    <label for="q03" class="rd">예</label>
+                                </li>
+                                <li>
+                                    <input type="radio" name="q2" id="q04" value="N">
+                                    <label for="q04" class="rd">아니오</label>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="q-wrap">
+                            <div class="bg-box">
+                                <p class="txt-style3">
+                                    <em class="color-4E32A5">Q.</em>
+                                    대출상담사로부터 고객에게 별도의 수수료를 요구하거나 수취할 수 없다는 사실에 대하여 사전에 고지 받으셨나요?
+                                </p>
+                            </div>
+
+                            <ul>
+                                <li>
+                                    <input type="radio" name="q2" id="q03" value="Y">
+                                    <label for="q03" class="rd">예</label>
+                                </li>
+                                <li>
+                                    <input type="radio" name="q2" id="q04" value="N">
+                                    <label for="q04" class="rd">아니오</label>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="q-wrap">
+                            <div class="bg-box">
+                                <p class="txt-style3">
+                                    <em class="color-4E32A5">Q.</em>
+                                    대출 상담을 받은 모집상담사 이름은 무엇인가요?
+                                </p>
+                            </div>
+                            <div class="form-wrap">
+                                <div class="input">
+                                    <input type="text" title="모집상담사이름" id="" class="inp" name="" value="" placeholder=" 모집상담사 이름 입력" required="">
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <!--E: 대출상담사 설명확인-->
+
+                    <hr class="hr-line">
+
+                    <!--S: 적합성 적정성원칙 확인서-->
+                    <div class="terms-area">
+                        <div class="tit-wrap">
+                            <p class="tit"><strong>적합성 적정성원칙 확인서</strong></p>
+                            <p class="s-txt">본 확인서는 금융소비자 보호에 대한 법률 제17조(적
+                                합성원칙) 및 제 18조(적정성원칙)에 따라 귀하의 연령,
+                                재산상황, 대출계약의 목적등을 파악하여 대출계약자
+                                에게 가장 적합한 대출계약 체결을 권유하기 위한 기초
+                                자료에 활용됩니다. 허위 또는 불성실한 답변을 하시는
+                                경우 부적합한 대출계약을 권유하게 될 수 있으며,  이로
+                                인해 발생하는 모든 손해는 계약자 본인에게 귀속되오
+                                니 유념하여 주시기 바랍니다.  </p>
+                        </div>
+
+                        <div class="q-wrap mb0">
+
+                            <div class="form-wrap mt30">
+                                <div class="form-tit">
+                                    <span class="tit"><em class="color-4E32A5">Q.</em> 소비자 구분</span>
+                                </div>
+                                <div class="select-box" tabindex="1">
+                                    <label for="">소비자 구분 선택</label>
+                                    <span class="option" id="">미선택</span>
+                                </div>
+                            </div>
+
+                            <div class="form-wrap mt30">
+                                <div class="form-tit">
+                                    <span class="tit"><em class="color-4E32A5">Q.</em> 대출용도</span>
+                                </div>
+                                <div class="select-box" tabindex="1">
+                                    <label for="">대출용도 선택</label>
+                                    <span class="option" id="">미선택</span>
+                                </div>
+                            </div>
+
+                            <div class="form-wrap mt30">
+                                <div class="form-tit">
+                                    <span class="tit"><em class="color-4E32A5">Q.</em> 연간소득</span>
+                                </div>
+                                <div class="select-box" tabindex="1">
+                                    <label for="">연간소득 선택</label>
+                                    <span class="option" id="">미선택</span>
+                                </div>
+                            </div>
+
+                            <div class="form-wrap mt30">
+                                <div class="form-tit">
+                                    <span class="tit"><em class="color-4E32A5">Q.</em> 총 자산규모(순자산)</span>
+                                </div>
+                                <div class="select-box" tabindex="1">
+                                    <label for="">총 자산규모(순자산) 선택</label>
+                                    <span class="option" id="">미선택</span>
+                                </div>
+                            </div>
+
+                            <div class="form-wrap mt30">
+                                <div class="form-tit">
+                                    <span class="tit"><em class="color-4E32A5">Q.</em> 총부채</span>
+                                </div>
+                                <div class="select-box" tabindex="1">
+                                    <label for="">총부채 선택</label>
+                                    <span class="option" id="">미선택</span>
+                                </div>
+                            </div>
+
+                            <div class="form-wrap mt30">
+                                <div class="form-tit">
+                                    <span class="tit"><em class="color-4E32A5">Q.</em>대출상환소득</span>
+                                </div>
+                                <div class="select-box" tabindex="1">
+                                    <label for="">대출상환소득 선택</label>
+                                    <span class="option" id="">미선택</span>
+                                </div>
+                            </div>
+
+                            <div class="form-wrap mt30">
+                                <div class="form-tit">
+                                    <span class="tit"><em class="color-4E32A5">Q.</em>고정지출</span>
+                                </div>
+                                <div class="select-box" tabindex="1">
+                                    <label for="">고정지출 선택</label>
+                                    <span class="option" id="">미선택</span>
+                                </div>
+                            </div>
+                            
+                            
+                        </div>
+
+                    </div>
+                    <!--E: 적합성 적정성원칙 확인서-->
+
+                    <hr class="hr-line">
+
+                    <!--S: 필요한 정보-->
+                    <div class="terms-area">
+
+                        <div class="tit-wrap">
+                            <p class="s-txt"><strong>♣ 다음은 ‘금융소비자보호법’에 따른 ‘적합성원칙’ 확인을 위해 필요한 정보입니다.</strong></p>
+                            <ul class="list-bull num">
+                                <li><em>1.</em>귀하가 당행에 직접 신청한 대출상품이 ‘주택 또는 증권 등(주식) 담보대출’이 맞으십니까?</li>
+                            </ul>
+                            <div class="radio-wrap">
+                                <ul class="radio-list">
+                                    <li>
+                                        <input type="radio" name="radio01" id="radio01_6" value="" onclick="">
+                                        <label for="radio01_6" class="">동의</label>
+                                    </li>
+                                    <li>
+                                        <input type="radio" name="radio01" id="radio01_7" value="" onclick="">
+                                        <label for="radio01_7" class="">동의하지 않음</label>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="tit-wrap">
+                            <ul class="list-bull num">
+                                <li>(“1””네” 선택 시) 상품이 귀하에게 부적정한 경우 제공하는 ‘부적정 결과 안내서;의 수취방식을 선택해주시기 바랍니다.(적정하다고 판단되는 경우에는 제공되지 않습니다.)</li>
+                            </ul>
+                            <div class="radio-wrap">
+                                <ul class="radio-list">
+                                    <li>
+                                        <input type="radio" name="radio01" id="radio01_8" value="" onclick="">
+                                        <label for="radio01_8" class="">동의</label>
+                                    </li>
+                                    <li>
+                                        <input type="radio" name="radio01" id="radio01_9" value="" onclick="">
+                                        <label for="radio01_9" class="">동의하지 않음</label>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                    </div>
+                    <!--E: 필요한 정보-->
+
+                    <hr class="hr-line">
+
+                    <!--S: 내용확인-->
+                    <div class="terms-area">
+                        <div class="tit-wrap">
+                            <p class="s-txt"><strong>♣ 본인은 상기와 같이 제공한 정보의 내용이 정확한 것임을 확인합니다.</strong></p>
+                            <ul class="list-bull num">
+                                <li><em>1.</em>본인이 귀행에 제공한 적합성.적정성 관련 정보는 본인의  재산 상황, 용도등의 정보를 정확히 알려드린 것입니다.</li>
+                                <li><em>2.</em>본인이 제공한 정보가 정확하지 않거나, 정보에 변경사항이 발생한 경우에는 적합성.적정성 판단이 달라질 수 있으며, 이 경우 대출계약 체결이 어려울 수 있음을 설명받았습니다.</li>
+                                <li><em>3.</em>상기 목적을 위해 본인의 개인(신용) 정보 수집, 이용, 제공 및 귀행을 통한 신용정보 점수를 조회하는 것에 동의합니다.</li>
+                            </ul>
+                        </div>
+
+                        <div class="radio-wrap">
+                            <ul class="radio-list">
+                                <li>
+                                    <input type="radio" name="radio01" id="radio01_10" value="" onclick="">
+                                    <label for="radio01_10" class="">동의</label>
+                                </li>
+                                <li>
+                                    <input type="radio" name="radio01" id="radio01_11" value="" onclick="">
+                                    <label for="radio01_11" class="">동의하지 않음</label>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <p class="date-num">2024년 6월 4일</p>
+
+                    </div>
+                    <!--E: 내용확인-->
+
+                </div>
+
+                <div class="btn-cont-wrap flexCenter">
+                    <a href="#none" class="btn">다음단계 진행</a>
+                    <a href="#none" class="btn-refresh"><span class="blind">취소</span></a><!--D: 취소 버튼-->
+                </div>
+
+            </div>
+        </div>
+        <!-- //contents -->
+
+        <!-- s: 상단 이동 버튼 -->
+	    <button type="button" name="button" class="btn-circle top ir btn-top">위로</button>
+	    <!-- //e: 상단 이동 버튼 -->
+
+    </div>
+    <!-- //contentsWrap -->
+</body>
+</html>
+

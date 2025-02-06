@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>예가람저축은행</title>
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="Content-Script-Type" content="text/javascript">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<meta name="keywords" content="예가람저축은행keywords" />
+<meta name="description" content="예가람저축은행description" />
+<!-- <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0, viewport-fit=cover"> -->
+	<meta name="viewport" content="user-scalable=no,width=375">
+
+<meta name="apple-mobile-web-app-status-bar-style" content="white" />
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta http-equiv="Expires" content="-1">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Cache-Control" content="No-Cache">
+
+<link href="/resources/css/default.css" rel="stylesheet" />
+<link href="/resources/css/renewal.css" rel="stylesheet" />
+
+
+<link href="/resources/css/swiper-bundle.min.css" rel="stylesheet" />
+<link rel="shortcut icon" type="image/x-icon" href="/resources/favicon.ico" />
+<link rel="icon" type="image/x-icon" href="/resources/favicon.ico" />
+
+<script type="text/javascript" src="/resources/js/lib/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="/resources/js/lib/jquery.cookie.js"></script>
+
+<script type="text/javascript" src="/resources/js/lib/swiper-bundle.min.js"></script>
+<script type="text/javascript" src="/resources/js/lib/TweenMax.min.js"></script>
+<script type="text/javascript" src="/resources/js/lib/jquery.animateSprite.min.js"></script>
+<script type="text/javascript" src="/resources/js/lib/default.js?v=20230803152535"></script>
+<script type="text/javascript" src="/resources/js/lib/ui.js?v=20230803152535"></script>
+<script type="text/javascript" src="/resources/js/lib/rolldate.js?v=20230803152535"></script>
+<script type="text/javascript" src="/resources/js/app_common_cont.js?v=20230803152535"></script>
+<script type="text/javascript" src="/resources/js/app_common_auth.js?v=20230803152535"></script>
+<script type="text/javascript" src="/resources/js/app_common_funs.js?v=20230803152535"></script>
+<script type="text/javascript" src="/resources/js/app_common_nsl.js?v=20230803152535"></script>
+<script type="text/javascript" src="/resources/js/app_common_util.js?v=20230803152535"></script>
+<script type="text/javascript" src="/resources/js/biz_common.js?version=20230803152535" id="biz_common"
+	data-menuId="dep/prc"
+	data-frameId="depAcnoOpenPrc2"
+	data-serviceCd="depAcnoOpenPrc2.frm"
+	data-serverTime="20230803152535"
+	data-activeMode="local"
+	data-activeEnv="${active.env">
+</script>
+
+
+<body>
+    <!-- header -->
+    <div id="headerWrap">
+        <script>
+        $(document).ready(function(){
+            document.charset="euc-kr";
+            $("#headerWrap").load("../includes/header.html");
+        });
+        </script>
+    </div>
+	<!-- //header -->
+
+    <!--contentsWrap -->
+    <div class="contentsWrap">
+        <!--contents -->
+        <div class="contents">
+            <div class="default-wrap">
+                
+
+            </div>
+        </div>
+        <!-- //contents -->
+
+        <!--D: 파일 다운로드 버튼 변경 / br 태그 추가 외 변경사항 없음 -->
+
+        <!-- S : 대출상환일정조회 상세보기 -->
+        <div id="repayScheduleList" class="layerpopup laypop-all" tabindex="0" data-focus-prev="btn-layer-close" style="display:block;">
+            <!-- s: pop contents -->
+            <div class="pop-header">
+                <h2 class="pop-title">대출상환 스케줄</h2>
+                <button type="button" name="button" class="btn-layer-close" onclick="closePopup('repayScheduleList')">닫기</button>
+            </div>
+            <div class="pop-con-wrap">
+                <div class="default-wrap">
+                    <div class="txt-list-wrap">
+                        <div class="txt-detail-area">
+                            <div class="txt-detail-tit">
+                                <strong>예스론</strong>
+                            </div>
+                            <ul class="txt-list">
+                                <li>
+                                    <span class="tit">대출금액</span>
+                                    <span class="txt">원</span>
+                                </li>
+                                <li>
+                                    <span class="tit">대출 일자</span>
+                                    <span class="txt">YYYY.MM.DD</span>
+                                </li>
+                                <li>
+                                    <span class="tit">만기 일자</span>
+                                    <span class="txt">YYYY.MM.DD</span>
+                                </li>
+                                <li>
+                                    <span class="tit">상환방법</span>
+                                    <span class="txt">원리금균등상환</span>
+                                </li>
+                                <li>
+                                    <span class="tit">정상금리</span>
+                                    <span class="txt">%</span>
+                                </li>
+                                <li>
+                                    <span class="tit">연체금리</span>
+                                    <span class="txt">%</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <p class="info-txt">대출상환 스케줄은 실제 납입 일자 등에 따라 변경될 수 있어요</p>
+                    <!-- TODO -->
+                    
+                    <div class="table-type style2 type-left">
+                        <!--D: 버튼 테이블 구조 안으로 이동, 클래스, 텍스트 변경-->
+                        <div class="btn-cont-wrap flexRight">
+                            <a href="#none" class="btn btn-sm gray" title="상환스케줄 pdf 파일 다운로드" onclick="fnFileDown()">파일 다운로드</a>
+                        </div>
+                        <!--D: 버튼 테이블 구조 안으로 이동, 클래스, 텍스트 변경 //-->
+                        <table>
+                            <caption></caption>
+                            <colgroup>
+                                <col width="*">
+                                <col width="30%">
+                                <col width="30%">
+                            </colgroup>
+                            <thead>
+                                <tr>
+                                    <th scope="row" rowspan="2">회차<br/>(상환예정일)</th><!--D: br 태그 추가-->
+                                    <th scope="row">상환원금</th>
+                                    <th scope="row" rowspan="2">납입원금</th>
+                                </tr>
+                                <tr>
+                                    <th scope="row">정상이자</th>
+                                </tr>
+                            </thead>
+                            <tbody id="repayListTbody">
+                                <tr>
+                                    <td  rowspan="2" class="ta-c">
+                                        <p>1</p>
+                                        <span class="date">2024.02.15</span>
+                                    </td>
+                                    <td>10,000,000</td>
+                                    <td rowspan="2">10,000,000</td>
+                                </tr>
+                                <tr>
+                                    <td>55,000</td>
+                                </tr>
+                                <tr>
+                                    <td rowspan="2"  class="ta-c">
+                                        <p>2</p>
+                                        <span class="date">2024.03.01</span>
+                                    </td>
+                                    <td>10,000,000</td>
+                                    <td rowspan="2">10,000,000</td>
+                                </tr>
+                                <tr>
+                                    <td>55,000</td>
+                                </tr>
+                                <tr>
+                                    <td rowspan="2"  class="ta-c">
+                                        <p>3</p>
+                                        <span class="date">2024.04.01</span>
+                                    </td>
+                                    <td>10,000,000</td>
+                                    <td rowspan="2">10,000,000</td>
+                                </tr>
+                                <tr>
+                                    <td>55,000</td>
+                                </tr>
+                                <tr>
+                                    <td rowspan="2"  class="ta-c">
+                                        <p>4</p>
+                                        <span class="date">2024.05.01</span>
+                                    </td>
+                                    <td>10,000,000</td>
+                                    <td rowspan="2">10,000,000</td>
+                                </tr>
+                                <tr>
+                                    <td>55,000</td>
+                                </tr>
+                                <tr>
+                                    <td rowspan="2"  class="ta-c">
+                                        <p>5</p>
+                                        <span class="date">2024.06.01</span>
+                                    </td>
+                                    <td>10,000,000</td>
+                                    <td rowspan="2">10,000,000</td>
+                                </tr>
+                                <tr>
+                                    <td>55,000</td>
+                                </tr>
+                                <tr>
+                                    <td rowspan="2"  class="ta-c">
+                                        <p>6</p>
+                                        <span class="date">2024.07.01</span>
+                                    </td>
+                                    <td>10,000,000</td>
+                                    <td rowspan="2">10,000,000</td>
+                                </tr>
+                                <tr>
+                                    <td>55,000</td>
+                                </tr>
+                                <tr>
+                                    <td rowspan="2"  class="ta-c">
+                                        <p>8</p>
+                                        <span class="date">2024.08.01</span>
+                                    </td>
+                                    <td>10,000,000</td>
+                                    <td rowspan="2">10,000,000</td>
+                                </tr>
+                                <tr>
+                                    <td>55,000</td>
+                                </tr>
+                                <tr>
+                                    <td rowspan="2"  class="ta-c">
+                                        <p>9</p>
+                                        <span class="date">2024.09.01</span>
+                                    </td>
+                                    <td>10,000,000</td>
+                                    <td rowspan="2">10,000,000</td>
+                                </tr>
+                                <tr>
+                                    <td>55,000</td>
+                                </tr>
+                                <tr>
+                                    <td rowspan="2"  class="ta-c">
+                                        <p>10</p>
+                                        <span class="date">2024.10.01</span>
+                                    </td>
+                                    <td>10,000,000</td>
+                                    <td rowspan="2">10,000,000</td>
+                                </tr>
+                                <tr>
+                                    <td>55,000</td>
+                                </tr>
+                                <tr>
+                                    <td rowspan="2"  class="ta-c">
+                                        <p>11</p>
+                                        <span class="date">2024.11.01</span>
+                                    </td>
+                                    <td>10,000,000</td>
+                                    <td rowspan="2">10,000,000</td>
+                                </tr>
+                                <tr>
+                                    <td>55,000</td>
+                                </tr>
+                                <tr>
+                                    <td rowspan="2"  class="ta-c">
+                                        <p>12</p>
+                                        <span class="date">2024.12.01</span>
+                                    </td>
+                                    <td>10,000,000</td>
+                                    <td rowspan="2">10,000,000</td>
+                                </tr>
+                                <tr>
+                                    <td>55,000</td>
+                                </tr>
+                            </tbody>
+                            
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <!-- //e: pop contents -->
+        </div>
+        <!-- E : 대출상환일정조회 상세보기 //-->
+
+    </div>
+    <!-- //contentsWrap -->
+</body>
+</html>
+

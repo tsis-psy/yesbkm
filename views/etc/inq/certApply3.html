@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>예가람저축은행</title>
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="Content-Script-Type" content="text/javascript">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<meta name="keywords" content="예가람저축은행keywords" />
+<meta name="description" content="예가람저축은행description" />
+<!-- <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0, viewport-fit=cover"> -->
+	<meta name="viewport" content="user-scalable=no,width=375">
+
+<meta name="apple-mobile-web-app-status-bar-style" content="white" />
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta http-equiv="Expires" content="-1">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Cache-Control" content="No-Cache">
+
+<link href="/resources/css/default.css" rel="stylesheet" />
+<link href="/resources/css/renewal.css" rel="stylesheet" />
+
+
+<link href="/resources/css/swiper-bundle.min.css" rel="stylesheet" />
+<link rel="shortcut icon" type="image/x-icon" href="/resources/favicon.ico" />
+<link rel="icon" type="image/x-icon" href="/resources/favicon.ico" />
+
+<script type="text/javascript" src="/resources/js/lib/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="/resources/js/lib/jquery.cookie.js"></script>
+
+<script type="text/javascript" src="/resources/js/lib/swiper-bundle.min.js"></script>
+<script type="text/javascript" src="/resources/js/lib/TweenMax.min.js"></script>
+<script type="text/javascript" src="/resources/js/lib/jquery.animateSprite.min.js"></script>
+<script type="text/javascript" src="/resources/js/lib/default.js?v=20230803152535"></script>
+<script type="text/javascript" src="/resources/js/lib/ui.js?v=20230803152535"></script>
+<script type="text/javascript" src="/resources/js/lib/rolldate.js?v=20230803152535"></script>
+<script type="text/javascript" src="/resources/js/app_common_cont.js?v=20230803152535"></script>
+<script type="text/javascript" src="/resources/js/app_common_auth.js?v=20230803152535"></script>
+<script type="text/javascript" src="/resources/js/app_common_funs.js?v=20230803152535"></script>
+<script type="text/javascript" src="/resources/js/app_common_nsl.js?v=20230803152535"></script>
+<script type="text/javascript" src="/resources/js/app_common_util.js?v=20230803152535"></script>
+<script type="text/javascript" src="/resources/js/biz_common.js?version=20230803152535" id="biz_common"
+	data-menuId="dep/prc"
+	data-frameId="depAcnoOpenPrc2"
+	data-serviceCd="depAcnoOpenPrc2.frm"
+	data-serverTime="20230803152535"
+	data-activeMode="local"
+	data-activeEnv="${active.env">
+</script>
+
+
+<body>
+    <!-- header -->
+    <header class="headerWrap"> <!--D: bg-color02 클래스 : 뒤에 색상 들어갈 경우  -->
+		<div class="headerLeft">
+			<!--D: 이전버튼-->
+			<a href="javascript:void(0)" class="btn btnBack"><img src="/resources/images/header/btn_back.png" alt="이전페이지 이동하기"></a>
+	
+		</div>
+		<div class="headerCenter">
+			<h2 class="text"><span>증명서 발급신청</span></h2> <!--D: TEXT -->
+		</div>
+		<div class="headerRight">
+			<!--D: 전체메뉴버튼 -->
+			<a href="javascript:void(0)" class="btn btn-menu "><img src="/resources/images/header/btn_menu.png" alt="전체메뉴"></a>
+		</div>
+	</header>
+	<!-- //header -->
+
+    <!--contentsWrap -->
+    <div class="contentsWrap">
+        <!--contents -->
+        <div class="contents">
+            <div class="default-wrap">
+
+                <div class="tit-wrap">
+					<p class="txt"><b>발급 계좌를</b>선택하세요</p>
+				</div>
+
+				<!--D: <span class="txt">원</span>일 경우 공통적으로 point 클래스가 추가됩니다. ex) <span class="txt point"></span>-->
+
+				<!-- D: 반복부 -->
+                <div class="txt-list-wrap active"><!--D: active-->
+					<div class="txt-detail-area">
+						<div class="txt-detail-tit">
+							<strong id="prodNm1">계좌1</strong>
+							<div class="check-account fl-r">
+								<input type="checkbox" id="chk1" class="chkBox" name="acnoCheck" value="">
+								<label for="chk1">
+									<span></span>
+								</label>
+							</div>
+						</div>
+
+						<ul id="1" class="txt-list">
+	 						<li>
+								<span class="tit">계좌번호</span><!--D:텍스트 변경-->
+								<span class="txt" id="">101-61-13-0024058</span>
+							</li>
+							<li>
+								<span class="tit" id="" data-value="1">예금종류</span>
+								<p id="" class="txt">정기예금(복리)</p>
+							</li>
+							<li>
+								<span class="tit">계좌잔액</span>
+								<span class="txt point" id="">1,754,762원</span><!--D: 계좌잔액 point 클래스 추가 -->
+							</li>
+							<li>
+								<span class="tit">개설일</span>
+								<span class="txt" id="">2018.08.21</span>
+							</li>
+                        </ul>
+					</div>
+		    	</div>
+
+				<div class="txt-list-wrap"><!--D: active-->
+					<div class="txt-detail-area">
+						<div class="txt-detail-tit">
+							<strong id="prodNm1">계좌1</strong>
+							<div class="check-account fl-r">
+								<input type="checkbox" id="chk1" class="chkBox" name="acnoCheck" value="">
+								<label for="chk1">
+									<span></span>
+								</label>
+							</div>
+						</div>
+
+						<ul id="1" class="txt-list">
+	 						<li>
+								<span class="tit">계좌번호</span><!--D:텍스트 변경-->
+								<span class="txt" id="">101-61-13-0024058</span>
+							</li>
+							<li>
+								<span class="tit" id="" data-value="1">예금종류</span>
+								<p id="" class="txt">정기예금(복리)</p>
+							</li>
+							<li>
+								<span class="tit">계좌잔액</span>
+								<span class="txt point" id="">1,754,762원</span><!--D: 계좌잔액 point 클래스 추가 -->
+							</li>
+							<li>
+								<span class="tit">개설일</span>
+								<span class="txt" id="">2018.08.21</span>
+							</li>
+                        </ul>
+					</div>
+		    	</div>
+				<!-- D: 반복부// -->
+
+            </div>
+        </div>
+        <!-- //contents -->
+
+        <div class="fixed-btn-wrap">
+            <div class="btn-wrap flexCol"><!--D: flexCol 클래스 추가-->
+                <a href="#none" class="btn">발급신청하기</a>
+                <a href="#none" class="btn txt">홈으로</a><!--D:txt 클래스 추가-->
+            </div>
+        </div>
+
+    </div>
+    <!-- //contentsWrap -->
+</body>
+</html>
+

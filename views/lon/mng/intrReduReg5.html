@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>예가람저축은행</title>
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="Content-Script-Type" content="text/javascript">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<meta name="keywords" content="예가람저축은행keywords" />
+<meta name="description" content="예가람저축은행description" />
+<!-- <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0, viewport-fit=cover"> -->
+	<meta name="viewport" content="user-scalable=no,width=375">
+
+<meta name="apple-mobile-web-app-status-bar-style" content="white" />
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta http-equiv="Expires" content="-1">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Cache-Control" content="No-Cache">
+
+<link href="/resources/css/default.css" rel="stylesheet" />
+<link href="/resources/css/renewal.css" rel="stylesheet" />
+
+
+<link href="/resources/css/swiper-bundle.min.css" rel="stylesheet" />
+<link rel="shortcut icon" type="image/x-icon" href="/resources/favicon.ico" />
+<link rel="icon" type="image/x-icon" href="/resources/favicon.ico" />
+
+<script type="text/javascript" src="/resources/js/lib/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="/resources/js/lib/jquery.cookie.js"></script>
+
+<script type="text/javascript" src="/resources/js/lib/swiper-bundle.min.js"></script>
+<script type="text/javascript" src="/resources/js/lib/TweenMax.min.js"></script>
+<script type="text/javascript" src="/resources/js/lib/jquery.animateSprite.min.js"></script>
+<script type="text/javascript" src="/resources/js/lib/default.js?v=20230803152535"></script>
+<script type="text/javascript" src="/resources/js/lib/ui.js?v=20230803152535"></script>
+<script type="text/javascript" src="/resources/js/lib/rolldate.js?v=20230803152535"></script>
+<script type="text/javascript" src="/resources/js/app_common_cont.js?v=20230803152535"></script>
+<script type="text/javascript" src="/resources/js/app_common_auth.js?v=20230803152535"></script>
+<script type="text/javascript" src="/resources/js/app_common_funs.js?v=20230803152535"></script>
+<script type="text/javascript" src="/resources/js/app_common_nsl.js?v=20230803152535"></script>
+<script type="text/javascript" src="/resources/js/app_common_util.js?v=20230803152535"></script>
+<script type="text/javascript" src="/resources/js/biz_common.js?version=20230803152535" id="biz_common"
+	data-menuId="dep/prc"
+	data-frameId="depAcnoOpenPrc2"
+	data-serviceCd="depAcnoOpenPrc2.frm"
+	data-serverTime="20230803152535"
+	data-activeMode="local"
+	data-activeEnv="${active.env">
+</script>
+
+
+<body>
+    <!-- header -->
+    <div id="headerWrap">
+        <script>
+        $(document).ready(function(){
+            document.charset="euc-kr";
+            $("#headerWrap").load("../includes/header.html");
+        });
+        </script>
+    </div>
+	<!-- //header -->
+
+    <!--contentsWrap -->
+    <div class="contentsWrap grid"><!--D: 디자인 적요 : grid  클래스 필요 / section 구조 필요-->
+        <!--contents -->
+        <div class="contents">
+            <div class="default-wrap">
+
+                <!--S:자동 심사 결과가 반영된 경우-->
+                <section class="result-area checking">
+					<p class="tit"><strong>금리인하요구가 반영되어<br/> 금리가 변경되었어요</strong></p>
+                    <div class="txt-list-wrap">
+                        <div class="txt-detail-area">
+                            <ul class="txt-list">
+                                <li>
+                                    <span class="tit">변경 전 금리</span>
+                                    <span class="txt">16.4%</span>
+                                </li>
+                                <li>
+                                    <span class="tit">변경 후 금리</span>
+                                    <span class="txt">16.4%</span>
+                                </li>
+                                <li>
+                                    <span class="tit">금리 적용일자</span>
+                                    <span class="txt">2024.07.12</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- <div class="txtbox-wrap">
+                        <p>신청하신 금리인하요구권에 대한 정확한 상담을<br/> 위해 상담원이 연락 드릴게요</p>
+                    </div> -->
+				</section>
+                <!--E:자동 심사 결과가 반영된 경우-->
+
+                <!--S:금리인하요구권 신청 완료-->
+                <section class="result-area checking"><!--D: section 태그로 변경 및 텍스트 변경-->
+					<p class="tit"><strong>금리인하요구권을 신청했어요</strong></p>
+                    <div class="txtbox-wrap"><!--D:txtbox-wrap 구조로 변경-->
+                        <p>신청하신 금리인하요구권에 대한 정확한 상담을<br/> 위해 상담원이 연락 드릴게요</p>
+                    </div>
+				</section>
+                <!--E:금리인하요구권 신청 완료-->
+
+                <!--S:금리인하요구권 신청 완료(직접 서류제출하기 선택 후 완료)-->
+                <section class="result-area checking"><!--D: section 태그로 변경 및 텍스트 변경-->
+					<p class="tit"><strong>금리인하요구권을 신청했어요</strong></p>
+                    <div class="txtbox-wrap"><!--D:txtbox-wrap 구조로 변경-->
+                        <p>금리인하요구권 신청에 필요한 서류를 온라인<br/>서류제출 메뉴를 이용하여 직접 제출 해주세요</p>
+                    </div>
+				</section>
+                <!--E:금리인하요구권 신청 완료(직접 서류제출하기 선택 후 완료)-->
+
+                <!--S:금리인하요구권 신청 실패-->
+                <section class="result-area exclamation"><!--D: section 태그로 변경 및 텍스트 변경-->
+					<p class="tit"><strong>금리인하요구권 신청이<br/>완료되지 않았어요</strong></p>
+                    <div class="txtbox-wrap"><!--D:txtbox-wrap 구조로 변경-->
+                        <p>금리인하요구권 신청에 대한 문의는<br/>고객지원팀에 연락 해주세요</p>
+                    </div>
+				</section>
+                <!--E:금리인하요구권 신청 실패-->
+
+                <!--[퍼블-1] - 6/17 : 금리인하요구권 신청 불가-->
+                <section class="result-area exclamation">
+					<p class="tit"><strong>[신청불가 사유에 따라 변경]으로<br/>지금은 금리인하요구 신청이 불가해요</strong></p>
+                    <div class="txtbox-wrap">
+                        <p>6개월 이내 연체 이력 존재<br/>다음에 다시 신청 해주세요</p>
+                    </div>
+				</section>
+                <section class="list-bull">
+                    <div class="border"></div>
+                    <strong>알아두세요</strong>
+                    <ul>
+                        <li>금리인하 여부는 소득ㆍ자산ㆍ부채변동 등 여러 요인을 종합적으로 고려한 내부신용평가 결과를 바탕으로 결졍되므로 금리인하 요구를 하더라도 심사결과 수용이 어려울 수 있어요</li>
+                    </ul>
+                </section>
+                <!--[퍼블-1] - 6/17 : 금리인하요구권 신청 불가-->
+
+                
+
+
+                <!--D: 하단 고정 (:신청 완료/신청 완료(직접 서류제출하기 선택 후 완료)/ - 공통 적용 ([퍼블-1]: 6/17 - 금리인하요구권 신청 불가는 미적용))-->
+                <section class="sub-info-wrap"><!--D: section 태그로 변경 및 텍스트 수정-->
+                    <div class="tel">이용문의 <strong>1877-7788</strong></div>
+                    <p>평일 09:00 ~ 18:00<br>(주말 및 공휴일 휴무)</p>
+                </section>
+
+
+                <!--D: 하단 고정 : 금리인하요구권 신청 실패-->
+                <section class="sub-info-wrap">
+                    <div class="tel">대표전화 <strong>1877-7788</strong></div>
+                    <p>평일 09:00 ~ 18:00<br>(주말 및 공휴일 휴무)</p>
+                </section>
+
+            </div>
+        </div>
+        <!-- //contents -->
+
+        <!--D: 금리인하요구권 신청 완료-->
+        <div class="fixed-btn-wrap">
+			<div class="btn-wrap">
+				<a href="javascript:void(0);" class="btn" onclick="goMainPage();">홈으로</a>
+			</div>
+		</div>
+
+        <div class="fixed-btn-wrap">
+			<div class="btn-wrap flexCol"><!--D: flexCol 클래스 추가-->
+                <a href="javascript:void(0);" class="btn">온라인서류제출</a>
+				<a href="javascript:void(0);" class="btn txt" onclick="goMainPage();">홈으로</a><!--D: btn txt 클래스 사용-->
+			</div>
+		</div>
+
+    </div>
+    <!-- //contentsWrap -->
+</body>
+</html>
+

@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>예가람저축은행</title>
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="Content-Script-Type" content="text/javascript">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<meta name="keywords" content="예가람저축은행keywords" />
+<meta name="description" content="예가람저축은행description" />
+<!-- <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0, viewport-fit=cover"> -->
+	<meta name="viewport" content="user-scalable=no,width=375">
+
+<meta name="apple-mobile-web-app-status-bar-style" content="white" />
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta http-equiv="Expires" content="-1">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Cache-Control" content="No-Cache">
+
+<link href="/resources/css/default.css" rel="stylesheet" />
+<link href="/resources/css/renewal.css" rel="stylesheet" />
+
+
+<link href="/resources/css/swiper-bundle.min.css" rel="stylesheet" />
+<link rel="shortcut icon" type="image/x-icon" href="/resources/favicon.ico" />
+<link rel="icon" type="image/x-icon" href="/resources/favicon.ico" />
+
+<script type="text/javascript" src="/resources/js/lib/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="/resources/js/lib/jquery.cookie.js"></script>
+
+<script type="text/javascript" src="/resources/js/lib/swiper-bundle.min.js"></script>
+<script type="text/javascript" src="/resources/js/lib/TweenMax.min.js"></script>
+<script type="text/javascript" src="/resources/js/lib/jquery.animateSprite.min.js"></script>
+<script type="text/javascript" src="/resources/js/lib/default.js?v=20230803152535"></script>
+<script type="text/javascript" src="/resources/js/lib/ui.js?v=20230803152535"></script>
+<script type="text/javascript" src="/resources/js/lib/rolldate.js?v=20230803152535"></script>
+<script type="text/javascript" src="/resources/js/app_common_cont.js?v=20230803152535"></script>
+<script type="text/javascript" src="/resources/js/app_common_auth.js?v=20230803152535"></script>
+<script type="text/javascript" src="/resources/js/app_common_funs.js?v=20230803152535"></script>
+<script type="text/javascript" src="/resources/js/app_common_nsl.js?v=20230803152535"></script>
+<script type="text/javascript" src="/resources/js/app_common_util.js?v=20230803152535"></script>
+<script type="text/javascript" src="/resources/js/biz_common.js?version=20230803152535" id="biz_common"
+	data-menuId="dep/prc"
+	data-frameId="depAcnoOpenPrc2"
+	data-serviceCd="depAcnoOpenPrc2.frm"
+	data-serverTime="20230803152535"
+	data-activeMode="local"
+	data-activeEnv="${active.env">
+</script>
+
+
+<body>
+    <!-- header -->
+    <div id="headerWrap">
+        <script>
+        $(document).ready(function(){
+            document.charset="euc-kr";
+            $("#headerWrap").load("../includes/header.html");
+        });
+        </script>
+    </div>
+	<!-- //header -->
+
+    <!--contentsWrap -->
+    <div class="contentsWrap">
+        <!--contents -->
+        <div class="contents">
+            <div class="default-wrap">
+
+				<div class="txt-list-wrap">
+					<div class="txt-detail-area">
+						<div class="txt-detail-tit">
+							<strong class="tit-icon pw">간편비밀번호</strong><span><em class="flag style7">등록됨</em></span><!--D: style7 클래스 추가-->
+						</div>
+						<div class="btn-cont-wrap">
+							<a href="#none" class="btn">재등록</a><!--D: btn-gray 클래스 삭제-->
+							<a href="#none" class="btn btn-info">해제</a><!--[퍼블-1] : btn-info 클래스 변경-->
+						</div>
+					</div>
+				</div>
+					
+
+				<div class="txt-list-wrap">
+					<div class="txt-detail-area">
+						<div class="txt-detail-tit">
+							<strong class="tit-icon pattern">패턴인증</strong><span><em class="flag style7">등록됨</em></span><!--D: style7 클래스 추가-->
+						</div>
+						<div class="btn-cont-wrap">
+							<a href="#none" class="btn">재등록</a><!--D: btn-gray 클래스 삭제-->
+							<a href="#none" class="btn btn-info">해제</a><!--[퍼블-1] : btn-info 클래스 변경-->
+						</div>
+					</div>
+				</div>
+
+				<div class="txt-list-wrap">
+					<div class="txt-detail-area">
+						<div class="txt-detail-tit">
+							<strong class="tit-icon bio">생체인증</strong>
+						</div>
+						<div class="btn-cont-wrap">
+							<a href="#none" class="btn">등록</a><!--[퍼블-1] : 클래스 변경-->
+						</div>
+					</div>
+				</div>
+
+				<ul class="arrow-button-list">
+                    <li><a href="#none" onclick="openPopupUp('lypullPop01')">로그인 방법 설정</a></li><!--D:로그인 방법 설정 추가-->
+                    <li><a href="#none" onclick="openPopupUp('lyPullPop02')">유의사항</a></li>
+                </ul>
+
+				<div class="list-bull"><!--D: 구조 변경-->
+                    <div class="border"></div>
+                    <strong>알아두세요</strong>
+                    <ul>
+                        <li>간편인증 서비스는 안드로이드 기준 8.0, 아이폰 기준 11.0 이상 기기에서 사용을 권장해요</li>
+                    </ul>
+                </div>
+
+
+            </div>
+        </div>
+        <!-- //contents -->
+
+			<!--S: 로그인방법 설정-->
+			<div id="lypullPop01" class="layerpopup laypop-all show">
+				<!-- s: contents -->
+				<div class="pop-header">
+					<h2 class="pop-title">로그인방법 설정</h2>
+					<button type="button" name="button" class="btn-layer-close" onclick="closePopup('lypullPop01')">닫기</button>
+				</div>
+	
+				<div class="pop-con-wrap" style="padding-bottom: 60px;">
+					<div class="default-wrap">
+						<div class="tit-wrap">
+							<p class="txt"><strong>기본 로그인 방법</strong>을<br/>선택해주세요</p>
+						</div>
+	
+						<div class="form-all-wrap"><!--D: form-all-wrap 감싸는 구조 추가 외 변경사항 없음-->
+							<div class="check-box toggle">
+								<input type="checkbox" id="check01">
+								<label for="check01">
+									<span>최근 로그인</span>
+									<div class="switch-btn">
+										<span class="off">OFF</span>
+										<span class="on">ON</span>
+										<div class="inside"></div>
+									</div>
+								</label>
+							</div>
+	
+							<div class="check-box toggle">
+								<input type="checkbox" id="check02">
+								<label for="check02">
+									<span>간편비밀번호</span>
+									<div class="switch-btn">
+										<span class="off">OFF</span>
+										<span class="on">ON</span>
+										<div class="inside"></div>
+									</div>
+								</label>
+							</div>
+	
+							<div class="check-box toggle">
+								<input type="checkbox" id="check03">
+								<label for="check03">
+									<span>패턴인증</span>
+									<div class="switch-btn">
+										<span class="off">OFF</span>
+										<span class="on">ON</span>
+										<div class="inside"></div>
+									</div>
+								</label>
+							</div>
+	
+							<div class="check-box toggle">
+								<input type="checkbox" id="check04">
+								<label for="check04">
+									<span>생체인증</span>
+									<div class="switch-btn">
+										<span class="off">OFF</span>
+										<span class="on">ON</span>
+										<div class="inside"></div>
+									</div>
+								</label>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="fixed-btn-wrap">
+					<div class="btn-wrap">
+						<a href="#none" class="btn" onclick="closePopup('lypullPop01')">확인</a>
+					</div>
+            	</div>
+			</div>
+			<!--E: 로그인방법 설정-->
+
+			<!-- S: 간편비밀번호 유의사항 (팝업) -->
+			<div id="lyPullPop02" class="layerpopup laypop-all" tabindex="0" data-focus-prev="btn-menu-close">
+				<!-- s: contents -->
+				<div class="pop-header">
+					<h2 class="pop-title">유의사항</h2>
+					<button type="button" name="button" class="btn-layer-close" onclick="closePopup('lyPullPop02)">닫기</button>
+				</div>
+				<div class="pop-con-wrap">
+					<div class="default-wrap">
+						<div class="sub-tit-wrap">
+							<p class="tit">유의사항</p>
+							<ul class="list-bull">
+								<li>저축은행은 이용자의 모바일인증 정보를 저장하거나 보관하지 않으며, <span class="point-red">이용자의 휴대폰에 저장된 모바일인증정보를 이용하여 모바일인증 서비스를 제공</span>하고 있어요</li>
+								<li>이용자의 휴대폰에 등록된 모바일인증 정보는 반드시 이용자 본인의 것이어야 하며, <span class="point-red">휴대폰에 등록된 모바일인증 정보의 관리 및 사용에 대한 책임은 이용자 본인에게 있으므로, 본인의 모바일인증 정보가 유출되지 않도록 각별히 주의</span>해 주세요</li>
+								<li>만약 저장된 모바일인증 정보가 <span class="point-red">타인에게 유출되었다고 판단할 경우 즉시 휴대폰에 등록된 모바일인증 정보를 삭제하시고 모바일인증 서비스를 해지</span>해야 해요</li>
+								<li>모바일인증을 통한 전자서명은 공동인증서를 제출한 것과 동일한 효력이 발생해요</li>
+								<li>모바일인증 정보를 누적 5회 잘못 입력할 경우 모바일인증 서비스 이용이 불가하며, 모바일인증 서비스 재등록 후 이용해 주세요</li>
+								<li>다음의 번호가 포함될 경우 설정이 불가해요
+									<ul class="list-bull hyphen">
+										<li>주민등록번호 13자리 중 연속 6자리</li>
+										<li>연속 또는 동일한 숫자 6자리</li>
+										<li>휴대폰번호 11자리 중 연속 6자리</li>
+									</ul>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- E: 간편비밀번호 유의사항 (팝업) -->
+
+			<!--S: 간편비밀번호 등록되지 않을 경우(Alert)-->
+			<div id="lyAlert1" class="layerpopup type-alert on" style="display: none;">
+				<div class="content-wrap">
+	
+					<div class="pop-con-wrap">
+						<span class="pop-con">간편비밀번호가 등록되지 않았어요 등록할까요?</span>
+					</div>
+					<div class="btn-wrap">
+						<a href="javascript:void(0);" class="btn btn-info" onclick="">취소</a>
+						<a href="javascript:void(0);" class="btn">확인</a>
+					</div>
+				</div>
+			</div>
+			<!--E: 간편비밀번호 등록되지 않을 경우(Alert)-->
+
+			<!--S: 간편인증 정보 등록 최초 1회 등록(Alert)-->
+			<div id="lyAlert1" class="layerpopup type-alert on" style="display: none;">
+				<div class="content-wrap">
+	
+					<div class="pop-con-wrap">
+						<span class="pop-con">간편인증 정보 등록을 위해 최초 1회 간편비밀번호를 등록해주세요</span>
+					</div>
+					<div class="btn-wrap">
+						<a href="javascript:void(0);" class="btn btn-info" onclick="">나중에</a>
+						<a href="javascript:void(0);" class="btn">등록</a>
+					</div>
+				</div>
+			</div>
+			<!--E: 간편인증 정보 등록 최초 1회 등록(Alert)-->
+			
+			<!--S: 간편인증 등록(Alert)-->
+			<div id="lyAlert1" class="layerpopup type-alert on" style="display: none;">
+				<div class="content-wrap">
+	
+					<div class="pop-con-wrap">
+						<span class="pop-con">간편인증(핀,패턴생체)이 등록되었어요</span>
+					</div>
+					<div class="btn-wrap">
+						<a href="javascript:void(0);" class="btn">확인</a>
+					</div>
+				</div>
+			</div>
+			<!--E: 간편인증 등록(Alert)-->
+
+			<!--S: 간편비밀번호 해제할 경우(Alert)-->
+			<div id="lyAlert1" class="layerpopup type-alert on" style="display: none;">
+				<div class="content-wrap">
+	
+					<div class="pop-con-wrap">
+						<span class="pop-con">간편비밀번호를 해제하면 패턴인증, 생체인증도 함께 해제돼요</span>
+					</div>
+					<div class="btn-wrap">
+						<a href="javascript:void(0);" class="btn btn-info" onclick="">취소</a>
+						<a href="javascript:void(0);" class="btn">확인</a>
+					</div>
+				</div>
+			</div>
+			<!--E: 간편비밀번호 해제할 경우(Alert)-->
+
+			<!--S: 패턴인증이 등록되지 않을 경우(Alert)-->
+			<div id="lyAlert1" class="layerpopup type-alert on" style="display: none;">
+				<div class="content-wrap">
+	
+					<div class="pop-con-wrap">
+						<span class="pop-con">패턴인증이 등록되지 않았어요 등록할까요?</span>
+					</div>
+					<div class="btn-wrap">
+						<a href="javascript:void(0);" class="btn btn-info" onclick="">취소</a>
+						<a href="javascript:void(0);" class="btn">등록</a>
+					</div>
+				</div>
+			</div>
+			<!--E: 패턴인증이 등록되지 않을 경우(Alert)-->
+	
+			<!--S:패턴 등록(Alert)-->
+			<div id="lyAlert1" class="layerpopup type-alert on" style="display: none;">
+				<div class="content-wrap">
+	
+					<div class="pop-con-wrap">
+						<span class="pop-con">패턴도 등록하시겠어요?</span>
+					</div>
+					<div class="btn-wrap">
+						<a href="javascript:void(0);" class="btn btn-info" onclick="">취소</a>
+						<a href="javascript:void(0);" class="btn">확인</a>
+					</div>
+				</div>
+			</div>
+			<!--E: 패턴 등록(Alert)-->
+	
+			<!--S:패턴 해제할 경우(Alert)-->
+			<div id="lyAlert1" class="layerpopup type-alert on" style="display: none;">
+				<div class="content-wrap">
+	
+					<div class="pop-con-wrap">
+						<span class="pop-con">패턴이 해제되었어요</span>
+					</div>
+					<div class="btn-wrap">
+						<a href="javascript:void(0);" class="btn">확인</a>
+					</div>
+				</div>
+			</div>
+			<!--E: 패턴 해제할 경우(Alert)-->
+	
+
+			<!--S: 생체인증이 등록되지 않을 경우(Alert)-->
+			<div id="lyAlert1" class="layerpopup type-alert on" style="display: none;">
+				<div class="content-wrap">
+	
+					<div class="pop-con-wrap">
+						<span class="pop-con">생체인증이 등록되지 않았어요 등록할까요?</span>
+					</div>
+					<div class="btn-wrap">
+						<a href="javascript:void(0);" class="btn btn-info" onclick="">취소</a>
+						<a href="javascript:void(0);" class="btn">확인</a>
+					</div>
+				</div>
+			</div>
+			<!--E: 생체인증이 등록되지 않을 경우(Alert)-->
+			
+			<!--S: 생체인증 등록(Alert)-->
+			<div id="lyAlert1" class="layerpopup type-alert on" style="display: none;">
+				<div class="content-wrap">
+	
+					<div class="pop-con-wrap">
+						<span class="pop-con">생체인증도 등록하시겠어요?</span>
+					</div>
+					<div class="btn-wrap">
+						<a href="javascript:void(0);" class="btn btn-info" onclick="">취소</a>
+						<a href="javascript:void(0);" class="btn">확인</a>
+					</div>
+				</div>
+			</div>
+			<!--E: 생체인증 등록(Alert)-->
+
+			<!--S: 생체인증 해제할 경우(Alert)-->
+			<div id="lyAlert1" class="layerpopup type-alert on" style="display: none;">
+				<div class="content-wrap">
+	
+					<div class="pop-con-wrap">
+						<span class="pop-con">생체인증이 해제되었어요</span>
+					</div>
+					<div class="btn-wrap">
+						<a href="javascript:void(0);" class="btn">확인</a>
+					</div>
+				</div>
+			</div>
+			<!--E: 생체인증 해제할 경우(Alert)-->
+        </div>
+    </div>
+    <!-- //contentsWrap -->
+</body>
+</html>
+

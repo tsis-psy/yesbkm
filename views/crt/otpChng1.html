@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>예가람저축은행</title>
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="Content-Script-Type" content="text/javascript">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<meta name="keywords" content="예가람저축은행keywords" />
+<meta name="description" content="예가람저축은행description" />
+<!-- <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0, viewport-fit=cover"> -->
+	<meta name="viewport" content="user-scalable=no,width=375">
+
+<meta name="apple-mobile-web-app-status-bar-style" content="white" />
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta http-equiv="Expires" content="-1">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Cache-Control" content="No-Cache">
+
+<link href="/resources/css/default.css" rel="stylesheet" />
+<link href="/resources/css/renewal.css" rel="stylesheet" />
+
+
+<link href="/resources/css/swiper-bundle.min.css" rel="stylesheet" />
+<link rel="shortcut icon" type="image/x-icon" href="/resources/favicon.ico" />
+<link rel="icon" type="image/x-icon" href="/resources/favicon.ico" />
+
+<script type="text/javascript" src="/resources/js/lib/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="/resources/js/lib/jquery.cookie.js"></script>
+
+<script type="text/javascript" src="/resources/js/lib/swiper-bundle.min.js"></script>
+<script type="text/javascript" src="/resources/js/lib/TweenMax.min.js"></script>
+<script type="text/javascript" src="/resources/js/lib/jquery.animateSprite.min.js"></script>
+<script type="text/javascript" src="/resources/js/lib/default.js?v=20230803152535"></script>
+<script type="text/javascript" src="/resources/js/lib/ui.js?v=20230803152535"></script>
+<script type="text/javascript" src="/resources/js/lib/rolldate.js?v=20230803152535"></script>
+<script type="text/javascript" src="/resources/js/app_common_cont.js?v=20230803152535"></script>
+<script type="text/javascript" src="/resources/js/app_common_auth.js?v=20230803152535"></script>
+<script type="text/javascript" src="/resources/js/app_common_funs.js?v=20230803152535"></script>
+<script type="text/javascript" src="/resources/js/app_common_nsl.js?v=20230803152535"></script>
+<script type="text/javascript" src="/resources/js/app_common_util.js?v=20230803152535"></script>
+<script type="text/javascript" src="/resources/js/biz_common.js?version=20230803152535" id="biz_common"
+	data-menuId="dep/prc"
+	data-frameId="depAcnoOpenPrc2"
+	data-serviceCd="depAcnoOpenPrc2.frm"
+	data-serverTime="20230803152535"
+	data-activeMode="local"
+	data-activeEnv="${active.env">
+</script>
+
+
+<body>
+    <!-- header -->
+    <header class="headerWrap">
+		<div class="headerLeft">
+			<a href="javascript:void(0)" class="btn btnBack"><img src="/resources/images/header/btn_back.png" alt="이전페이지 이동하기"></a>
+		</div>
+		<div class="headerCenter">
+            <h2><span>OTP 보정</span></h2>
+		</div>
+		<div class="headerRight">
+			<a href="javascript:void(0)" class="btn btn-menu "><img src="/resources/images/header/btn_menu.png" alt="전체메뉴"></a>
+		</div>
+	</header>
+	<!-- //header -->
+
+    <form>
+        <!--contentsWrap -->
+        <div class="contentsWrap">
+            <!--contents -->
+            <div class="contents">
+                    <!--D : default-wrap로 분리가 아닌 section태그 변경분리-->
+                    <div class="default-wrap">
+                        <!--s: OTP 보정 대상이 아닐 경우-->
+                        <section class="result-area exclamation">
+                            <p class="tit"><strong>OTP 보정 대상이 아니에요</strong></p>
+                            <div class="bg-box">
+                                <p class="box-tit"><strong>OTP 보정이란 ?</strong></p>
+                                <p class="box-desc">사용 중인 OTP와 인증기관의 시간 정보를<br/> 일치시키는 것이에요 . 현재 사용 중인 OTP는<br/> 보정이 필요 없어요</p>
+                            </div>
+                        </section>
+                         <!--e: OTP 보정 대상이 아닐 경우-->
+                          <!--s: OTP 보정을 위한 정보 입력-->
+                    <section>
+                        <div class="tit-wrap">
+                            <p class="txt"><strong>OTP 보정</strong>을 위한<br/>정보를 입력해주세요</p>
+                            <p class="s-txt">보유하고 계신 OTP의 뒷면에서<br/> 일련번호 및 벤더 코드를 확인하실 수 있어요</p>
+                        </div>
+        
+                        <div class="img-wrap otp">
+                            <img src="/resources/images/common/img-otp.png" alt="주민등록증 예시이미지">
+                        </div>
+                        <!--D : form-wrap 부분 form-all-wrap로 감싸기-->
+                        <div class="form-all-wrap">
+                            <div class="form-wrap">
+                                <div class="select-box on disabled" tabindex="1"><!--D: disabled-->
+                                    <label for="">OTP일련번호</label>
+                                    <span class="option">12⦁⦁⦁6780</span>
+                                </div>
+                            </div>
+                            <div class="form-wrap">
+                                <label for="" class="formlabel essential">OTP 비밀번호</label>
+                                <div class="input">
+                                    <input type="tel" title="OTP 일련번호" id="OTP_SRNO2" class="inp validChk" name="" value=""  maxlength="12" placeholder="OTP 비밀번호" required="">
+                                </div>
+                            </div>
+                            <p class="info-txt">
+                                OTP 비밀번호는 새롭게 생성된 비밀번호를 입력해주세요
+                            </p>
+                        </div>
+                    </section>
+                     <!--e: OTP 보정을 위한 정보 입력-->
+
+                    </div>
+            </div>
+            <!-- //contents -->
+
+            <div class="fixed-btn-wrap">
+                <div class="btn-wrap">
+                    <a href="#none" class="btn">다음</a>
+                </div>
+            </div>
+
+
+
+
+        </div>
+        <!-- //contentsWrap -->
+    </form>
+</body>
+</html>
+

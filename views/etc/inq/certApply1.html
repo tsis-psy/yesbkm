@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>예가람저축은행</title>
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="Content-Script-Type" content="text/javascript">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<meta name="keywords" content="예가람저축은행keywords" />
+<meta name="description" content="예가람저축은행description" />
+<!-- <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0, viewport-fit=cover"> -->
+	<meta name="viewport" content="user-scalable=no,width=375">
+
+<meta name="apple-mobile-web-app-status-bar-style" content="white" />
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta http-equiv="Expires" content="-1">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Cache-Control" content="No-Cache">
+
+<link href="/resources/css/default.css" rel="stylesheet" />
+<link href="/resources/css/renewal.css" rel="stylesheet" />
+
+
+<link href="/resources/css/swiper-bundle.min.css" rel="stylesheet" />
+<link rel="shortcut icon" type="image/x-icon" href="/resources/favicon.ico" />
+<link rel="icon" type="image/x-icon" href="/resources/favicon.ico" />
+
+<script type="text/javascript" src="/resources/js/lib/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="/resources/js/lib/jquery.cookie.js"></script>
+
+<script type="text/javascript" src="/resources/js/lib/swiper-bundle.min.js"></script>
+<script type="text/javascript" src="/resources/js/lib/TweenMax.min.js"></script>
+<script type="text/javascript" src="/resources/js/lib/jquery.animateSprite.min.js"></script>
+<script type="text/javascript" src="/resources/js/lib/default.js?v=20230803152535"></script>
+<script type="text/javascript" src="/resources/js/lib/ui.js?v=20230803152535"></script>
+<script type="text/javascript" src="/resources/js/lib/rolldate.js?v=20230803152535"></script>
+<script type="text/javascript" src="/resources/js/app_common_cont.js?v=20230803152535"></script>
+<script type="text/javascript" src="/resources/js/app_common_auth.js?v=20230803152535"></script>
+<script type="text/javascript" src="/resources/js/app_common_funs.js?v=20230803152535"></script>
+<script type="text/javascript" src="/resources/js/app_common_nsl.js?v=20230803152535"></script>
+<script type="text/javascript" src="/resources/js/app_common_util.js?v=20230803152535"></script>
+<script type="text/javascript" src="/resources/js/biz_common.js?version=20230803152535" id="biz_common"
+	data-menuId="dep/prc"
+	data-frameId="depAcnoOpenPrc2"
+	data-serviceCd="depAcnoOpenPrc2.frm"
+	data-serverTime="20230803152535"
+	data-activeMode="local"
+	data-activeEnv="${active.env">
+</script>
+
+
+<body>
+    <!-- header -->
+    <header class="headerWrap"> <!--D: bg-color02 클래스 : 뒤에 색상 들어갈 경우  -->
+		<div class="headerLeft">
+			<!--D: 이전버튼-->
+			<a href="javascript:void(0)" class="btn btnBack"><img src="/resources/images/header/btn_back.png" alt="이전페이지 이동하기"></a>
+	
+		</div>
+		<div class="headerCenter">
+			<h2 class="text"><span>증명서 발급신청</span></h2> <!--D: TEXT -->
+		</div>
+		<div class="headerRight">
+			<!--D: 전체메뉴버튼 -->
+			<a href="javascript:void(0)" class="btn btn-menu "><img src="/resources/images/header/btn_menu.png" alt="전체메뉴"></a>
+		</div>
+	</header>
+	<!-- //header -->
+
+    <!--contentsWrap -->
+    <div class="contentsWrap">
+        <!--contents -->
+        <div class="contents">
+            <div class="default-wrap">
+
+                <div class="tit-wrap">
+					<p class="txt"><strong>발급신청 정보</strong>를 입력하세요</p><!--D: 텍스트수정-->
+				</div>
+
+                <!--D: " 부채잔액증명서, 금융거래확인서, 완납증명서, 미연체확인서, 대출거래내역서, 예금잔액증명서, 금융소득종합과세, 원천징수영수증 " 의 증명서 발금신청 정보입력 -->
+                
+                <!--S:FORM-->
+                <div class="form-all-wrap"><!--D: 5/13 - form 전체 감쌀 경우 : form-all-wrap / slect-box를 감쌀 경우 slect-wrap이 아닌 form-wrap으로 감싸주세요-->
+
+                    <!--D: 증명서 종류 -->
+                    <div class="form-wrap"><!--D: 5/13  개발 포커스 및 error 적용 문제로 select-wrap을 form-wrap으로 변경-->
+                        <div class="select-box" tabindex="1">
+                            <label for="" class="essential">증명서 종류</label><!--D: essentail 추가-->
+                            <span class="option" id="">미선택</span>
+                        </div>
+                    </div>
+
+                    <!--D: 발급목적 -->
+                    <div class="form-wrap"><!--D: 5/13  개발 포커스 및 error 적용 문제로 select-wrap을 form-wrap으로 변경-->
+                        <div class="select-box" tabindex="1">
+                            <label for="" class="essential">발급목적</label><!--D: essentail 추가-->
+                            <span class="option" id="">미선택</span>
+                        </div>
+                    </div>
+
+                    <!--D: 제출처 선택 -->
+                    <div class="form-wrap"><!--D: 5/13  개발 포커스 및 error 적용 문제로 select-wrap을 form-wrap으로 변경-->
+                        <div class="select-box" tabindex="1">
+                            <label for="" class="essential">제출처 선택</label><!--D: essentail 추가-->
+                            <span class="option" id="">미선택</span>
+                        </div>
+                    </div>
+
+                    <!--D: 발급년도 -->
+                    <div class="form-wrap"><!--D: 5/13  개발 포커스 및 error 적용 문제로 select-wrap을 form-wrap으로 변경-->
+                        <div id="rolldate4" class="select-box" tabindex="1">
+                            <label for="" class="essential">발급년도</label><!--D: essentail 추가-->
+                            <span class="option" id="">미선택</span>
+                        </div>
+                    </div>
+
+
+                    <!--D: 수령방법 -->
+                    <div class="form-wrap"><!--D: 5/13  개발 포커스 및 error 적용 문제로 select-wrap을 form-wrap으로 변경-->
+                        <div class="select-box" tabindex="1">
+                            <label for="" class="essential">수령방법</label><!--D: essentail 추가-->
+                            <span class="option" id="">미선택</span>
+                        </div>
+                    </div>
+
+                    <!--D: 조회계좌 -->
+                    <div class="form-wrap"><!--D: 5/13  개발 포커스 및 error 적용 문제로 select-wrap을 form-wrap으로 변경-->
+                        <div class="select-box" tabindex="1">
+                            <label for="" class="essential">조회계좌</label><!--D: essentail 추가-->
+                            <span class="option" id="">미선택</span>
+                        </div>
+                    </div>
+
+                    <!--D: 조회기간 -->
+                    <div class="form-wrap"><!--D: 5/13  개발 포커스 및 error 적용 문제로 select-wrap을 form-wrap으로 변경-->
+                        <div class="select-box" tabindex="1">
+                            <label for="" class="essential">조회기간</label><!--D: essentail 추가-->
+                            <span class="option" id="">미선택</span>
+                        </div>
+                    </div>
+
+                    <!--D: 이메일 -->
+                    <div class="form-wrap"><!-- D:이메일-->
+                        <label for="ipt02" class="formlabel">이메일</label>
+                        <div class="input">
+                            <span><input type="text" id="email" class="inp" pattern=".+@\." onclick="eml()" placeholder="이메일주소 입력" name="EML_C50" value="" required=""></span><!--D: placeholder : 이메일주소 입력-->
+                        </div>
+                    </div>
+
+
+                    <div class="form-wrap"><!-- D:팩스번호-->
+                        <label for="ipt02" class="formlabel">팩스번호</label>
+                        <div class="input">
+                            <span><input type="text" id="txt" class="inp" placeholder="팩스번호 입력" name="" value="" required=""></span>
+                        </div>
+                    </div>
+                    <p class="info-txt">팩스번호 입력 시 '-'를 빼고 입력해주세요</p><!--D: 팩스번호  info-txt 추가-->
+
+
+                    <div class="form-wrap form-line"><!-- D:우편번호-->
+                        <label for="ipt04" class="formlabel">주소</label>
+                        <div class="input"><!--D:<div class="input">로 변경-->
+                            <input type="text" title="주소검색" class="inp validChk" name="" value="" id=""  placeholder="우편번호 입력" required="">
+                            <button type="button" class="btn-certi">우편번호찾기</button>
+                        </div>
+                        <div class="input"><!--D:<div class="input">로 변경-->
+                            <input type="text" class="inp validChk" name="" value="" id=""placeholder="기본주소 입력" required="">
+                        </div>
+                        <div class="input"><!--D:<div class="input">로 변경-->
+                            <input type="text" class="inp validChk" name="" value="" id=""  placeholder="상세주소 입력" required="">
+                        </div>
+                        <p class="error-txt">주소를 입력해주세요</p>
+                    </div>
+
+                </div>
+                <!--E:FORM-->
+
+                <!--D: 리스트 뿌려지는게 다름 - 추가 -->
+
+                <!--S: 부채잔액증명서-->
+                <div class="list-bull">
+                    <div class="border"></div>
+                    <strong>알아두세요</strong>
+                    <ul>
+                        <li>거래가능시간 : 은행영업원(평일) 08:00 ~ 22:00</li>
+                        <li>부채잔액증명서에 이자 잔액은 표시되지 않아요</li>
+                        <li>특수채권내역은 인터넷뱅킹에서 조회되지 않으므로 영업점을 방문하여 발급해 주세요</li>
+                        <!--[퍼블-1] : 240724 기획현행화-->
+                        <!-- <li>아래와 같은 경우에는 가까운 영업점을 방문하여 발급해 주세요
+                            <ul class="list-bull hyphen">
+                                <li>개인회생, 파산, 기업회생 등의 용도로 발급을 원하는 경우</li>
+                            </ul>
+                        </li> -->
+                    </ul>
+                </div>
+                <!--E: 부채잔액증명서-->
+                
+                <!--S: 금융소득종합과세 / 원천징수영수증-->
+                <div class="list-bull">
+                    <div class="border"></div>
+                    <strong>알아두세요</strong>
+                    <ul>
+                        <li>거래가능시간 : 은행영업원(평일) 08:00 ~ 22:00</li>
+                    </ul>
+                </div>
+                <!--E: 금융소득종합과세 / 원천징수영수증-->
+                
+                <!--S: 예금잔액증명서-->
+                <div class="list-bull">
+                    <div class="border"></div>
+                    <strong>알아두세요</strong>
+                    <ul>
+                        <li>출력은 입력하신 이메일 주소에서 첨부파일을 내려받으신 후 인쇄해 주세요</li>
+                        <li>고객님의 예금 등에 대해서 발급기준일자의 최종잔액을 증명할 수 있어요</li>
+                        <li>아래와 같은 경우에는 가까운 영업점을 방문하여 발급해 주세요
+                            <ul class="list-bull hyphen">
+                                <li>제 3자에게 양도 거래한 대금</li>
+                                <li>수익자를 타인으로 지정한 타인 신탁 상품</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <!--E: 예금잔액증명서-->
+
+                <!--D: 리스트 뿌려지는게 다름 - 추가 // -->
+
+
+
+            </div>
+        </div>
+        <!-- //contents -->
+
+        <div class="fixed-btn-wrap">
+            <div class="btn-wrap flexCol"><!--D: flexCol추가-->
+                <a href="#none" class="btn">다음</a>
+                <a href="#none" class="btn txt">그만하기</a><!--D: btn txt 클래스 변경-->
+            </div>
+        </div>
+
+        <!--S: 증명서 종류 -->
+        <div id="lySel1" class="layerpopup layer-up show" style="position: fixed; top: 462.5px; left: 0px; display: none;">
+            <div class="content-wrap">
+                <div class="pop-header">
+                    <h2 class="pop-title">발급목적</h2>
+                    <button type="button" name="button" class="btn-layer-close" data-focus="btn-layer-close">닫기</button>
+                </div>
+                <div class="ly-scroll-con ly-select">
+                    <ul class="ly-select-list">
+                        <li><button>부채잔액증명서</button></li><!-- [D] 클래스 active 추가 시 활성화 스타일 노출 -->
+                        <li><button>금융거래확인서</button></li>
+                        <li><button>완납증명서</button></li>
+                        <li><button>미연체확인서</button></li>
+                        <li><button>금융소득종합과세</button></li>
+                        <li><button>원천징수영수증</button></li>
+                        <li><button>대출거래내역서</button></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!--E: 증명서 종류 -->
+
+        <!--S: 발급목적 -->
+        <div id="lySel2" class="layerpopup layer-up show" style="position: fixed; top: 462.5px; left: 0px; display: none;">
+            <div class="content-wrap">
+                <div class="pop-header">
+                    <h2 class="pop-title">발급목적</h2>
+                    <button type="button" name="button" class="btn-layer-close" data-focus="btn-layer-close">닫기</button>
+                </div>
+                <div class="ly-scroll-con ly-select">
+                    <ul class="ly-select-list">
+                        <li><button>금융기관제출용</button></li><!-- [D] 클래스 active 추가 시 활성화 스타일 노출 -->
+                        <li><button>대환대출</button></li>
+                        <li><button>개인회생</button></li>
+                        <li><button>파산</button></li>
+                        <li><button>상속</button></li>
+                        <li><button>본인확인용</button></li>
+                        <li><button>기타</button></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!--E: 발급목적 -->
+
+        <!--S: 제출처 선택-->
+        <div id="lySel3" class="layerpopup layer-up show" style="position: fixed; top: 462.5px; left: 0px; display: none;">
+            <div class="content-wrap">
+                <div class="pop-header">
+                    <h2 class="pop-title">제출처 선택</h2>
+                    <button type="button" name="button" class="btn-layer-close" data-focus="btn-layer-close">닫기</button>
+                </div>
+                <div class="ly-scroll-con ly-select">
+                    <ul class="ly-select-list">
+                        <li><button>법원</button></li><!-- [D] 클래스 active 추가 시 활성화 스타일 노출 -->
+                        <li><button>은행</button></li>
+                        <li><button>은행 외 금융기관</button></li>
+                        <li><button>관공서</button></li>
+                        <li><button>신용보증기금</button></li>
+                        <li><button>자산관리공사</button></li>
+                        <li><button>기타관공서</button></li>
+                        <li><button>본인확인용</button></li>
+                        <li><button>기타</button></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!--E: 제출처 선택 -->
+
+        <!--S: 수령방법-->
+        <div id="lySel3" class="layerpopup layer-up show" style="position: fixed; top: 462.5px; left: 0px; display: none;">
+            <div class="content-wrap">
+                <div class="pop-header">
+                    <h2 class="pop-title">수령방법</h2>
+                    <button type="button" name="button" class="btn-layer-close" data-focus="btn-layer-close">닫기</button>
+                </div>
+                <div class="ly-scroll-con ly-select">
+                    <ul class="ly-select-list">
+                        <li><button>팩스</button></li><!-- [D] 클래스 active 추가 시 활성화 스타일 노출 -->
+                        <li><button>방문수령</button></li>
+                        <li><button>우편</button></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!--E: 수령방법 -->
+
+    </div>
+    <!-- //contentsWrap -->
+</body>
+</html>
+

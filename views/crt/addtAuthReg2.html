@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>예가람저축은행</title>
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="Content-Script-Type" content="text/javascript">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<meta name="keywords" content="예가람저축은행keywords" />
+<meta name="description" content="예가람저축은행description" />
+<!-- <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0, viewport-fit=cover"> -->
+	<meta name="viewport" content="user-scalable=no,width=375">
+
+<meta name="apple-mobile-web-app-status-bar-style" content="white" />
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta http-equiv="Expires" content="-1">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Cache-Control" content="No-Cache">
+
+<link href="/resources/css/default.css" rel="stylesheet" />
+<link href="/resources/css/renewal.css" rel="stylesheet" />
+
+
+<link href="/resources/css/swiper-bundle.min.css" rel="stylesheet" />
+<link rel="shortcut icon" type="image/x-icon" href="/resources/favicon.ico" />
+<link rel="icon" type="image/x-icon" href="/resources/favicon.ico" />
+
+<script type="text/javascript" src="/resources/js/lib/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="/resources/js/lib/jquery.cookie.js"></script>
+
+<script type="text/javascript" src="/resources/js/lib/swiper-bundle.min.js"></script>
+<script type="text/javascript" src="/resources/js/lib/TweenMax.min.js"></script>
+<script type="text/javascript" src="/resources/js/lib/jquery.animateSprite.min.js"></script>
+<script type="text/javascript" src="/resources/js/lib/default.js?v=20230803152535"></script>
+<script type="text/javascript" src="/resources/js/lib/ui.js?v=20230803152535"></script>
+<script type="text/javascript" src="/resources/js/lib/rolldate.js?v=20230803152535"></script>
+<script type="text/javascript" src="/resources/js/app_common_cont.js?v=20230803152535"></script>
+<script type="text/javascript" src="/resources/js/app_common_auth.js?v=20230803152535"></script>
+<script type="text/javascript" src="/resources/js/app_common_funs.js?v=20230803152535"></script>
+<script type="text/javascript" src="/resources/js/app_common_nsl.js?v=20230803152535"></script>
+<script type="text/javascript" src="/resources/js/app_common_util.js?v=20230803152535"></script>
+<script type="text/javascript" src="/resources/js/biz_common.js?version=20230803152535" id="biz_common"
+	data-menuId="dep/prc"
+	data-frameId="depAcnoOpenPrc2"
+	data-serviceCd="depAcnoOpenPrc2.frm"
+	data-serverTime="20230803152535"
+	data-activeMode="local"
+	data-activeEnv="${active.env">
+</script>
+
+
+<body>
+    <!-- header -->
+    <div id="headerWrap">
+        <script>
+        $(document).ready(function(){
+            document.charset="euc-kr";
+            $("#headerWrap").load("../includes/header.html");
+        });
+        </script>
+    </div>
+	<!-- //header -->
+
+    <!--contentsWrap -->
+    <div class="contentsWrap">
+        <!--contents -->
+        <div class="contents">
+            <div class="default-wrap">
+
+                <!--D: double_auth.html과 같은 페이지인데 기존에도 이 페이지가 있어 일단 추가 해놨습니다.--->
+
+                <div class="tit-wrap">
+					<p class="txt"><strong>추가인증 방법</strong>를<br/>선택해 주세요</p>
+				</div>
+                
+                <!--S:form-all-wrap-->
+                <div class="form-all-wrap"><!--D: form-all-wrap 감싸주는 구조 추가-->
+
+                    <ul class="check-box">
+                        <li class="ars">
+                            <fieldset>
+                                <input type="radio" name="addAuth" value="20" class="" checked>
+                                <label for="Chk01_1">ARS인증</label>
+                            </fieldset>
+                        </li>
+                        <li class="app">
+                            <fieldset>
+                                <input type="radio" name="addAuth" value="10" class="" disabled="disabled">
+                                <label for="Chk01_2">스마트 앱 인증</label>
+                            </fieldset>
+                        </li>
+                    </ul>
+
+                    <div class="txtbox-wrap">
+                        <p>전화번호를 선택 후 <strong>[ARS 요청]</strong> 버튼을 눌러주세요</p>
+                    </div>
+
+                </div>
+                <!--E:form-all-wrap-->
+
+				<div class="list-bull"><!--D: 구조 변경-->
+                    <div class="border"></div>
+                    <strong>알아두세요</strong>
+                    <ul>
+                        <li>전화가 오지 않는 경우 전화번호가 다르게 입력되었거나,
+                            착신이 정지되었는지 확인해주세요</li>
+                        <li>ARS 수신번호는 02-1877-7788 입니다</li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+        <!-- //contents -->
+
+        <div class="fixed-btn-wrap">
+			<div class="btn-wrap">
+				<a href="#none" class="btn">다음</a><!--D:화면설계서 기준 다음 텍스트로 변경-->
+		</div>
+
+
+        <!--S:등록된 추가 인증 서비스가 없을 경우 (Alert)-->
+        <div id="lyAlert1" class="layerpopup type-alert on" style="display: block;">
+            <div class="content-wrap">
+                
+                <div class="pop-con-wrap">
+                    <span class="pop-con">기존에 등록하신 추가인증 방식이 없어요<br/>추가인증 서비스를 가입하시겠어요?</span>
+                </div>
+                <div class="btn-wrap">
+                    <a href="javascript:void(0);" class="btn btn-info" onclick="">아니오</a>
+                    <a href="javascript:void(0);" class="btn">예</a>
+                </div>
+            </div>
+        </div>
+        <!--E:등록된 추가 인증 서비스가 없을 경우 (Alert)-->
+
+    </div>
+    <!-- //contentsWrap -->
+</body>
+</html>
+

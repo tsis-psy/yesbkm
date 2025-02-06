@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>예가람저축은행</title>
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="Content-Script-Type" content="text/javascript">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<meta name="keywords" content="예가람저축은행keywords" />
+<meta name="description" content="예가람저축은행description" />
+<!-- <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0, viewport-fit=cover"> -->
+	<meta name="viewport" content="user-scalable=no,width=375">
+
+<meta name="apple-mobile-web-app-status-bar-style" content="white" />
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta http-equiv="Expires" content="-1">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Cache-Control" content="No-Cache">
+
+<link href="/resources/css/default.css" rel="stylesheet" />
+<link href="/resources/css/renewal.css" rel="stylesheet" />
+
+
+<link href="/resources/css/swiper-bundle.min.css" rel="stylesheet" />
+<link rel="shortcut icon" type="image/x-icon" href="/resources/favicon.ico" />
+<link rel="icon" type="image/x-icon" href="/resources/favicon.ico" />
+
+<script type="text/javascript" src="/resources/js/lib/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="/resources/js/lib/jquery.cookie.js"></script>
+
+<script type="text/javascript" src="/resources/js/lib/swiper-bundle.min.js"></script>
+<script type="text/javascript" src="/resources/js/lib/TweenMax.min.js"></script>
+<script type="text/javascript" src="/resources/js/lib/jquery.animateSprite.min.js"></script>
+<script type="text/javascript" src="/resources/js/lib/default.js?v=20230803152535"></script>
+<script type="text/javascript" src="/resources/js/lib/ui.js?v=20230803152535"></script>
+<script type="text/javascript" src="/resources/js/lib/rolldate.js?v=20230803152535"></script>
+<script type="text/javascript" src="/resources/js/app_common_cont.js?v=20230803152535"></script>
+<script type="text/javascript" src="/resources/js/app_common_auth.js?v=20230803152535"></script>
+<script type="text/javascript" src="/resources/js/app_common_funs.js?v=20230803152535"></script>
+<script type="text/javascript" src="/resources/js/app_common_nsl.js?v=20230803152535"></script>
+<script type="text/javascript" src="/resources/js/app_common_util.js?v=20230803152535"></script>
+<script type="text/javascript" src="/resources/js/biz_common.js?version=20230803152535" id="biz_common"
+	data-menuId="dep/prc"
+	data-frameId="depAcnoOpenPrc2"
+	data-serviceCd="depAcnoOpenPrc2.frm"
+	data-serverTime="20230803152535"
+	data-activeMode="local"
+	data-activeEnv="${active.env">
+</script>
+
+
+<body>
+    <!-- header -->
+    <div id="headerWrap">
+        <script>
+        $(document).ready(function(){
+            document.charset="euc-kr";
+            $("#headerWrap").load("../includes/header.html");
+        });
+        </script>
+    </div>
+	<!-- //header -->
+
+    <!--contentsWrap -->
+    <div class="contentsWrap">
+        <!--contents -->
+        <div class="contents">
+            <div class="default-wrap">
+
+				<div class="tit-wrap">
+					<p class="txt">
+						<strong>금리인하요구권 신청</strong>을 위해<br>
+						<strong>정보를 입력</strong>해주세요
+					</p>
+				</div>
+
+                <!--D: FORM구조만 변경 되었습니다.-->
+
+                <!--S:FORM-->
+                <div class="form-all-wrap"><!--D: form-all-wrap 클래스 추가-->
+                    <!--D: 삭제 <div class="form-wrap">
+                        <div class="input"> -->
+                            <div class="form-wrap"><!--D: form-wrap 클래스로 변경-->
+                                <div class="select-box" tabindex="1"  onclick="openPopupUp('lySel1');">
+                                    <label for="SCRAP_TYPE" class="essential">직업</label>
+                                    <span class="option">미선택</span>
+                                    <input type="hidden" name="SCRAP_TYPE" id="SCRAP_TYPE" class="validChk"/>
+                                </div>
+                            </div>
+                        <!-- </div>
+                    </div> -->
+
+                    <!--D: 삭제  <div class="form-wrap"> 
+                        <div class="input"> -->
+                            <div class="form-wrap" id="reqReasonDiv"><!--D: form-wrap 클래스 변경-->
+                                <div class="select-box" tabindex="1" onclick="openPopupUp('lySel2');">
+                                    <label for="REQ_REASON_CD" class="essential">신청사유</label>
+                                    <span class="option" id="reqReasonText">미선택</span>
+                                    <input type="hidden" name="REQ_REASON_CD" id="REQ_REASON_CD" class="validChk" />
+                                </div>
+                            </div>
+                        <!-- </div>
+                    </div> -->
+
+                    <!--20240711 기획현행화 - 삭제 <div class="form-wrap form-line address">
+                        <label for="ipt04" class="formlabel">주소</label>
+                        <div class="input" onclick="biz.addrSelect(jusoRoadResultCallBack_home);">
+                            <input type="text" title="주소검색" class="inp validChk" name="PSNT_RSDC_ZPCD" value="" id="ZIP_CODE" onkeyup="validChk();" onclick="removeErr(this);" placeholder="우편번호 입력" required readonly>
+                            <button type="button" class="btn btn-sm">우편번호찾기</button>
+                        </div>
+                        <div  class="input">
+                            <input type="text" class="inp validChk" name="PSNT_RSDC_BSIC_ADDR" value="" id="ADDR" onkeyup="validChk();" onclick="removeErr(this);" placeholder="기본주소 입력" required readonly>
+                        </div>
+                        <div  class="input">
+                            <input type="text" class="inp validChk" name="PSNT_RSDC_DTAD" value="" id="ADDR_DETAIL" onkeyup="validChk();" onclick="removeErr(this);" placeholder="상세주소 입력" required style="display:none">
+                            <input type="hidden" id="PSNT_RSDC_BLDG_MNGNO" name="PSNT_RSDC_BLDG_MNGNO">
+                            <input type="hidden" id="PSNT_RSDC_REF_ITEM_NM" name="PSNT_RSDC_REF_ITEM_NM">
+                        </div>
+                        <p class="error-txt">주소를 입력해주세요</p>
+                    </div> -->
+                </div>
+                <!--E:FORM-->
+				
+			</div>
+        </div>
+        <!-- //contents -->
+
+        <div class="fixed-btn-wrap">
+			<div class="btn-wrap">
+				<a href="javascript:void(0);" class="btn disabled">다음</a><!--D: disabled 클래스 삭제 시 활성화 -->
+			</div>
+		</div>
+
+        <!--S: 직업 (팝업)-->
+        <div id="lySel1" class="layerpopup layer-up show">
+            <div class="content-wrap">
+                <div class="pop-header">
+                    <h2 class="pop-title">직업</h2>
+                    <button type="button" name="button" class="btn-layer-close" data-focus="btn-layer-close">닫기</button>
+                </div>
+                <div class="ly-scroll-con ly-select">
+                    <ul class="ly-select-list">
+                        <li><button>급여소득자</button></li><!-- [D] 클래스 active 추가 시 활성화 스타일 노출 -->
+                        <li><button>자영업자</button></li>
+                        <li><button>프리랜서</button></li>
+                        <li><button>주부</button></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!--E: 직업 (팝업)-->
+
+        <!--S  신청사유 (팝업)-->
+        <div id="lySel2" class="layerpopup layer-up show" >
+            <div class="content-wrap">
+                <div class="pop-header">
+                    <h2 class="pop-title">신청사유</h2>
+                    <button type="button" name="button" class="btn-layer-close" data-focus="btn-layer-close">닫기</button>
+                </div>
+                <div class="ly-scroll-con ly-select">
+                    <ul class="ly-select-list">
+                        <li><button>신용평점이 향상된 경우</button></li><!-- [D] 클래스 active 추가 시 활성화 스타일 노출 -->
+                        <li><button>부채가 감소한 경우</button></li>
+                        <li><button>연소득이 증가한 경우</button></li>
+                        <li><button>직위가 상승한 경우</button></li>
+                        <li><button>전문자격을 취득한 경우</button></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!--E: 신청사유 (팝업)-->
+
+    </div>
+    <!-- //contentsWrap -->
+</body>
+</html>
+

@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>예가람저축은행</title>
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="Content-Script-Type" content="text/javascript">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<meta name="keywords" content="예가람저축은행keywords" />
+<meta name="description" content="예가람저축은행description" />
+<!-- <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0, viewport-fit=cover"> -->
+	<meta name="viewport" content="user-scalable=no,width=375">
+
+<meta name="apple-mobile-web-app-status-bar-style" content="white" />
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta http-equiv="Expires" content="-1">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Cache-Control" content="No-Cache">
+
+<link href="/resources/css/default.css" rel="stylesheet" />
+<link href="/resources/css/renewal.css" rel="stylesheet" />
+
+
+<link href="/resources/css/swiper-bundle.min.css" rel="stylesheet" />
+<link rel="shortcut icon" type="image/x-icon" href="/resources/favicon.ico" />
+<link rel="icon" type="image/x-icon" href="/resources/favicon.ico" />
+
+<script type="text/javascript" src="/resources/js/lib/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="/resources/js/lib/jquery.cookie.js"></script>
+
+<script type="text/javascript" src="/resources/js/lib/swiper-bundle.min.js"></script>
+<script type="text/javascript" src="/resources/js/lib/TweenMax.min.js"></script>
+<script type="text/javascript" src="/resources/js/lib/jquery.animateSprite.min.js"></script>
+<script type="text/javascript" src="/resources/js/lib/default.js?v=20230803152535"></script>
+<script type="text/javascript" src="/resources/js/lib/ui.js?v=20230803152535"></script>
+<script type="text/javascript" src="/resources/js/lib/rolldate.js?v=20230803152535"></script>
+<script type="text/javascript" src="/resources/js/app_common_cont.js?v=20230803152535"></script>
+<script type="text/javascript" src="/resources/js/app_common_auth.js?v=20230803152535"></script>
+<script type="text/javascript" src="/resources/js/app_common_funs.js?v=20230803152535"></script>
+<script type="text/javascript" src="/resources/js/app_common_nsl.js?v=20230803152535"></script>
+<script type="text/javascript" src="/resources/js/app_common_util.js?v=20230803152535"></script>
+<script type="text/javascript" src="/resources/js/biz_common.js?version=20230803152535" id="biz_common" 
+	data-menuId="dep/prc"
+	data-frameId="depAcnoOpenPrc2"
+	data-serviceCd="depAcnoOpenPrc2.frm" 
+	data-serverTime="20230803152535"
+	data-activeMode="local"
+	data-activeEnv="${active.env">
+</script>
+</head>
+<style>
+    .default-wrap h3.tit-h3 {  display:block; margin:20px 0; font-size:20px; }
+    .default-wrap h4.tit-h4 {  display:block; margin:20px 0; font-size:16px; }
+    .bg-txt { background:#DDDDDD; padding:20px; font-size:16px; }
+    
+</style>
+
+<body>
+    <!-- header -->
+    <div id="headerWrap">
+        <script>
+        $(document).ready(function(){
+            document.charset="euc-kr";
+            $("#headerWrap").load("../includes/header.html");
+        });
+        </script>
+    </div>
+	<!-- //header -->
+
+        <!--contentsWrap -->
+        <div class="contentsWrap">
+            <!--contents -->
+            <div class="contents">
+                <div class="default-wrap">
+                    <div class="bg-txt">
+                        <p>
+                            • 왼쪽, 가운데, 오른쪽 : flexLeft, flexCenter, flexRight 클래스를 사용하여 위치조정 가능
+                        </p>
+                        <p>
+                            • 버튼이 위아래로 나열할 경우 : flexCol 클래스를 사용하여 위치조정 가능
+                        </p>
+                    </div>
+
+                    <h3 class="tit-h3">컨텐츠 버튼</h3>
+
+                    <h4 class="tit-h4">• 컨텐츠 2개 버튼</h4>
+
+                    <div class="btn-cont-wrap">
+                        <a href="javascript:void(0);" class="btn btn-info">버튼명</a>
+                        <a href="javascript:void(0);" class="btn btn-primary">버튼명</a>
+                    </div>
+
+                    <h4 class="tit-h4">• 컨텐츠 3개 버튼</h4>
+
+                    <div class="btn-cont-wrap">
+                        <a href="javascript:void(0);" class="btn btn-info">버튼명</a>
+                        <a href="javascript:void(0);" class="btn btn-primary">버튼명</a>
+                    </div>
+                    <div class="btn-cont-wrap">
+                        <a href="javascript:void(0);" class="btn btn-sub">버튼명</a>
+                    </div>
+                    
+
+                    <h4 class="tit-h4">• 컨텐츠 버튼 - primary</h4>
+                    <div class="btn-cont-wrap">
+                        <a href="javascript:void(0);" class="btn btn-primary">버튼명</a>
+                    </div>
+
+                    <h4 class="tit-h4">• 컨텐츠 버튼 - sub</h4>
+                    <div class="btn-cont-wrap">
+                        <a href="javascript:void(0);" class="btn btn-info">버튼명</a>
+                    </div>
+
+                    <h3 class="tit-h3">하단 버튼 [fixed-btn-wrap 구조 안에 들어감]</h3>
+
+                    <h4 class="tit-h4">• 하단 2개 버튼</h4>
+
+                    <!-- D: fixed-btn-wrap -->
+                    <div class="btn-wrap flexRow">
+                        <a href="javascript:void(0);" class="btn btn-info">버튼명</a>
+                        <a href="javascript:void(0);" class="btn">버튼명</a>
+                    </div>
+                    
+
+                    <h4 class="tit-h4">• 하단 버튼 - primary </h4>
+
+                    <div class="btn-wrap">
+                        <a href="javascript:void(0);" class="btn">버튼명</a>
+                    </div>
+
+                    <h4 class="tit-h4">• 하단 버튼 - sub </h4>
+
+                    <div class="btn-wrap">
+                        <a href="javascript:void(0);" class="btn btn-sub">버튼명</a>
+                    </div>
+
+                    <h4 class="tit-h4">• 하단 버튼 - disabled </h4>
+
+                    <div class="btn-wrap">
+                        <a href="javascript:void(0);" class="btn disabled">버튼명</a>
+                    </div>
+
+                    <h4 class="tit-h4">하단 버튼 - txt </h4>
+
+                    <div class="btn-wrap flexCol">
+                        <a href="javascript:void(0);" class="btn">버튼명</a>
+                        <a href="javascript:void(0);" class="btn txt">버튼명</a>
+                    </div>
+
+                    <h3 class="tit-h3">arrow버튼</h3>
+
+                    <h4 class="tit-h4">• arrow버튼 - default(sm)</h4>
+
+                    <div class="btn-cont-wrap">
+                        <a href="javascript:void(0);" class="btn-txt">버튼명</a>
+                    </div>
+
+                    <h4 class="tit-h4">• arrow버튼 - default(sm) 오른쪽 정렬</h4>
+
+                    <div class="btn-cont-wrap flex-end">
+                        <a href="javascript:void(0);" class="btn-txt">버튼명</a>
+                    </div>
+
+                    <h4 class="tit-h4">• arrow버튼 - default(Medium)</h4>
+
+                    <div class="btn-cont-wrap">
+                        <a href="javascript:void(0);" class="btn-txt md">버튼명</a>
+                    </div>
+
+                    <h3 class="tit-h3">etc 버튼</h3>
+
+                    <h4 class="tit-h4">• input 버튼</h4>
+                    
+                    <div class="form-wrap password form-line"><!--D: form-line클래스 : input에 버튼(btnInput) 있을 경우-->
+                        <label for="ipt05" class="formlabel">인증번호</label>
+                        <div class="input">
+                            <input type="number" title="은행선택" id="ipt05" class="inp" name="" value="" required="" placeholder="인증번호">
+                            <div class="btn-input">
+                                <span class="txt-numb" id="">03:00</span>
+                                <button type="button" class="btn btn-sm">인증번호요청</button>
+                            <!-- <button type="button" class="btn-certi">재전송</button> --><!--D: 인증번호 재전송 -->
+                            </div>
+                        </div>
+                        <p class="error-txt">인증번호을 입력해주세요</p>
+                    </div>
+
+                    <h4 class="tit-h4">• add버튼</h4>
+
+                    <div class="btn-cont-wrap flexCenter">
+                        <a href="javascript:void(0);" class="btn btn-add">버튼명</a>
+                    </div>
+
+                    <h4 class="tit-h4">• 전자민원신청 버튼 / 인증보안 해지하기 버튼</h4>
+
+                    <div class="btn-cont-wrap btn-more">
+                        <a href="tel:1877-9900" class="btn">전화 문의하기</a><!--D: strong 삭제-->
+                    </div>
+
+                    <h4 class="tit-h4">• sm버튼 - default</h4>
+                    
+
+                    <div class="btn-cont-wrap">
+                        <a href="javascript:void(0);" class="btn btn-sm">대출/예/적금</a>
+                        <a href="javascript:void(0);" class="btn btn-sm gray">취소</a>
+                    </div>
+                    <div class="btn-cont-wrap">
+                        <a href="javascript:void(0);" class="btn btn-sm gray reset">새로고침</a><!--D: 보안문자 입력 새로고침 버튼-->
+                    </div>
+                    <div class="btn-cont-wrap">
+                        <a href="javascript:void(0);" class="btn btn-sm btn-primary">상환일정조회</a><!--D: 금융계산기 버튼-->
+                    </div>
+
+                    <!-- <div class="btn-cont-wrap">
+                        <a href="javascript:void(0);" class="btn btn-sm blue">완료</a>
+                        <a href="javascript:void(0);" class="btn btn-sm green">진행중</a>
+                        <a href="javascript:void(0);" class="btn btn-sm pink">대기</a>
+                        <a href="javascript:void(0);" class="btn btn-sm red">상태표시</a>
+                    </div> -->
+
+                    <h4 class="tit-h4">• sm버튼 - blue(외버튼) .btn.btn-sm.other / .btn.btn-gray : 기존 구조로 인해 동일 버튼 추가 되었습니다. </h4>
+
+                    <div class="btn-cont-wrap">
+                        <a href="javascript:void(0);" class="btn btn-sm other">버튼명</a>
+                        <a href="javascript:void(0);" class="btn btn-gray">버튼명</a>
+                    </div>
+
+                    <!-- <h4 class="tit-h4">• sm(카드)  - em구조 ( 버튼 아닐 경우 )</h4>
+
+                    <em class="btn btn-sm">대출/예/적금</em >
+                    <em  class="btn btn-sm gray">취소</em >
+                    <em class="btn btn-sm blue">완료</em>
+                    <em class="btn btn-sm green">진행중</em>
+                    <em class="btn btn-sm pink">대기</em>
+                    <em class="btn btn-sm red">상태표시</em> -->
+
+                    <!-- <h4 class="tit-h4">• sm(카드)  - em구조 ( 버튼 아닐 경우, square 디자인(sq클래스) ) </h4>
+                    
+                    <em class="btn btn-sm sq">대출/예/적금</em >
+                    <em  class="btn btn-sm gray sq">취소</em >
+                    <em class="btn btn-sm blue sq">완료</em>
+                    <em class="btn btn-sm green sq">진행중</em>
+                    <em class="btn btn-sm pink sq">대기</em>
+                    <em class="btn btn-sm red sq">상태표시</em> -->
+
+                    <h4 class="tit-h4">• mini(카드/상품상세/약관) - em구조( 버튼 아닐 경우 )</h4>
+
+                    <em class="flag style2">예금,적금,입출금</em>
+                    <em class="flag style3">대출</em>
+                    <em class="flag style4">종합통장대출</em>
+                    
+ 
+                    <h4 class="tit-h4">• flag (리스트/전자민원신청) - em구조( 버튼 아닐 경우 )</h4>
+
+                    <em class="flag style5">접수/대기</em>
+                    <em class="flag style6">처리중/진행중</em>
+                    <em class="flag style7">완료</em>
+                    <em class="flag style8">거절/분실</em>
+                    <em class="flag style9">취소</em>
+                    <em class="flag style10">이어하기</em>
+                    <em class="flag">기타</em>
+
+                    <h3 class="tit-h3">팝업 버튼</h3>
+
+                    <h4 class="tit-h4">• 팝업 하단버튼 - txt <span class="essential">(onclick : openPopupUp 사용)</span></h4>
+
+                    <div class="btn-cont-wrap">
+                        <a href="javascript:void(0);" class="btn btn-primary"  onclick="openPopupUp('lyPop1');">버튼명</a>
+                    </div>
+
+
+                    <h4 class="tit-h4">• 팝업 하단버튼 - disabled <span class="essential">(onclick : openPopupUp 사용)</span></h4>
+
+                    <div class="btn-cont-wrap">
+                        <a href="javascript:void(0);" class="btn btn-primary"  onclick="openPopupUp('lyPop2');">버튼명</a>
+                    </div>
+
+                    <h4 class="tit-h4">• 팝업 셀렉트버튼 <span class="essential">(onclick : openPopupUp 사용)</span></h4>
+
+                    <div class="btn-cont-wrap">
+                        <a href="javascript:void(0);" class="btn btn-primary"  onclick="openPopupUp('lySel2');">버튼명</a>
+                    </div>
+
+                    <h4 class="tit-h4">• 팝업 셀렉트버튼 - 로그인 방식 <span class="essential">(onclick : openPopupUp 사용)</span></h4>
+
+                    <div class="btn-cont-wrap">
+                        <a href="javascript:void(0);" class="btn btn-primary"  onclick="openPopupUp('lySel2');">버튼명</a>
+                    </div>
+
+
+                    <h4 class="tit-h4">• 팝업 셀렉트버튼-non-click   <span class="essential">(onclick : openPopupUp 사용)</span></h4>
+                    
+                    <div class="btn-cont-wrap">
+                        <a href="javascript:void(0);" class="btn btn-primary"  onclick="openPopupUp('lySelBtn');">버튼명</a>
+                    </div>
+
+                    <h4 class="tit-h4">• 하단 2개 버튼 <span class="essential">(onclick : openPopup 사용)</span> </h4>
+
+                    <div class="btn-cont-wrap">
+                        <a href="javascript:void(0);" class="btn btn-primary"  onclick="openPopup('lyAlert');">버튼명</a>
+                    </div>
+                    
+
+                </div>
+            </div>
+            <!-- //contents -->
+
+
+            <!-- s: button -->
+            <!-- <div class="fixed-btn-wrap">
+                <div class="btn-wrap flexRow">
+                    <a href="javascript:void(0);" class="btn btn-info">버튼명</a>
+                    <a href="javascript:void(0);" class="btn">버튼명</a>
+                </div>
+            </div> -->
+            <!-- e: button -->
+
+            <!-- s: button -->
+            <div class="fixed-btn-wrap"> 
+                <div class="btn-wrap flexCol">
+                    <a href="javascript:void(0);" class="btn">버튼명</a>
+                    <a href="javascript:void(0);" class="btn txt">버튼명</a>
+                </div>
+            </div>
+            <!-- e: button -->
+
+
+           
+
+            <!-- s: button -->
+            <!-- <div class="fixed-btn-wrap">
+                <div class="btn-wrap">
+                    <a href="javascript:void(0);" class="btn disabled">버튼명</a>
+                </div>
+            </div> -->
+            <!-- e: button -->
+
+            <!--하단 txt 버튼-->
+            <div id="lyPop1" class="layerpopup layer-up has-button"><!-- [D] has-button 클래스 : 하단버튼 있을 경우 사용 -->
+                <div class="content-wrap">
+                    <div class="pop-header">
+                        <h2 class="pop-title">팝업 버튼</h2>
+                        <button type="button" name="button" class="btn-layer-close" data-focus="btn-layer-close">닫기</button>
+                    </div>
+                    <div class="ly-scroll-con ">
+                        txt
+                        txt
+                    </div>
+                </div>
+                <!--D: fixed-btn-wrap 버튼은 content-wrap 밖으로 위치-->
+                <div class="fixed-btn-wrap">
+                    <div class="btn-wrap flexCol">
+                        <a href="javascript:void(0);" class="btn close">확인</a>
+                        <a href="javascript:void(0);" class="btn txt">버튼명</a>
+                    </div>
+                </div>
+            </div>
+            <!--//하단 txt 버튼-->
+
+            <!--하단 disabled 버튼 -->
+            <div id="lyPop2" class="layerpopup layer-up has-button"><!-- [D] has-button 클래스 : 팝업 하단버튼 있을 경우 사용(alert 제외) -->
+                <div class="content-wrap">
+                    <div class="pop-header">
+                        <h2 class="pop-title">팝업 버튼</h2>
+                        <button type="button" name="button" class="btn-layer-close" data-focus="btn-layer-close">닫기</button>
+                    </div>
+                    <div class="ly-scroll-con ly-select">
+                        fffffff
+                    </div>
+                </div>
+                <!--D: fixed-btn-wrap 버튼은 content-wrap 밖으로 위치-->
+                <div class="fixed-btn-wrap">
+                    <div class="btn-wrap">
+                        <a href="javascript:void(0);" class="btn disabled">버튼명</a>
+                    </div>
+                </div>
+            </div>
+            <!--//하단 disabled 버튼 -->
+
+            <!-- 셀렉트 버튼 -->
+            <div id="lySel1" class="layerpopup layer-up show"><!-- [D] 클래스 has-button 추가 시 하단 fixed 버튼 있을 시 스타일 노출-->
+                <div class="content-wrap">
+                    <div class="pop-header">
+                        <h2 class="pop-title">근로자유형을 선택해주세요</h2>
+                        <button type="button" name="button" class="btn-layer-close" data-focus="btn-layer-close">닫기</button>
+                    </div>
+                    <div class="ly-scroll-con ly-select">
+                        <ul class="ly-select-list">
+                            <li class=""><button>정규직</button></li><!-- [D] 클래스 active 추가 시 활성화 스타일 노출 -->
+                        <li><button>비정규직</button></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!-- //셀렉트 버튼 -->
+
+            <!-- 셀렉트 버튼 -->
+            <div id="lySel2" class="layerpopup layer-up"><!-- [D] 클래스 has-button 추가 시 하단 fixed 버튼 있을 시 스타일 노출-->
+                <div class="content-wrap">
+                    <div class="pop-header">
+                        <h2 class="pop-title">로그인 방식을 선택해 주세요</h2>
+                        <button type="button" name="button" class="btn-layer-close" data-focus="btn-layer-close">닫기</button>
+                    </div>
+                    <div class="ly-scroll-con ly-select login">
+                        <ul class="ly-select-list">
+                            <li><button class="pw" >간편비밀번호</button></li><!-- [D] 클래스 active 추가 시 활성화 스타일 노출 -->
+                            <li><button class="pattern">패턴<em class="btn btn-sm gray">미등록</em></button></li>
+                            <li><button class="bio">생체인증<em class="btn btn-sm gray">미등록</em></button></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!-- //셀렉트 버튼 -->
+
+
+            <div id="lySelBtn" class="layerpopup layer-up has-button">
+                <div class="content-wrap">
+                    <div class="pop-header">
+                        <h2 class="pop-title">거래자금원천</h2>
+                        <button type="button" name="button" class="btn-layer-close" data-focus="btn-layer-close">닫기</button>
+                    </div>
+                    <div class="ly-scroll-con ly-select">
+                        <ul class="ly-select-list non-click">
+                            <li class="">
+                                <button type="button">보유</button>
+                                <div class="form-wrap  view-wrap form-type2">
+                                    <div class="input">
+                                        <input type="text" title="연간소득" id="ipt02" class="inp" name="" value="" placeholder="고객님의 연간소득을 입력해주세요" required="">
+                                    </div>
+                                    <p class="error-txt">고객님의 연간소득을 입력해주세요</p>
+                                </div>
+                            </li>
+                            <li class=""><button type="button">미보유</button></li>
+                        </ul>
+                    </div>
+                    <div class="fixed-btn-wrap">
+                        <div class="btn-wrap ">
+                            <a href="#none" class="btn close" >확인</a><!-- [D] 버튼에 btn 클래스 필수 (normal style) -->
+                        </div>
+                    </div>
+                </div>
+                    <!-- e: bottom sheet -->
+            </div>
+
+            <!-- 알럿 버튼 -->
+            <div id="lyAlert" class="layerpopup type-alert" >
+                <div class="content-wrap">
+                    
+                    <div class="pop-con-wrap">
+                        <span class="pop-con">주소를 입력해주세요</span>
+                    </div>
+                    <div class="btn-wrap">
+                        <a href="javascript:void(0);" class="btn btn-info" onclick="">버튼명</a>
+                        <a href="javascript:void(0);" class="btn close">확인</a>
+                    </div>
+                </div>
+            </div>
+            <!--//알럿 버튼 -->
+            
+        </div>
+        <!-- //contentsWrap -->
+</body>
+</html>
+

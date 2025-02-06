@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>예가람저축은행</title>
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="Content-Script-Type" content="text/javascript">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<meta name="keywords" content="예가람저축은행keywords" />
+<meta name="description" content="예가람저축은행description" />
+<!-- <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0, viewport-fit=cover"> -->
+	<meta name="viewport" content="user-scalable=no,width=375">
+
+<meta name="apple-mobile-web-app-status-bar-style" content="white" />
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta http-equiv="Expires" content="-1">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Cache-Control" content="No-Cache">
+
+<link href="/resources/css/default.css" rel="stylesheet" />
+<link href="/resources/css/renewal.css" rel="stylesheet" />
+
+
+<link href="/resources/css/swiper-bundle.min.css" rel="stylesheet" />
+<link rel="shortcut icon" type="image/x-icon" href="/resources/favicon.ico" />
+<link rel="icon" type="image/x-icon" href="/resources/favicon.ico" />
+
+<script type="text/javascript" src="/resources/js/lib/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="/resources/js/lib/jquery.cookie.js"></script>
+
+<script type="text/javascript" src="/resources/js/lib/swiper-bundle.min.js"></script>
+<script type="text/javascript" src="/resources/js/lib/TweenMax.min.js"></script>
+<script type="text/javascript" src="/resources/js/lib/jquery.animateSprite.min.js"></script>
+<script type="text/javascript" src="/resources/js/lib/default.js?v=20230803152535"></script>
+<script type="text/javascript" src="/resources/js/lib/ui.js?v=20230803152535"></script>
+<script type="text/javascript" src="/resources/js/lib/rolldate.js?v=20230803152535"></script>
+<script type="text/javascript" src="/resources/js/app_common_cont.js?v=20230803152535"></script>
+<script type="text/javascript" src="/resources/js/app_common_auth.js?v=20230803152535"></script>
+<script type="text/javascript" src="/resources/js/app_common_funs.js?v=20230803152535"></script>
+<script type="text/javascript" src="/resources/js/app_common_nsl.js?v=20230803152535"></script>
+<script type="text/javascript" src="/resources/js/app_common_util.js?v=20230803152535"></script>
+<script type="text/javascript" src="/resources/js/biz_common.js?version=20230803152535" id="biz_common" 
+	data-menuId="dep/prc"
+	data-frameId="depAcnoOpenPrc2"
+	data-serviceCd="depAcnoOpenPrc2.frm"
+	data-serverTime="20230803152535"
+	data-activeMode="local"
+	data-activeEnv="${active.env">
+</script>
+
+<script>
+$(document).ready(function(){
+	$('.like').on('click', function (e) {
+		e.preventDefault();
+		var $tooltipWrap = $(this).parents('.tooltip-wrap');
+		var $regText  = $(this).siblings('.tooltip-txt.reg');
+		var $delText = $(this).siblings('.tooltip-txt.del');
+		var $toolLike = $(this).siblings('.like');
+
+
+		if ($tooltipWrap.hasClass('type2')) {
+            
+
+			if ($(this).hasClass('active')) {
+				$(this).removeClass('active');
+                // $tooltipWrap.css('z-index', 13);
+                // $toolLike.css('z-index', 10);
+				$delText.fadeIn();
+				setTimeout(function () {
+					$delText.fadeOut();
+				}, 1000);
+			} else {
+				$(this).addClass('active');
+                // $tooltipWrap.css('z-index', 13);
+                $toolLike.css('z-index', 10);
+				$regText.fadeIn();
+				setTimeout(function () {
+					$regText.fadeOut();
+				}, 1000);
+			}
+		}
+	});
+});
+
+</script>
+
+
+
+
+<body>
+    <!-- header -->
+    <header class="headerWrap">
+		<div class="headerLeft">
+			<a href="javascript:void(0)" class="btn btnBack"><img src="/resources/images/header/btn_back.png" alt="이전페이지 이동하기"></a>
+		</div>
+		<div class="headerCenter">
+			<h2 class="text"><span>햇살론II</span></h2> <!--D: TEXT -->
+		</div>
+		<div class="headerRight">
+			<a href="javascript:void(0)" class="btn btn-menu "><img src="/resources/images/header/btn_menu.png" alt="전체메뉴"></a>
+		</div>
+	</header>
+	<!-- //header -->
+
+	<!--contentsWrap -->
+	<div class="contentsWrap product-detail loan01"><!--D: 대출/예적금상품에 따라 디자인이 다르게 적용됩니다. dep01 클래스 : 예적금상품, loan01 클래스 : 대출상품  -->
+		<!--contents -->
+		<div class="contents">
+			<div class="default-wrap">
+				<div class="visual-area">
+
+					<!--S: 관리자 페이지 : 상단 상품 소개-->
+					<div class="flag-tit-wrap">
+						<p><em class="flag style3">정책자금대출</em></p><!--D: 상품 레이블 - 대출/예적금상품에 따라 디자인이 다르게 적용됩니다.  style2 클래스 : 예적금상품, style3 클래스 : 대출상품 -->
+						<strong class="tit">햇살론 II</strong><!--D: 상품 타이틀 -->
+						<div class="tooltip-wrap type2">
+							<span class="like"></span>
+							<div class="tooltip-txt reg"><!--D:  클릭 했을 경우 -->
+								<p>관심상품으로 등록되었어요</p>
+							</div>
+							<div class="tooltip-txt del"><!--D:  클릭 해제 했을 경우 -->
+								<p>관심상품에서 제외했어요</p>
+							</div>
+						</div>
+					</div>
+					<p class="desc-txt">#회전정기예금 #변동금리 #2년,3년 #인터넷,모바일가입</p>
+
+					<ul>
+						<li class="limit">
+							<strong class="tit">한도</strong>
+							<span class="exp">최대 5천만원</span>
+						</li>
+						<li class="rate">
+							<strong class="tit">금리</strong>
+							<span class="exp">9 ~ 11%</span>
+						</li>
+					</ul>
+				</div>
+				<!--E: 관리자 페이지 : 상단 상품 소개 -->
+				
+				<ul class="button-list">
+					<li><a href="javascript:void(0);">친구에게 공유하기</a></li>
+					<li class="active"><a href="javascript:void(0);">상품비교 담기</a></li> <!--D li에 active 클래스 추가시 체크 활성화 -->
+				</ul>
+
+				<!--S: 관리자 페이지 : 상품 금리 안내 -->
+				<div class="visual-area img01">
+					<div class="tit-wrap">
+						<p class="txt">
+							최대 <em class="color-F1108E">5천만원</em>을 최저 <em class="color-F1108E">9%</em>금리로<br/>
+							<em class="color-F1108E">햇살론II</em> 대출을 받을 수 있어요
+						</p>
+					</div>
+				</div>
+				<!--E: 관리자 페이지 : 상품 금리 안내 -->
+
+				<!--S: 관리자 페이지 : 상품 기간 안내 -->
+				<div class="visual-area img02">
+					<div class="tit-wrap">
+						<p class="txt">
+							<em class="color-F1108E">최장 5년</em>동안 매 달 <em class="color-F1108E">일정한 상환</em>으로<br/>
+							한 줄기의 햇살처럼<br/>큰 힘이 되어주는 상품이에요
+						</p>
+					</div>
+				</div>
+				<!--E: 관리자 페이지 : 상품 기간 안내 -->
+
+				<!--S: [퍼블-1]:추가 관리자 페이지  -->
+				<div class="product-info">
+					<h3>상품안내</h3>
+					<div class="sub-tit-wrap">
+						<p class="tit">대출 금리</p>
+						<ul class="txt hyphen">
+							<li>연 9%대 ~연 11%대</li>
+							<li>매월 금융감독원에서 고시하는 금리에 따라 변동가능</li>
+						</ul>
+					</div>
+					<div class="sub-tit-wrap">
+						<p class="tit">연체 이율</p>
+						<ul class="txt hyphen">
+							<li>약정금리 + 3.0%(최대 20% 이내)</li>
+							<li>금리 및 수수료를 포함하여 법정이자율을 초과하지 않음</li>
+						</ul>
+					</div>
+					<div class="sub-tit-wrap">
+						<p class="tit">상환 방식</p>
+						<p class="txt">원금균등분할상환</p>
+					</div>
+					<div class="sub-tit-wrap">
+						<p class="tit">대출 기간</p>
+						<p class="txt">3년 또는 5년</p>
+					</div>
+
+					<div class="sub-tit-wrap">
+						<p class="tit">대출 한도</p>
+						<p class="txt">최대 2,000만원</p>
+					</div>
+				
+				</div>
+				<!--E: [퍼블-1]:추가 관리자 페이지 -->
+
+				<!--S: 관리자 페이지 -->
+				<div class="product-info">
+					<ul class="arrow-button-list">
+						<!--[퍼블-1]: 상품 안내 리스트 하나는 삭제-->
+						<li><a href="javascript:void(0);">금리인하요구안내</a></li>
+						<li><a href="javascript:void(0);">청약철회안내문</a></li>
+						<li><a href="javascript:void(0);">여신거래기본약관</a></li>
+						<li><a href="javascript:void(0);">유의사항</a></li>
+					</ul>
+				</div>
+				<!--E: 관리자 페이지 -->
+
+				<!--S: 관리자 페이지 : 심의필-->
+				<p class="txt-junbub">예가람저축은행 준법감시인 심의필 제2023-105호<br>(2023.09.27~2024.09.26)</p>
+				<!--E: 관리자 페이지 : 심의필-->
+
+			</div>
+		</div>
+		<!-- //contents -->
+
+		<div class="fixed-btn-wrap">
+			<div class="btn-wrap flexRow"><!-- [퍼블-2] flexRow 클래스 추가 -->
+				<a href="javascript:void(0);" class="btn btn-info">전화상담</a>
+				<a href="javascript:void(0);" class="btn">대출신청</a>
+			</div>
+		</div>
+
+	</div>
+	<!-- //contentsWrap -->
+</body>
+</html>
+

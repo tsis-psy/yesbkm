@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>예가람저축은행</title>
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="Content-Script-Type" content="text/javascript">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<meta name="keywords" content="예가람저축은행keywords" />
+<meta name="description" content="예가람저축은행description" />
+<!-- <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0, viewport-fit=cover"> -->
+	<meta name="viewport" content="user-scalable=no,width=375">
+
+<meta name="apple-mobile-web-app-status-bar-style" content="white" />
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta http-equiv="Expires" content="-1">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Cache-Control" content="No-Cache">
+
+<link href="/resources/css/default.css" rel="stylesheet" />
+<link href="/resources/css/renewal.css" rel="stylesheet" />
+
+
+<link href="/resources/css/swiper-bundle.min.css" rel="stylesheet" />
+<link rel="shortcut icon" type="image/x-icon" href="/resources/favicon.ico" />
+<link rel="icon" type="image/x-icon" href="/resources/favicon.ico" />
+
+<script type="text/javascript" src="/resources/js/lib/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="/resources/js/lib/jquery.cookie.js"></script>
+
+<script type="text/javascript" src="/resources/js/lib/swiper-bundle.min.js"></script>
+<script type="text/javascript" src="/resources/js/lib/TweenMax.min.js"></script>
+<script type="text/javascript" src="/resources/js/lib/jquery.animateSprite.min.js"></script>
+<script type="text/javascript" src="/resources/js/lib/default.js?v=20230803152535"></script>
+<script type="text/javascript" src="/resources/js/lib/ui.js?v=20230803152535"></script>
+<script type="text/javascript" src="/resources/js/lib/rolldate.js?v=20230803152535"></script>
+<script type="text/javascript" src="/resources/js/app_common_cont.js?v=20230803152535"></script>
+<script type="text/javascript" src="/resources/js/app_common_auth.js?v=20230803152535"></script>
+<script type="text/javascript" src="/resources/js/app_common_funs.js?v=20230803152535"></script>
+<script type="text/javascript" src="/resources/js/app_common_nsl.js?v=20230803152535"></script>
+<script type="text/javascript" src="/resources/js/app_common_util.js?v=20230803152535"></script>
+<script type="text/javascript" src="/resources/js/biz_common.js?version=20230803152535" id="biz_common"
+	data-menuId="dep/prc"
+	data-frameId="depAcnoOpenPrc2"
+	data-serviceCd="depAcnoOpenPrc2.frm"
+	data-serverTime="20230803152535"
+	data-activeMode="local"
+	data-activeEnv="${active.env">
+</script>
+
+
+<body>
+    <!-- header -->
+    <header class="headerWrap">
+		<div class="headerLeft">
+			<a href="javascript:void(0)" class="btn btnBack"><img src="/resources/images/header/btn_back.png" alt="이전페이지 이동하기"></a>
+		</div>
+		<div class="headerCenter">
+			<h2 class="text"><span>비과세 한도조회 </span></h2> <!--D: TEXT -->
+		</div>
+		<div class="headerRight">
+			<!-- <a href="javascript:void(0)" class="btn btn-menu "><img src="/resources/images/header/btn_menu.png" alt="전체메뉴"></a> -->
+		</div>
+	</header>
+	<!-- //header -->
+
+    <!--contentsWrap -->
+    <div class="contentsWrap"><!--D: 이용문의 하단 고정으로 grid 클래스 추가 - section 구조 필요-->
+        <!--contents -->
+        <div class="contents">
+            <div class="default-wrap">
+                <!--s:비과세 한도결과 안내-->
+                <seciton>
+                    <div class="tit-wrap">
+                        <p class="txt"><strong><strong>이가람님</strong>의 비과세종합저축 한도</strong>를 확인하세요</p> <!-- [퍼블-1]: span 태그 strong 태그로 변경 -->
+                    </div>
+                    <div class="txt-list-wrap">
+                        <div class="sub-tit-wrap mb15">
+                            <p class="tit">비과세종합저축 한도</p>
+                        </div>
+                        <div class="txt-detail-area">
+                            <ul class="txt-list">
+                                <li>
+                                    <span class="tit">총 한도</span>
+                                    <span class="txt point">50,000,000원</span>
+                                </li>
+                                <li>
+                                    <span class="tit">가입금액</span>
+                                    <span class="txt point">10,000,000원</span>
+                                </li>
+                                <li>
+                                    <span class="tit">신규가입가능금액</span>
+                                    <span class="txt point">40,000,000원</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </seciton>
+                <!--e:비과세 한도결과 안내-->
+
+                <!--s:비과세 한도대상 아닐경우-->
+                <section class="result-area exclamation"  style="display:block;">
+                    <p class="tit"><b>비과세종합저축<br>가입대상이 아니에요</b></p>
+                </section>
+                <!--e:비과세 한도대상 아닐경우-->
+            </div>
+        </div>
+        <!-- //contents -->
+
+
+        <div class="fixed-btn-wrap">
+            <div class="btn-wrap">
+                <a href="javascript:void(0);" class="btn">홈으로</a>
+            </div>
+        </div>
+
+        
+
+    </div>
+    <!-- //contentsWrap -->
+</body>
+</html>
+

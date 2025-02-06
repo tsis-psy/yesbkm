@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>예가람저축은행</title>
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="Content-Script-Type" content="text/javascript">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<meta name="keywords" content="예가람저축은행keywords" />
+<meta name="description" content="예가람저축은행description" />
+<!-- <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0, viewport-fit=cover"> -->
+	<meta name="viewport" content="user-scalable=no,width=375">
+
+<meta name="apple-mobile-web-app-status-bar-style" content="white" />
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta http-equiv="Expires" content="-1">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Cache-Control" content="No-Cache">
+
+<link href="/resources/css/default.css" rel="stylesheet" />
+<link href="/resources/css/renewal.css" rel="stylesheet" />
+
+
+<link href="/resources/css/swiper-bundle.min.css" rel="stylesheet" />
+<link rel="shortcut icon" type="image/x-icon" href="/resources/favicon.ico" />
+<link rel="icon" type="image/x-icon" href="/resources/favicon.ico" />
+
+<script type="text/javascript" src="/resources/js/lib/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="/resources/js/lib/jquery.cookie.js"></script>
+
+<script type="text/javascript" src="/resources/js/lib/swiper-bundle.min.js"></script>
+<script type="text/javascript" src="/resources/js/lib/TweenMax.min.js"></script>
+<script type="text/javascript" src="/resources/js/lib/jquery.animateSprite.min.js"></script>
+<script type="text/javascript" src="/resources/js/lib/default.js?v=20230803152535"></script>
+<script type="text/javascript" src="/resources/js/lib/ui.js?v=20230803152535"></script>
+<script type="text/javascript" src="/resources/js/lib/rolldate.js?v=20230803152535"></script>
+<script type="text/javascript" src="/resources/js/app_common_cont.js?v=20230803152535"></script>
+<script type="text/javascript" src="/resources/js/app_common_auth.js?v=20230803152535"></script>
+<script type="text/javascript" src="/resources/js/app_common_funs.js?v=20230803152535"></script>
+<script type="text/javascript" src="/resources/js/app_common_nsl.js?v=20230803152535"></script>
+<script type="text/javascript" src="/resources/js/app_common_util.js?v=20230803152535"></script>
+<script type="text/javascript" src="/resources/js/biz_common.js?version=20230803152535" id="biz_common" 
+	data-menuId="dep/prc"
+	data-frameId="depAcnoOpenPrc2"
+	data-serviceCd="depAcnoOpenPrc2.frm" 
+	data-serverTime="20230803152535"
+	data-activeMode="local"
+	data-activeEnv="${active.env">
+</script>
+
+
+<body>
+    <!-- header -->
+    <header class="headerWrap">
+        <div class="headerLeft">
+        </div>
+        <div class="headerCenter">
+            <h2><span>예적금 해지 예상 조회</span></h2><!--D: TEXT -->
+        </div>
+        <div class="headerRight">
+            <a href="javascript:void(0)" class="btn btn-menu"><img src="/resources/images/header/btn_menu.png" alt="전체메뉴"></a>  <!--D: 전체메뉴버튼 -->
+        </div>
+    </header>
+	<!-- //header -->
+
+        <!--contentsWrap -->
+        <div class="contentsWrap">
+            <!--contents -->
+            <div class="contents">
+                <div class="default-wrap">
+
+                    <div class="visaul-info-section">
+
+                        <!-- [퍼블-1] 위치 이동 -->
+                        <div class="tit-wrap">
+                            <p class="txt"><strong>해지할 금액</strong>을 입력해 주세요</p>
+                        </div>
+                        <!-- //[퍼블-1] 위치 이동 -->
+
+                        <div class="visaul-info-box">
+                            <div class="flag-tit-wrap"><em class="flag style2">정기예금</em></div><!-- [퍼블-1]: flag-tit-wrap 클래스 추가  -->
+                            <strong class="info-tit">e정기예금 단리</strong>
+                            <div class="account-area">
+                                <p class="account">123-12-12-1234567</p>
+                                <button type="button" class="btn-copy">복사하기</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- <div class="mt40 mb20">
+                        <span class="label-txt">현재잔액</span>
+                        <div class="value-wrap">
+                            <strong class="value" id="mndpAmt"></strong>
+                            <span class="unit">원</span>
+                        </div>
+                    </div> -->
+    
+                    <div class="txt-list-wrap mt20">
+                        <div class="txt-detail-area">
+                            <ul class="txt-list">
+                                <li>
+                                    <span class="tit">현재잔액</span>
+                                    <span class="txt point" id="">000,000,000원</span><!--D:point 클래스 추가-->
+                                </li>
+                                <li>
+                                    <span class="tit">적금개설일</span>
+                                    <span class="txt" id="newDt">YYYY.MM.DD</span>
+                                </li>
+                                <li>
+                                    <span class="tit">적금만기일</span>
+                                    <span class="txt" id="expDt">YYYY.MM.DD</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!--D: 해지금액부분 구조확인 필요-->
+                    <div class="form-wrap type2">
+                        <label for="ipt01" class="formlabel essential">해지금액</label>
+                        <div class="input">
+                            <input type="tel" title="해지금액" id="ipt01" class="inp" name="" value="" placeholder="해지금액을 입력해주세요" required="">
+                            <div class="value-wrap">
+                                <strong class="value PYMN_AMT">0</strong>
+                                <span class="unit">만원</span>
+                                <button type="reset" class="btn-delete">검색어 삭제</button>
+                            </div>
+                        </div>
+                    </div>
+                    <!--D : mt10 클래스 추가-->
+                    <div class="check-account mt10">
+                        <input type="checkbox" id="chk01" name="check" value="">
+                        <label for="chk01">
+                            <span>일부 해지</span>
+                        </label>
+                    </div>
+
+                    <!-- D : 일부해지 선택 시 인풋 활성화
+                    <div class="form-wrap mt10" id="amtDiv" style="display:none;">
+                        <label for="closeAmt" class="formlabel onbasic">해지금액</label>
+                        <div class="input">
+                            <input type="tel" title="해지금액" id="closeAmt" class="inp validChk" name="" value="" onclick="inputAmtKeyup(this);" placeholder="해지금액을 입력해주세요" required>
+                        </div>
+                        <p class="error-txt">해지금액을 입력해주세요</p>
+                    </div>
+                    D : 일부해지 선택 시 인풋 활성화 //
+    
+                    <div class="check-account mt30">
+                        <input type="checkbox" id="amtCheckbox" name="check" value="">
+                        <label for="amtCheckbox">
+                            <span>일부해지</span>
+                        </label>
+                    </div> [퍼블] 주석 처리 -->
+    
+                    <div class="form-wrap">
+                        <div class="select-wrap">
+                            <div id="rolldate" class="select-box" tabindex="1" onclick="closeDtSel();"><!-- [D] rolldate 사용 시 해당위치에 id부여 필요 -->
+                                <label for="closeDt" class="essential">해지일자</label>
+                                <span class="option" id="closeDt">미선택</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- // [퍼블] 전체 변경, 순서 변경 -->
+
+                </div>
+            </div>
+            <!-- //contents -->
+            <div class="fixed-btn-wrap">
+                <div class="btn-wrap">
+                    <a href="#none" class="btn" id="procBtn" onclick="PageFunc.proc();">조회</a>
+                </div>
+            </div>
+
+
+        </div>
+        <!-- //contentsWrap -->
+</body>
+</html>
+

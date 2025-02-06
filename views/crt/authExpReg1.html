@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>예가람저축은행</title>
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="Content-Script-Type" content="text/javascript">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<meta name="keywords" content="예가람저축은행keywords" />
+<meta name="description" content="예가람저축은행description" />
+<!-- <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0, viewport-fit=cover"> -->
+	<meta name="viewport" content="user-scalable=no,width=375">
+
+<meta name="apple-mobile-web-app-status-bar-style" content="white" />
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta http-equiv="Expires" content="-1">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Cache-Control" content="No-Cache">
+
+<link href="/resources/css/default.css" rel="stylesheet" />
+<link href="/resources/css/renewal.css" rel="stylesheet" />
+
+
+<link href="/resources/css/swiper-bundle.min.css" rel="stylesheet" />
+<link rel="shortcut icon" type="image/x-icon" href="/resources/favicon.ico" />
+<link rel="icon" type="image/x-icon" href="/resources/favicon.ico" />
+
+<script type="text/javascript" src="/resources/js/lib/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="/resources/js/lib/jquery.cookie.js"></script>
+
+<script type="text/javascript" src="/resources/js/lib/swiper-bundle.min.js"></script>
+<script type="text/javascript" src="/resources/js/lib/TweenMax.min.js"></script>
+<script type="text/javascript" src="/resources/js/lib/jquery.animateSprite.min.js"></script>
+<script type="text/javascript" src="/resources/js/lib/default.js?v=20230803152535"></script>
+<script type="text/javascript" src="/resources/js/lib/ui.js?v=20230803152535"></script>
+<script type="text/javascript" src="/resources/js/lib/rolldate.js?v=20230803152535"></script>
+<script type="text/javascript" src="/resources/js/app_common_cont.js?v=20230803152535"></script>
+<script type="text/javascript" src="/resources/js/app_common_auth.js?v=20230803152535"></script>
+<script type="text/javascript" src="/resources/js/app_common_funs.js?v=20230803152535"></script>
+<script type="text/javascript" src="/resources/js/app_common_nsl.js?v=20230803152535"></script>
+<script type="text/javascript" src="/resources/js/app_common_util.js?v=20230803152535"></script>
+<script type="text/javascript" src="/resources/js/biz_common.js?version=20230803152535" id="biz_common"
+	data-menuId="dep/prc"
+	data-frameId="depAcnoOpenPrc2"
+	data-serviceCd="depAcnoOpenPrc2.frm"
+	data-serverTime="20230803152535"
+	data-activeMode="local"
+	data-activeEnv="${active.env">
+</script>
+
+
+<body>
+    <!-- header -->
+    <div id="headerWrap">
+        <script>
+        $(document).ready(function(){
+            document.charset="euc-kr";
+            $("#headerWrap").load("../includes/header.html");
+        });
+        </script>
+    </div>
+	<!-- //header -->
+
+    <!--contentsWrap -->
+    <div class="contentsWrap">
+        <!--contents -->
+        <div class="contents">
+            <div class="default-wrap">
+                <!--D: arrow-button-wrap 만 추가 그 외는 변동사항 없음, 팝업도 변동사항 없음 -->
+
+                <div class="tit-wrap">
+					<p class="txt"><strong>인증 예외서비스 등록</strong>이란?</p>
+					<p class="s-txt">1일 누적 100만원 이상 자금이체 시<br/>사기예방서비스(추가인증)을 사용하지 않는<br/>인증예외처리 서비스예요</p>
+				</div>
+                <div class="arrow-button-wrap"><!--D: arrow-button-wrap 감싸주는 구조만 추가 그 외는 변경사항 없음-->
+                    <ul class="arrow-button-list">
+                        <li><a href="#none" onclick="openPopup('lyPullPop01')">서비스 적용 업무 및 이용안내</a></li>
+                        <li><a href="#none" onclick="openPopup('lyPullPop02')">유의사항</a></li>
+                    </ul>
+                </div>
+
+        </div>
+        <!-- //contents -->
+
+        <div class="fixed-btn-wrap">
+			<div class="btn-wrap">
+				<a href="#none" class="btn">다음</a><!--D: 텍스트 변경-->
+			</div>
+		</div>
+
+        <!-- // D: 서비스 적용 업무 및 이용안내 팝업 -->
+	<div id="lyPullPop01" class="layerpopup laypop-all" tabindex="0" data-focus-prev="btn-menu-close">
+		<!-- s: contents -->
+		<div class="pop-header">
+			<h2 class="pop-title">서비스 적용 업무 및 이용안내</h2>
+			<button type="button" name="button" class="btn-layer-close" onclick="closePopup('lyPullPop01')">닫기</button>
+		</div>
+		<div class="pop-con-wrap">
+			<div class="default-wrap">
+				<div class="sub-tit-wrap">
+					<p class="tit">서비스 적용 업무</p>
+					<ul class="list-bull">
+						<li>뱅킹서비스(인터넷/스마트폰)일 누적 100만원 이상 이체거래시에만 적용돼요</li>
+					</ul>
+				</div>
+				<div class="sub-tit-wrap">
+					<p class="tit">이용안내</p>
+					<ul class="list-bull">
+						<li>사기예방서비스 인증예외처리 서비스를 이용하시기 전에 아래 내용안내 및 유의사항을 확인해주세요</li>
+						<li>인터넷뱅킹에서도 서비스를 가입하실 수 있어요</li>
+						<li>서비스가입시 공동인증서가 꼭 필요해요</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- D: 서비스 적용 업무 및 이용안내 팝업 // -->
+
+
+	<!-- // D: 유의사항 팝업 -->
+	<div id="lyPullPop02" class="layerpopup laypop-all" tabindex="0" data-focus-prev="btn-menu-close">
+		<!-- s: contents -->
+		<div class="pop-header">
+			<h2 class="pop-title">유의사항</h2>
+			<button type="button" name="button" class="btn-layer-close" onclick="closePopup('lyPullPop02')">닫기</button>
+		</div>
+		<div class="pop-con-wrap">
+			<div class="default-wrap">
+				<div class="sub-tit-wrap">
+					<p class="tit">유의사항</p>
+					<ul class="list-bull">
+						<li>인증예외처리로 전자금융사기 피해에 노출될 수 있으니 신중히 고려하신 후 등록해주세요</li>
+						<li>인증예외처리 신청 시 기존 신청하신 추가인증 서비스는 자동으로 해지돼요</li>
+						<li>가입은 본인 명의 휴대폰만 가능해요.<br/>본인 명의 휴대폰이 아닐 경우 창구에 방문하시면 변경 가능해요</li>
+						<li>인증용 휴대폰 번호를 변경할 경우에도 인터넷에서는 본인 명의 휴대폰만 가능해요</li>
+						<li>일 누적 100만원 이상 이체거래 시에만 적용돼요</li>
+						<li>인증예외처리서비스 신청 시 인증에 실패하는 경우 거래제한이 발생할 수 있어요</li>
+						<li>월말 등 통신사 장애로 인증번호 전송 지연이 발생하여 서비스 제공이 불가한 경우 당행에서는 책임지지 않아요</li>
+						<li>서비스 해지는 사기예방서비스(추가인증서비스)에 가입하시면 자동 해지돼요</li>
+						<li>해외 사용자는 해당서비스를 가입해도 출국자 정보 확인단계를 거친 후 인증 예외처리 돼요</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- D: 유의사항 팝업 // -->
+
+    </div>
+    <!-- //contentsWrap -->
+</body>
+</html>
+

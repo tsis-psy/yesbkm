@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>예가람저축은행</title>
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="Content-Script-Type" content="text/javascript">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<meta name="keywords" content="예가람저축은행keywords" />
+<meta name="description" content="예가람저축은행description" />
+<!-- <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0, viewport-fit=cover"> -->
+	<meta name="viewport" content="user-scalable=no,width=375">
+
+<meta name="apple-mobile-web-app-status-bar-style" content="white" />
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta http-equiv="Expires" content="-1">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Cache-Control" content="No-Cache">
+
+<link href="/resources/css/default.css" rel="stylesheet" />
+<link href="/resources/css/renewal.css" rel="stylesheet" />
+
+
+<link href="/resources/css/swiper-bundle.min.css" rel="stylesheet" />
+<link rel="shortcut icon" type="image/x-icon" href="/resources/favicon.ico" />
+<link rel="icon" type="image/x-icon" href="/resources/favicon.ico" />
+
+<script type="text/javascript" src="/resources/js/lib/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="/resources/js/lib/jquery.cookie.js"></script>
+
+<script type="text/javascript" src="/resources/js/lib/swiper-bundle.min.js"></script>
+<script type="text/javascript" src="/resources/js/lib/TweenMax.min.js"></script>
+<script type="text/javascript" src="/resources/js/lib/jquery.animateSprite.min.js"></script>
+<script type="text/javascript" src="/resources/js/lib/default.js?v=20230803152535"></script>
+<script type="text/javascript" src="/resources/js/lib/ui.js?v=20230803152535"></script>
+<script type="text/javascript" src="/resources/js/lib/rolldate.js?v=20230803152535"></script>
+<script type="text/javascript" src="/resources/js/app_common_cont.js?v=20230803152535"></script>
+<script type="text/javascript" src="/resources/js/app_common_auth.js?v=20230803152535"></script>
+<script type="text/javascript" src="/resources/js/app_common_funs.js?v=20230803152535"></script>
+<script type="text/javascript" src="/resources/js/app_common_nsl.js?v=20230803152535"></script>
+<script type="text/javascript" src="/resources/js/app_common_util.js?v=20230803152535"></script>
+<script type="text/javascript" src="/resources/js/biz_common.js?version=20230803152535" id="biz_common"
+	data-menuId="dep/prc"
+	data-frameId="depAcnoOpenPrc2"
+	data-serviceCd="depAcnoOpenPrc2.frm"
+	data-serverTime="20230803152535"
+	data-activeMode="local"
+	data-activeEnv="${active.env">
+</script>
+
+
+<body>
+    <!-- header -->
+    <header class="headerWrap">
+        <div class="headerLeft">
+            <!--D: 이전버튼-->
+            <a href="javascript:void(0)" class="btn btnBack"><img src="/resources/images/header/btn_back.png" alt="이전페이지 이동하기"></a>
+        </div>
+        <div class="headerCenter">
+            <h2 class="text"><span>전자민원신청</span></h2> <!--D: TEXT -->
+        </div>
+        <div class="headerRight">
+            <!--D: 전체메뉴버튼 -->
+            <a href="javascript:void(0)" class="btn btn-menu "><img src="/resources/images/header/btn_menu.png" alt="전체메뉴"></a>
+        </div>
+    </header>
+	<!-- //header -->
+
+    <!--contentsWrap -->
+    <div class="contentsWrap">
+        <!--contents -->
+        <div class="contents">
+            <div class="default-wrap">
+                <!-- D: list 구조 변경 , fixed 버튼 변경 , 팝업 및 알럿 추가  -->
+                <div class="tit-wrap">
+                    <p class="txt"><strong>전자민원 신청을</strong>을 위한<br/><strong>정보</strong>를 입력해주세요</p>
+                </div>
+
+                <div class="form-wrap">
+                    <label for="ipt01" class="formlabel onbasic">제목</label>
+                    <div class="input">
+                        <input type="text" title="성명" id="ipt01" class="inp" name="" value="" placeholder="제목을 입력해주세요." maxlength="100" required="">
+                    </div>
+                </div>
+
+                <div class="form-wrap">
+                    <div class="input">
+                        <textarea type="text" title="성명" id="ipt02" class="inp" name="" value="" placeholder="내용을 입력해주세요" maxlength="" required="">
+내용을 입력해주세요
+                        </textarea>
+                    </div>
+                </div>
+
+                <div class="sub-tit-wrap">
+					<p class="tit">첨부파일</p>
+				</div>
+
+                <div class="form-wrap">
+                    
+                    <div class="input">
+                        <div class="file-box added"><!-- D : added 클래스 추가시 파일삭제 버튼 노출, 파일추가 버튼 히든 -->
+                            <span class="file-name">대출신청화면.jpg</span>
+                            <label for="file" class="file-label">파일 추가</label>
+                            <input type="file" id="file" class="ip-file">
+                            <button type="button" class="btn-file-del">파일 삭제</button>
+                        </div>
+                    </div>
+                </div>
+                <p class="info-txt">이미지(jpg, png, gif 등) 파일 또는 PDF 파일만 첨부 가능해요</p>
+                <p class="info-txt">첨부파일은 10MB 이하만 등록이 가능해요</p>
+
+                <div class="list-bull"><!--D: 구조 변경 및 텍스트 변경-->
+                    <div class="border"></div>
+                    <strong>알아두세요</strong>
+                    <ul>
+                        <li>민원 처리기간 : 접수일로부터 1개월 이내</li>
+                        <li>민원센터 연락처 : 02-6906-7065/7083(준법감시팀)</li>
+                    </ul>
+                </div>
+
+                <div class="list-bull"><!--D: 구조 변경-->
+                    <strong>전자민원신청 내역 확인 방법</strong>
+                    <ul>
+                        <li>'전자민원신청 안내' 화면에서 '신청 및 조회하기' 선택 → 본인인증 → 전자민원신청 내역확인</li>
+                    </ul>
+                </div>
+
+            </div>
+
+        </div>
+        <!-- //contents -->
+
+        <div class="fixed-btn-wrap">
+            <div class="btn-wrap flexCol"><!--D: 클래스 추가-->
+                <a href="#none" class="btn">등록하기</a>
+                <a href="#none" class="btn txt">그만하기</a><!--D : 클래스 변경-->
+            </div>
+        </div>
+
+        <!--S: 제목 입력 (Alert)-->
+        <div id="lyAlert1" class="layerpopup type-alert on" style="display: block;">
+            <div class="content-wrap">
+                
+                <div class="pop-con-wrap">
+                    <span class="pop-con">제목을 입력해 주세요</span>
+                </div>
+                <div class="btn-wrap">
+                    <a href="javascript:void(0);" class="btn" onclick="">확인</a>
+                </div>
+            </div>
+        </div>
+        <!--E: 제목 입력 (Alert)-->
+
+    </div>
+    <!-- //contentsWrap -->
+
+</body>
+</html>
+

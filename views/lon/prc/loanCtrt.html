@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>예가람저축은행</title>
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="Content-Script-Type" content="text/javascript">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<meta name="keywords" content="예가람저축은행keywords" />
+<meta name="description" content="예가람저축은행description" />
+<!-- <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0, viewport-fit=cover"> -->
+	<meta name="viewport" content="user-scalable=no,width=375">
+
+<meta name="apple-mobile-web-app-status-bar-style" content="white" />
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta http-equiv="Expires" content="-1">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Cache-Control" content="No-Cache">
+
+<link href="/resources/css/default.css" rel="stylesheet" />
+<link href="/resources/css/renewal.css" rel="stylesheet" />
+
+
+<link href="/resources/css/swiper-bundle.min.css" rel="stylesheet" />
+<link rel="shortcut icon" type="image/x-icon" href="/resources/favicon.ico" />
+<link rel="icon" type="image/x-icon" href="/resources/favicon.ico" />
+
+<script type="text/javascript" src="/resources/js/lib/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="/resources/js/lib/jquery.cookie.js"></script>
+
+<script type="text/javascript" src="/resources/js/lib/swiper-bundle.min.js"></script>
+<script type="text/javascript" src="/resources/js/lib/TweenMax.min.js"></script>
+<script type="text/javascript" src="/resources/js/lib/jquery.animateSprite.min.js"></script>
+<script type="text/javascript" src="/resources/js/lib/default.js?v=20230803152535"></script>
+<script type="text/javascript" src="/resources/js/lib/ui.js?v=20230803152535"></script>
+<script type="text/javascript" src="/resources/js/lib/rolldate.js?v=20230803152535"></script>
+<script type="text/javascript" src="/resources/js/app_common_cont.js?v=20230803152535"></script>
+<script type="text/javascript" src="/resources/js/app_common_auth.js?v=20230803152535"></script>
+<script type="text/javascript" src="/resources/js/app_common_funs.js?v=20230803152535"></script>
+<script type="text/javascript" src="/resources/js/app_common_nsl.js?v=20230803152535"></script>
+<script type="text/javascript" src="/resources/js/app_common_util.js?v=20230803152535"></script>
+<script type="text/javascript" src="/resources/js/biz_common.js?version=20230803152535" id="biz_common"
+	data-menuId="dep/prc"
+	data-frameId="depAcnoOpenPrc2"
+	data-serviceCd="depAcnoOpenPrc2.frm"
+	data-serverTime="20230803152535"
+	data-activeMode="local"
+	data-activeEnv="${active.env">
+</script>
+
+
+<body>
+    <!-- header -->
+    <header class="headerWrap">
+		<div class="headerLeft">
+			<a href="javascript:void(0)" class="btn btnBack"><img src="/resources/images/header/btn_back.png" alt="이전페이지 이동하기"></a>
+		</div>
+		<div class="headerCenter">
+			<h2 class="text"><span>대출신청</span></h2> <!--D: TEXT -->
+		</div>
+		<div class="headerRight">
+			<!-- <a href="javascript:void(0)" class="btn btn-menu "><img src="/resources/images/header/btn_menu.png" alt="전체메뉴"></a> -->
+		</div>
+	</header>
+	<!-- //header -->
+
+        <!--contentsWrap -->
+        <div class="contentsWrap">
+            <!--contents -->
+            <div class="contents">
+                <div class="default-wrap">
+
+                    <!--D: step_bar 단계 삭제-->
+
+                    <div class="tit-wrap">
+                        <p class="txt"><strong>얼마를 대출</strong>하시겠어요?</p>
+                    </div>
+                    
+                    <!--S:form-->
+                    <div class="form-all-wrap"><!--D: 5/13 - form 전체 감쌀 경우 : form-all-wrap / slect-box를 감쌀 경우 slect-wrap이 아닌 form-wrap으로 감싸주세요-->
+
+                        <div class="form-wrap type2">
+                            <!--[퍼블-1] : 버튼 추가-->
+                            <div class="form-tit">
+                                <label for="LOAN_AMT" class="essential">대출신청금액</label><!--D: essential 클래스 추가-->
+                                <button type="button" class="btn btn-sm btn-primary">상환일정조회</button>
+                            </div>
+                            <!--//[퍼블-1] : 버튼 추가-->
+                            <div class="input">
+                                <input type="tel" title="" class="validChk" id="LOAN_AMT" value="" placeholder="대출신청금액을 입력해주세요." pattern="[0-9]*"  maxlength="4" required="">
+                                <div class="value-wrap">
+                                    <strong class="value"></strong>
+                                    <span class="unit">만원</span>
+                                    <button type="reset" class="btn-delete">삭제</button>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="exp-txt">나의 대출한도 : 만원</p>
+
+
+                        <!--D: 삭제 <div class="form-wrap">
+                            <div class="input"> -->
+                                <div id="selDiv1" class="form-wrap"><!--D: 5/13  개발 포커스 및 error 적용 문제로 select-wrap을 form-wrap으로 변경-->
+                                    <div class="select-box openSel" tabindex="1" onclick="openSelect();">
+                                        <label for="qValue1">대출기간</label>
+                                        <span class="option" id="qText1">미선택</span>
+                                        <input type="hidden" name="LOAN_TERM" id="qValue1" value="" class="validChk" />
+                                    </div>
+                                </div>
+                            <!-- </div>
+                        </div> -->
+
+                        <!--D: 삭제 <div class="form-wrap">
+                            <div class="input"> -->
+                                <div id="selDiv2" class="form-wrap"><!--D: 5/13  개발 포커스 및 error 적용 문제로 select-wrap을 form-wrap으로 변경-->
+                                    <div id="rolldate2" class="select-box openSel type2" tabindex="1" onclick="openSelect('납입일','C007600000','2');" >
+                                        <label for="qValue2">납입일</label>
+                                        <span class="option" id="qText2">미선택</span>
+                                        <input type="hidden" name="LOAN_CNRT_DD" id="qValue2" value="" class="validChk" />
+                                    </div>
+                                </div>
+                            <!-- </div>
+                        </div> -->
+
+
+                        <!--D: 삭제 <div class="form-wrap">
+                            <div class="input"> -->
+                                <div id="selDiv2" class="form-wrap"><!--D: 5/13  개발 포커스 및 error 적용 문제로 select-wrap을 form-wrap으로 변경-->
+                                    <div id="" class="select-box openSel disabled on" tabindex="1" onclick="openSelect('납입일','C007600000','2');" ><!--D: disabled 클래스 : 비활성화 / on 클래스 : 값이 있을 경우  -->
+                                        <label for="qValue2">상환방법</label>
+                                        <span class="option" id="qText2">원리금균등상환</span>
+                                        <input type="hidden" name="LOAN_CNRT_DD" id="qValue2" value="" class="validChk" />
+                                    </div>
+                                </div>
+                            <!-- </div>
+                        </div> -->
+
+
+                        <!--D: 삭제 <div class="form-wrap">
+                            <div class="input"> -->
+                                <div class="form-wrap"><!--D: 5/13  개발 포커스 및 error 적용 문제로 select-wrap을 form-wrap으로 변경-->
+                                    <div class="select-box disabled on" tabindex="1"><!--D: disabled 클래스 : 비활성화 / on 클래스 : 값이 있을 경우  -->
+                                        <label for="">중도수수료율</label>
+                                        <span class="option">00.00%</span>
+                                    </div>
+                                </div>
+                            <!-- </div>
+                        </div> -->
+
+
+                        <!--D: 삭제 <div class="form-wrap">
+                            <div class="input"> -->
+                                <div class="form-wrap"><!--D: 5/13  개발 포커스 및 error 적용 문제로 select-wrap을 form-wrap으로 변경-->
+                                    <div class="select-box disabled on" tabindex="1"><!--D: disabled 클래스 : 비활성화 / on 클래스 : 값이 있을 경우  -->
+                                        <label for="">연체이자율</label>
+                                        <span class="option">00.00%</span>
+                                    </div>
+                                </div>
+                            <!-- </div>
+                        </div> -->
+
+                    </div>
+                    <!--E:form-->
+                    
+                </div>
+            </div>
+            <!-- //contents -->
+
+            <div class="fixed-btn-wrap">
+                <div class="btn-wrap flexCol"><!--D: flexCol  클래스 사용-->
+                    <a href="javascript:void(0);" class="btn disabled">다음</a><!--D: disabled 클래스 삭제 시 활성화-->
+                    <a href="javascript:void(0);" class="btn txt">그만하기</a><!--D: btn txt  클래스 사용-->
+                </div>
+            </div>
+
+            <!--S: 대출금리 확인 (팝업)-->
+            <div id="lyPop1" class="layerpopup layer-up has-button show" style=" display: none;"><!-- [D] has-button 클래스 : 하단버튼 있을 경우 사용 -->
+                <div class="content-wrap">
+                    <div class="pop-header">
+                        <h2 class="pop-title">대출 금리</h2>
+                        <button type="button" name="button" class="btn-layer-close" data-focus="btn-layer-close">닫기</button>
+                    </div>
+                    <div class="ly-scroll-con pb0">
+                        <div class="txtbox-wrap">
+                            <p>대출 금리를 확인하셨나요?</p>
+                        </div>
+                        <div class="select-wrap">
+                            <div class="select-box disabled on" tabindex="1">
+                                <label for="">대출금리</label>
+                                <span class="option">00.00%</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--D: fixed-btn-wrap 버튼은 content-wrap 밖으로 위치-->
+                <div class="fixed-btn-wrap">
+                    <div class="btn-wrap">
+                        <a href="javascript:void(0);" class="btn">해지하기</a>
+                    </div>
+                </div>
+            </div>
+            <!--E: 대출금리 확인 (팝업)-->
+
+            <!--S: 대출신청금액 입력 (Alert)-->
+            <div id="lyAert1" class="layerpopup type-alert on" style="display: none;">
+                <div class="content-wrap">
+                    
+                    <div class="pop-con-wrap">
+                        <span class="pop-con">대출신청금액을 입력해주세요</span>
+                    </div>
+                    <div class="btn-wrap">
+                        <a href="javascript:void(0);" class="btn">확인</a>
+                    </div>
+                </div>
+            </div>
+            <!--E: 대출신청금액 입력 (Alert)-->
+
+            <!--S: 대출기간 (팝업)-->
+            <div id="lySel2" class="layerpopup layer-up show" style="display: none;">
+                <div class="content-wrap">
+                    <div class="pop-header">
+                        <h2 class="pop-title">대출기간</h2>
+                        <button type="button" name="button" class="btn-layer-close" data-focus="btn-layer-close">닫기</button>
+                    </div>
+                    <div class="ly-scroll-con ly-select">
+                        <ul class="ly-select-list">
+                            <li><button>12개월</button></li><!-- [D] 클래스 active 추가 시 활성화 스타일 노출 -->
+                            <li><button>24개월</button></li>
+                            <li><button>36개월</button></li>
+                            <li><button>48개월</button></li>
+                            <li><button>60개월</button></li>
+                            <li><button>72개월</button></li>
+                            <li><button>84개월</button></li>
+                            <li><button>96개월</button></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!--E: 대출기간 (팝업)-->
+
+            <!--S: 상환방법 (팝업)-->
+            <div id="lySel3" class="layerpopup layer-up show" style="display: none;">
+                <div class="content-wrap">
+                    <div class="pop-header">
+                        <h2 class="pop-title">상환방법</h2>
+                        <button type="button" name="button" class="btn-layer-close" data-focus="btn-layer-close">닫기</button>
+                    </div>
+                    <div class="ly-scroll-con ly-select">
+                        <ul class="ly-select-list">
+                            <li><button>원리균등상환</button></li><!-- [D] 클래스 active 추가 시 활성화 스타일 노출 -->
+                            <li><button>원리금균등상환</button></li>
+                            <li><button>원금만기일시상환</button></li>
+                    
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!--E: 상환방법 (팝업)-->
+
+            
+
+        </div>
+        <!-- //contentsWrap -->
+</body>
+</html>
+

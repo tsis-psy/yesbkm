@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>예가람저축은행</title>
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="Content-Script-Type" content="text/javascript">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<meta name="keywords" content="예가람저축은행keywords" />
+<meta name="description" content="예가람저축은행description" />
+<!-- <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0, viewport-fit=cover"> -->
+	<meta name="viewport" content="user-scalable=no,width=375">
+
+<meta name="apple-mobile-web-app-status-bar-style" content="white" />
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta http-equiv="Expires" content="-1">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Cache-Control" content="No-Cache">
+
+<link href="/resources/css/default.css" rel="stylesheet" />
+<link href="/resources/css/renewal.css" rel="stylesheet" />
+
+
+<link href="/resources/css/swiper-bundle.min.css" rel="stylesheet" />
+<link rel="shortcut icon" type="image/x-icon" href="/resources/favicon.ico" />
+<link rel="icon" type="image/x-icon" href="/resources/favicon.ico" />
+
+<script type="text/javascript" src="/resources/js/lib/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="/resources/js/lib/jquery.cookie.js"></script>
+
+<script type="text/javascript" src="/resources/js/lib/swiper-bundle.min.js"></script>
+<script type="text/javascript" src="/resources/js/lib/TweenMax.min.js"></script>
+<script type="text/javascript" src="/resources/js/lib/jquery.animateSprite.min.js"></script>
+<script type="text/javascript" src="/resources/js/lib/default.js?v=20230803152535"></script>
+<script type="text/javascript" src="/resources/js/lib/ui.js?v=20230803152535"></script>
+<script type="text/javascript" src="/resources/js/lib/rolldate.js?v=20230803152535"></script>
+<script type="text/javascript" src="/resources/js/app_common_cont.js?v=20230803152535"></script>
+<script type="text/javascript" src="/resources/js/app_common_auth.js?v=20230803152535"></script>
+<script type="text/javascript" src="/resources/js/app_common_funs.js?v=20230803152535"></script>
+<script type="text/javascript" src="/resources/js/app_common_nsl.js?v=20230803152535"></script>
+<script type="text/javascript" src="/resources/js/app_common_util.js?v=20230803152535"></script>
+<script type="text/javascript" src="/resources/js/biz_common.js?version=20230803152535" id="biz_common"
+	data-menuId="dep/prc"
+	data-frameId="depAcnoOpenPrc2"
+	data-serviceCd="depAcnoOpenPrc2.frm"
+	data-serverTime="20230803152535"
+	data-activeMode="local"
+	data-activeEnv="${active.env">
+</script>
+
+
+<body>
+    <!-- header -->
+    <div id="headerWrap">
+        <script>
+        $(document).ready(function(){
+            document.charset="euc-kr";
+            $("#headerWrap").load("../includes/header.html");
+        });
+        </script>
+    </div>
+	<!-- //header -->
+
+    <!--contentsWrap -->
+    <div class="contentsWrap">
+        <!--contents -->
+        <div class="contents">
+            <div class="default-wrap">
+                
+
+            </div>
+        </div>
+        <!-- //contents -->
+
+        <!--D: 팝업으로 변경했습니다.-->
+        <!--S: 원리금상환/한도해지 예정금액 팝업 (풀팝업)-->
+        <div id="lypullPop" class="layerpopup laypop-all show" style="display: block;">
+            <!-- s: contents -->
+            <div class="pop-header">
+                <h2 class="pop-title">원금상환/한도해지</h2>
+                <button type="button" name="button" class="btn-layer-close" onclick="closePopup('lypullPop')">닫기</button>
+            </div>
+            
+            <div class="pop-con-wrap">
+                <div class="default-wrap">
+
+                    <div class="tit-wrap">
+                        <p class="txt"><strong>상환하실</strong> 내용을<br/> 확인해 주세요</p><!--D: 텍스트 변경-->
+                    </div>
+
+                    <div class="txt-list-wrap">
+                        <div class="txt-detail-area">
+                            <div class="txt-detail-tit">
+                                <strong>예스론</strong>
+                            </div>
+                            <ul class="txt-list">
+                                <!--D: 텍스트 변경-->
+                                <li>
+                                    <span class="tit">출금계좌번호</span>
+                                    <span class="txt">123-456-7890</span>
+                                </li>
+                                <li>
+                                    <span class="tit">대출계좌번호</span>
+                                    <span class="txt">123-456-7890</span>
+                                </li>
+                                <li>
+                                    <span class="tit">상환금액</span>
+                                    <span class="txt">000,000,000원</span>
+                                </li>
+                                <li>
+                                    <span class="tit">대출이율</span>
+                                    <span class="txt">00.00%</span>
+                                </li>
+                                <li>
+                                    <span class="tit">정상이자</span>
+                                    <span class="txt">YYYY.MM.DD</span>
+                                </li>
+                                <li>
+                                    <span class="tit">이자기간</span>
+                                    <span class="txt">YYYY.MM.DD<br>~ YYYY.MM.DD</span>
+                                </li>
+                                <li>
+                                    <span class="tit">연체료</span>
+                                    <span class="txt">000,000,000원</span>
+                                </li>
+                                <li>
+                                    <span class="tit">연체이자</span>
+                                    <span class="txt">00.00%</span>
+                                </li>
+                                <li>
+                                    <span class="tit">환출이자</span>
+                                    <span class="txt">000,000,000원</span>
+                                </li>
+                                <li>
+                                    <span class="tit">상환수수료</span>
+                                    <span class="txt">000,000,000원</span>
+                                </li>
+                                <li>
+                                    <span class="tit">미징구금액</span>
+                                    <span class="txt">000,000,000원</span>
+                                </li>
+                                <li>
+                                    <span class="tit">입금총액</span>
+                                    <span class="txt">000,000,000원</span>
+                                </li>
+                                <li>
+                                    <span class="tit">입금 후 대출잔액</span>
+                                    <span class="txt">000,000,000원</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="fixed-btn-wrap">
+                <div class="btn-wrap">
+                    <a href="#none" class="btn" onclick="closePopup('lypullPop')">다음</a>
+                </div>
+            </div>
+
+        </div>
+        <!--E: 원리금상환/한도해지 예정금액 팝업 (풀팝업)-->
+
+    </div>
+    <!-- //contentsWrap -->
+</body>
+</html>
+
