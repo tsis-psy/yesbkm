@@ -1543,6 +1543,7 @@ div:has(.txt-list-wrap) + .btn-cont-wrap.btn-add { margin-top:40px; }
   justify-content: center;
   gap: 10px;
   padding: 20px 0 10px;
+  background-color: #fff;
 }
 .month button img{width: 22px;}
 
@@ -1589,7 +1590,4 @@ span.more img{width: 16px;}
 .mySwiper .swiper-button-next.swiper-button-disabled, .mySwiper .swiper-button-prev.swiper-button-disabled{opacity: 1;}
 
 
-.mask-wrapper {
-  mask-image: linear-gradient(to right, transparent, white 40%, white 60%, transparent);
-  -webkit-mask-image: linear-gradient(to right, transparent, white 40%, white 60%, transparent);
-}
+  
