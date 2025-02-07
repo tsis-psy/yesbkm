@@ -778,10 +778,10 @@ mySwiper.el.addEventListener('touchend', function (e) {
     if (Math.abs(deltaX) > swipeThreshold) {
         if (reachedFirstSlide && deltaX > 0) {
             // 🎯 왼쪽 끝에서 추가 스와이프 시 토스트 표시
-            toastPopup("공모주 일정은 당월과 익월만 제공합니다", 1800);
+            toastPopup("공모주 일정은 당월과 익월만 제공합니다", 1500);
         } else if (reachedLastSlide && deltaX < 0) {
             // 🎯 오른쪽 끝에서 추가 스와이프 시 토스트 표시 (🚀 angle 보정 추가)
-            toastPopup("공모주 일정은 당월과 익월만 제공합니다", 1800);
+            toastPopup("공모주 일정은 당월과 익월만 제공합니다", 1500);
         }
     }
 });
@@ -844,7 +844,7 @@ document.querySelector(".swiper-button-next").addEventListener("pointerdown", fu
     setTimeout(() => {
         let nextButton = document.querySelector(".swiper-button-next");
         if (nextButton.classList.contains("swiper-button-disabled") && nextButtonDisabled) {
-            toastPopup("공모주 일정은 당월과 익월만 제공합니다", 3000);
+            toastPopup("공모주 일정은 당월과 익월만 제공합니다", 1500);
         }
     }, 200);
 });
@@ -854,7 +854,7 @@ document.querySelector(".swiper-button-prev").addEventListener("pointerdown", fu
     setTimeout(() => {
         let prevButton = document.querySelector(".swiper-button-prev");
         if (prevButton.classList.contains("swiper-button-disabled") && prevButtonDisabled) {
-            toastPopup("공모주 일정은 당월과 익월만 제공합니다", 3000);
+            toastPopup("공모주 일정은 당월과 익월만 제공합니다", 1500);
         }
     }, 200);
 });
