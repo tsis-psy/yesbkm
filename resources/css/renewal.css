@@ -1601,7 +1601,6 @@ span.more img{width: 16px;}
   -webkit-mask-image: -webkit-radial-gradient(white, black);
   opacity: 0.9999;
   mix-blend-mode: normal;
-  filter: brightness(1.01);
   clip-path: inset(0 0 0 0);
   
 }

@@ -1,0 +1,869 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>예가람저축은행</title>
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Script-Type" content="text/javascript" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <meta name="keywords" content="예가람저축은행keywords" />
+    <meta name="description" content="예가람저축은행description" />
+    <!-- <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0, viewport-fit=cover"> -->
+    <meta name="viewport" content="user-scalable=no,width=375" />
+
+    <meta name="apple-mobile-web-app-status-bar-style" content="white" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta http-equiv="Expires" content="-1" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Cache-Control" content="No-Cache" />
+
+    <link href="../../../resources/css/default.css" rel="stylesheet" />
+    <link href="../../../resources/css/renewal.css" rel="stylesheet" />
+    <link href="../../../resources/css/main_renewal.css" rel="stylesheet" />
+    <link href="../../../resources/css/swiper-bundle.min.css" rel="stylesheet" />
+    <link rel="shortcut icon" type="image/x-icon" href="../../../resources/favicon.ico" />
+    <link rel="icon" type="image/x-icon" href="../../../resources/favicon.ico" />
+
+    <script type="text/javascript" src="../../../resources/js/lib/jquery-1.12.4.min.js"></script>
+    <script type="text/javascript" src="../../../resources/js/lib/jquery.cookie.js"></script>
+    <script type="text/javascript" src="../../../resources/js/lib/swiper-bundle.min.js"></script>
+    <script type="text/javascript" src="../../../resources/js/lib/TweenMax.min.js"></script>
+    <script type="text/javascript" src="../../../resources/js/lib/jquery.animateSprite.min.js"></script>
+    <script type="text/javascript" src="../../../resources/js/lib/default.js?v=20230803152535"></script>
+    <script type="text/javascript" src="../../../resources/js/lib/ui.js?v=20230803152535"></script>
+    <script type="text/javascript" src="../../../resources/js/lib/rolldate.js?v=20230803152535"></script>
+    <script type="text/javascript" src="../../../resources/js/app_common_cont.js?v=20230803152535"></script>
+    <script type="text/javascript" src="../../../resources/js/app_common_auth.js?v=20230803152535"></script>
+    <script type="text/javascript" src="../../../resources/js/app_common_funs.js?v=20230803152535"></script>
+    <script type="text/javascript" src="../../../resources/js/app_common_nsl.js?v=20230803152535"></script>
+    <script type="text/javascript" src="../../../resources/js/app_common_util.js?v=20230803152535"></script>
+    <script
+      type="text/javascript"
+      src="../../../resources/js/biz_common.js?version=20230803152535"
+      id="biz_common"
+      data-menuId="dep/prc"
+      data-frameId="depAcnoOpenPrc2"
+      data-serviceCd="depAcnoOpenPrc2.frm"
+      data-serverTime="20230803152535"
+      data-activeMode="local"
+      data-activeEnv="${active.env"
+    ></script>
+  </head>
+
+  <body>
+    <!-- header -->
+    <header class="headerWrap">
+      <div class="headerLeft">
+        <a href="javascript:void(0)" class="btn btnBack"><img src="../../../resources/images/header/btn_back.png" alt="이전페이지 이동하기" /></a>
+      </div>
+      <div class="headerCenter">
+        <h2 class="text"><span>청약일정</span></h2>
+        <!--D: TEXT -->
+      </div>
+      <div class="headerRight">
+        <a href="javascript:void(0)" class="btn btn-menu"><img src="../../../resources/images/header/btn_menu.png" alt="전체메뉴" /></a>
+      </div>
+    </header>
+    <!-- s: contentsWrap -->
+    <div class="contentsWrap" >
+      <!-- s: contents -->
+      <div class="contents cal" >
+       
+        <!-- 캘린더영역 -->
+         <div class="calWrap recom-areadep">
+          <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+              <!-- 2월 -->
+              <div class="swiper-slide">
+                <div class="month">
+                  <!-- <button><img src="../../../resources/images/common/btn_prev_month.png" alt="이전월" /></button> -->
+                  <h2 class="dateTitle">2025년 2월</h2>
+                  <!-- <button><img src="../../../resources/images/common/btn_next_month.png" alt="다음월" /></button> -->
+                </div>
+                <div class="guide-wrap">
+                  <div class="ssc-date">청약시작일</div>
+                  <div class="listed-date">상장일</div>
+                </div>
+                <div class="grid dateHead">
+                  <div class="child">월</div>
+                  <div class="child">화</div>
+                  <div class="child">수</div>
+                  <div class="child">목</div>
+                  <div class="child">금</div>
+                </div>
+                <div class="grid dateBoard">
+                  <div class="today" id="divDay2" onclick="getTagDayText(2)" value="2">
+                    <div class="dayWrap">
+                      <span class="date">2</span>
+                      <span class="more"><img src="../../../resources/images/common/ic-omit.png" alt="공모주더보기" /></span>
+                    </div>
+                    <div class="list">
+                      <ul>
+                        <li class="ssc">위츠</li>
+                        <li class="ssc">엠오티</li>
+                        <li class="listed">에스캠</li>
+                        <li class="listed">하나34호fjdkaljkfdlksal</li>
+                        <li class="listed">하나34호fjdkaljkfdlksal</li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div id="divDay3" onclick="getTagDayText(3)" value="3">
+                    <div class="dayWrap">
+                      <span class="date">3</span>
+                      <!-- <span class="more"><img src="../../../resources/images/common/ic-omit.png" alt="공모주더보기"></span> -->
+                    </div>
+                    <div class="list">
+                      <ul>
+                        <li class="ssc">위츠</li>
+                        <li class="ssc">엠오티</li>
+                        <li class="listed">에스캠</li>
+                        <li class="listed">하나34호fjdkaljkfdlksal</li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div id="divDay4" onclick="getTagDayText(4)" value="4">
+                    <div class="dayWrap">
+                      <span class="date">4</span>
+                      <span class="more"><img src="../../../resources/images/common/ic-omit.png" alt="공모주더보기" /></span>
+                    </div>
+                    <div class="list">
+                      <ul>
+                        <li class="ssc">위츠</li>
+                        <li class="ssc">엠오티</li>
+                        <li class="listed">에스캠</li>
+                        <li class="listed">하나34호fjdkaljkfdlksal</li>
+                        <li class="listed">하나34호fjdkaljkfdlksal</li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div id="divDay5" onclick="getTagDayText(5)" value="5">
+                    <div class="dayWrap">
+                      <span class="date">5</span>
+                      <!-- <span class="more"><img src="../../../resources/images/common/ic-omit.png" alt="공모주더보기"></span> -->
+                    </div>
+                    <div class="list">
+                      <ul>
+                        <li class="ssc">위츠</li>
+                        <li class="ssc">엠오티</li>
+                        <li class="listed">에스캠</li>
+                        <li class="listed">하나34호fjdkaljkfdlksal</li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div id="divDay6" class="right" onclick="getTagDayText(6)" value="6">
+                    <div class="dayWrap">
+                      <span class="date">6</span>
+                      <!-- <span class="more"><img src="../../../resources/images/common/ic-omit.png" alt="공모주더보기"></span> -->
+                    </div>
+                    <div class="list">
+                      <ul>
+                        <li class="ssc">위츠</li>
+                        <li class="ssc">엠오티</li>
+                        <li class="listed">에스캠</li>
+                        <li class="listed">하나34호fjdkaljkfdlksal</li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div id="divDay9" onclick="getTagDayText(9)" value="9">
+                    <div class="dayWrap">
+                      <span class="date">9</span>
+                      <!-- <span class="more"><img src="../../../resources/images/common/ic-omit.png" alt="공모주더보기"></span> -->
+                    </div>
+                    <div class="list">
+                      <ul>
+                        <li class="ssc">위츠</li>
+                        <li class="ssc">엠오티</li>
+                        <li class="listed">에스캠</li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div id="divDay10" onclick="getTagDayText(10)" value="10">
+                    <div class="dayWrap">
+                      <span class="date">10</span>
+                      <!-- <span class="more"><img src="../../../resources/images/common/ic-omit.png" alt="공모주더보기"></span> -->
+                    </div>
+                    <div class="list">
+                      <ul>
+                        <li class="ssc">위츠</li>
+                        <li class="ssc">엠오티</li>
+                        <li class="listed">에스캠</li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div id="divDay11" onclick="getTagDayText(11)" value="11">
+                    <div class="dayWrap">
+                      <span class="date">11</span>
+                      <!-- <span class="more"><img src="../../../resources/images/common/ic-omit.png" alt="공모주더보기"></span> -->
+                    </div>
+                    <div class="list">
+                      <ul>
+                        <li class="ssc">위츠</li>
+                        <li class="listed">에스캠</li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div id="divDay12" onclick="getTagDayText(12)" value="12">
+                    <div class="dayWrap">
+                      <span class="date">12</span>
+                      <!-- <span class="more"><img src="../../../resources/images/common/ic-omit.png" alt="공모주더보기"></span> -->
+                    </div>
+                    <div class="list">
+                      <ul>
+                        
+                        <li class="listed">에스캠</li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div id="divDay13" class="right" onclick="getTagDayText(13)" value="13">
+                    <div class="dayWrap">
+                      <span class="date">13</span>
+                      <!-- <span class="more"><img src="../../../resources/images/common/ic-omit.png" alt="공모주더보기"></span> -->
+                    </div>
+                    <div class="list">
+                      <ul>
+                        <li class="ssc">위츠</li>
+                        
+                      </ul>
+                    </div>
+                  </div>
+                  <div id="divDay16" onclick="getTagDayText(16)" value="16">
+                    <div class="dayWrap">
+                      <span class="date">16</span>
+                      <!-- <span class="more"><img src="../../../resources/images/common/ic-omit.png" alt="공모주더보기"></span> -->
+                    </div>
+                  </div>
+                  <div id="divDay17" onclick="getTagDayText(17)" value="17">
+                    <div class="dayWrap">
+                      <span class="date">17</span>
+                      <!-- <span class="more"><img src="../../../resources/images/common/ic-omit.png" alt="공모주더보기"></span> -->
+                    </div>
+                  </div>
+                  <div id="divDay18" onclick="getTagDayText(18)" value="18">
+                    <div class="dayWrap">
+                      <span class="date">18</span>
+                      <!-- <span class="more"><img src="../../../resources/images/common/ic-omit.png" alt="공모주더보기"></span> -->
+                    </div>
+                  </div>
+                  <div id="divDay19" onclick="getTagDayText(19)" value="19">
+                    <div class="dayWrap">
+                      <span class="date">19</span>
+                      <!-- <span class="more"><img src="../../../resources/images/common/ic-omit.png" alt="공모주더보기"></span> -->
+                    </div>
+                  </div>
+                  <div id="divDay20" class="right" onclick="getTagDayText(20)" value="20">
+                    <div class="dayWrap">
+                      <span class="date">20</span>
+                      <!-- <span class="more"><img src="../../../resources/images/common/ic-omit.png" alt="공모주더보기"></span> -->
+                    </div>
+                  </div>
+                  <div id="divDay23" onclick="getTagDayText(23)" value="23">
+                    <div class="dayWrap">
+                      <span class="date">23</span>
+                      <!-- <span class="more"><img src="../../../resources/images/common/ic-omit.png" alt="공모주더보기"></span> -->
+                    </div>
+                  </div>
+                  <div id="divDay24" onclick="getTagDayText(24)" value="24">
+                    <div class="dayWrap">
+                      <span class="date">24</span>
+                      <!-- <span class="more"><img src="../../../resources/images/common/ic-omit.png" alt="공모주더보기"></span> -->
+                    </div>
+                  </div>
+                  <div id="divDay25" onclick="getTagDayText(25)" value="25">
+                    <div class="dayWrap">
+                      <span class="date">25</span>
+                      <!-- <span class="more"><img src="../../../resources/images/common/ic-omit.png" alt="공모주더보기"></span> -->
+                    </div>
+                  </div>
+                  <div id="divDay26" onclick="getTagDayText(26)" value="26">
+                    <div class="dayWrap">
+                      <span class="date">26</span>
+                      <!-- <span class="more"><img src="../../../resources/images/common/ic-omit.png" alt="공모주더보기"></span> -->
+                    </div>
+                  </div>
+                  <div id="divDay27" class="right" onclick="getTagDayText(27)" value="27">
+                    <div class="dayWrap">
+                      <span class="date">27</span>
+                      <!-- <span class="more"><img src="../../../resources/images/common/ic-omit.png" alt="공모주더보기"></span> -->
+                    </div>
+                  </div>
+                
+                </div>
+              </div>
+              <!-- //2월 -->
+              <!-- 3월 -->
+              <div class="swiper-slide" style="display:">
+                <div class="month">
+                  <!-- <button><img src="../../../resources/images/common/btn_prev_month.png" alt="이전월" /></button> -->
+                  <h2 class="dateTitle">2025년 3월</h2>
+                  <!-- <button><img src="../../../resources/images/common/btn_next_month.png" alt="다음월" /></button> -->
+                </div>
+                <div class="guide-wrap">
+                  <div class="ssc-date">청약시작일</div>
+                  <div class="listed-date">상장일</div>
+                </div>
+                <div class="grid dateHead">
+                  <div class="child">월</div>
+                  <div class="child">화</div>
+                  <div class="child">수</div>
+                  <div class="child">목</div>
+                  <div class="child">금</div>
+                </div>
+                <div class="grid dateBoard">
+                  <div class="today" id="divDay2" onclick="getTagDayText(2)" value="2">
+                    <div class="dayWrap">
+                      <span class="date">2</span>
+                      <span class="more"><img src="../../../resources/images/common/ic-omit.png" alt="공모주더보기" /></span>
+                    </div>
+                    <div class="list">
+                      <ul>
+                        <li class="ssc">위츠</li>
+                        <li class="ssc">엠오티</li>
+                        <li class="listed">에스캠</li>
+                        <li class="listed">하나34호fjdkaljkfdlksal</li>
+                        <li class="listed">하나34호fjdkaljkfdlksal</li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div id="divDay3" onclick="getTagDayText(3)" value="3">
+                    <div class="dayWrap">
+                      <span class="date">3</span>
+                      <!-- <span class="more"><img src="../../../resources/images/common/ic-omit.png" alt="공모주더보기"></span> -->
+                    </div>
+                    <div class="list">
+                      <ul>
+                        <li class="ssc">위츠</li>
+                        <li class="ssc">엠오티</li>
+                        <li class="listed">에스캠</li>
+                        <li class="listed">하나34호fjdkaljkfdlksal</li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div id="divDay4" onclick="getTagDayText(4)" value="4">
+                    <div class="dayWrap">
+                      <span class="date">4</span>
+                      <span class="more"><img src="../../../resources/images/common/ic-omit.png" alt="공모주더보기" /></span>
+                    </div>
+                    <div class="list">
+                      <ul>
+                        <li class="ssc">위츠</li>
+                        <li class="ssc">엠오티</li>
+                        <li class="listed">에스캠</li>
+                        <li class="listed">하나34호fjdkaljkfdlksal</li>
+                        <li class="listed">하나34호fjdkaljkfdlksal</li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div id="divDay5" onclick="getTagDayText(5)" value="5">
+                    <div class="dayWrap">
+                      <span class="date">5</span>
+                      <!-- <span class="more"><img src="../../../resources/images/common/ic-omit.png" alt="공모주더보기"></span> -->
+                    </div>
+                    <div class="list">
+                      <ul>
+                        <li class="ssc">위츠</li>
+                        <li class="ssc">엠오티</li>
+                        <li class="listed">에스캠</li>
+                        <li class="listed">하나34호fjdkaljkfdlksal</li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div id="divDay6" class="right" onclick="getTagDayText(6)" value="6">
+                    <div class="dayWrap">
+                      <span class="date">6</span>
+                      <!-- <span class="more"><img src="../../../resources/images/common/ic-omit.png" alt="공모주더보기"></span> -->
+                    </div>
+                    <div class="list">
+                      <ul>
+                        <li class="ssc">위츠</li>
+                        <li class="ssc">엠오티</li>
+                        <li class="listed">에스캠</li>
+                        <li class="listed">하나34호fjdkaljkfdlksal</li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div id="divDay9" onclick="getTagDayText(9)" value="9">
+                    <div class="dayWrap">
+                      <span class="date">9</span>
+                      <!-- <span class="more"><img src="../../../resources/images/common/ic-omit.png" alt="공모주더보기"></span> -->
+                    </div>
+                    <div class="list">
+                      <ul>
+                        <li class="ssc">위츠</li>
+                        <li class="ssc">엠오티</li>
+                        <li class="listed">에스캠</li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div id="divDay10" onclick="getTagDayText(10)" value="10">
+                    <div class="dayWrap">
+                      <span class="date">10</span>
+                      <!-- <span class="more"><img src="../../../resources/images/common/ic-omit.png" alt="공모주더보기"></span> -->
+                    </div>
+                    <div class="list">
+                      <ul>
+                        <li class="ssc">위츠</li>
+                        <li class="ssc">엠오티</li>
+                        <li class="listed">에스캠</li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div id="divDay11" onclick="getTagDayText(11)" value="11">
+                    <div class="dayWrap">
+                      <span class="date">11</span>
+                      <!-- <span class="more"><img src="../../../resources/images/common/ic-omit.png" alt="공모주더보기"></span> -->
+                    </div>
+                    <div class="list">
+                      <ul>
+                        <li class="ssc">위츠</li>
+                        <li class="listed">에스캠</li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div id="divDay12" onclick="getTagDayText(12)" value="12">
+                    <div class="dayWrap">
+                      <span class="date">12</span>
+                      <!-- <span class="more"><img src="../../../resources/images/common/ic-omit.png" alt="공모주더보기"></span> -->
+                    </div>
+                    <div class="list">
+                      <ul>
+                        
+                        <li class="listed">에스캠</li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div id="divDay13" class="right" onclick="getTagDayText(13)" value="13">
+                    <div class="dayWrap">
+                      <span class="date">13</span>
+                      <!-- <span class="more"><img src="../../../resources/images/common/ic-omit.png" alt="공모주더보기"></span> -->
+                    </div>
+                    <div class="list">
+                      <ul>
+                        <li class="ssc">위츠</li>
+                        
+                      </ul>
+                    </div>
+                  </div>
+                  <div id="divDay16" onclick="getTagDayText(16)" value="16">
+                    <div class="dayWrap">
+                      <span class="date">16</span>
+                      <!-- <span class="more"><img src="../../../resources/images/common/ic-omit.png" alt="공모주더보기"></span> -->
+                    </div>
+                  </div>
+                  <div id="divDay17" onclick="getTagDayText(17)" value="17">
+                    <div class="dayWrap">
+                      <span class="date">17</span>
+                      <!-- <span class="more"><img src="../../../resources/images/common/ic-omit.png" alt="공모주더보기"></span> -->
+                    </div>
+                  </div>
+                  <div id="divDay18" onclick="getTagDayText(18)" value="18">
+                    <div class="dayWrap">
+                      <span class="date">18</span>
+                      <!-- <span class="more"><img src="../../../resources/images/common/ic-omit.png" alt="공모주더보기"></span> -->
+                    </div>
+                  </div>
+                  <div id="divDay19" onclick="getTagDayText(19)" value="19">
+                    <div class="dayWrap">
+                      <span class="date">19</span>
+                      <!-- <span class="more"><img src="../../../resources/images/common/ic-omit.png" alt="공모주더보기"></span> -->
+                    </div>
+                  </div>
+                  <div id="divDay20" class="right" onclick="getTagDayText(20)" value="20">
+                    <div class="dayWrap">
+                      <span class="date">20</span>
+                      <!-- <span class="more"><img src="../../../resources/images/common/ic-omit.png" alt="공모주더보기"></span> -->
+                    </div>
+                  </div>
+                  <div id="divDay23" onclick="getTagDayText(23)" value="23">
+                    <div class="dayWrap">
+                      <span class="date">23</span>
+                      <!-- <span class="more"><img src="../../../resources/images/common/ic-omit.png" alt="공모주더보기"></span> -->
+                    </div>
+                  </div>
+                  <div id="divDay24" onclick="getTagDayText(24)" value="24">
+                    <div class="dayWrap">
+                      <span class="date">24</span>
+                      <!-- <span class="more"><img src="../../../resources/images/common/ic-omit.png" alt="공모주더보기"></span> -->
+                    </div>
+                  </div>
+                  <div id="divDay25" onclick="getTagDayText(25)" value="25">
+                    <div class="dayWrap">
+                      <span class="date">25</span>
+                      <!-- <span class="more"><img src="../../../resources/images/common/ic-omit.png" alt="공모주더보기"></span> -->
+                    </div>
+                  </div>
+                  <div id="divDay26" onclick="getTagDayText(26)" value="26">
+                    <div class="dayWrap">
+                      <span class="date">26</span>
+                      <!-- <span class="more"><img src="../../../resources/images/common/ic-omit.png" alt="공모주더보기"></span> -->
+                    </div>
+                  </div>
+                  <div id="divDay27" class="right" onclick="getTagDayText(27)" value="27">
+                    <div class="dayWrap">
+                      <span class="date">27</span>
+                      <!-- <span class="more"><img src="../../../resources/images/common/ic-omit.png" alt="공모주더보기"></span> -->
+                    </div>
+                  </div>
+                  <div id="divDay30" onclick="getTagDayText(30)" value="30">
+                    <div class="dayWrap">
+                      <span class="date">30</span>
+                      <!-- <span class="more"><img src="../../../resources/images/common/ic-omit.png" alt="공모주더보기"></span> -->
+                    </div>
+                  </div>
+                  <div id="divDay31" onclick="getTagDayText(31)" value="31">
+                    <div class="dayWrap">
+                      <span class="date">31</span>
+                      <!-- <span class="more"><img src="../../../resources/images/common/ic-omit.png" alt="공모주더보기"></span> -->
+                    </div>
+                  </div>
+                  <div id="divDay00" onclick="getTagDayText(00)" value="00">
+                    <span></span>
+                  </div>
+                  <div id="divDay00" onclick="getTagDayText(00)" value="00">
+                    <span></span>
+                  </div>
+                  <div id="divDay00" class="right" onclick="getTagDayText(00)" value="00">
+                    <span></span>
+                  </div>
+                  
+                </div>
+              </div>
+              <!-- //3월 -->
+            </div> 
+            
+            
+            
+          </div>
+          <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+          <div class="recomDep-pagination swiper-pagination"></div>
+
+        </div>
+        <!-- //캘린더영역 -->
+        <div class="default-wrap">
+          <section>
+            <div class="list-bull mt0 pt20 pb20">
+              <ul>
+                <li>출처 : KIND(청약일정)</li>
+                <li>주의사항 : 등록된 일정은 증권사 및 기업의 사정에 따라 변경될 수 있습니다.</li>
+                <li>모든 투자의 책임은 개인에게 있습니다.</li>
+              </ul>
+            </div>
+          </section>
+          <hr class="line">
+          <section class="recom-area" style="display:;">
+          
+            <div class="recom-areadep swiper swiper-initialized swiper-horizontal swiper-ios swiper-backface-hidden" id="depAcnoCardDiv">
+              <script type="text/javascript">
+                /*버튼클릭이벤트*/
+                //거래내역조회 화면으로 이동
+                function depAcnoDetail(acno, kncd, limit) {
+                  var dataForm = makeForm("acnoDetailDataForm");
+                  addFormData(dataForm, "LINK_ACT", "ACNO_DETAIL");
+                  addFormData(dataForm, "txGbnCd", "D");
+                  addFormData(dataForm, "ACNO", acno);
+                  addFormData(dataForm, "KNCD", kncd);
+                  addFormData(dataForm, "LIMIT_WTCH_ACCO_YN", limit);
+                  doActionFrame("dep/inq/depAcnoSrch", dataForm);
+                }
+
+                /*상품가입하기*/
+                function fnProdJoin(pdcd) {
+                  var reqForm = makeForm("reqForm");
+                  addFormData(reqForm, "LINK_ACT", "BBS_SELECT");
+                  addFormData(reqForm, "txGbnCd", "P"); // 상품조회
+                  addFormData(reqForm, "PRD_TYCD", "D"); // 상품타입코드
+                  addFormData(reqForm, "PDCD", pdcd);
+                  doActionFrame("dep/inq/depDetail", reqForm);
+                }
+
+                //이체하기
+                function transBtn(acno) {
+                  var dataForm = makeForm("dataForm");
+                  if (!UtilFunc.isEmpty(acno)) addFormData(dataForm, "REQ_ACNO", acno);
+                  doActionFrame("bnk/prc/transPrc1", dataForm);
+                }
+
+                //수신계좌거래내역 화면으로 이동
+                function acnoTrnHist(acno, kncd) {
+                  var dataForm = makeForm("dataForm");
+                  addFormData(dataForm, "LINK_ACT", "ACNO_DETAIL");
+                  addFormData(dataForm, "txGbnCd", "D");
+                  addFormData(dataForm, "ACNO", acno);
+                  addFormData(dataForm, "KNCD", kncd);
+                  doActionFrame("dep/inq/depTrnHist", dataForm);
+                }
+
+                //마이버킷적금 거래내역 화면으로 이동
+                function acnoTrnHistMyBucket(acno, kncd) {
+                  var dataForm = makeForm("dataForm");
+                  addFormData(dataForm, "LINK_ACT", "ACNO_DETAIL");
+                  addFormData(dataForm, "txGbnCd", "D");
+                  addFormData(dataForm, "ACNO", acno);
+                  addFormData(dataForm, "KNCD", kncd);
+                  doActionFrame("dep/inq/depTrnHist2", dataForm);
+                }
+
+                /* 거래중지계좌 해제 20241125
+                 * @input acno 계좌번호
+                 * @input prodNm 상품명
+                 */
+                function trnSusAcct(acno, prodNm) {
+                  var dataForm = makeForm("dataForm");
+                  addFormData(dataForm, "LINK_ACT", "ACNO_STS_MNG");
+                  addFormData(dataForm, "txGbnCd", "S");
+                  addFormData(dataForm, "ACNO", acno);
+                  addFormData(dataForm, "PROD_NM", prodNm);
+                  addFormData(dataForm, "bzwrDvcd", "RP"); // 재개신청전조회
+
+                  doAction("ACNO_STS_MNG", dataForm, function (resDs) {
+                    if ("SUCCESS" == resDs.API_RS_MSG) {
+                      doActionFrame("bnk/mng/trnSusAcctRenew1", dataForm);
+                    } else {
+                      errMsg(resDs.API_RS_MSG);
+                    }
+                  });
+                }
+
+                $(document).ready(function () {
+                  // 계좌번호 복사
+                  $(".btn-copy").unbind();
+                  $(".btn-copy").on("click", function () {
+                    var accNum = $(this).prev().text().replace(/\-/g, "");
+                    copyToClipboard(accNum);
+                    toastPopup("복사되었습니다.", 1500);
+                  });
+                  
+                  var recomSlider = new Swiper(".recom-areadep.swiper", {
+                    // 2023-06-20 선택자 변경 : swiper-container => swiper
+                    //slidesPerView : 1,
+                    slidesPerView: "auto",
+                    spaceBetween: 20,
+                    loopedSlides: 3,
+                    //centeredSlides: true,
+                    loopAdditionalSlides: 3,
+                    pagination: {
+                      el: ".recomDep-pagination",
+                    },
+                    loop: true,
+                  });
+                  
+                });
+              </script>
+
+              <div class="alignment-both-side">
+                <h2 class="area-title">내 예금 <span class="point">2</span>건</h2>
+                <strong class="amount-on">총 <span class="point">0</span>원</strong>
+                <strong class="amount-off" style="display: none"><span class="point">금액숨김</span></strong>
+              </div>
+              <div class="swiper-wrapper" >
+                <!-- 계좌1 -->
+                <div class="visaul-info-box swiper-slide">
+                  <a class="info-tit ico-arrow" onclick="depAcnoDetail('04961130709636','1','N');">
+                    <em class="flag style2"> 입출금 </em>
+
+                    보통예금(예스뱅킹)
+                  </a>
+                  <div class="account-area">
+                    <p class="account">049-61-13-0709636</p>
+                    <button type="button" class="btn-copy"></button>
+                  </div>
+
+                  <div class="account-info">
+                    <div class="account-amount">
+                      <p class="amount-on"><span>0</span>원</p>
+                      <p class="amount-off" style="display: none">금액숨김</p>
+                    </div>
+                  </div>
+                  <div class="btn-cont-wrap">
+                    <a href="javascript:void(0);" class="btn btn-primary" onclick="transBtn('04961130709636')">바로 송금하기</a>
+                  </div>
+                </div>
+                <!-- //계좌1 -->
+                <!-- 계좌2 -->
+                <div class="visaul-info-box swiper-slide">
+                  <a class="info-tit ico-arrow" onclick="depAcnoDetail('04961130709636','1','N');">
+                    <em class="flag style2"> 입출금 </em>
+
+                    보통예금(예스뱅킹)
+                  </a>
+                  <div class="account-area">
+                    <p class="account">049-61-13-0709636</p>
+                    <button type="button" class="btn-copy"></button>
+                  </div>
+
+                  <div class="account-info">
+                    <div class="account-amount">
+                      <p class="amount-on"><span>0</span>원</p>
+                      <p class="amount-off" style="display: none">금액숨김</p>
+                    </div>
+                  </div>
+                  <div class="btn-cont-wrap">
+                    <a href="javascript:void(0);" class="btn btn-primary" onclick="transBtn('04961130709636')">바로 송금하기</a>
+                  </div>
+                </div>
+                <!-- //계좌2 -->
+                
+              </div>
+              <div class="recomDep-pagination swiper-pagination-bullets swiper-pagination-horizontal">
+                
+              </div>
+              <span class="swiper-notification"></span>
+            </div>
+          </section>
+
+        </div>
+      </div>
+    </div>
+    <!-- 토스트 메시지 컨테이너 -->
+    <div class="toast"></div>
+
+    <!-- //e: contents -->
+    <!-- 캘린더 스와이퍼 2502 -->
+    <script>
+var mySwiper = new Swiper('.mySwiper', {
+    slidesPerView: 1,
+    spaceBetween: 30,
+    loop: false,
+    autoHeight: true,
+    pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+    },
+    navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+    },
+    touchAngle: 30,
+    resistance: true,
+    resistanceRatio: 0.85,
+    touchRatio: 1,
+    touchStartPreventDefault: false,
+    threshold: 5,
+});
+
+let startX, startY, endX, endY;
+const swipeThreshold = 50;  // 최소 스와이프 거리
+const angleThreshold = 30;  // X축 기준 최대 허용 각도 (위아래 스크롤 방지)
+
+let reachedLastSlide = false; // 마지막 슬라이드에서 추가 스와이프 감지용
+let reachedFirstSlide = false; // 첫 번째 슬라이드에서 추가 스와이프 감지용
+
+// 🎯 슬라이드 변경 이벤트: 마지막 슬라이드 도달 여부 확인 (isEnd 대신 직접 계산)
+mySwiper.on('slideChangeTransitionEnd', function () {
+    reachedLastSlide = mySwiper.activeIndex === mySwiper.slides.length - 1;
+    reachedFirstSlide = mySwiper.activeIndex === 0;
+});
+
+// 🎯 터치 시작 시 좌표 저장
+mySwiper.el.addEventListener('touchstart', function (e) {
+    startX = e.touches[0].clientX;
+    startY = e.touches[0].clientY;
+});
+
+// 🎯 터치 종료 시 스와이프 방향 및 거리 계산
+mySwiper.el.addEventListener('touchend', function (e) {
+    endX = e.changedTouches[0].clientX;
+    endY = e.changedTouches[0].clientY;
+
+    const deltaX = endX - startX;  // X축 이동 거리
+    const deltaY = endY - startY;  // Y축 이동 거리
+    let angle = Math.abs(Math.atan2(deltaY, deltaX) * 180 / Math.PI);  // 스와이프 각도 계산
+
+    // 🎯 세로 스크롤 감지: Y축 이동이 X축 이동보다 크거나, 일정 각도 이상이면 무시
+    if (Math.abs(deltaY) > Math.abs(deltaX) || (angle > angleThreshold && angle < 150)) {
+        return;
+    }
+
+    // 🎯 최소 스와이프 거리 이상일 때만 실행
+    if (Math.abs(deltaX) > swipeThreshold) {
+        if (reachedFirstSlide && deltaX > 0) {
+            // 🎯 왼쪽 끝에서 추가 스와이프 시 토스트 표시
+            toastPopup("공모주 일정은 당월과 익월만 제공합니다", 1500);
+        } else if (reachedLastSlide && deltaX < 0) {
+            // 🎯 오른쪽 끝에서 추가 스와이프 시 토스트 표시 (🚀 angle 보정 추가)
+            toastPopup("공모주 일정은 당월과 익월만 제공합니다", 1500);
+        }
+    }
+});
+
+let nextButtonDisabled = false;
+let prevButtonDisabled = false;
+
+// 🎯 상태 변경 후 딜레이 추가 (비활성화 상태를 기록하지만, 즉시 토스트 표시 X)
+let disableNextTimeout, disablePrevTimeout;
+
+// 🎯 초기 로딩 시 버튼 상태 체크 (비활성화 상태면 true 설정)
+function checkInitialButtonState() {
+    let nextButton = document.querySelector(".swiper-button-next");
+    let prevButton = document.querySelector(".swiper-button-prev");
+
+    if (nextButton.classList.contains("swiper-button-disabled")) {
+        nextButtonDisabled = true;
+    }
+
+    if (prevButton.classList.contains("swiper-button-disabled")) {
+        prevButtonDisabled = true;
+    }
+}
+
+// 🎯 MutationObserver를 사용하여 버튼 상태 변경 감지 (비활성화 여부 자동 감지, 하지만 클릭 전에는 토스트 X)
+const observer = new MutationObserver(() => {
+    let nextButton = document.querySelector(".swiper-button-next");
+    let prevButton = document.querySelector(".swiper-button-prev");
+
+    if (nextButton.classList.contains("swiper-button-disabled")) {
+        clearTimeout(disableNextTimeout);
+        disableNextTimeout = setTimeout(() => {
+            nextButtonDisabled = true;
+        }, 300);
+    } else {
+        clearTimeout(disableNextTimeout);
+        nextButtonDisabled = false;
+    }
+
+    if (prevButton.classList.contains("swiper-button-disabled")) {
+        clearTimeout(disablePrevTimeout);
+        disablePrevTimeout = setTimeout(() => {
+            prevButtonDisabled = true;
+        }, 300);
+    } else {
+        clearTimeout(disablePrevTimeout);
+        prevButtonDisabled = false;
+    }
+});
+
+// 🎯 버튼 상태 변경 감지를 위한 MutationObserver 시작 (자동 토스트 방지)
+const config = { attributes: true, attributeFilter: ["class"] };
+observer.observe(document.querySelector(".swiper-button-next"), config);
+observer.observe(document.querySelector(".swiper-button-prev"), config);
+
+// 🎯 Swiper 비활성화 버튼 클릭 시 토스트 팝업 표시 (클릭할 때마다)
+document.querySelector(".swiper-button-next").addEventListener("pointerdown", function () {
+
+
+    setTimeout(() => {
+        let nextButton = document.querySelector(".swiper-button-next");
+        if (nextButton.classList.contains("swiper-button-disabled") && nextButtonDisabled) {
+            toastPopup("공모주 일정은 당월과 익월만 제공합니다", 1500);
+        }
+    }, 200);
+});
+
+document.querySelector(".swiper-button-prev").addEventListener("pointerdown", function () {
+
+    setTimeout(() => {
+        let prevButton = document.querySelector(".swiper-button-prev");
+        if (prevButton.classList.contains("swiper-button-disabled") && prevButtonDisabled) {
+            toastPopup("공모주 일정은 당월과 익월만 제공합니다", 1500);
+        }
+    }, 200);
+});
+
+// 🎯 초기 버튼 상태 체크 실행
+checkInitialButtonState();
+    </script>
+    <!-- e: contentsWrap -->
+  </body>
+</html>
