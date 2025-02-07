@@ -1585,30 +1585,18 @@ span.more img{width: 16px;}
 
 .mySwiper .swiper-button-next,
 .mySwiper .swiper-button-prev {
-  top:44px;
-  width: 30%;
-  height: 30px;
-  z-index: 999;
-  background-color: #fff;
-  border: none !important;
-    box-shadow: none !important;
-    outline: none !important;
-    transform: translate3d(0, 0, 0);
-    will-change: opacity, transform;
-    backface-visibility: hidden;
-    -webkit-perspective: 1px;
-    contain: layout paint;
-    -webkit-mask-image: -webkit-radial-gradient(white, black);
-    opacity: 0.9999;
-    mix-blend-mode: normal;
-    filter: brightness(1.01);
-    clip-path: inset(0 0 0 0);
-    
-    background: rgba(255, 255, 255, 0.01);
+  width: 0 !important;
+    height: 0 !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    overflow: visible !important;
+    display: inline-block !important;
+    position: absolute;
+    top:24px; ;
 }
-.mySwiper .swiper-button-next{right:0;justify-content: flex-start;}
+.mySwiper .swiper-button-next{right:10px;justify-content: flex-start;}
 .mySwiper .swiper-button-prev{left:0;justify-content: flex-end;}
-.swiper-button-next:after, .swiper-button-prev:after{color: #999;--swiper-navigation-size: 16px;display: none;}
+.swiper-button-next:after, .swiper-button-prev:after{color: #999;--swiper-navigation-size: 16px; width: auto;display: inline-block;}
 .mySwiper .swiper-button-next.swiper-button-disabled:after, .mySwiper .swiper-button-prev.swiper-button-disabled:after{opacity: .35;}
 .mySwiper .swiper-button-next.swiper-button-disabled, .mySwiper .swiper-button-prev.swiper-button-disabled{opacity: 1; pointer-events: visible;}
 
