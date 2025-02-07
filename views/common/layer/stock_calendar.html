@@ -781,13 +781,82 @@ mySwiper.el.addEventListener('touchend', function (e) {
     if (Math.abs(deltaX) > swipeThreshold) {
         if (reachedFirstSlide && deltaX > 0) {
             // 🎯 왼쪽 끝에서 추가 스와이프 시 토스트 표시
-            toastPopup("왼쪽 끝에서 한 번 더 스와이프 완료!", 3000);
+            toastPopup("공모주 일정은 당월과 익월만 제공합니다", 1800);
         } else if (reachedLastSlide && deltaX < 0) {
             // 🎯 오른쪽 끝에서 추가 스와이프 시 토스트 표시 (🚀 angle 보정 추가)
-            toastPopup("오른쪽 끝에서 한 번 더 스와이프 완료!", 3000);
+            toastPopup("공모주 일정은 당월과 익월만 제공합니다", 1800);
         }
     }
 });
+
+let nextButtonDisabled = false;
+let prevButtonDisabled = false;
+
+// 🎯 상태 변경 후 딜레이 추가 (300ms 후 버튼 클릭 가능)
+let disableNextTimeout, disablePrevTimeout;
+
+// 🎯 MutationObserver를 사용하여 버튼 상태 변경 감지 (비활성화 여부 자동 감지)
+const observer = new MutationObserver(() => {
+    let nextButton = document.querySelector(".swiper-button-next");
+    let prevButton = document.querySelector(".swiper-button-prev");
+
+    if (nextButton.classList.contains("swiper-button-disabled")) {
+        console.log("⚠️ Next 버튼이 비활성화됩니다. (300ms 후 반영)");
+        clearTimeout(disableNextTimeout);
+        disableNextTimeout = setTimeout(() => {
+            nextButtonDisabled = true;
+            console.log("✅ Next 버튼 비활성화 상태 저장 완료");
+        }, 300);
+    } else {
+        console.log("✅ Next 버튼 다시 활성화됨");
+        clearTimeout(disableNextTimeout);
+        nextButtonDisabled = false;
+    }
+
+    if (prevButton.classList.contains("swiper-button-disabled")) {
+        console.log("⚠️ Prev 버튼이 비활성화됩니다. (300ms 후 반영)");
+        clearTimeout(disablePrevTimeout);
+        disablePrevTimeout = setTimeout(() => {
+            prevButtonDisabled = true;
+            console.log("✅ Prev 버튼 비활성화 상태 저장 완료");
+        }, 300);
+    } else {
+        console.log("✅ Prev 버튼 다시 활성화됨");
+        clearTimeout(disablePrevTimeout);
+        prevButtonDisabled = false;
+    }
+});
+
+// 🎯 버튼 상태 변경 감지를 위한 MutationObserver 시작
+const config = { attributes: true, attributeFilter: ["class"] };
+observer.observe(document.querySelector(".swiper-button-next"), config);
+observer.observe(document.querySelector(".swiper-button-prev"), config);
+
+// 🎯 Swiper 비활성화 버튼 클릭 시 토스트 팝업 표시 (클릭할 때마다)
+document.querySelector(".swiper-button-next").addEventListener("pointerdown", function () {
+    console.log("➡️ Next 버튼 클릭됨");
+
+    setTimeout(() => {
+        let nextButton = document.querySelector(".swiper-button-next");
+        if (nextButton.classList.contains("swiper-button-disabled") && nextButtonDisabled) {
+            console.log("✅ Next 버튼 클릭! 토스트 출력");
+            toastPopup("공모주 일정은 당월과 익월만 제공합니다", 1800);
+        }
+    }, 200);
+});
+
+document.querySelector(".swiper-button-prev").addEventListener("pointerdown", function () {
+    console.log("⬅️ Prev 버튼 클릭됨");
+
+    setTimeout(() => {
+        let prevButton = document.querySelector(".swiper-button-prev");
+        if (prevButton.classList.contains("swiper-button-disabled") && prevButtonDisabled) {
+            console.log("✅ Prev 버튼 클릭! 토스트 출력");
+            toastPopup("공모주 일정은 당월과 익월만 제공합니다", 1800);
+        }
+    }, 200);
+});
+
     </script>
     <!-- e: contentsWrap -->
   </body>
