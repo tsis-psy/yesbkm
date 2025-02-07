@@ -1591,10 +1591,10 @@ span.more img{width: 16px;}
     overflow: visible !important;
     display: inline-block !important;
     position: absolute;
-    top: 24px !important;
+    top: 27px !important;
 }
-.mySwiper .swiper-button-next{right:20%;justify-content: flex-start;}
-.mySwiper .swiper-button-prev{left:20%;justify-content: flex-end;}
+.swiper-button-next{right:27% !important;justify-content: flex-start;}
+.swiper-button-prev{left:25% !important;justify-content: flex-end;}
 .swiper-button-next:after, .swiper-button-prev:after{
   color: #999;
   --swiper-navigation-size: 16px; 
