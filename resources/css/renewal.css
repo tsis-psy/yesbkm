@@ -1585,10 +1585,15 @@ span.more img{width: 16px;}
 
 .mySwiper .swiper-button-next,
 .mySwiper .swiper-button-prev {
-    outline: none !important;
-    box-shadow: none !important;
-    -webkit-tap-highlight-color: transparent;
-    backdrop-filter: none !important;
+  border: none !important;
+  box-shadow: none !important;
+  outline: none !important;
+  transform: translateZ(0);
+  will-change: transform;
+  backface-visibility: hidden;
+  perspective: 1000px;
+  -webkit-mask-image: -webkit-radial-gradient(white, black);
+  opacity: 0.9999;
     top:44px;
     width: 30%;height: 30px;
     z-index: 999;
