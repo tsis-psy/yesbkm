@@ -792,8 +792,21 @@ mySwiper.el.addEventListener('touchend', function (e) {
 let nextButtonDisabled = false;
 let prevButtonDisabled = false;
 
-// 🎯 상태 변경 후 딜레이 추가 (300ms 후 버튼 클릭 가능)
-let disableNextTimeout, disablePrevTimeout;
+// 🎯 초기 로딩 시 버튼 상태 체크 (비활성화 상태면 true 설정)
+function checkInitialButtonState() {
+    let nextButton = document.querySelector(".swiper-button-next");
+    let prevButton = document.querySelector(".swiper-button-prev");
+
+    if (nextButton.classList.contains("swiper-button-disabled")) {
+        console.log("⚠️ Next 버튼이 처음부터 비활성화됨.");
+        nextButtonDisabled = true;
+    }
+
+    if (prevButton.classList.contains("swiper-button-disabled")) {
+        console.log("⚠️ Prev 버튼이 처음부터 비활성화됨.");
+        prevButtonDisabled = true;
+    }
+}
 
 // 🎯 MutationObserver를 사용하여 버튼 상태 변경 감지 (비활성화 여부 자동 감지)
 const observer = new MutationObserver(() => {
@@ -801,28 +814,18 @@ const observer = new MutationObserver(() => {
     let prevButton = document.querySelector(".swiper-button-prev");
 
     if (nextButton.classList.contains("swiper-button-disabled")) {
-        console.log("⚠️ Next 버튼이 비활성화됩니다. (300ms 후 반영)");
-        clearTimeout(disableNextTimeout);
-        disableNextTimeout = setTimeout(() => {
-            nextButtonDisabled = true;
-            console.log("✅ Next 버튼 비활성화 상태 저장 완료");
-        }, 300);
+        console.log("⚠️ Next 버튼이 비활성화됩니다.");
+        nextButtonDisabled = true;
     } else {
         console.log("✅ Next 버튼 다시 활성화됨");
-        clearTimeout(disableNextTimeout);
         nextButtonDisabled = false;
     }
 
     if (prevButton.classList.contains("swiper-button-disabled")) {
-        console.log("⚠️ Prev 버튼이 비활성화됩니다. (300ms 후 반영)");
-        clearTimeout(disablePrevTimeout);
-        disablePrevTimeout = setTimeout(() => {
-            prevButtonDisabled = true;
-            console.log("✅ Prev 버튼 비활성화 상태 저장 완료");
-        }, 300);
+        console.log("⚠️ Prev 버튼이 비활성화됩니다.");
+        prevButtonDisabled = true;
     } else {
         console.log("✅ Prev 버튼 다시 활성화됨");
-        clearTimeout(disablePrevTimeout);
         prevButtonDisabled = false;
     }
 });
@@ -856,7 +859,8 @@ document.querySelector(".swiper-button-prev").addEventListener("pointerdown", fu
         }
     }, 200);
 });
-
+// 🎯 초기 버튼 상태 체크 실행
+checkInitialButtonState();
     </script>
     <!-- e: contentsWrap -->
   </body>
