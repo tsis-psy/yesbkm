@@ -1608,7 +1608,7 @@ span.more img{width: 16px;}
 }
 .mySwiper .swiper-button-next{right:0;justify-content: flex-start;}
 .mySwiper .swiper-button-prev{left:0;justify-content: flex-end;}
-.swiper-button-next:after, .swiper-button-prev:after{color: #999;--swiper-navigation-size: 16px;}
+.swiper-button-next:after, .swiper-button-prev:after{color: #999;--swiper-navigation-size: 16px;display: none;}
 .mySwiper .swiper-button-next.swiper-button-disabled:after, .mySwiper .swiper-button-prev.swiper-button-disabled:after{opacity: .35;}
 .mySwiper .swiper-button-next.swiper-button-disabled, .mySwiper .swiper-button-prev.swiper-button-disabled{opacity: 1; pointer-events: visible;}
 
