@@ -1585,8 +1585,6 @@ span.more img{width: 16px;}
 
 .mySwiper .swiper-button-next,
 .mySwiper .swiper-button-prev {
-  -webkit-backface-visibility: hidden;
-  -webkit-transform: translate3d(0, 0, 0);
   top:44px;
   width: 30%;
   height: 30px;
@@ -1595,15 +1593,17 @@ span.more img{width: 16px;}
   border: none !important;
   box-shadow: none !important;
   outline: none !important;
-  transform: translateZ(0);
-  will-change: transform;
+  transform: translate3d(0, 0, 0);
+  will-change: opacity, transform;
   backface-visibility: hidden;
-  perspective: 1000px;
+  -webkit-perspective: 1px;
+  contain: layout paint;
   -webkit-mask-image: -webkit-radial-gradient(white, black);
   opacity: 0.9999;
   mix-blend-mode: normal;
   filter: brightness(1.01);
   clip-path: inset(0 0 0 0);
+  background: rgba(255, 255, 255, 0.01);
 }
 .mySwiper .swiper-button-next{right:0;justify-content: flex-start;}
 .mySwiper .swiper-button-prev{left:0;justify-content: flex-end;}
