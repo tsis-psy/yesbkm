@@ -1604,6 +1604,8 @@ span.more img{width: 16px;}
   mix-blend-mode: difference;
   backdrop-filter: blur(0px);
   text-shadow: 0 0 1px rgba(0,0,0,0.01);
+  text-transform: none !important;
+  line-height: 1;
   }
 .mySwiper .swiper-button-next.swiper-button-disabled:after, .mySwiper .swiper-button-prev.swiper-button-disabled:after{}
 .mySwiper .swiper-button-next.swiper-button-disabled, .mySwiper .swiper-button-prev.swiper-button-disabled{opacity: 1; pointer-events: visible;}
