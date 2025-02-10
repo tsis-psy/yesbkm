@@ -1590,8 +1590,8 @@ span.more img{width: 16px;}
     margin: 0 !important;
     overflow: visible !important;
     display: inline-block !important;
-    position: absolute; */
-    top: 27px !important;
+    position: absolute; 
+    top: 27px !important;*/
 }
 .swiper-button-next{right:27% !important;}
 .swiper-button-prev{left:25% !important;}
