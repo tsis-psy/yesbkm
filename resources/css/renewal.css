@@ -1583,7 +1583,7 @@ span.more img{width: 16px;}
 
 .calWrap .swiper-pagination{height: 30px;background-color: #f5f8fa;display: block;margin-top: 0;--swiper-pagination-bottom:-30px}
 
-.swiper-button-next, .swiper-button-prev {
+/* .swiper-button-next, .swiper-button-prev {
   width: 0 !important;
     height: 0 !important;
     padding: 0 !important;
@@ -1592,10 +1592,10 @@ span.more img{width: 16px;}
     display: inline-block !important;
     position: absolute;
     top: 27px !important;
-}
-.swiper-button-next{right:27% !important;justify-content: flex-start;}
-.swiper-button-prev{left:25% !important;justify-content: flex-end;}
-.swiper-button-next:after, .swiper-button-prev:after{
+} */
+/* .swiper-button-next{right:27% !important;justify-content: flex-start;} */
+/* .swiper-button-prev{left:25% !important;justify-content: flex-end;} */
+/* .swiper-button-next:after, .swiper-button-prev:after{
   color: #999;
   --swiper-navigation-size: 16px; 
   width: auto;
@@ -1606,9 +1606,9 @@ span.more img{width: 16px;}
   text-shadow: 0 0 1px rgba(0,0,0,0.01);
   text-transform: none !important;
   line-height: 1;
-  }
+  } */
 .mySwiper .swiper-button-next.swiper-button-disabled:after, .mySwiper .swiper-button-prev.swiper-button-disabled:after{}
-.mySwiper .swiper-button-next.swiper-button-disabled, .mySwiper .swiper-button-prev.swiper-button-disabled{opacity: 1; pointer-events: visible;}
+.mySwiper .swiper-button-next.swiper-button-disabled, .mySwiper .swiper-button-prev.swiper-button-disabled{ pointer-events: visible;}
 
 
   
