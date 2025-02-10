@@ -1593,7 +1593,7 @@ span.more img{width: 16px;}
     position: absolute; */
     top: 36px !important;
 }
-.swiper-button-next{right:27% !important;}
+.swiper-button-next{right:26% !important;}
 .swiper-button-prev{left:25% !important;}
 .swiper-button-next:after, .swiper-button-prev:after{
   color: #999;
@@ -1604,7 +1604,10 @@ span.more img{width: 16px;}
   mix-blend-mode: difference;
   backdrop-filter: blur(0px);
   text-shadow: none !important;
-  
+  filter: grayscale(100%) contrast(100%);
+  border: 0.1px solid transparent;
+  clip-path: circle(100% at center);
+  animation: fadeFix 0.01s infinite;
   }
 .mySwiper .swiper-button-next.swiper-button-disabled:after, .mySwiper .swiper-button-prev.swiper-button-disabled:after{}
 .mySwiper .swiper-button-next.swiper-button-disabled, .mySwiper .swiper-button-prev.swiper-button-disabled{ pointer-events: visible;}
