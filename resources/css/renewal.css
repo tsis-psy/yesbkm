@@ -1577,40 +1577,42 @@ span.more img{width: 16px;}
 
 /* 캘린더 스와이프 추가 2502 */
 .contents.cal{height: 100vh;display: flex; flex-direction: column;}
-.contents.cal .default-wrap{background-color: #f5f8fa;flex-grow: 1;margin-bottom: 0;padding-bottom: 0;padding-top: 30px;}
+.contents.cal .default-wrap{background-color: #f5f8fa;flex-grow: 1;margin-bottom: 0;padding-bottom: 10px;}
 .calWrap{position: relative;height: fit-content;}
-.swiper {transition: height 0.2s ease;}
+.mySwiper {transition: height 0.2s ease;-webkit-backface-visibility: hidden;-webkit-transform: translate3d(0, 0, 0);}
 
-.calWrap .swiper-pagination{height: 30px;background-color: #f5f8fa;display: block;margin-top: 0;--swiper-pagination-bottom:-30px}
+.calWrap .swiper-pagination{
+  height: 30px;background-color: #f5f8fa;display: block;margin-top: 0;--swiper-pagination-bottom:0px;position: relative;}
 
 .mySwiper .swiper-button-next, .mySwiper .swiper-button-prev {
-  /* width: 0 !important;
-    height: 0 !important;
-    padding: 0 !important;
-    margin: 0 !important;
-    overflow: visible !important;
-    display: inline-block !important;
-    position: absolute; */
     top: 36px !important;
 }
-.swiper-button-next{right:26% !important;}
-.swiper-button-prev{left:25% !important;}
-.swiper-button-next:after, .swiper-button-prev:after{
+.mySwiper .swiper-button-next{right:26% !important;}
+.mySwiper .swiper-button-prev{left:25% !important;}
+.mySwiper .swiper-button-next:after, .mySwiper .swiper-button-prev:after{
   color: #999;
   --swiper-navigation-size: 16px; 
   width: auto;
   display: block;
   position: absolute;
-  mix-blend-mode: difference;
+  mix-blend-mode: normal;
   backdrop-filter: blur(0px);
   text-shadow: none !important;
   filter: grayscale(100%) contrast(100%);
   border: 0.1px solid transparent;
   clip-path: circle(100% at center);
-  animation: fadeFix 0.01s infinite;
-  }
-.mySwiper .swiper-button-next.swiper-button-disabled:after, .mySwiper .swiper-button-prev.swiper-button-disabled:after{}
-.mySwiper .swiper-button-next.swiper-button-disabled, .mySwiper .swiper-button-prev.swiper-button-disabled{ pointer-events: visible;}
+  -webkit-backface-visibility: hidden;
+  -webkit-transform: translate3d(0, 0, 0);
+  background: none !important;
+  border: none !important;  
+  box-shadow: none !important;
+  will-change: opacity, transform;
+  backface-visibility: hidden;
+  -webkit-perspective: 1px;
+  contain: layout paint;
+  -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 90%, rgba(0,0,0,0) 100%);
+}
 
+.mySwiper .swiper-button-next.swiper-button-disabled, .mySwiper .swiper-button-prev.swiper-button-disabled{ pointer-events: visible;}
 
   
